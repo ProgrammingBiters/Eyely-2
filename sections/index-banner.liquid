@@ -1,6 +1,6 @@
 {{ 'section-index-banner.css' | asset_url | stylesheet_tag }}
 
-<div class="index-banner">
+<div class="container index-banner  p-0">
  <div class="desk-banner">
   <a href="{{ section.settings.featured_link }}" class="slide-image">
     <img srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | img_url: '375x' }} 375w,{%- endif -%}
