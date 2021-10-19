@@ -8,6 +8,51 @@
         "featured_link": "shopify:\/\/collections\/new-arrivals"
       }
     },
+    "1634638697d2b5e52a": {
+      "type": "index-icons",
+      "blocks": {
+        "7d791bc1-61ac-4ec2-8f9e-6941fa81a47e": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object.png",
+            "title": "Free Shipping"
+          }
+        },
+        "212c6c4e-a4dd-4ed4-81fd-debb3e060718": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object_1.png",
+            "title": "Secure Ordering"
+          }
+        },
+        "cbc6c6c8-eee5-4d6f-951b-27e584ba4189": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object_2.png",
+            "title": "30 Day Guarantee"
+          }
+        },
+        "6267e923-eaf7-49e9-bc0a-78f425541181": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object_3.png",
+            "title": "Easy Returns"
+          }
+        }
+      },
+      "block_order": [
+        "7d791bc1-61ac-4ec2-8f9e-6941fa81a47e",
+        "212c6c4e-a4dd-4ed4-81fd-debb3e060718",
+        "cbc6c6c8-eee5-4d6f-951b-27e584ba4189",
+        "6267e923-eaf7-49e9-bc0a-78f425541181"
+      ],
+      "settings": {
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -152,6 +197,7 @@
   },
   "order": [
     "16346258161ef8d1b8",
+    "1634638697d2b5e52a",
     "rich_text",
     "featured_products",
     "collage",
