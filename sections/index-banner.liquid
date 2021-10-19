@@ -1,7 +1,7 @@
 {{ 'section-index-banner.css' | asset_url | stylesheet_tag }}
 
 <div class="index-banner">
- <div class="desk-banner" style="padding-top: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%">
+ <div class="desk-banner">
   <a href="{{ section.settings.featured_link }}" class="slide-image">
     <img srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | img_url: '375x' }} 375w,{%- endif -%}
     {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
@@ -20,7 +20,7 @@
 </a>
 </div>
                
-<div class="mobile-banner" style="padding-top: {{ 1 | divided_by: section.settings.image_2.aspect_ratio | times: 100 }}%">
+<div class="mobile-banner" >
   <a  href="{{ section.settings.featured_link }}" class="slide-image">
     <img  srcset="{%- if section.settings.image_2.width >= 375 -%}{{ section.settings.image_2 | img_url: '375x' }} 375w,{%- endif -%}
     {%- if section.settings.image_2.width >= 750 -%}{{ section.settings.image_2 | img_url: '750x' }} 750w,{%- endif -%}
