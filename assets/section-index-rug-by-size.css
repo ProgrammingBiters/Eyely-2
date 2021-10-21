@@ -1,6 +1,9 @@
 .rug-by-size{
     margin-top:20px;
   }
+  .rug-by-size .container{
+    max-width: 1630px;
+  }
   .rug-by-size .rug-by-size_heading{
     text-align:center;
     padding-bottom: 10px;
@@ -9,4 +12,11 @@
     color: #000;
     font-size: 16px;
     font-weight: 300;
+  }
+  .rug-by-size_inner .rug-by-size_main{
+    text-align:center;
+
+  }
+  .rug-by-size_inner .rug-by-size_main a{
+    text-decoration: none;
   }

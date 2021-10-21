@@ -2,13 +2,13 @@
 <div class="rug-by-size">
     <div class="container">
         <div class="rug-by-size_heading d-md-block d-none">
-           <h2 class="heading display-5">{{ section.settings.title_txt }}</h2>
+           <h2 class="heading">{{ section.settings.title_txt }}</h2>
             <p class="shop__p">{{ section.settings.heading_txt }}
         </div>
-        <div class="row RugsbySize_inner">
+        <div class="row rug-by-size_inner pb-3 mx-auto">
             {% for block in section.blocks %}
                 {% if block.type == 'Rugs_by_Size' %}
-                  <div class="RugsbySize_main col-lg-3" >
+                  <div class="rug-by-size_main col-lg-3" >
                     <div class="RugsbySize__icon">
                       <a href="{{ block.settings.logo_url }}">
                           {%
