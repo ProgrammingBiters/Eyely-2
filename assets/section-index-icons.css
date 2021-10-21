@@ -82,7 +82,7 @@ justify-content: space-between;
 }
 @media (max-width:400px){
     .item-icon h3{ 
-        font-size: calc(1rem);
+        font-size: 10px!important;
         line-height: 1.4;
     }
     .index-icons .item-icon{

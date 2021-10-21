@@ -53,6 +53,54 @@
       "settings": {
       }
     },
+    "163479756837bdea1f": {
+      "type": "index-review-products",
+      "blocks": {
+        "1b003807-bb93-48ba-b0c2-f9dfd5480820": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "featured_product": "tinos-ourika-moroccan-geometric-textured-area-rug",
+            "review_star": 5,
+            "review_author": "Tammie J.",
+            "review_title": "Rug arrived on time",
+            "review_description": "Rug arrived on time & it was beautiful. Looked exactly like the picture. Size was accurate & it layed flat easily! So happy I purchased it."
+          }
+        },
+        "ee2b460b-031b-4fcc-af5e-2c5b21a30d69": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "featured_product": "kolkata-moroccan-hype-boho-vintage-area-rug",
+            "review_star": 5,
+            "review_author": "Jolene P.",
+            "review_title": "Love It!",
+            "review_description": "Great quality rug at a very reasonable price! It’s exactly what I was expecting. I would definitely purchase rugs from Eyely again!"
+          }
+        },
+        "c3c9dc84-56b6-458d-8398-351573281c6c": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "featured_product": "andromeda-denia-ornate-geometric-medallion-area-rug",
+            "review_star": 5,
+            "review_author": "Candace",
+            "review_title": "This rug is amazing!!",
+            "review_description": "This rug is amazing!! And it was shipped within a day!!"
+          }
+        }
+      },
+      "block_order": [
+        "1b003807-bb93-48ba-b0c2-f9dfd5480820",
+        "ee2b460b-031b-4fcc-af5e-2c5b21a30d69",
+        "c3c9dc84-56b6-458d-8398-351573281c6c"
+      ],
+      "settings": {
+        "enable": true,
+        "title": "Shop Area Rugs Over 10,000 Customers Love",
+        "btnname": "More Review"
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -198,6 +246,7 @@
   "order": [
     "16346258161ef8d1b8",
     "1634638697d2b5e52a",
+    "163479756837bdea1f",
     "rich_text",
     "featured_products",
     "collage",
