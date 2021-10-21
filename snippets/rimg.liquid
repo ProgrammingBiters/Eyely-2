@@ -198,6 +198,19 @@
       >
     </noscript>
   {% endif %}
+  {%- liquid 
+    assign image_widths = '180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,2592,2808,3024' | split: ',' 
+  -%}
+  {%- capture image_widths -%}
+  {%- for width in image_widths -%}
+    {%- comment -%} Check if image width is less or equal to width {%- endcomment -%}
+    {%- assign width_num = width | plus: 0 | round -%}
+    {%- if img.width >= width_num -%}{{ width_num }},{%- endif -%}
+  {%- endfor -%}
+  {{ img.width }}
+{%- endcapture -%}
+
+{%- assign image_widths = image_widths | strip -%}
 
   <img
     {% if rimg_format == '' %}
@@ -209,6 +222,8 @@
     height="auto"
     width="auto"
     loading="lazy"
+    data-widths="[{{ image_widths }}]"
+    data-sizes="auto"
     {% if lazy %}
       data-rimg="lazy"
       data-rimg-scale="{{ rimg_scale }}"
