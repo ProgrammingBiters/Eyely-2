@@ -10,3 +10,10 @@
     font-size: 16px;
     font-weight: 300;
   }
+  .rug-by-size_inner .rug-by-size_main{
+    text-align:center;
+
+  }
+  .rug-by-size_inner .rug-by-size_main a{
+    text-decoration: none;
+  }
