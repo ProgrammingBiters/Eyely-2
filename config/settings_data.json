@@ -8,9 +8,9 @@
     "colors_background_1": "#FFFFFF",
     "colors_background_2": "#F3F3F3",
     "type_header_font": "josefin_sans_n6",
-    "heading_scale": 130,
+    "heading_scale": 120,
     "type_body_font": "josefin_sans_n7",
-    "body_scale": 120,
+    "body_scale": 110,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
