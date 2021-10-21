@@ -1,0 +1,267 @@
+{%- liquid
+     capture _ 
+
+   assign lazy = lazy | default: false 
+   assign background = background | default: false   
+   assign size_default = img.width | append: 'x' | append: img.height 
+   assign size = size | default: size_default 
+   assign crop = crop | default: false 
+   assign scale = scale | default: 1 
+   assign format = format | default: '' 
+   assign placeholder = placeholder | default: false 
+   assign alt = alt | default: img.alt | default: '' 
+   assign class = class | default: blank 
+   assign style = style | default: blank 
+   assign attr = attr | default: blank
+   assign canvas = canvas | default: false 
+   assign disable_noscript = disable_noscript | default: false 
+
+ 
+  assign rimg_s = size | split: 'x' 
+  assign rimg_w = rimg_s[0]
+  assign rimg_h = rimg_s[1] 
+  assign rimg_size_aspect_ratio = rimg_w | times: 1.0 | divided_by: rimg_h 
+
+ 
+   if rimg_w == blank and rimg_h == blank 
+    assign rimg_w = img.width 
+   assign rimg_h = img.height 
+
+  elsif rimg_w == blank 
+     assign rimg_w = rimg_h | times: img.aspect_ratio
+     if rimg_w > img.width 
+       assign rimg_w = img.width 
+      assign rimg_h = rimg_w | divided_by: img.aspect_ratio 
+   endif 
+
+   elsif rimg_h == blank 
+     assign rimg_h = rimg_w | divided_by: img.aspect_ratio 
+     if rimg_h > img.height 
+       assign rimg_h = img.height 
+       assign rimg_w = rimg_h | times: img.aspect_ratio 
+     endif 
+
+
+     elsif crop == blank 
+     if img.aspect_ratio > rimg_size_aspect_ratio 
+       assign rimg_h = rimg_w | divided_by: img.aspect_ratio 
+     if rimg_h > img.height 
+         assign rimg_h = img.height 
+         assign rimg_w = rimg_h | times: img.aspect_ratio 
+       endif 
+
+     else 
+       assign rimg_w = rimg_h | times: img.aspect_ratio 
+        if rimg_w > img.width 
+         assign rimg_w = img.width 
+         assign rimg_h = rimg_w | divided_by: img.aspect_ratio 
+       endif 
+     endif 
+
+   else 
+     if img.aspect_ratio > rimg_size_aspect_ratio 
+      
+       assign rimg_h = rimg_w | divided_by: rimg_size_aspect_ratio 
+       if rimg_h > img.height or rimg_w > img.width 
+         assign rimg_h = img.height 
+         assign rimg_w = rimg_h | times: rimg_size_aspect_ratio 
+       endif 
+
+     else 
+
+       assign rimg_w = rimg_h | times: rimg_size_aspect_ratio 
+       if rimg_h > img.height or rimg_w > img.width 
+         assign rimg_w = img.width 
+         assign rimg_h = rimg_w | divided_by: rimg_size_aspect_ratio 
+       endif 
+
+     endif 
+
+   endif 
+
+   assign rimg_w = rimg_w | ceil 
+   assign rimg_h = rimg_h | ceil 
+
+   assign rimg_size = '' | append: rimg_w | append: 'x' | append: rimg_h 
+
+  assign rimg_scale = scale 
+
+   assign rimg_format = format 
+
+   assign rimg_alt = alt | escape 
+
+   assign rimg_url_template = img | img_url: '1x1', crop: crop | replace: '_1x1', '_{size}' 
+
+   unless rimg_format == '' 
+     assign rimg_url_template = img | img_url: '1x1', crop: crop, format: rimg_format | replace: '_1x1', '_{size}' 
+   endunless 
+
+   
+   assign rimg_placeholder = 'data:image/svg+xml;utf8,' | append: "<svg xmlns='http://www.w3.org/2000/svg' width='X' height='Y'></svg>" | replace: 'X', rimg_w | replace: 'Y', rimg_h | replace: ' ', '%20' 
+
+  
+   assign rimg_density = '' 
+   for i in (1..4) 
+     assign rimg_densities_w = rimg_w | times: i | round 
+     assign rimg_densities_h = rimg_h | times: i | round 
+
+     assign rimg_density = rimg_density | append: ' ' 
+
+     if rimg_densities_w > img.width or rimg_densities_h > img.height 
+       if img.aspect_ratio > rimg_size_aspect_ratio 
+         assign rimg_max_density = img.height | divided_by: rimg_h 
+         assign rimg_max_density_float = img.height | times: 100 | divided_by: rimg_h | times: 0.01 
+       else 
+         assign rimg_max_density = img.width | divided_by: rimg_w 
+         assign rimg_max_density_float = img.width | times: 100 | divided_by: rimg_w | times: 0.01 
+       endif 
+
+       if rimg_max_density != rimg_max_density_float 
+         assign rimg_max_density = rimg_max_density_float 
+       endif 
+
+       unless rimg_density contains rimg_max_density 
+         assign rimg_density = rimg_density | append: rimg_max_density 
+       endunless 
+       break 
+     else 
+       assign rimg_density = rimg_density | append: i 
+     endif 
+   endfor 
+
+   assign rimg_densities = rimg_density | split: ' ' 
+   assign rimg_density_srcset = '' 
+   for rimg_densities_i in rimg_densities 
+     assign rimg_densities_w = rimg_w | times: rimg_densities_i | round 
+     assign rimg_densities_h = rimg_h | times: rimg_densities_i | round 
+
+     assign rimg_densities_size = rimg_densities_w | append: 'x' | append: rimg_densities_h 
+     assign rimg_density_src = img | img_url: rimg_densities_size, crop: crop 
+
+     unless rimg_format == '' 
+       assign rimg_density_src = img | img_url: rimg_densities_size, crop: crop, format: rimg_format 
+     endunless 
+
+     assign rimg_density_srcset = rimg_density_srcset | append: ', ' | append: rimg_density_src | append: ' ' | append: rimg_densities_i | append: 'x' 
+   endfor 
+   assign rimg_density_srcset = rimg_density_srcset | remove_first: ', ' 
+
+ endcapture 
+-%}
+
+{% if background %}
+  {% if lazy %}
+    data-rimg="lazy"
+    data-rimg-scale="{{ rimg_scale }}"
+    data-rimg-template="{{ rimg_url_template }}"
+    data-rimg-max="{{ img.width }}x{{ img.height }}"
+    data-rimg-crop="{{ crop }}"
+    {% if placeholder %}data-rimg-placeholder="{{ placeholder }}"{% endif %}
+    {% if class != blank %}class="{{ class }}"{% endif %}
+    {% if style != blank %}style="{{ style }}"{% endif %}
+    {% if attr != blank %}{{ attr }}{% endif %}
+
+  {% else %}
+    {% if class != blank %}class="{{ class }}"{% endif %}
+    style="
+      {% if rimg_format == '' %}
+        background-image: url('{{ img | img_url: rimg_size, crop: crop }}');
+      {% else %}
+        background-image: url('{{ img | img_url: rimg_size, format: rimg_format }}');
+      {% endif %}
+
+      {% if style != blank %}{{ style }}{% endif %}
+    "
+    {% if attr != blank %}{{ attr }}{% endif %}
+
+  {% endif %}
+
+{% comment %} Image tag {% endcomment %}
+{% else %}
+  {% if lazy and disable_noscript != true %}
+    <noscript data-rimg-noscript>
+      <img
+        {% if rimg_format == '' %}
+          src="{{ img | img_url: rimg_size, crop: crop }}"
+        {% else %}
+          src="{{ img | img_url: rimg_size, crop: crop, format: rimg_format }}"
+        {% endif %}
+        height="auto"
+        width="auto"
+        loading="lazy"
+        alt="{{ rimg_alt }}"
+        data-rimg="noscript"
+        srcset="{{ rimg_density_srcset }}"
+        {% if class != blank %}class="{{ class }}"{% endif %}
+        {% if style != blank %}style="{{ style }}"{% endif %}
+        {% if attr != blank %}{{ attr }}{% endif %}
+      >
+    </noscript>
+  {% endif %}
+
+  <img
+    {% if rimg_format == '' %}
+      src="{{ img | img_url: rimg_size, crop: crop }}"
+    {% else %}
+      src="{{ img | img_url: rimg_size, crop: crop, format: rimg_format }}"
+    {% endif %}
+    alt="{{ rimg_alt }}"
+    height="auto"
+    width="auto"
+    loading="lazy"
+    {% if lazy %}
+      data-rimg="lazy"
+      data-rimg-scale="{{ rimg_scale }}"
+      data-rimg-template="{{ rimg_url_template }}"
+      data-rimg-max="{{ img.width }}x{{ img.height }}"
+      data-rimg-crop="{{ crop }}"
+      {% if placeholder %}data-rimg-placeholder="{{ placeholder }}"{% endif %}
+      srcset="{{ rimg_placeholder }}"
+    {% else %}
+      data-rimg
+      srcset="{{ rimg_density_srcset }}"
+    {% endif %}
+
+    {% if class != blank %}class="{{ class }}"{% endif %}
+    {% if style != blank %}style="{{ style }}"{% endif %}
+    {% if attr != blank %}{{ attr }}{% endif %}
+  >
+{% endif %}
+
+{% if canvas %}
+  <div data-rimg-canvas></div>
+{% endif %}
+{%- liquid
+capture _ 
+  assign lazy = nil
+  assign background = nil
+   assign size = nil 
+   assign crop = nil 
+   assign scale = nil 
+   assign format = nil 
+   assign placeholder = nil 
+   assign alt = nil 
+   assign class = nil
+   assign style = nil
+   assign attr = nil 
+   assign canvas = nil 
+   assign disable_noscript = nil 
+ 
+   assign rimg_s = blank 
+   assign rimg_w = blank 
+   assign rimg_h = blank 
+   assign rimg_size_aspect_ratio = blank 
+   assign rimg_scale = blank 
+   assign rimg_url_template = blank 
+   assign rimg_alt = blank 
+   assign rimg_density = blank 
+   assign rimg_densities = blank 
+   assign rimg_densities_i = blank 
+   assign rimg_densities_w = blank    
+   assign rimg_densities_h = blank
+   assign rimg_density_src = blank 
+   assign rimg_densities_size = blank 
+   assign rimg_density_srcset = blank 
+   assign rimg_placeholder = blank 
+   endcapture 
+-%}

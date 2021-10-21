@@ -101,8 +101,18 @@
         "btnname": "More Review"
       }
     },
+    "1634804839b2634194": {
+      "type": "index-new-arrival",
+      "settings": {
+        "enable-section": true,
+        "arrival-banner-img": "shopify:\/\/shop_images\/new_arrivals_banner.png",
+        "mob-arrival-banner-img": "shopify:\/\/shop_images\/eyee.png",
+        "link": "shopify:\/\/collections\/new-arrivals"
+      }
+    },
     "rich_text": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "heading": {
           "type": "heading",
@@ -138,6 +148,7 @@
     },
     "featured_products": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "collection": "all",
@@ -154,6 +165,7 @@
     },
     "collage": {
       "type": "collage",
+      "disabled": true,
       "blocks": {
         "video": {
           "type": "video",
@@ -194,6 +206,7 @@
     },
     "video": {
       "type": "video",
+      "disabled": true,
       "settings": {
         "heading": "Video",
         "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
@@ -203,6 +216,7 @@
     },
     "multi_column": {
       "type": "multicolumn",
+      "disabled": true,
       "blocks": {
         "column1": {
           "type": "column",
@@ -247,6 +261,7 @@
     "16346258161ef8d1b8",
     "1634638697d2b5e52a",
     "163479756837bdea1f",
+    "1634804839b2634194",
     "rich_text",
     "featured_products",
     "collage",
