@@ -1,6 +1,6 @@
 {{ 'section-index-review-products.css' | asset_url | stylesheet_tag }}
 
-<section class="review-products">
+<div class="review-products">
     <div class="container">
       <div class="title-div">
           <h2 class="title text-center review-title display-5">{{ section.settings.title }}</h2>
@@ -71,7 +71,7 @@
       </div>
       <a class="mobile_btn" href="javascript:void(0)">{{ section.settings.btnname }}</a>
       </div>
-</section>
+    </div>
 <script>
     $(document).ready(function(){
 
