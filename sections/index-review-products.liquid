@@ -71,24 +71,14 @@
       </div>
       <a class="mobile_btn" href="javascript:void(0)">{{ section.settings.btnname }}</a>
       </div>
-    </div>
-<script>
-    $(document).ready(function(){
+</div>
 
-        $(".review-wrap").slice(0, 1).show();
-        $(".mobile_btn").on("click", function(e){
-          e.preventDefault();
-          $(".review-wrap:hidden").slice(0, 1).slideDown();
-          if($(".review-wrap:hidden").length == 0) {
-             $(".mobile_btn").fadeOut("slow");
-          }
-        });
-    });
-</script>
 {% schema %}
 {
   "name": "Review",
   "max_blocks": 3,
+  "tag":"section",
+  "class": "spaced-section spaced-section--full-width",
   "settings": [
 {
 "type": "checkbox",
