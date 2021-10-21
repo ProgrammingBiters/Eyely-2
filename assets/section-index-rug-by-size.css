@@ -38,6 +38,7 @@
     width: 10%;
   }
   .rug-by-size .btn{
+    display: block;
     text-align: center;
     font-weight: 700;
     font-size: 20px;
@@ -53,8 +54,9 @@
   }
   @media (max-width:480px){
     .rug-by-size .rug-by-size_inner .rug-by-size_main .rug-by-size__text h3{
-      font-size:calc(var(--font-heading-scale) * 0.7rem)
-
+      font-size:calc(var(--font-heading-scale) * 1.5rem);
       }
-
+      .rug-by-size .rug-by-size_inner .rug-by-size_main .rug-by-size__text span{
+        font-size:1.2rem;
+      }
   }
