@@ -134,13 +134,14 @@
     {%- endif -%}
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
-     <script src="{{ 'jquery-3.6.0.js' | asset_url }}" async></script>
    
     <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
-<script>jQuery.noConflict();</script>
+
   </head>
 
   <body class="gradient">
+    <script src="{{ 'jquery-3.6.0.js' | asset_url }}" async></script>
+   j
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
