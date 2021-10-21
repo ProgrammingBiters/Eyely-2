@@ -1,0 +1,113 @@
+{{ 'section-index-rug-by-size.css' | asset_url | stylesheet_tag }}
+<div class="rug-by-size">
+    <div class="container">
+        <div class="rug-by-size_heading d-md-block d-none">
+           <h2 class="heading display-5">{{ section.settings.title_txt }}</h2>
+            <p class="shop__p">{{ section.settings.heading_txt }}
+        </div>
+        <div class="row RugsbySize_inner">
+            {% for block in section.blocks %}
+                {% if block.type == 'Rugs_by_Size' %}
+                  <div class="RugsbySize_main col-lg-3" >
+                    <div class="RugsbySize__icon">
+                      <a href="{{ block.settings.logo_url }}">
+                          {%
+                              render 'rimg',
+                              class: 'img-fluid RugsbySize__custom-icon',
+                              img: block.settings.logo_img,
+                              size: '300x300'                              
+                            %}
+                      </a>
+                    </div>
+                    
+                    <div class="RugsbySize__text">
+                      <a href="{{ block.settings.logo_url }}">
+                        <h3>{{ block.settings.heading_txt }}</h3>
+                        <span class="RugsbySize_size">
+                          {{ block.settings.size_txt }}
+                        </span>
+                      </a>
+                    </div>
+                  
+                    <div class="RugsbySize-arrow d-md-none d-block">
+                      <span><a href="{{ block.settings.logo_url }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></span>
+                    </div>
+                  </div>
+                {% endif %}
+            {% endfor %}
+             
+                  <div class="view_all_btn d-md-none d-block">
+                    <a href="{{ section.settings.btn_url }}" class=" btn ">{{ section.settings.btn_text }}</a>
+                  </div>
+                </div>
+    </div>    
+
+</div>
+
+{% schema %}
+{
+  "name": "Index-Rug By Size",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "max_blocks": 4,
+  "settings" : [
+    {
+        "type": "text",
+        "id": "title_txt",
+        "label": "Title",
+		"default": "Rugs By Size"
+      },
+		{
+        "type": "textarea",
+        "id": "heading_txt",
+        "label": "Sub Title",
+		"default": "The right size rug gives your room the perfect feel. We can help make it easy."
+      },
+      {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "View all rugs"
+      },
+	  {
+	  "type": "url",
+      "id": "btn_url",
+      "label" : "Button Url"
+      }
+  ],
+  "blocks":[
+      {
+          "type": "Rugs_by_Size",
+          "name": "Rugs by Size",
+          "settings": [
+              {	
+                "type": "image_picker",
+                "id": "logo_img",
+                "label": "Image"
+              },
+              {	
+                "type": "url",
+                "id": "logo_url",
+                "label": "Link"
+              },
+              {	
+                "type": "text",
+                "id": "heading_txt",
+                "label": "Title"
+              },
+              {	
+                "type": "text",
+                "id": "size_txt",
+                "label": "Size"
+              }
+          ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Index Rug By Size"
+    }
+  ]
+
+}
+{% endschema %}
