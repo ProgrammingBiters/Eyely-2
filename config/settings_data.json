@@ -8,9 +8,7 @@
     "colors_background_1": "#FFFFFF",
     "colors_background_2": "#F3F3F3",
     "type_header_font": "assistant_n4",
-    "heading_scale": 150,
     "type_body_font": "assistant_n4",
-    "body_scale": 120,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -18,9 +16,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "background-1",
-              "link": ""
+              "color_scheme": "background-1"
             }
           }
         },
@@ -29,54 +25,8 @@
         ],
         "settings": {
         }
-      },
-      "header": {
-        "type": "header",
-        "settings": {
-          "color_scheme": "background-1",
-          "logo_width": 100,
-          "logo_position": "middle-left",
-          "menu": "main-menu",
-          "show_line_separator": true,
-          "enable_sticky_header": true
-        }
-      },
-      "footer": {
-        "type": "footer",
-        "blocks": {
-          "footer-0": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
-            }
-          },
-          "footer-1": {
-            "type": "text",
-            "settings": {
-              "heading": "Heading",
-              "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
-            }
-          }
-        },
-        "block_order": [
-          "footer-0",
-          "footer-1"
-        ],
-        "settings": {
-          "color_scheme": "background-1",
-          "newsletter_enable": true,
-          "newsletter_heading": "Subscribe to our emails",
-          "show_social": false,
-          "enable_country_selector": true,
-          "enable_language_selector": true,
-          "payment_enable": true
-        }
       }
-    },
-    "content_for_index": [
-
-    ]
+    }
   },
   "presets": {
     "Default": {
