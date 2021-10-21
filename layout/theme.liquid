@@ -135,13 +135,11 @@
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
    
-    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
-
+    
   </head>
 
   <body class="gradient">
-    <script src="{{ 'jquery-3.6.0.js' | asset_url }}" async></script>
-   j
+    
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -149,6 +147,8 @@
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ 'jquery-3.6.0.js' | asset_url | script_tag }}
+
       {{ content_for_layout }}
     </main>
 
@@ -185,5 +185,7 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
+
   </body>
 </html>
