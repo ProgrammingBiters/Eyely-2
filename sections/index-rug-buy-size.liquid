@@ -8,7 +8,7 @@
         <div class="row rug-by-size_inner pb-3 mx-auto">
             {% for block in section.blocks %}
                 {% if block.type == 'Rugs_by_Size' %}
-                  <div class="rug-by-size_main col-md-3 d-md-block d-flex justify-content-between align-items-center" >
+                  <div class="rug-by-size_main col-md-3 d-md-block d-flex justify-content-between align-items-center py-md-0 py-2" >
                     <div class="rug-by-size__icon">
                       <a href="{{ block.settings.logo_url }}">
                           {%
@@ -23,7 +23,7 @@
                     <div class="rug-by-size__text">
                       <a href="{{ block.settings.logo_url }}">
                         <h3>{{ block.settings.heading_txt }}</h3>
-                        <span class="RugsbySize_size">
+                        <span class="rug-by-size_size">
                           {{ block.settings.size_txt }}
                         </span>
                       </a>
