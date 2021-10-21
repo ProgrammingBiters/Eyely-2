@@ -31,6 +31,8 @@
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
+    <script>var jQuery132 = $.noConflict(true);</script>
+
     {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
    {% comment %}
     --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
