@@ -9,4 +9,4 @@ $(document).ready(function(){
           $(".mobile_btn").fadeOut("slow");
         }
       });
-  });
+  });   
