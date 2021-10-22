@@ -135,8 +135,7 @@
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
    
-    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous" async></script>  </head>
-
+  </head>
   <body class="gradient">
   
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -183,20 +182,8 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
-    
-    <script>
-      jQuery(document).ready(function($){
-        console.log("hii--1");
-        $(".review-wrap").slice(0, 1).show();
-        $(".mobile_btn").on("click", function(e){
-            e.preventDefault();
-            console.log("hii");
-           $(".review-wrap:hidden").slice(0, 1).slideDown();
-            if($(".review-wrap:hidden").length == 0) {
-              $(".mobile_btn").fadeOut("slow");
-            }
-          });
-      });
-  </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous" async></script>  
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+  
   </body>
 </html>
