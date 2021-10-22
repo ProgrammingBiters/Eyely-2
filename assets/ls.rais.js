@@ -1,6 +1,4 @@
 /*** IMPORTS FROM imports-loader ***/
-var $ = require("jquery");
-var jQuery = require("jquery");
 
 (function(window, factory) {
 	var globalInstall = function(){
