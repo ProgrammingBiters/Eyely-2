@@ -184,6 +184,10 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
+    <script type="text/javascript">
+      $.noConflict();
+      // Code that uses other library's $ can follow here.
+    </script>
     <script>
       $(document).ready(function(){
         console.log("hii--1");
