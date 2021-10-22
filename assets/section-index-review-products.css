@@ -27,7 +27,7 @@
     border-radius: 0 50px 0 0;
 }
 .review-products .main-wrapper .review-wrap .content_wrap {
-    width: 50%;
+    width: 100%;
 }
 .review-products .fa-star {
     color: #df685d;
@@ -92,5 +92,6 @@
 }
 .review-products .content_wrap {
     width: 70%!important;
+    font-size: 12px;
 }
 }
