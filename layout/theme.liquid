@@ -134,7 +134,10 @@
     {%- endif -%}
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
-    </head>
+   
+    <script src="{{ 'jquery-3.5.1.js' | asset_url }}" rel="preload" defer></script>
+
+  </head>
   <body class="gradient">
   
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -182,7 +185,12 @@
     {%- endif -%}
     <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
+
+
+
     <script src="{{ 'lazysizes.js' | asset_url }}" async></script>
-  
+    <script src="{{ 'ls.rais.js' | asset_url }}" defer></script>
+    <script src="{{ 'ls.respimg.js' | asset_url }}" defer></script>
+   
   </body>
 </html>
