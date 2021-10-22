@@ -117,7 +117,7 @@
           "type": "Rugs_by_Size",
           "settings": {
             "logo_img": "shopify:\/\/shop_images\/Round_Runner.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_round",
+            "logo_url": "\/collections\/rugs\/shape_round",
             "heading_txt": "Round",
             "size_txt": "5x5"
           }
@@ -126,7 +126,7 @@
           "type": "Rugs_by_Size",
           "settings": {
             "logo_img": "shopify:\/\/shop_images\/Runner_New.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_runner",
+            "logo_url": "\/collections\/rugs\/shape_runner",
             "heading_txt": "Runner",
             "size_txt": "2x8 | 2x10"
           }
@@ -135,7 +135,7 @@
           "type": "Rugs_by_Size",
           "settings": {
             "logo_img": "shopify:\/\/shop_images\/medium_new.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_rectangle",
+            "logo_url": "\/collections\/rugs\/shape_rectangle",
             "heading_txt": "Medium",
             "size_txt": "3×5 | 4×6 | 5×8"
           }
@@ -144,7 +144,7 @@
           "type": "Rugs_by_Size",
           "settings": {
             "logo_img": "shopify:\/\/shop_images\/large_new.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/large-rugs",
+            "logo_url": "\/collections\/large-rugs",
             "heading_txt": "Large",
             "size_txt": "8×10 | 9×12"
           }
