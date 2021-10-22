@@ -1,5 +1,4 @@
-var $ = jQuery;
-$(document).ready(function($){
+$(document).ready(function(){
     console.log("hii--1");
     $(".review-wrap").slice(0, 1).show();
     $(".mobile_btn").on("click", function(e){
