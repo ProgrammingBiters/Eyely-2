@@ -139,8 +139,7 @@
   </head>
 
   <body class="gradient">
-    <script src = "{{ 'jquery-3.6.0.js' | asset_url }}" async></script>
-
+  
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -185,6 +184,18 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
-
+    <script>
+      $(document).ready(function(){
+  
+          $(".review-wrap").slice(0, 1).show();
+          $(".mobile_btn").on("click", function(e){
+            e.preventDefault();
+            $(".review-wrap:hidden").slice(0, 1).slideDown();
+            if($(".review-wrap:hidden").length == 0) {
+               $(".mobile_btn").fadeOut("slow");
+            }
+          });
+      });
+  </script>
   </body>
 </html>
