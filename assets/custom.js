@@ -1,3 +1,4 @@
+var $ = jQuery;
 $(document).ready(function($){
     console.log("hii--1");
     $(".review-wrap").slice(0, 1).show();
