@@ -1,5 +1,8 @@
 .index-new-arrival {
     margin-top: 20px;
+    max-width:1630px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .index-new-arrival .new_arrival-image{

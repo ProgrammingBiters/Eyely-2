@@ -75,6 +75,7 @@
     }
 .review-products .image_wrap img {
     max-width: 100% !important;
+    height: 100% !important;
 }
 .review-products .mobile_btn {
     display: block;
