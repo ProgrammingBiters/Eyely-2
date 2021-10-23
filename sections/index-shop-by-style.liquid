@@ -11,7 +11,7 @@
             {% if block.type == "shop_by_style" %}
                     <div class="col-md-4 col-6 text-center shop-by-style-item">
                         <a href="{{block.settings.logo_url}}">
-                            <div class="image_wrap  ">
+                            <div class="image_wrap">
                               {% if block.settings.featured_image != blank %}
                                     {%
                                     render 'rimg',
@@ -23,14 +23,13 @@
                             </div>
                             <div class="content_wrap ">
                               <div class="item_content">
-                                <p class=" m-0 fw-bold "><strong>{{ block.settings.heading_txt }}</strong></p>
+                                <p class=" m-0 fw-bold mb-0"><strong>{{ block.settings.heading_txt }}</strong></p>
                               </div>
                               <div class="discount">
                                 <p><i>{{ block.settings.save_txt }}</i></p>
                               </div>
                             </div>
                         </a>
-                    <div >
                 </div>
             {% endif %}
         {% endfor %}
