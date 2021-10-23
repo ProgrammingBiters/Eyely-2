@@ -1,0 +1,94 @@
+{{ 'section-index-shop-by-style.css' | asset_url | stylesheet_tag }}
+<div class="shop-by-style">
+    <div class="container">
+        <div class="shop-by-style_heading d-md-block d-none">
+           <h2 class="heading">{{ section.settings.title_txt }}</h2>
+            <p class="shop__p">{{ section.settings.heading_txt }}
+        </div>
+    </div>
+    <div class="row main_wrapper m-auto">
+        {% for block in section.blocks %}
+            {% if block.type == "shop_by_style" %}
+                    <div class="col-md-4 col-6 text-center shop-by-style-item">
+                        <a href="{{block.settings.logo_url}}">
+                            <div class="image_wrap">
+                              {% if block.settings.featured_image != blank %}
+                                    {%
+                                    render 'rimg',
+                                    class: 'img-fluid',
+                                    img: block.settings.featured_image,
+                                    size: '400x400'                                   
+                                  %}
+                               {% endif %}
+                            </div>
+                            <div class="content_wrap ">
+                              <div class="item_content">
+                                <p class=" m-0 fw-bold mb-0"><strong>{{ block.settings.heading_txt }}</strong></p>
+                              </div>
+                              <div class="discount">
+                                <p><i>{{ block.settings.save_txt }}</i></p>
+                              </div>
+                            </div>
+                        </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>   
+</div>        
+{% schema %}
+{
+  "name": "Index-Shop By Style",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "max_blocks": 6,
+  "settings" : [
+    {
+        "type": "text",
+        "id": "title_txt",
+        "label": "Title",
+		"default": "Shop By Style"
+      },
+		{
+        "type": "textarea",
+        "id": "heading_txt",
+        "label": "Sub Title",
+		"default": "Make finding what you’re looking for easier by narrowing your search by style."
+        }
+  ],
+  "blocks":[
+      {
+          "type": "shop_by_style",
+          "name": "Shop By Style",
+          "settings": [
+              {	
+                "type": "image_picker",
+                "id": "featured_image",
+                "label": "Image"
+              },
+              {	
+                "type": "url",
+                "id": "logo_url",
+                "label": "Link"
+              },
+              {	
+                "type": "text",
+                "id": "heading_txt",
+                "label": "Title"
+              },
+              {	
+                "type": "text",
+                "id": "save_txt",
+                "label":"Save text",
+                "default": "save 60%"
+              }
+          ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Index Shop By Style"
+    }
+  ]
+
+}
+{% endschema %}
