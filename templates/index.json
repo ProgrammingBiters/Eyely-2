@@ -452,7 +452,80 @@
       ],
       "settings": {
         "title_txt": "Shop By Color",
-        "heading_txt": "When you need some color assistance, shop by color to complete your palette."
+        "heading_txt": "When you need some color assistance, shop by color to complete your palette.",
+        "btn_txt": "More Color"
+      }
+    },
+    "1634984935486e4768": {
+      "type": "index-collection-grid",
+      "blocks": {
+        "7be31ceb-585f-4e81-b624-69b3b32aed63": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL3008A-ON-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/table-lamps",
+            "title": "Table Lamps"
+          }
+        },
+        "57f72f7f-e093-4d1b-a029-396b3fcc74ec": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL7610A-MAIN-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/flush-mounts",
+            "title": "Flush Mounts"
+          }
+        },
+        "8c8428e5-73d8-4beb-b403-685074df5cdc": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL6111A-ON-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/pendants",
+            "title": "Pendants"
+          }
+        },
+        "68e79361-0ca1-47dc-bc13-9f750e0d79e1": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL7424A-ON-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/vanity-lights",
+            "title": "Vanity Lights"
+          }
+        },
+        "bcd8e7f0-8fd1-4e7f-ac5c-ec4f4e284556": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL3022A-ON-ROOM_7cf44211-f70f-4e2e-9608-30cc3deec57f.jpg",
+            "featured_url": "shopify:\/\/collections\/floor-lamps",
+            "title": "Floor Lamps"
+          }
+        },
+        "fdde6371-ff11-471c-9515-3404288ef63b": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/HPM1005C-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/trash-cans",
+            "title": "Trash cans"
+          }
+        },
+        "0d38449a-c432-484c-b5c9-b251e6eb24e0": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/TBL1014A-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/garden-stool",
+            "title": "Garden Stools"
+          }
+        }
+      },
+      "block_order": [
+        "7be31ceb-585f-4e81-b624-69b3b32aed63",
+        "57f72f7f-e093-4d1b-a029-396b3fcc74ec",
+        "8c8428e5-73d8-4beb-b403-685074df5cdc",
+        "68e79361-0ca1-47dc-bc13-9f750e0d79e1",
+        "bcd8e7f0-8fd1-4e7f-ac5c-ec4f4e284556",
+        "fdde6371-ff11-471c-9515-3404288ef63b",
+        "0d38449a-c432-484c-b5c9-b251e6eb24e0"
+      ],
+      "settings": {
       }
     }
   },
@@ -468,6 +541,7 @@
     "multi_column",
     "16349005502f579484",
     "163496890411eb8d52",
-    "163497260307339b36"
+    "163497260307339b36",
+    "1634984935486e4768"
   ]
 }
