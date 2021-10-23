@@ -1,0 +1,61 @@
+{{ 'section-index-shop-product.css' | asset_url | stylesheet_tag }}
+
+<div class="shop-product">
+    <div class="container">
+        <div class="shop-product-title">
+        <h3>{{ section.settings.title_txt }}</h3>
+        <p class="shop__p">{{ section.settings.heading_txt }}</p>
+      </div>
+      <div class="shop-product-maindiv">
+        {% assign collection =  collections[section.settings.collection_main] %}
+                {% for product in  collection.products limit : 5 %}
+                <div class="shop-product-mainbox">
+                    <a href="{{ product.url }}">
+                        <div class="shop-product-img">
+                            {%
+                                render 'rimg',
+                                class: 'img-fluid',
+                                img: product.images[1].src,
+                                size: '400x400'                        
+                            %}
+                        </div>
+                    </a>
+                    <div class="title-div my-2">
+                        <h6><a href="{{ product.url }}">{{ product.title }}</a></h6>
+                    </div>
+                </div>
+               {% endfor %}
+   
+      </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name" : "Shop Product",
+    "settings" : [
+                {
+                "type" : "text",
+                "id" : "title_txt",
+                "label" : "Title",
+                "default" : "Shop Table Lamps"
+                },
+                {
+                "type" : "textarea",
+                "id" : "heading_txt",
+                "label" : "Sub Title",
+                "default" : "Our table lamps pair up perfectly with any type of rug you have"
+                },
+                {
+                "type" : "collection",
+                "id" : "collection_main",
+                "label" : "Collection"
+                }
+        ],
+	"presets": [
+      {
+        "name": "Shop Product",
+        "category": "Index"
+      }
+    ]
+  }
+{% endschema %}
