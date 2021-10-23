@@ -1,0 +1,65 @@
+{{ 'section-index-collection-grid.css' | asset_url | stylesheet_tag }}
+
+
+<div class="collection-grid">
+    <div class="container">
+        <div class="grid-wrap">
+            {% for block in section.blocks %}
+                {% if block.type == "featured_box" and block.settings.featured_image != blank and block.settings.featured_url != blank %}
+                <div class="unique-sec-img {% if forloop.first %} grid_join {% endif %}">
+                    <a href="{{ block.settings.featured_url }}"> 
+                            {%
+                            render : 'rimg',
+                            class : 'img-fluid',
+                            img : block.settings.featured_image,
+                            size : '400x400',
+                            crop:true
+                            %}      
+                    </a>  
+                    <div class="pt-3">
+                        <h6 class="mb-0 text-center">
+                            <a href="{{ block.settings.featured_url }}">{{ block.settings.title }}</a>
+                        </h6>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Index Collection Grid",
+    "settings": [],
+    "blocks":[
+        {
+        "type" : "featured_box",
+        "name" : "Featured Box",
+        "settings" : [
+                    {
+                        "type" : "image_picker",
+                        "id" : "featured_image",
+                        "label" : "Featured Image"
+                    },
+                    {
+                        "type" : "url",
+                        "id" : "featured_url",
+                        "label" : "Featured Url"
+                    },
+                    {
+                        "type" : "text",
+                        "id" : "title",
+                        "label" : "Title",
+                        "default" : "Lights"
+                    }
+            ]
+        }
+    ],
+	"presets" : [
+      {
+        "name" : "Index Collection Grid",
+        "category" : "Index"
+      }
+    ]
+  }
+{% endschema %}
