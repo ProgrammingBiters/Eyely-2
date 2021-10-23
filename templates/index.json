@@ -110,59 +110,6 @@
         "link": "shopify:\/\/collections\/new-arrivals"
       }
     },
-    "1634817098fbc01239": {
-      "type": "index-rug-buy-size",
-      "blocks": {
-        "84d86210-2c0c-4c9a-a508-efc9d8465b26": {
-          "type": "Rugs_by_Size",
-          "settings": {
-            "logo_img": "shopify:\/\/shop_images\/Round_Runner.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_round",
-            "heading_txt": "Round",
-            "size_txt": "5x5"
-          }
-        },
-        "a4706a4b-dcac-48b1-a3e1-806c8ce16c5e": {
-          "type": "Rugs_by_Size",
-          "settings": {
-            "logo_img": "shopify:\/\/shop_images\/Runner_New.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_runner",
-            "heading_txt": "Runner",
-            "size_txt": "2x8 | 2x10"
-          }
-        },
-        "1e027bbb-ba5e-4c45-99b4-81a66279a68e": {
-          "type": "Rugs_by_Size",
-          "settings": {
-            "logo_img": "shopify:\/\/shop_images\/medium_new.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_rectangle",
-            "heading_txt": "Medium",
-            "size_txt": "3×5 | 4×6 | 5×8"
-          }
-        },
-        "7afb4571-600a-4db0-9f5e-387a3b8deb73": {
-          "type": "Rugs_by_Size",
-          "settings": {
-            "logo_img": "shopify:\/\/shop_images\/large_new.png",
-            "logo_url": "https:\/\/www.eyely.com\/collections\/large-rugs",
-            "heading_txt": "Large",
-            "size_txt": "8×10 | 9×12"
-          }
-        }
-      },
-      "block_order": [
-        "84d86210-2c0c-4c9a-a508-efc9d8465b26",
-        "a4706a4b-dcac-48b1-a3e1-806c8ce16c5e",
-        "1e027bbb-ba5e-4c45-99b4-81a66279a68e",
-        "7afb4571-600a-4db0-9f5e-387a3b8deb73"
-      ],
-      "settings": {
-        "title_txt": "Rugs By Size",
-        "heading_txt": "The right size rug gives your room the perfect feel. We can help make it easy.",
-        "btn_text": "View all rugs",
-        "btn_url": "shopify:\/\/collections\/rugs"
-      }
-    },
     "rich_text": {
       "type": "rich-text",
       "disabled": true,
@@ -308,6 +255,86 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "16349005502f579484": {
+      "type": "index-best-seller",
+      "settings": {
+        "enable": true,
+        "title_txt": "Best Seller",
+        "heading_txt": "The best of the best. From all we’ve sold here is what most people are purchasing.",
+        "featured_collection": "new-arrivals"
+      }
+    },
+    "163496890411eb8d52": {
+      "type": "index-shop-by-style",
+      "blocks": {
+        "2a23b3ff-9a47-4d78-93af-4b2ee9a02d15": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/BMF106A-5-ROOM1_327f1ec9-1ff7-4a0b-8753-b511bb995935.jpg",
+            "logo_url": "shopify:\/\/collections\/bohemian",
+            "heading_txt": "Bohemian",
+            "save_txt": "save 70%"
+          }
+        },
+        "03a3d8d5-1657-4ded-9b2f-53601afe83bd": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/NRF102A-2-ROOM.jpg",
+            "logo_url": "\/collections\/rugs\/shape_runner",
+            "heading_txt": "Runners",
+            "save_txt": "save 70%"
+          }
+        },
+        "5d3cc6ae-2a56-4bb3-8b55-1c933b7ae962": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/MCR102B-5-ROOM1.jpg",
+            "logo_url": "\/collections\/shags",
+            "heading_txt": "Shags",
+            "save_txt": "save 70%"
+          }
+        },
+        "d07cac08-79f6-424a-9c5b-14dd0dd5f8e5": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/AMC100B-5-ROOM.jpg",
+            "logo_url": "shopify:\/\/collections\/outdoor",
+            "heading_txt": "Outdoor",
+            "save_txt": "save 70%"
+          }
+        },
+        "f84b3913-0431-42d5-8bd8-bb4462f845ee": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/CTP103A-5-ROOM1.jpg",
+            "logo_url": "shopify:\/\/collections\/contemporary",
+            "heading_txt": "Contemporary",
+            "save_txt": "save 70%"
+          }
+        },
+        "213634a2-7ce5-4043-b099-c1b0fa66ee16": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/MDP400A-5-ROOM1.jpg",
+            "logo_url": "shopify:\/\/collections\/vintage",
+            "heading_txt": "Vintage",
+            "save_txt": "save 70%"
+          }
+        }
+      },
+      "block_order": [
+        "2a23b3ff-9a47-4d78-93af-4b2ee9a02d15",
+        "03a3d8d5-1657-4ded-9b2f-53601afe83bd",
+        "5d3cc6ae-2a56-4bb3-8b55-1c933b7ae962",
+        "d07cac08-79f6-424a-9c5b-14dd0dd5f8e5",
+        "f84b3913-0431-42d5-8bd8-bb4462f845ee",
+        "213634a2-7ce5-4043-b099-c1b0fa66ee16"
+      ],
+      "settings": {
+        "title_txt": "Shop By Style",
+        "heading_txt": "Make finding what you’re looking for easier by narrowing your search by style."
+      }
     }
   },
   "order": [
@@ -315,11 +342,12 @@
     "1634638697d2b5e52a",
     "163479756837bdea1f",
     "1634804839b2634194",
-    "1634817098fbc01239",
     "rich_text",
     "featured_products",
     "collage",
     "video",
-    "multi_column"
+    "multi_column",
+    "16349005502f579484",
+    "163496890411eb8d52"
   ]
 }

@@ -1,0 +1,16 @@
+.shop-by-style{
+    margin-top:20px;
+  }
+  .shop-by-style .container{
+    max-width: 1630px;
+  }
+  .shop-by-style .shop-by-style_heading{
+    text-align:center;
+    padding-bottom: 10px;
+  }
+  .shop-by-style .shop__p{
+    color: #000;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  

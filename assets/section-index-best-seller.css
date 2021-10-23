@@ -71,3 +71,13 @@ text-decoration: none;
     overflow: hidden;
     }
   }
+  @media (max-width:768px){
+    .best-seller .item-wrap  .fst_img-2{
+      border-radius: 0 50px 0 0;
+      overflow: hidden;
+    }
+  .best-seller .item-wrap  .fst_img-3{
+    border-radius: 0 0px 0 50px;
+    overflow: hidden;
+    }
+  }
