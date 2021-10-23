@@ -1,0 +1,100 @@
+{{ 'section-index-shop-by-color.css' | asset_url | stylesheet_tag }}
+<div class="shop-by-color">
+    <div class="container">
+        <div class="shop-by-color_heading d-md-block d-none">
+           <h2 class="heading">{{ section.settings.title_txt }}</h2>
+            <p class="shop__p">{{ section.settings.heading_txt }}
+        </div>
+    </div>
+    <div class="row main_wrapper m-auto">
+        {% for block in section.blocks %}
+            {% if block.type == "shop_by_color" %}
+                    <div class="col-xl-2 col-lg-2 col-md-3 text-center shop-by-color-item px-md-4 shop-by-color-item-{{forloop.index}} mb-md-0 mb-sm-5 mb-4">
+                        <a href="{{block.settings.logo_url}}" class="d-md-block d-flex align-items-center">
+                            <div class="wrap">
+                                <div class="image_wrap">
+                                {% if block.settings.featured_image != blank %}
+                                        {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: block.settings.featured_image,
+                                        size: '400x600'                                   
+                                    %}
+                                {% endif %}
+                                </div>
+                            </div>
+                            <div class="content_wrap ">
+                              <div class="item_content">
+                                <p class=" m-0 fw-bold mb-0"><strong>{{ block.settings.heading_txt }}</strong></p>
+                              </div>
+                            </div>
+                            <div class="shop-by-color-arrow d-md-none d-block text-right">
+                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>  
+    <div  class="shop-by-color-a d-md-none d-block text-center">
+        <a href="javascript:void(0)" class="shop-by-color-link">{{ section.settings.btn_txt }}</a>
+    </div>
+      
+</div>        
+{% schema %}
+{
+  "name": "Index-Shop By Color",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "max_blocks": 12,
+  "settings" : [
+    {
+        "type": "text",
+        "id": "title_txt",
+        "label": "Title",
+		"default": "Shop By Color"
+      },
+		{
+        "type": "textarea",
+        "id": "heading_txt",
+        "label": "Sub Title",
+		"default": "When you need some color assistance, shop by color to complete your palette."
+        },
+        {	
+            "type": "text",
+            "id": "btn_txt",
+            "label": "Button Text",
+            "default":"More Color"
+          }
+  ],
+  "blocks":[
+      {
+          "type": "shop_by_color",
+          "name": "Shop By Color",
+          "settings": [
+              {	
+                "type": "image_picker",
+                "id": "featured_image",
+                "label": "Image"
+              },
+              {	
+                "type": "url",
+                "id": "logo_url",
+                "label": "Link"
+              },
+              {	
+                "type": "text",
+                "id": "heading_txt",
+                "label": "Title"
+              }
+          ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Index Shop By Color"
+    }
+  ]
+
+}
+{% endschema %}

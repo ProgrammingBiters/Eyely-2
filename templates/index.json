@@ -335,6 +335,125 @@
         "title_txt": "Shop By Style",
         "heading_txt": "Make finding what you’re looking for easier by narrowing your search by style."
       }
+    },
+    "163497260307339b36": {
+      "type": "index-shop-by-color",
+      "blocks": {
+        "0ca6d808-24ef-46db-b679-8c7cdbb6e58d": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/5_gray.png",
+            "logo_url": "\/collections\/rugs\/color_gray",
+            "heading_txt": "Gray"
+          }
+        },
+        "aeb6320d-1ff9-4ed4-ad87-60d8c183797a": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/12_navy.png",
+            "logo_url": "\/collections\/rugs\/color_blue",
+            "heading_txt": "Blue"
+          }
+        },
+        "4e5502d1-48f0-4e36-90cb-e3feea4ed570": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/8_black-white.png",
+            "logo_url": "\/collections\/rugs\/color_black+color_white",
+            "heading_txt": "Black & White"
+          }
+        },
+        "36561fd3-a802-41d6-830b-99584018cb36": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/3_multi.png",
+            "logo_url": "\/collections\/rugs\/color_multi",
+            "heading_txt": "Multi"
+          }
+        },
+        "155b882a-6409-446d-a872-8bc73bd9bf60": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/2_green.png",
+            "logo_url": "\/collections\/rugs\/color_green",
+            "heading_txt": "Green"
+          }
+        },
+        "434a3d8b-05e0-44ba-87d9-661f90d19679": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/4_red.png",
+            "logo_url": "\/collections\/rugs\/color_red",
+            "heading_txt": "Red"
+          }
+        },
+        "79749c53-d673-4169-9c50-1d2670dc3c79": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/6_cream.png",
+            "logo_url": "\/collections\/rugs\/color_cream",
+            "heading_txt": "Cream"
+          }
+        },
+        "badce77f-6de3-4fda-aff2-282940306db7": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/7_ivory.png",
+            "logo_url": "\/collections\/rugs\/color_ivory",
+            "heading_txt": "Ivory"
+          }
+        },
+        "a8f5f0fa-319d-46e7-ab94-eb2d7b23e661": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/10_brown.png",
+            "logo_url": "\/collections\/rugs\/color_brown",
+            "heading_txt": "Brown"
+          }
+        },
+        "ba5e0dd5-38fb-4e35-af82-d987fa5d3ee3": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/11_natural.png",
+            "logo_url": "\/collections\/rugs\/color_natural",
+            "heading_txt": "Natural"
+          }
+        },
+        "bdd81a1f-8c9a-4048-bffb-690066a68ad5": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/12_navy.png",
+            "logo_url": "\/collections\/rugs\/color_navy",
+            "heading_txt": "Navy"
+          }
+        },
+        "e223a47e-4daa-44bf-993e-1e0c0882f718": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/13_teal.png",
+            "logo_url": "\/collections\/rugs\/color_teal",
+            "heading_txt": "Teal"
+          }
+        }
+      },
+      "block_order": [
+        "0ca6d808-24ef-46db-b679-8c7cdbb6e58d",
+        "aeb6320d-1ff9-4ed4-ad87-60d8c183797a",
+        "4e5502d1-48f0-4e36-90cb-e3feea4ed570",
+        "36561fd3-a802-41d6-830b-99584018cb36",
+        "155b882a-6409-446d-a872-8bc73bd9bf60",
+        "434a3d8b-05e0-44ba-87d9-661f90d19679",
+        "79749c53-d673-4169-9c50-1d2670dc3c79",
+        "badce77f-6de3-4fda-aff2-282940306db7",
+        "a8f5f0fa-319d-46e7-ab94-eb2d7b23e661",
+        "ba5e0dd5-38fb-4e35-af82-d987fa5d3ee3",
+        "bdd81a1f-8c9a-4048-bffb-690066a68ad5",
+        "e223a47e-4daa-44bf-993e-1e0c0882f718"
+      ],
+      "settings": {
+        "title_txt": "Shop By Color",
+        "heading_txt": "When you need some color assistance, shop by color to complete your palette."
+      }
     }
   },
   "order": [
@@ -348,6 +467,7 @@
     "video",
     "multi_column",
     "16349005502f579484",
-    "163496890411eb8d52"
+    "163496890411eb8d52",
+    "163497260307339b36"
   ]
 }
