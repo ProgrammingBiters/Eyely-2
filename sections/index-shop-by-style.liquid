@@ -5,7 +5,7 @@
            <h2 class="heading">{{ section.settings.title_txt }}</h2>
             <p class="shop__p">{{ section.settings.heading_txt }}
         </div>
-    </div>
+
     <div class="row main_wrapper m-auto">
         {% for block in section.blocks %}
             {% if block.type == "shop_by_style" %}
@@ -33,7 +33,8 @@
                 </div>
             {% endif %}
         {% endfor %}
-    </div>   
+    </div> 
+  </div>  
 </div>        
 {% schema %}
 {
