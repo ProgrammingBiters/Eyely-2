@@ -535,6 +535,71 @@
         "heading_txt": "Our table lamps pair up perfectly with any type of rug you have",
         "collection_main": "table-lamps"
       }
+    },
+    "1635148724bde69291": {
+      "type": "index-warehouse-sale",
+      "blocks": {
+        "bd09d198-4f4b-426c-9c8c-fc8f468ec424": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-566-ROOM.jpg"
+          }
+        },
+        "00e1ea3a-b88b-4da6-92b3-b89fc3c5c7d0": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-567-ROOM.jpg"
+          }
+        },
+        "65f8c741-ecab-458f-ab73-b165b4a07e4a": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-568-ROOM.jpg"
+          }
+        },
+        "7ce20ac2-3d1b-4588-a684-5b7ec6f63eee": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-293-ROOM1.jpg"
+          }
+        },
+        "5b0967e1-9c1c-4368-a707-7282163f6bbc": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-564-ROOM.jpg"
+          }
+        },
+        "99cfb618-d968-41b8-af46-85aa4ddb8d5f": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-523-ROOM.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "bd09d198-4f4b-426c-9c8c-fc8f468ec424",
+        "00e1ea3a-b88b-4da6-92b3-b89fc3c5c7d0",
+        "65f8c741-ecab-458f-ab73-b165b4a07e4a",
+        "7ce20ac2-3d1b-4588-a684-5b7ec6f63eee",
+        "5b0967e1-9c1c-4368-a707-7282163f6bbc",
+        "99cfb618-d968-41b8-af46-85aa4ddb8d5f"
+      ],
+      "settings": {
+        "back_span": "Eyelys Picks",
+        "title_txt": "Warehouse Sale",
+        "back_p_url": "shopify:\/\/collections\/warehouse-sale",
+        "back_p": "Shop this unique finds",
+        "info_p": "Shop from our exclusive limited quantity warehouse sale which offers rugs for $49.99. Don't miss out, and grab one while it's still in stock.",
+        "enable_btn": true,
+        "btn_text": "Show Now",
+        "btn_url": "shopify:\/\/collections\/warehouse-sale"
+      }
     }
   },
   "order": [
@@ -551,6 +616,7 @@
     "163496890411eb8d52",
     "163497260307339b36",
     "1634984935486e4768",
-    "1634987872fe7e44be"
+    "1634987872fe7e44be",
+    "1635148724bde69291"
   ]
 }
