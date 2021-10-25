@@ -8,6 +8,9 @@
     text-align:center;
     padding-bottom: 10px;
   }
+  .shop-by-style .shop-by-style_heading .heading{ 
+  color:#2d3654;
+  }
   .shop-by-style .shop__p{
     color: #000;
     font-size: 16px;

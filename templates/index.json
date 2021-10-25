@@ -608,6 +608,13 @@
         "heading_txt": "read the eyely blogs",
         "link": "shopify:\/\/blogs\/lighting"
       }
+    },
+    "1635157511e92542d4": {
+      "type": "index-cevoid-section",
+      "settings": {
+        "title": "Pictures from our customers",
+        "div-code": "<div id=\"cevoid-container\" data-gallery=\"g-18uTo2qHb81F5EcXRnzRZ\"><\/div>"
+      }
     }
   },
   "order": [
@@ -626,6 +633,7 @@
     "1634984935486e4768",
     "1634987872fe7e44be",
     "1635148724bde69291",
-    "163515266224f4e42b"
+    "163515266224f4e42b",
+    "1635157511e92542d4"
   ]
 }
