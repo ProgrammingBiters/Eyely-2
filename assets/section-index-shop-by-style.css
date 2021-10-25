@@ -11,7 +11,8 @@
   .shop-by-style .shop__p{
     color: #000;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 300; 
+    font-family: var(--font-body-family-other);
   }
   .shop-by-style .main_wrapper .shop-by-style-item .image_wrap{
       width:80%;

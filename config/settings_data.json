@@ -11,6 +11,7 @@
     "heading_scale": 120,
     "type_body_font": "josefin_sans_n7",
     "body_scale": 105,
+    "type_body_other": "josefin_sans_n3",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",

@@ -40,10 +40,10 @@
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-    %}
+      %}
 
     {% style %}
-    
+    {% assign n = settings.type_body_other.family | remove : '"' | append: "-light" %}
         @font-face {
           font-family: 'Bookmania Bold';
           src: url(' {{ 'Bookmania.ttf' | asset_url }} ') format('truetype');
@@ -51,16 +51,25 @@
           font-style: normal;
           font-display: swap;
       }
+      @font-face {
+        font-family: {{ n }};
+        src: url('{{ settings.type_body_other | font_url: 'woff' }}') format('woff2');
+        font-style: normal;
+        font-display: swap;
+    }
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
+     
+     
 
       :root {
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-body-family-other: '{{ n }}', {{ settings.type_body_font.fallback_families }};
        
         --font-heading-family:'Bookmania Bold' , {{ settings.type_header_font.fallback_families }};  
         --font-heading-style: {{ settings.type_header_font.style }};
