@@ -1,4 +1,3 @@
-{{ 'section-index-shop-by-style.css' | asset_url | stylesheet_tag }}
 <div class="shop-by-style">
     <div class="container">
         <div class="shop-by-style_heading d-md-block d-none">
@@ -35,7 +34,9 @@
         {% endfor %}
     </div> 
   </div>  
-</div>        
+</div>    
+{{ 'section-index-shop-by-style.css' | asset_url | stylesheet_tag }}
+
 {% schema %}
 {
   "name": "Index-Shop By Style",
