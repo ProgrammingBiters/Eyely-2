@@ -615,6 +615,13 @@
         "title": "Pictures from our customers",
         "div-code": "<div id=\"cevoid-container\" data-gallery=\"g-18uTo2qHb81F5EcXRnzRZ\"><\/div>"
       }
+    },
+    "16351639957d0d774a": {
+      "type": "index-newsletter",
+      "settings": {
+        "title_txt": "<b>Yas!<\/b> Send me exclusive offers, deals, and personalised tips for shopping on Eyely.",
+        "bg_image": "shopify:\/\/shop_images\/gradient.png"
+      }
     }
   },
   "order": [
@@ -634,6 +641,7 @@
     "1634987872fe7e44be",
     "1635148724bde69291",
     "163515266224f4e42b",
-    "1635157511e92542d4"
+    "1635157511e92542d4",
+    "16351639957d0d774a"
   ]
 }
