@@ -8,13 +8,18 @@
     text-align:center;
     padding-bottom: 10px;
   }
+  .shop-by-style .shop-by-color_heading .heading{ 
+    color:#2d3654;
+    }
   .shop-by-color .shop__p{
     color: #000;
     font-size: 16px;
     font-weight: 300;
+    font-family: var(--font-body-family-other);
   }
  .shop-by-color .main_wrapper .shop-by-color-item a{
     text-decoration: none;
+    color:#2d3654;
 }
 .shop-by-color .main_wrapper   .shop-by-color-item  .content_wrap{
     padding:20px 0;

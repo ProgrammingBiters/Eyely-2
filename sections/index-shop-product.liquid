@@ -1,4 +1,3 @@
-{{ 'section-index-shop-product.css' | asset_url | stylesheet_tag }}
 
 <div class="shop-product">
     <div class="container">
@@ -29,9 +28,14 @@
       </div>
     </div>
 </div>
+
+{{ 'section-index-shop-product.css' | asset_url | stylesheet_tag }}
+
 {% schema %}
   {
     "name" : "Shop Product",
+    "tag": "section",
+    "class": "spaced-section spaced-section--full-width",
     "settings" : [
                 {
                 "type" : "text",

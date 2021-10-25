@@ -130,6 +130,13 @@
         "unit": "%",
         "label": "t:settings_schema.typography.settings.body_scale.label",
         "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_other",
+        "default": "assistant_n4",
+        "label": "Extra Font",
+        "info": "Extra Font"
       }
     ]
   },
