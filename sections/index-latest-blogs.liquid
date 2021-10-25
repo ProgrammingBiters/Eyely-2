@@ -1,0 +1,87 @@
+{% assign featuredBlogs = 'home-care-tips,lighting,rugs' | split : ',' %}
+{% assign featuredArticles = false %}
+{% for featuredBlog in featuredBlogs %}
+	{% if blogs[featuredBlog].articles %}
+		{% if featuredArticles %}
+			{% assign featuredArticles = featuredArticles | concat : blogs[featuredBlog].articles %}
+		{% else %}
+			{% assign featuredArticles = blogs[featuredBlog].articles %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+{% if featuredArticles %}
+	{% assign featuredArticles = featuredArticles | sort : 'updated_at' | reverse %}
+{% endif %}
+{{ 'section-index-latest-blogs.css' | asset_url | stylesheet_tag }}
+<div class="index-latest-blog">
+    <div class="container">
+        <div class="title-div">
+          <h4 class="index_blog-heading">{{ section.settings.title_txt }} </h4>
+          <a href="{{ section.settings.link }}" class="shop-now-prd">{{ section.settings.heading_txt }}
+            <i class="fa fa-long-arrow-right"></i>
+          </a>
+        </div>
+        <div class="row mx-0">
+                 {% for article in featuredArticles limit  : 3 %}
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                        <div class="index-grid-div">
+                            <div class="index-grid-img">
+                                <a href="{{ article.url }}">
+                                    {% if article.image != blank %} 
+                                    {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: article.image,
+                                        size: '400x400'
+                                    %}
+                                    {% endif %}
+                                </a>
+                            </div>
+                            
+                            <div class="index-blog-content">
+                                {% assign bTitle= article.handle | split : '/' %}    
+                                <span class="text-uppercase">{{ bTitle[0] }}</span>
+                                <h3><a href="{{ article.url }}"><strong>{{ article.title }}</strong></a></h3>
+                                <div class="index-main-div-info">
+                                    <p>{{ article.content | strip_html | truncate: 150 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name" : "Index Latest Blogs",
+    "tag": "section",
+    "class": "spaced-section spaced-section--full-width",
+    "settings" : [
+                {
+                "type" : "text",
+                "id" : "title_txt",
+                "label" : "Title",
+                "default" : "Fresh from the blog"
+                },
+                {
+                "type": "text",
+                "id": "heading_txt",
+                "label" : "Read More Title",
+                "default" : "read the eyely blogs"
+                },
+                {
+                "type":"url",
+                "id":"link",
+                "label":"link"
+                }
+         ],
+	"presets": [
+      {
+        "name": "Index Latest Blogs",
+        "category": "Index"
+      }
+    ]
+  }
+  {% endschema %}

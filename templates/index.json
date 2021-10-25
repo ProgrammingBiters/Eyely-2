@@ -600,6 +600,14 @@
         "btn_text": "Show Now",
         "btn_url": "shopify:\/\/collections\/warehouse-sale"
       }
+    },
+    "163515266224f4e42b": {
+      "type": "index-latest-blogs",
+      "settings": {
+        "title_txt": "Fresh from the blog",
+        "heading_txt": "read the eyely blogs",
+        "link": "shopify:\/\/blogs\/lighting"
+      }
     }
   },
   "order": [
@@ -617,6 +625,7 @@
     "163497260307339b36",
     "1634984935486e4768",
     "1634987872fe7e44be",
-    "1635148724bde69291"
+    "1635148724bde69291",
+    "163515266224f4e42b"
   ]
 }
