@@ -91,3 +91,9 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+@media (max-width: 480px){
+    .index-latest-blog .title-div{
+        display: block;
+
+    }
+}
