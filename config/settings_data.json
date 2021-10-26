@@ -49,42 +49,6 @@
       },
       "footer": {
         "type": "footer",
-        "blocks": {
-          "footer-0": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
-            }
-          },
-          "e832ef43-2ed2-42ec-8c97-161c2d83762c": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
-            }
-          },
-          "885a8894-86b2-420a-a5e4-d6da8d62e2ec": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
-            }
-          },
-          "67af3085-54b6-4ef9-85fd-82a1f8eb1ef8": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
-            }
-          }
-        },
-        "block_order": [
-          "footer-0",
-          "e832ef43-2ed2-42ec-8c97-161c2d83762c",
-          "885a8894-86b2-420a-a5e4-d6da8d62e2ec",
-          "67af3085-54b6-4ef9-85fd-82a1f8eb1ef8"
-        ],
         "settings": {
           "color_scheme": "accent-1",
           "newsletter_enable": false,
