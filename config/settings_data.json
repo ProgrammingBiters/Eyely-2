@@ -12,11 +12,10 @@
     "type_body_font": "josefin_sans_n7",
     "body_scale": 105,
     "type_body_other": "josefin_sans_n3",
-    "social_twitter_link": "",
-    "social_facebook_link": "#",
-    "social_pinterest_link": "#",
-    "social_instagram_link": "#",
-    "social_youtube_link": "#",
+    "social_facebook_link": "https:\/\/facebook.com\/eyelyhome",
+    "social_pinterest_link": "https:\/\/in.pinterest.com\/eyelyhome\/_shop\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/eyelyhome\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UC7Nfh4f1r3DxfDfoZHx8jfQ",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -49,14 +48,44 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Help",
+              "menu": "help"
+            }
+          },
+          "666284fd-9247-4a85-852a-80683e4718f9": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Guides",
+              "menu": "shop"
+            }
+          },
+          "0cd98fdf-2efb-488f-b5a5-600f68a17907": {
+            "type": "link_list",
+            "settings": {
+              "heading": "About",
+              "menu": "about"
+            }
+          },
+          "2684320c-c622-4f3f-ab0a-e7a0180990ed": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Legal",
+              "menu": "sell"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "666284fd-9247-4a85-852a-80683e4718f9",
+          "0cd98fdf-2efb-488f-b5a5-600f68a17907",
+          "2684320c-c622-4f3f-ab0a-e7a0180990ed"
+        ],
         "settings": {
-          "color_scheme": "accent-1",
-          "newsletter_enable": false,
-          "newsletter_heading": "Subscribe to our emails",
-          "show_social": true,
-          "enable_country_selector": false,
-          "enable_language_selector": false,
-          "payment_enable": false
+          "show_social": true
         }
       }
     },
@@ -112,19 +141,12 @@
               "type": "link_list",
               "settings": {
               }
-            },
-            "text": {
-              "type": "text",
-              "settings": {
-              }
             }
           },
           "block_order": [
-            "menu",
-            "text"
+            "menu"
           ],
           "settings": {
-            "color_scheme": "accent-1"
           }
         }
       }
