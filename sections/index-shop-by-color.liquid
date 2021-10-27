@@ -9,16 +9,19 @@
         {% for block in section.blocks %}
             {% if block.type == "shop_by_color" %}
                     <div class="col-xl-2 col-lg-2 col-md-3 text-center shop-by-color-item px-md-4 shop-by-color-item-{{forloop.index}} mb-md-0 mb-sm-5 mb-4">
-                        <a href="{{block.settings.logo_url}}" class="d-md-block d-flex align-items-center">
+                        <a href="{{ block.settings.logo_url }}" class="d-md-block d-flex align-items-center">
                             <div class="wrap">
                                 <div class="image_wrap">
                                 {% if block.settings.featured_image != blank %}
-                                        {%
+                                        {% comment %}{%
                                         render 'rimg',
                                         class: 'img-fluid',
                                         img: block.settings.featured_image,
                                         size: '400x600'                                   
                                     %}
+                                  {% endcomment %}
+                                  {% render 'responsive-image' with image : block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt : block.settings.featured_image.alt, max_width : 200, max_height : 300 %}
+                               
                                 {% endif %}
                                 </div>
                             </div>

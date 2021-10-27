@@ -20,7 +20,23 @@
   .shop-by-style .main_wrapper .shop-by-style-item .image_wrap{
       width:80%;
       margin:auto;
-  }
+      display: block;
+      overflow: hidden;
+      padding-bottom: 80%;
+      position: relative;
+    }
+    .shop-by-style .main_wrapper .shop-by-style-item .image_wrap img{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      transform: translate(-50%,-50%);
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height:auto;      
+    }
   .shop-by-style .main_wrapper .shop-by-style-item a{
       text-decoration: none;
   }
