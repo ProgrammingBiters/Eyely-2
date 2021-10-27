@@ -17,11 +17,22 @@
   .best-seller .item-wrap .image_wrap {
     overflow: hidden;
     width: 100%;
+    position: relative;
+    display: block;
+    padding-bottom: 100%;
   }
 
   .best-seller .item-wrap .image_wrap img{
-    height:auto !important;
-    width:100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: auto !important;   
   }
   .shop_all_btn{
     margin: 0 auto;
