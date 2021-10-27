@@ -7,13 +7,8 @@
                 {% if block.type == "featured_box" and block.settings.featured_image != blank and block.settings.featured_url != blank %}
                 <div class="unique-sec-img {% if forloop.first %} grid_join {% endif %}">
                     <a href="{{ block.settings.featured_url }}"> 
-                            {%
-                            render : 'rimg',
-                            class : 'img-fluid',
-                            img : block.settings.featured_image,
-                            size : '400x400',
-                            crop : 'center'
-                            %}      
+                         {% render 'responsive-image' with image : block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt : block.settings.featured_image.alt, max_width : 200, max_height : 200 %}
+                                   
                     </a>  
                     <div class="pt-3">
                         <h6 class="my-0 text-center">
