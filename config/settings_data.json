@@ -16,22 +16,12 @@
     "social_pinterest_link": "https:\/\/in.pinterest.com\/eyelyhome\/_shop\/",
     "social_instagram_link": "https:\/\/www.instagram.com\/eyelyhome\/",
     "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UC7Nfh4f1r3DxfDfoZHx8jfQ",
+    "show_countdown": true,
+    "month": 10,
+    "day": 30,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "background-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
         "settings": {
         }
       },

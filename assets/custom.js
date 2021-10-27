@@ -18,4 +18,30 @@ $(document).ready(function(){
            $(".shop-by-color-link").fadeOut("slow");
         }
       });
+      var month = $("#month-data").val();
+      var day = $("#days-data").val();
+      var year = $("#year-data").val();
+      console.log(year);
+      if(year != undefined){
+        var now = new Date();
+        $(".timer_wrap").css("display","inline-flex");
+        var nextyear = month + '/' + day + '/' + year + ' 00:00:00';
+        console.log(nextyear);
+        setTimeout(function(){
+          $('#example').countdown({
+            date: nextyear, // TODO Date format: 07/27/2017 17:00:00
+            offset: -5, // TODO Your Timezone Offset
+            day: 'Day',
+            days: 'Days',
+            hideOnComplete: true
+          }, function (container) {
+             $(".timer_wrap").css("display","none");
+       
+          });
+  
+
+        },3000);
+  
+
+      }      
   });   
