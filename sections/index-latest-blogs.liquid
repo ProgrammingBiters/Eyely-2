@@ -27,8 +27,12 @@
                             <div class="index-grid-img">
                                 <a href="{{ article.url }}">
                                     {% if article.image != blank %} 
-                                      {% render 'responsive-image' with image : article.image , class: 'productitem--image-primary img-fluid', image.alt : article.image.alt, max_width : 200, max_height : 200 %}
-                       
+                                    {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: article.image,
+                                        size: '400x400'
+                                    %}
                                     {% endif %}
                                 </a>
                             </div>

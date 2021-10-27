@@ -12,8 +12,12 @@
                         <a href="{{block.settings.logo_url}}">
                             <div class="image_wrap">
                               {% if block.settings.featured_image != blank %}
-                                        {% render 'responsive-image' with image :  block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt :  block.settings.featured_image .alt, max_width : 360, max_height : 360 %}
-                          
+                                    {%
+                                    render 'rimg',
+                                    class: 'img-fluid',
+                                    img: block.settings.featured_image,
+                                    size: '400x400'                                   
+                                  %}
                                {% endif %}
                             </div>
                             <div class="content_wrap ">

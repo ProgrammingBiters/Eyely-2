@@ -17,8 +17,12 @@
                    <div class="back-sec-img">
                         <a href="{{ block.settings.link }}">
                         {% if block.settings.back_img != blank %} 
-                          {% render 'responsive-image' with image : block.settings.back_img , class: 'productitem--image-primary img-fluid', image.alt : block.settings.back_img.alt, max_width : 200, max_height : 200 %}
-                        
+                          {%
+                            render 'rimg',
+                            class: 'img-fluid',
+                            img: block.settings.back_img,
+                            size: '300x300'
+                          %}
                         {% endif %}
                         </a>
                    </div>

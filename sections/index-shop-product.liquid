@@ -11,9 +11,12 @@
                 <div class="shop-product-mainbox">
                     <a href="{{ product.url }}">
                         <div class="shop-product-img">
-                               
-                          {% render 'responsive-image' with image : product.images[1].src , class: 'productitem--image-primary img-fluid', image.alt : product.images[1].src.alt, max_width : 200, max_height : 200 %}
-                          
+                            {%
+                                render 'rimg',
+                                class: 'img-fluid',
+                                img: product.images[1].src,
+                                size: '400x400'                        
+                            %}
                         </div>
                     </a>
                     <div class="title-div my-2">
