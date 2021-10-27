@@ -23,6 +23,10 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
+          "text": "Welcome to our store",
+          "announcement_color": "#000000",
+          "announcement_background": "#ffffff",
+          "link": ""
         }
       },
       "header": {
