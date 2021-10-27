@@ -13,12 +13,8 @@
                 <div class="item-wrap">
                     <a href="{{ product.url }}">
                         <div class="image_wrap  fst_img-{{ forloop.index }} ">
-                            {%
-                                render 'rimg',
-                                class: 'productitem--image-primary img-fluid',
-                                img: initial_image,
-                                size: '300x300'                              
-                              %}  
+                             {% render 'responsive-image' with image : initial_image , class: 'productitem--image-primary img-fluid', image.alt : initial_image.alt, max_width : 300, max_height : 300 %}
+                             
                         </div>
                         <div class="content_wrap">
                             <div class="item_content">
