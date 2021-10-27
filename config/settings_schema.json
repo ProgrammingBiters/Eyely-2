@@ -355,5 +355,45 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "Annoucement Countdown",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Countdown Details"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_countdown",
+        "label": "Show Countdown",
+        "default": true
+      },
+      {
+        "type": "number",
+        "label": "Year",
+        "id": "year",
+        "default": 2021
+      },
+      {
+        "type": "range",
+        "label": "Month",
+        "id": "month",
+        "default": 5,
+        "min": 1,
+        "step": 1,
+        "max": 12
+      },
+      {
+        "type": "range",
+        "label": "Day",
+        "id": "day",
+        "default": 15,
+        "min": 1,
+        "step": 1,
+        "max": 31
+      }
+
+    ]
   }
 ]

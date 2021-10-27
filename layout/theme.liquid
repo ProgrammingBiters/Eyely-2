@@ -196,8 +196,14 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
-    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+ 
+    
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer="defer"></script>
+    {% if settings.show_countdown %}
+      <script src="{{ 'jquery-countdown.min.js' | asset_url }}"  defer="defer"></script>
+    {% endif %}
+    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script> 
+    
 
 
 

@@ -16,34 +16,33 @@
     "social_pinterest_link": "https:\/\/in.pinterest.com\/eyelyhome\/_shop\/",
     "social_instagram_link": "https:\/\/www.instagram.com\/eyelyhome\/",
     "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UC7Nfh4f1r3DxfDfoZHx8jfQ",
+    "show_countdown": true,
+    "month": 10,
+    "day": 30,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "background-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
         "settings": {
+          "text": "Welcome to our store",
+          "announcement_color": "#000000",
+          "announcement_background": "#ffffff",
+          "enabletimer": true,
+          "year": 2021,
+          "month": 11,
+          "day": 30,
+          "link": ""
         }
       },
       "header": {
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo_width": 100,
-          "logo_position": "middle-left",
-          "menu": "main-menu",
+          "logo": "shopify:\/\/shop_images\/eyely-logo-png-shopify.png",
+          "logo_width": 120,
+          "logo_position": "top-left",
+          "menu": "app-menu",
           "show_line_separator": true,
-          "enable_sticky_header": true
+          "enable_sticky_header": false
         }
       },
       "footer": {
