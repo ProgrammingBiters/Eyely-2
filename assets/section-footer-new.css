@@ -1,0 +1,73 @@
+footer{
+    padding:40px 0px;
+    background-color: #2d3654;
+    color: #fff;
+}
+footer .container{
+    max-width: 1630px;
+}
+footer .heading-wrap h4{
+    color: #fff;   
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 18px;
+    font-family: 'Bookmania Bold';
+}
+footer .link-wrapper .footer-block__details-content li a{
+    text-decoration: none;
+    color:#fff;
+    line-height: 1.5;
+}
+footer .accordion-item{
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+footer .accordion-item h2 .accordion-button{
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Bookmania Bold';
+}
+footer .accordion-item  .accordion-button:focus{
+    border-color: #fff;
+    box-shadow: none;
+}
+footer .accordion-item  .accordion-button:not(.collapsed){
+
+    box-shadow: none;
+}
+footer .accordion-item  .accordion-button:after{
+
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(315deg);
+    background-image: none;
+}
+footer .accordion-item  .accordion-button[aria-expanded="true"]::after{
+    transform: rotate(130deg);
+}
+
+footer .accordion-item .accordion-body ul li a{
+    color:#fff;
+}
+footer .list-social__item svg{
+    color:#fff;
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+@media (min-width:992px){
+footer .list-social__item .list-social__link:first-child{
+padding-left:0px;
+}
+}
+footer .list-social{
+    justify-content: flex-start;
+}
+footer .footer-bottom a{
+color:#fff;
+text-decoration: none;
+}
+footer .footer-bottom  .opacity-75{
+    opacity: 0.75;
+}
