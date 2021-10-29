@@ -124,7 +124,7 @@
 
       @media screen and (min-width: 750px) {
         body {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
         }
       }
     {% endstyle %}
@@ -210,6 +210,10 @@
     <script src="{{ 'lazysizes.js' | asset_url }}" async></script>
     <script src="{{ 'ls.rais.js' | asset_url }}" defer></script>
     <script src="{{ 'ls.respimg.js' | asset_url }}" defer></script>
-   
+   <style>
+    .tmenu_item--root{
+      display: none !important
+    }
+  </style>
   </body>
 </html>

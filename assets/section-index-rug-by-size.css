@@ -12,11 +12,14 @@
     color: #000;
     font-size: 16px;
     font-weight: 300;
+    font-family: var(--font-body-family-other);
   }
   .rug-by-size .rug-by-size_inner .rug-by-size_main{
     text-align:center;
 
-  }
+  } 
+  
+  
   .rug-by-size .rug-by-size_inner .rug-by-size_main .rug-by-size__text{
     padding:10px;
   }
@@ -24,11 +27,25 @@
     text-decoration: none;
     color:#222;
   }
+  .rug-by-size .rug-by-size_inner .rug-by-size_main a div{
+    margin: auto;
+  }.rug-by-size .rug-by-size_inner .rug-by-size_main .rug-by-size__icon img{
+    margin: auto;
+   }
+  @media (max-width: 800px){
+    .rug-by-size .rug-by-size_inner .rug-by-size_main .rug-by-size__icon img{
+     max-width: 100% !important;
+     max-height: 100% !important;
+     height: auto !important;
+     }
+  }
   @media (max-width:767px){
     .rug-by-size .rug-by-size_inner .rug-by-size_main .rug-by-size__icon{
       width: 40%;  
       overflow: hidden;
     }
+    
+
     .rug-by-size .rug-by-size_inner .rug-by-size_main .rug-by-size__text{
     padding: 0 0 0 15px;
     width: 50%;
