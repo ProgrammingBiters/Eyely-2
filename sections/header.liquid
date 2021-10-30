@@ -511,7 +511,7 @@
     </div>
 
     <div class="search-wrap">
-      <div class="search-form-wrapper">
+      <form class="search-form-wrapper"  action="/search" method="get">
         <input class="form-field-input live-search-form-field" type="text" name="q" aria-label="Search" placeholder="What are you looking for?" autocomplete="off" data-live-search-input="">
         <button class="live-search-button mdc-ripple-surface mdc-ripple-upgraded" type="submit" aria-label="Search" data-live-search-submit="">
           <span class="search-icon search-icon--inactive">
@@ -520,7 +520,10 @@
           </svg>
           </span>
         </button>
-      </div>
+        <ul class="box-results" style="position:absolute;left:0;top:34px;display:none"></ul>
+      </form>
+      
+      {% render 'search-perform' %}
     </div>
   </header>
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
