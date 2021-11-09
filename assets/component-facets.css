@@ -172,7 +172,7 @@
 }
 
 .facets__disclosure {
-  margin-right: 3.5rem;
+  margin-right: 0.5rem;
 }
 
 .facets__summary {
@@ -214,11 +214,12 @@
 
 .facets__display {
   background-color: rgb(var(--color-background));
-  position: absolute;
+  /* position: absolute; */
+  position: relative;
   border: 1px solid rgba(var(--color-foreground), 0.2);
-  top: calc(100% + 0.5rem);
-  left: -1.2rem;
-  width: 35rem;
+  /* top: calc(100% + 0.5rem); */
+  /* left: -1.2rem; */
+  /* width: 35rem; */
   max-height: 55rem;
   overflow-y: auto;
 }

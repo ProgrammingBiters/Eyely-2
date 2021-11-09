@@ -5,7 +5,15 @@
 .collection {
   position: relative;
 }
-
+.collection-grid-section .container{
+  max-width: 1630px;
+}
+.filter-div{
+  width: 185px;
+}
+@media (max-width: 859px){
+  .filter-div{width: 100%;}
+}
 @media screen and (max-width: 749px) {
   .collection .grid__item:only-child {
     flex: 0 0 100%;

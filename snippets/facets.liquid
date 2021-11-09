@@ -34,10 +34,11 @@
 
         {% if enable_filtering %}
           <div id="FacetsWrapperDesktop" class="facets__wrapper">
-            {%- unless results.filters == empty -%}
+           {% comment %} 
+           {%- unless results.filters == empty -%}
               <p class="facets__heading caption-large">{{ 'products.facets.filter_by_label' | t }}</p>
             {%- endunless -%}
-
+          {% endcomment %}
             {%- for filter in results.filters -%}
               {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
               {% case filter.type %}
@@ -166,45 +167,13 @@
             </noscript>
           </div>
 
-          <div class="active-facets active-facets-desktop">
-            {%- for filter in results.filters -%}
-              {%- for value in filter.active_values -%}
-                <facet-remove>
-                  <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                    <span class="active-facets__button-inner button button--tertiary">
-                      {{ value.label | escape }}
-                      {% render 'icon-close-small' %}
-                      <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                    </span>
-                  </a>
-                </facet-remove>
-              {%- endfor -%}
-              {% if filter.type == "price_range" %}
-                {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-                  <facet-remove>
-                    <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                      <span class="active-facets__button-inner button button--tertiary">
-                        {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
-                        {% render 'icon-close-small' %}
-                        <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                      </span>
-                    </a>
-                  </facet-remove>
-                {%- endif -%}
-              {% endif %}
-            {%- endfor -%}
-            <facet-remove class="active-facets__button-wrapper">
-              <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
-                <span>{{ 'products.facets.clear_all' | t }}</span>
-              </a>
-            </facet-remove>
-          </div>
+     
         {% endif %}
 
         {% if results.current_vendor or results.current_type %}
           <input type="hidden" name="q" value="{{ results.current_vendor }}{{ results.current_type }}">
         {% endif %}
-
+    {% comment %}
         {%- if enable_sorting -%}
           <div class="facet-filters sorting caption">
             <div class="facet-filters__field">
@@ -225,7 +194,7 @@
             </noscript>
           </div>
         {%- endif -%}
-
+      
         <div class="product-count light" role="status">
           <p id="ProductCountDesktop" class="product-count__text">
             {%- if results.results_count -%}
@@ -241,7 +210,7 @@
               <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
             </svg>
           </div>
-        </div>          
+        </div> {% endcomment %}         
       </form>
     </facet-filters-form>
   {%- endunless -%}
