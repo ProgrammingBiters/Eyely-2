@@ -7,13 +7,36 @@
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
-
+{% assign results = collection %}
+  
 
 <div class="container">
-  <div class="row my-3">
-  <div class="col-6">
-    <h2> {{ collection.title }} </h2>
-  </div>
+  <div class="row my-3 mx-0">
+    <div class="col-6">
+      <h2> {{ collection.title }} </h2>
+    </div>
+    <div class="col-6">
+     
+        <div class="facet-filters sorting caption">
+          <div class="facet-filters__field">
+            <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+            <div class="select">
+              {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+              <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
+                {%- for option in results.sort_options -%}
+                  <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
+                {%- endfor -%}
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+          </div>
+
+          <noscript>
+            <button type="submit" class="facets__button-no-js button button--tertiary">{{ 'products.facets.sort_button' | t }}</button>
+          </noscript>
+        </div>
+
+    </div>
   </div>
 
   <div class="row">
@@ -27,7 +50,6 @@
         </div>
       {%- endif -%}
     </div>
-    {% assign results = collection %}
     <div class="col">
       <div class="active-facets active-facets-desktop my-3">
         {%- for filter in results.filters -%}
@@ -55,6 +77,7 @@
               </facet-remove>
             {%- endif -%}
           {% endif %}
+         
         {%- endfor -%}
         {%- liquid
           assign sort_by = results.sort_by | default: results.default_sort_by
