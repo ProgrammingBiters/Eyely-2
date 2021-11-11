@@ -61,12 +61,12 @@
                       </facet-remove>
                     </div>
 
-                    <ul class="facets__list list-unstyled" role="list">
+                    <ul class="facets__list list-unstyled color__list" role="list">
                       {%- for value in filter.values -%} 
                       {% assign tag = value.value | strip %}
                       {% assign tag_value = tag | handleize %} 
                       
-                        <li class="list-menu__item facets__item">
+                        <li class="list-menu__item facets__item color-item">
                           {% comment %}<label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
                             <input type="checkbox"
                               name="{{ value.param_name }}"
@@ -97,9 +97,17 @@
                             {{ value.label | escape }} ({{ value.count }})
                           </label>
                         {% endcomment %}
-                         
+                        
+
                             <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %} {% if value.count == 0 and value.active %}active{% endif %}" title="{{ tag }}"
-                            style="background-color: {{ tag_value }}; {% if settings.show_product_color_img %}background-image: url({{ tag_value | handle | append: '.png' | file_url }}){% endif %}">
+                            style="background-color: {{ tag_value }}; background-image: url({{ tag_value | handle | append: '.png' | file_url }})">
+                            <input type="radio"
+                              name="{{ value.param_name }}"
+                              value="{{ value.value }}"
+                              id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                              {% if value.active %}checked{% endif %}
+                              {% if value.count == 0 and value.active == false %}disabled{% endif %} class="color-checkbox"
+                            ><span></span>
                             </label>
                          
                         </li>
