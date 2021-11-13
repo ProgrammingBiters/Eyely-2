@@ -18,7 +18,7 @@
           </div>
           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12">
             <div class="cont-form-add">
-                {% if  section.settings.detail_img.height != blank %}
+                {% if  section.settings.detail_img != blank %}
                  <div><img src="{{ section.settings.detail_img | img_url : 'master' }}" height="{{ section.settings.detail_img.height }}" width="{{ section.settings.detail_img.width }}" loading="lazy"></div>
                 {% endif %}
               <div class="contact-detail text-center w-100"><label class="chat-eyely" id="chat-with-us"><i class="fa fa-comments"></i>Chat with us</label></div>
