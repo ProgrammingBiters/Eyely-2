@@ -115,7 +115,10 @@
     width: 100%;
     margin: 16px 0;
   }
-  
+  .lighting-guid-section .lighting-guid-box .lighting-guid-img a:hover img{
+    opacity: 1;
+   filter: brightness(50%);
+}
   /* rug-care-sec */
   .rug-care-sec .container{
     max-width: 1600px !important;
