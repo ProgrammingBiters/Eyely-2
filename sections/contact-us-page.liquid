@@ -1,0 +1,89 @@
+{% if section.settings.banner_img != blank %}
+<section class="cont-banner"> 
+    <div class="container">
+      <div class="cont-ibanner-img" ><img src="{{ section.settings.banner_img | img_url: 'master' }}" height="{{ section.settings.banner_img.height }}" width="{{ section.settings.banner_img.width }}" loading="lazy" />
+        <div class="cont-banner-overlayer">{{ section.settings.banner_text }}</div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+  <section>
+    <div class="contect-forms">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12">
+            <h3>{{ section.settings.form_text }}</h3>
+            <div style="margin: 0 auto;" class="pxFormGenerator" id="ojVs6673TTrnXCcMaj5YYg"></div>
+  
+          </div>
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12">
+            <div class="cont-form-add">
+                {% if  section.settings.detail_img.height != blank %}
+                 <div><img src="{{ section.settings.detail_img | img_url : 'master' }}" height="{{ section.settings.detail_img.height }}" width="{{ section.settings.detail_img.width }}" loading="lazy"></div>
+                {% endif %}
+              <div class="contact-detail text-center w-100"><label class="chat-eyely" id="chat-with-us"><i class="fa fa-comments"></i>Chat with us</label></div>
+              <div class="contact-detail d-flex justify-content-center align-items-baseline w-100 text-center">
+                <label class="chat-eyely"><i class="fa fa-envelope" aria-hidden="true"></i>Email: </label> <a href="mailto:eyely@gmail.com">eyely@gmail.com</a>
+              </div>
+              <div class="contact-detail d-flex justify-content-center align-items-baseline w-100 text-center">
+                <label class="chat-eyely"><i class="fa fa-phone" aria-hidden="true"></i>Phone: </label> <a href="tel:8777839359">877 783-9359</a>
+              </div>
+              <div class="contact-detail eyely-date text-center"><span> 9AM – 5PM EST <br> Mon – Fri <br> Sat – Sun – Closed </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  {{ 'page-contact-us.css' | asset_url | stylesheet_tag }}
+  <script>
+    window.intercomSettings = {
+    app_id: "uradbd4l",
+    custom_launcher_selector:'#chat-with-us'
+  };
+   </script>
+  {% schema %}
+  {
+  "name": "Contact-Us",
+  "settings": [
+  {
+  "type": "image_picker",
+  "id": "banner_img",
+  "label": "Banner Image"
+  },
+  {
+  "type": "text",
+  "id": "banner_text",
+  "label": "Banner Text",
+  "default": "Contact us"
+  },
+  {
+  "type": "header",
+  "content": "Contect Us form"
+  },
+  {
+  "type": "text",
+  "id": "form_text",
+  "label": "Form Text",
+  "default": "Contact us at info@eyely.com or fill out the form below:"
+  },
+  {
+  "type": "header",
+  "content": "Contect Us Detail"
+  },
+  {
+  "type": "image_picker",
+  "id": "detail_img",
+  "label": "Image"
+  }
+  ]
+  }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  

@@ -1,0 +1,242 @@
+.page-width--narrow {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .page-width--narrow .main-page-title {
+    padding: 0 15px;
+    font-size: 38px;
+    text-align: center;
+    color: #2D3654;
+    margin-bottom: 40px;
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .page-width--narrow .main-page-title {
+      font-size: 36px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .page-width--narrow .main-page-title {
+      margin-bottom: 30px;
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .page-width--narrow .main-page-title {
+      margin-bottom: 30px;
+      font-size: 30px;
+    }
+  }
+  
+  /* easy-return-sec */
+  .easy-return-sec .easy-return-detail {
+    padding: 0 15px;
+  }
+  
+  .easy-return-sec .easy-return-detail p {
+    margin: 16px 0;
+    color: #212529;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .easy-return-sec .easy-return-detail p {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .easy-return-sec .easy-return-detail p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .easy-return-sec .easy-return-detail p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .easy-return-sec .easy-return-detail p {
+      font-size: 13px;
+    }
+  }
+  
+  /* lighting-guid-section */
+  .lighting-guid-section .lighting-guid-box {
+    position: relative;
+  }
+  
+  .lighting-guid-section .lighting-guid-box .lighting-guid-img {
+    margin-bottom: 16px;
+  }
+  
+  .lighting-guid-section .lighting-guid-box .lighting-guid-img img {
+    width: 100%;
+  }
+  
+  .lighting-guid-section .lighting-guid-box .lighting-guid-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .lighting-guid-section .lighting-guid-box .lighting-guid-title h4 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    color: #567788;
+    text-align: center;
+  }
+  
+  @media (max-width: 767px) {
+    .lighting-guid-section .lighting-guid-box .lighting-guid-title h4 {
+      font-size: 18px;
+    }
+  }
+  
+  .lighting-guid-section .lighting-guid-box .lighting-guid-title p .light-guid-pintrest {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    background: #fff;
+    border-radius: 0 0 0 10px;
+    z-index: 1;
+  }
+  
+  .lighting-guid-section .lighting-guid-box .lighting-guid-title p .light-guid-pintrest img {
+    width: 100%;
+    margin: 16px 0;
+  }
+  
+  /* rug-care-sec */
+  .rug-care-sec .container{
+    max-width: 1600px !important;
+  }
+  .rug-care-sec .rug-care-box .rug-care-img {
+    margin: 16px 0;
+  }
+  
+  .rug-care-sec .rug-care-box .rug-care-img img {
+    width: 100%;
+  }
+  
+  .rug-care-sec .rug-care-box .rug-care-txt h4 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    color: #567788;
+    text-align: center;
+  }
+  
+  @media (max-width: 767px) {
+    .rug-care-sec .rug-care-box .rug-care-txt h4 {
+      font-size: 18px;
+    }
+  }
+  
+  .rug-care-sec .rug-care-box .rug-care-txt p {
+    margin: 16px 0;
+    font-size: 16px;
+    line-height: 26px;
+    color: #212529;
+    font-weight: 300;
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .rug-care-sec .rug-care-box .rug-care-txt p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .rug-care-sec .rug-care-box .rug-care-txt p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .rug-care-sec .rug-care-box .rug-care-txt p {
+      font-size: 13px;
+    }
+  }
+  
+
+  .financing .financing-banner img{
+    width:100%;
+  }
+  .financing .financing-detail h2{
+    margin:40px 0 50px;
+  }
+  @media (max-width:480px){
+  .financing .financing-detail h2{
+    margin:40px 40px 50px;
+  }
+  }
+  .financing .financing-detail p{
+    color: #567788;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .financing .financing-detail .first-line{
+    margin-bottom:25px;
+  }
+  .financing .financing-detail .financing-view{
+    margin:35px 0;
+  }
+  .financing .financing-detail .financing-view .financing-btn{
+    padding:14px 20px;
+    background:#b23c18;
+    font-size:14px;
+    font-weight:400;
+    text-transform:uppercase;
+    border: 1px solid #ba502f; 
+    text-decoration: none;
+  }
+  .financing .financing-detail .financing-view .financing-btn:focus{
+    box-shadow:none;
+  }
+  .financing .financing-detail .financing-view .financing-btn:hover{
+    opacity:0.9;
+  }
+  .financing .shop-for-eyely{
+    margin:0 25%;
+  } 
+  @media (max-width:480px){
+    .financing .shop-for-eyely{
+    margin:0 0;
+  } 
+  }
+  .financing .shop-for-eyely h2{
+    margin:42px 0 45px;
+  }
+  .shop-for-eyely-detail-div .shop-for-eyely-detail-name h4{
+  
+    margin:42px 0 15px;
+  }
+  .shop-for-eyely-detail-div .shop-for-eyely-detail-name h4 a{
+    color: #b23c18;
+    text-decoration: none;
+    font-size:23px;
+  }
+  .financing .financing-text-details{
+    font-size:11px;
+    
+  }
+  .financing .financing-text-details p{
+    margin:0 15%; 
+  }
+  @media (max-width:480px){
+    .financing .financing-text-details p{
+    margin:0 4%; 
+  }
+  }
+  
