@@ -43,5 +43,24 @@ $(document).ready(function(){
         },3000);
   
 
-      }      
+      } 
+      $(".faq_questions").on("click", function() {
+      if ($(this).hasClass("active")) { 
+        $(this).siblings(".faq_answer").slideUp(500);
+         $("i").removeClass("fa-angle-up").addClass("fa-angle-down");
+   
+        $(this).removeClass("active");
+          $(this).next(".faq_answer").removeClass("active");
+        
+          } else {
+        $("i").removeClass("fa-angle-up").addClass("fa-angle-down");
+        $(this).find("i").removeClass("fa-angle-down").addClass("fa-angle-up");
+        $(".faq_questions").removeClass("active");
+        $(".faq_answer").slideUp(500);
+        
+        $(this).addClass("active");
+        $(this).next(".faq_answer").addClass('active');
+        $(this).next(".faq_answer").slideDown(500);
+      }
+    });     
   });   
