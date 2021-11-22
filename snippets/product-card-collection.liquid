@@ -160,12 +160,37 @@
         </div>
       {%- endif -%}
 
-      <div class="card__badge">
+      
+        {% comment %}
         {%- if product_card_product.available == false -%}
           <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
         {%- elsif product_card_product.compare_at_price > product_card_product.price and product_card_product.available -%}
           <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
         {%- endif -%}
+      {% endcomment%}
+      
+        <span class="smartwishlist" data-product="{{ product_card_product.id }}" data-variant="{{ product_card_product.variants.first.id }}"></span>
+        <div class="tag-div">
+        {% for tag in product_card_product.tags %}
+      	{% if tag == "Room_Outdoor" %}
+        
+          <span class="tag-wrap bg-dark color-{{ settings.sale_badge_color_scheme }}">INDOOR / OUTDOOR</span>
+      
+        {% endif %}
+        {% assign show_size = 0 %}
+        {% if tag == "light" %}
+            {% for product_option in product_card_product.options_with_values %}
+              {% if product_option.name == "Size" or product_option.name == "Style" %}
+              {% assign show_size = 1 %}
+              {% endif %}
+            {% endfor %}
+            {% if show_size == 1 %}
+             
+                <span class="tag-wrap bg-dark color-{{ settings.sale_badge_color_scheme }}">More Style</span>
+            
+            {% endif %}
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
