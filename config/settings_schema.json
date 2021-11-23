@@ -395,5 +395,26 @@
       }
 
     ]
+  },
+  {
+    "name" : "Collection",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Color swatches"
+      },
+      {
+        "type": "checkbox",
+        "id": "swatches_enable",
+        "label": "Enable color swatches",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "swatches_swatch_trigger",
+        "label": "Swatch trigger",
+        "default": "Color"
+      }
+    ]
   }
 ]

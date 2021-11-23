@@ -110,6 +110,59 @@
         "link": "shopify:\/\/collections\/new-arrivals"
       }
     },
+    "1635498049c0a9cf93": {
+      "type": "index-rug-buy-size",
+      "blocks": {
+        "cd9fd099-27a1-483c-9e24-0cb8636ae474": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/round.png",
+            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_round",
+            "heading_txt": "Round",
+            "size_txt": "5x5"
+          }
+        },
+        "119f90ea-7c20-416c-828c-4bcde0af362a": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/runner.png",
+            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_runner",
+            "heading_txt": "Runner",
+            "size_txt": "2x8 | 2x10"
+          }
+        },
+        "d3219c40-2e76-47cc-af85-da442f6d2640": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/medium.png",
+            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_rectangle",
+            "heading_txt": "Medium",
+            "size_txt": "3×5 | 4×6 | 5×8"
+          }
+        },
+        "67898db4-0eee-48df-b662-0a9300c613a5": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/large.png",
+            "logo_url": "shopify:\/\/collections\/large-rugs",
+            "heading_txt": "Large",
+            "size_txt": "8×10 | 9×12"
+          }
+        }
+      },
+      "block_order": [
+        "cd9fd099-27a1-483c-9e24-0cb8636ae474",
+        "119f90ea-7c20-416c-828c-4bcde0af362a",
+        "d3219c40-2e76-47cc-af85-da442f6d2640",
+        "67898db4-0eee-48df-b662-0a9300c613a5"
+      ],
+      "settings": {
+        "title_txt": "Rugs By Size",
+        "heading_txt": "The right size rug gives your room the perfect feel. We can help make it easy.",
+        "btn_text": "View all rugs",
+        "btn_url": "shopify:\/\/collections\/rugs"
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "disabled": true,
@@ -629,6 +682,7 @@
     "1634638697d2b5e52a",
     "163479756837bdea1f",
     "1634804839b2634194",
+    "1635498049c0a9cf93",
     "rich_text",
     "featured_products",
     "collage",

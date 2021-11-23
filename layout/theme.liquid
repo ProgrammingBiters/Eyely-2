@@ -124,7 +124,7 @@
 
       @media screen and (min-width: 750px) {
         body {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
         }
       }
     {% endstyle %}
@@ -176,7 +176,7 @@
         cart_update_url: '{{ routes.cart_update_url }}',
         predictive_search_url: '{{ routes.predictive_search_url }}'
       };
-
+      window.money = "{{ shop.money_format }}";
       window.cartStrings = {
         error: `{{ 'sections.cart.cart_error' | t }}`,
         quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t }}`
@@ -203,13 +203,13 @@
       <script src="{{ 'jquery-countdown.min.js' | asset_url }}"  defer="defer"></script>
     {% endif %}
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script> 
-    
-
-
-
     <script src="{{ 'lazysizes.js' | asset_url }}" async></script>
     <script src="{{ 'ls.rais.js' | asset_url }}" defer></script>
     <script src="{{ 'ls.respimg.js' | asset_url }}" defer></script>
-   
+   <style>
+    .tmenu_item--root{
+      display: none !important
+    }
+  </style>
   </body>
 </html>

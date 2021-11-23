@@ -1,17 +1,16 @@
 {
   "sections": {
     "main": {
-      "type": "main-page"
-    },
-    "form": {
-      "type": "contact-form",
+      "type": "contact-us-page",
       "settings": {
-        "heading": ""
+        "banner_img": "shopify:\/\/shop_images\/11-1.jpg",
+        "banner_text": "Contect Us",
+        "form_text": "Contact us at info@eyely.com or fill out the form below:",
+        "detail_img": "shopify:\/\/shop_images\/0-2.png"
       }
     }
   },
   "order": [
-    "main",
-    "form"
+    "main"
   ]
 }
