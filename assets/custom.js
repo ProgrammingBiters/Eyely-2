@@ -33,10 +33,10 @@ $(document).ready(function(){
         
       });
       $(".c-item").hover(function(e){
-          
+        
         e.preventDefault();
         var pid=$(this).data("p-id");
-       var prgrid=$("#prd-"+pid).find(".v-img");
+       var prgrid=$(pid).find("img");
        $(prgrid).each(function(){
         $(this).removeClass("show");
 
