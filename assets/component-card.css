@@ -403,14 +403,18 @@
     flex-wrap: wrap;
     width: 100%;
     margin-top: 10px;
-    max-height: 40px;
+    max-height: 45px;
     overflow: hidden;
-    position: relative;
+    position: relative;  
+   
+
   }
 .collection-swathces .swatch-inner .c-item{
 width: 40px;
 margin-right: 5px;
 margin-bottom: 5px;
+background: #fff;
+border: 0px;
 }
 .swatch-inner{
       display: flex;
@@ -430,4 +434,30 @@ margin-bottom: 5px;
   align-items: center;
   font-size: 20px;
   justify-content: center;
+  background: #fff;
+}
+.more-color.plus .pl{
+  display: block !important;
+  }
+  .more-color.minus .mi{
+    display: block !important;
+    }
+.more-color span{
+  display: none;
+}
+.collection-swathces.more-view{
+  max-height: 100%; transition: height 4s;
+
+}
+.v-img{
+  opacity: 0;
+  visibility: hidden;
+}
+.c-item img.active{
+  box-shadow: 0 0 0 3px #cfcfcf, 0 0 0 3px #cfcfcf;
+}
+.v-img.show{
+  opacity: 1  !important;
+  visibility: visible;
+  background: #fff;
 }
