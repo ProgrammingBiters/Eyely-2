@@ -403,7 +403,7 @@
     flex-wrap: wrap;
     width: 100%;
     margin-top: 10px;
-    max-height: 45px;
+    max-height: 50px;
     overflow: hidden;
     position: relative;  
    
@@ -415,11 +415,13 @@ margin-right: 5px;
 margin-bottom: 5px;
 background: #fff;
 border: 0px;
+position: relative;
 }
 .swatch-inner{
       display: flex;
     flex-wrap: wrap;
   width: calc( 100% - 40px);
+  margin-top: 2px;
 }
   .swatch-inner .full{
     width: 100%;
@@ -454,10 +456,38 @@ border: 0px;
   visibility: hidden;
 }
 .c-item img.active{
-  box-shadow: 0 0 0 3px #cfcfcf, 0 0 0 3px #cfcfcf;
+  box-shadow: 0px 0px 0px 4px #616161;
 }
 .v-img.show{
   opacity: 1  !important;
   visibility: visible;
   background: #fff;
+}
+.swatch-tooltip{
+font-size: 14px;
+font-weight: bold;
+border:0px;
+background: #fff !important;
+color :#000 !important;
+}
+.card-wrapper .reviews-div a{
+  display: none;
+}
+
+.tooltip .tooltip-inner {
+  background: #fff !important;
+  color :#000 !important;
+}
+.collection-swathces .swatch-inner .c-item.disabled-item:before{
+  position: absolute;
+    top: -25%;
+    right: 40%;
+    display: block;
+    width: 32px;
+    height: 40px;
+    content: "";
+    opacity: .5;
+    border-right: 4px solid #000;
+    transform: rotate(31deg);
+
 }

@@ -87,7 +87,7 @@
 
 
             {% assign colorlist = tempList %}
-            <button class="c-item" data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy"/></button>
+            <button class="c-item {% unless variant.available %} disabled-item {% endunless%} "  {% unless variant.available %} disabled {% endunless%}  data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ color }}" src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy" />  </button>
             {% capture tempList %}{{ colorlist | append: color | append: ' ' }}{% endcapture %}
             {% assign colorlist = tempList %}
           {% endunless %}
@@ -98,7 +98,7 @@
    <div class="card-information__wrapper">
       <div class="collection-swathces">
       <div class="swatch-inner {% if c <= 5 %} full {% endif %}"> {{ swatches }}</div>
-      {% if c > 5 %} <button class="more-color plus" ><span class="pl">+</span><span class="mi">-</span></button> {% endif %}
+      {% if c > 5 %} <button class="more-color plus"  data-prd-id="{{ product_card_product.id }}"><span class="pl">+</span><span class="mi">-</span></button> {% endif %}
     </div>
       
       {%- if show_vendor -%}
@@ -107,8 +107,8 @@
       {%- endif -%}
 
       {%- if product_card_product.featured_media -%}
-        <h3 class="card-information__text h5">
-          <a href="{{ product_card_product.url | default: '#' }}" class="full-unstyled-link">
+        <h3 class="card-information__text h5 title-{{ product_card_product.id }}">
+          <a href="{{ product_card_product.url | default: '#' }}" class="full-unstyled-link prd-link-{{ product_card_product.id }}">
             {{ product_card_product.title | escape }}
           </a>
         </h3>
@@ -117,9 +117,9 @@
       {% comment %} TODO: metafield {% endcomment %}
       <span class="caption-large light">{{ block.settings.description | escape }}</span>
       {%- if show_rating -%}
-        <div class="reviews-div">
+        <div class="reviews-div review-{{ product_card_product.id }}" >
              <div class="yotpo bottomLine"
-            data-product-id="{{ product.id }}">
+            data-product-id="{{ product_card_product.id }}">
           {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
           {%- assign time_now = 'now' | date: '%s' %}
           {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
@@ -133,7 +133,7 @@
           {%- endif %}
           
           {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
-             {{ product.metafields.yotpo.bottomline }}
+             {{ product_card_product.metafields.yotpo.bottomline }}
           {%- endif %}
           </div>
         </div>
@@ -150,7 +150,7 @@
   </div>
 
   <div class="card card--product{% if initial_image == nil %} card--text-only card--soft{% endif %}{% if initial_image != nil and show_image_outline %} card--outline-collection{% endif %}" tabindex="-1">
-    <a href="{{ product_card_product.url }}">
+    <a href="{{ product_card_product.url }}" class="prd-img-link-{{ product_card_product.id }}">
      <div class="card__inner">
       {%- if initial_image -%}
         {%- liquid
