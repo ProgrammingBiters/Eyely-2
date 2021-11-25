@@ -111,7 +111,7 @@
           <div class="collection ">
             <div class="loading-overlay gradient"></div>
 
-            <ul id="product-grid" data-id="{{ section.id }}" class="
+            <ul  data-id="{{ section.id }}" id="product-grid" class="
               grid grid--2-col negative-margin product-grid {% if collection.products_count == 4 %} grid--4-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}
               ">
               {%- for product in collection.products -%}
@@ -136,6 +136,7 @@
               </div>
                 {% endif %}
             </ul>
+         
            {% comment %}    
             {%- if paginate.pages > 1 -%}
 
@@ -151,7 +152,14 @@
     </div>
   </div>
 </div> 
-
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#Huratips-Loop',
+      pagination: '#Huratips-Pagination'
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",

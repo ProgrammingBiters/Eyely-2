@@ -18,7 +18,7 @@ $(document).ready(function(){
         $(".title-"+pid).toggleClass("d-none");
       });
       //Swatch-item Js   start
-     
+
       $(".c-item").click(function(e){
         
         e.preventDefault();
@@ -141,7 +141,8 @@ $(document).ready(function(){
           $(moreButon).remove();
   
           triggered = true;
-          $.ajax(nextUrl,{
+          $.ajax({url: nextUrl,
+            dataType: "html",
             success: function (data, status, xhr) {// success callback function
                               console.log(data);
                               $(loader).remove();
@@ -152,8 +153,57 @@ $(document).ready(function(){
                               //            $(".loader-div").toggleClass("hide");
                               var api = new Yotpo.API(yotpo);
                               api.refreshWidgets();
+                              $(".c-item").click(function(e){
+        
+                                e.preventDefault();
+                                var fg=false;
+                                var vid=$(this).data("v-id");
+                                var u=$(this).data("prd-url");
+                                var pid=$(this).data("p-id");
+                                var prgrid=$("#prd-"+pid).find(".v-img");
+                                $(prgrid).each(function(){
+                                  if( $("."+vid).hasClass("show") ){
+                                    fg=true;
+                                  }else{
+                                    $(this).removeClass("show");
+                        
+                                  }
+                                  });     
+                               $("."+vid).toggleClass("show");
+                        
+                                var oth=$(this).siblings('button');
+                                var c=$(this).find('img');
+                                
+                                $(oth).each(function(){
+                                    $(this).find("img").removeClass("active");
+                                 });
+                               
+                                  $(this).find("img").toggleClass("active");
+                               
+                                 if(fg){  
+                                    var m=u.split("?");
+                                    $(".prd-link-"+pid).attr("href",m[0]);  
+                                    $(".prd-img-link-"+pid).attr("href",m[0]);
+                                 }else{
+                                  $(".prd-link-"+pid).attr("href",u);
+                                  $(".prd-img-link-"+pid).attr("href",u);
+                                 }
+                        
+                              });
+                              $(".more-color").click(function(e){
+                                e.preventDefault();
+                                $(this).parent().toggleClass("more-view");
+                                $(this).toggleClass("minus");
+                                $(this).toggleClass("plus");
+                                var pid=$(this).data("prd-id");
+                                $(".review-"+pid).toggleClass("d-none");
+                                $(".title-"+pid).toggleClass("d-none");
+                              });
                     }
-          });
+                  });
+        
+         
+
         
       }
     }

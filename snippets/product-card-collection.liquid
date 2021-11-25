@@ -257,3 +257,52 @@
   </a>
   </div>
 </div>
+<script>
+  setTimeout(function(){
+$(document).ready(function(){
+//Swatch-item Js   start
+     
+$(".c-item").click(function(e){
+        
+  e.preventDefault();
+  var fg=false;
+  var vid=$(this).data("v-id");
+  var u=$(this).data("prd-url");
+  var pid=$(this).data("p-id");
+  var prgrid=$("#prd-"+pid).find(".v-img");
+  $(prgrid).each(function(){
+    if( $("."+vid).hasClass("show") ){
+      fg=true;
+    }else{
+      $(this).removeClass("show");
+
+    }
+    });     
+ $("."+vid).toggleClass("show");
+
+  var oth=$(this).siblings('button');
+  var c=$(this).find('img');
+  
+  $(oth).each(function(){
+      $(this).find("img").removeClass("active");
+   });
+ 
+    $(this).find("img").toggleClass("active");
+ 
+   if(fg){  
+      var m=u.split("?");
+      $(".prd-link-"+pid).attr("href",m[0]);  
+      $(".prd-img-link-"+pid).attr("href",m[0]);
+   }else{
+    $(".prd-link-"+pid).attr("href",u);
+    $(".prd-img-link-"+pid).attr("href",u);
+   }
+
+});
+//Swatch-item Js end
+
+
+});
+
+  },6000);
+</script>
