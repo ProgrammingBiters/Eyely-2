@@ -145,7 +145,7 @@
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
    
     <script src="{{ 'jquery-3.5.1.js' | asset_url }}" rel="preload" defer></script>
-
+{% if template contains 'collection' %}<script src = "https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" async></script>{% endif %}
   </head>
   <body class="gradient">
   

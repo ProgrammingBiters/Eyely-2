@@ -111,7 +111,7 @@
           <div class="collection ">
             <div class="loading-overlay gradient"></div>
 
-            <ul id="product-grid" data-id="{{ section.id }}" class="
+            <ul  data-id="{{ section.id }}" id="product-grid" class="
               grid grid--2-col negative-margin product-grid {% if collection.products_count == 4 %} grid--4-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}
               ">
               {%- for product in collection.products -%}
@@ -127,19 +127,39 @@
                   %}
                 </li>
               {%- endfor -%}
+              {% if paginate.next %}
+                <div id="more" class="col-12  mt-4 d-none">
+                  <p><a href="{{ paginate.next.url }}" class="btn-show-more button-all m-auto">Load More</a></p>
+                </div>
+              <div class="col-12 loader-div  text-center">
+                <img src="{{ 'loader.gif' | asset_img_url : '100x100' }}" class="img-fluid" loading="lazy" height="100" width="150">
+              </div>
+                {% endif %}
             </ul>
-              {% comment %}
+         
+           {% comment %}    
             {%- if paginate.pages > 1 -%}
+
+             
               {% render 'pagination', paginate: paginate, anchor: '' %}
-            {%- endif -%}
-          {% endcomment %}
+             
+            {%- endif -%} {% endcomment %}
+            
           </div>
         {%- endif -%}
         {%- endpaginate -%}
       </div>
     </div>
   </div>
-</div>
+</div> 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#Huratips-Loop',
+      pagination: '#Huratips-Pagination'
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",

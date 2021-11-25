@@ -13,45 +13,53 @@ $(document).ready(function(){
         $(this).parent().toggleClass("more-view");
         $(this).toggleClass("minus");
         $(this).toggleClass("plus");
+        var pid=$(this).data("prd-id");
+        $(".review-"+pid).toggleClass("d-none");
+        $(".title-"+pid).toggleClass("d-none");
       });
+      //Swatch-item Js   start
+
       $(".c-item").click(function(e){
         
         e.preventDefault();
-
-      var u=$(this).data("prd-url");
-      var pid=$(this).data("p-id");
-      var prgrid=$("#prd-"+pid).find(".v-img");
-       $(prgrid).each(function(){
-        $(this).removeClass("show");
-       });
-        var oth=$(this).siblings('button');
-        $(oth).each(function(){
-          $(this).find("img").removeClass("active");
-        });
-        $(this).find("img").toggleClass("active");
+        var fg=false;
         var vid=$(this).data("v-id");
-        $("."+vid).toggleClass("show");
-        $(".prd-link-"+pid).attr("href",u);
-      });
-      // $(".c-item").focus(function(e){
-        
-      //   e.preventDefault();
-      //   var pid=$(this).data("p-id");
-      //  var prgrid=$(pid).find("img");
-      //  $(prgrid).each(function(){
-      //   $(this).removeClass("show");
+        var u=$(this).data("prd-url");
+        var pid=$(this).data("p-id");
+        var prgrid=$("#prd-"+pid).find(".v-img");
+        $(prgrid).each(function(){
+          if( $("."+vid).hasClass("show") ){
+            fg=true;
+          }else{
+            $(this).removeClass("show");
 
-      //  });
-      //   var oth=$(this).siblings('button');
-      //   $(oth).each(function(){
-      //     $(this).find("img").removeClass("active");
-      //   });
-      //   $(this).find("img").toggleClass("active");
-      //   var vid=$(this).data("v-id");
-      //   $("."+vid).toggleClass("show");
+          }
+          });     
+       $("."+vid).toggleClass("show");
+
+        var oth=$(this).siblings('button');
+        var c=$(this).find('img');
         
-      // });
-      $(".shop-by-color-item").slice(0, 2).show();
+        $(oth).each(function(){
+            $(this).find("img").removeClass("active");
+         });
+       
+          $(this).find("img").toggleClass("active");
+       
+         if(fg){  
+            var m=u.split("?");
+            $(".prd-link-"+pid).attr("href",m[0]);  
+            $(".prd-img-link-"+pid).attr("href",m[0]);
+         }else{
+          $(".prd-link-"+pid).attr("href",u);
+          $(".prd-img-link-"+pid).attr("href",u);
+         }
+
+      });
+    //Swatch-item Js end
+
+
+       $(".shop-by-color-item").slice(0, 2).show();
       $(".shop-by-color-link").on("click", function(e){
         e.preventDefault();
         $(".shop-by-color-item:hidden").slice(0, 2).slideDown();
@@ -111,3 +119,98 @@ $(document).ready(function(){
       customClass : 'swatch-tooltip shadow'
     })
   })
+
+
+
+  // collection loadmore
+  function isVisible($el) {
+    var winTop = $(window).scrollTop();
+    var winBottom = winTop + $(window).height();
+    var elTop = $el.offset().top;
+    var elBottom = elTop + $el.height();
+    return ((elBottom<= winBottom) && (elTop >= winTop));
+  }
+    let triggered = false;
+  
+    function ScrollExecute() {
+      let moreButon = $('#more');
+      let nextUrl = $(moreButon).find('a').attr("href");
+      let loader=$(".loader-div");
+      if ((triggered == false) && nextUrl != undefined && isVisible(loader)) {
+           
+          $(moreButon).remove();
+  
+          triggered = true;
+          $.ajax({url: nextUrl,
+            dataType: "html",
+            success: function (data, status, xhr) {// success callback function
+                              console.log(data);
+                              $(loader).remove();
+  
+                              $('#product-grid').append($(data).find('#product-grid').html());
+                              triggered = false;
+                            
+                              //            $(".loader-div").toggleClass("hide");
+                              var api = new Yotpo.API(yotpo);
+                              api.refreshWidgets();
+                              $(".c-item").click(function(e){
+        
+                                e.preventDefault();
+                                var fg=false;
+                                var vid=$(this).data("v-id");
+                                var u=$(this).data("prd-url");
+                                var pid=$(this).data("p-id");
+                                var prgrid=$("#prd-"+pid).find(".v-img");
+                                $(prgrid).each(function(){
+                                  if( $("."+vid).hasClass("show") ){
+                                    fg=true;
+                                  }else{
+                                    $(this).removeClass("show");
+                        
+                                  }
+                                  });     
+                               $("."+vid).toggleClass("show");
+                        
+                                var oth=$(this).siblings('button');
+                                var c=$(this).find('img');
+                                
+                                $(oth).each(function(){
+                                    $(this).find("img").removeClass("active");
+                                 });
+                               
+                                  $(this).find("img").toggleClass("active");
+                               
+                                 if(fg){  
+                                    var m=u.split("?");
+                                    $(".prd-link-"+pid).attr("href",m[0]);  
+                                    $(".prd-img-link-"+pid).attr("href",m[0]);
+                                 }else{
+                                  $(".prd-link-"+pid).attr("href",u);
+                                  $(".prd-img-link-"+pid).attr("href",u);
+                                 }
+                        
+                              });
+                              $(".more-color").click(function(e){
+                                e.preventDefault();
+                                $(this).parent().toggleClass("more-view");
+                                $(this).toggleClass("minus");
+                                $(this).toggleClass("plus");
+                                var pid=$(this).data("prd-id");
+                                $(".review-"+pid).toggleClass("d-none");
+                                $(".title-"+pid).toggleClass("d-none");
+                              });
+                    }
+                  });
+        
+         
+
+        
+      }
+    }
+              
+    $(document).ready(function () {
+      $(window).scroll(function(){
+         ScrollExecute();
+       }); 
+     
+     });
