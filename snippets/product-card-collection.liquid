@@ -87,7 +87,7 @@
 
 
             {% assign colorlist = tempList %}
-            <button class="c-item" data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy"/></button>
+            <button class="c-item"    data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ color }}" src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy"/></button>
             {% capture tempList %}{{ colorlist | append: color | append: ' ' }}{% endcapture %}
             {% assign colorlist = tempList %}
           {% endunless %}
@@ -108,7 +108,7 @@
 
       {%- if product_card_product.featured_media -%}
         <h3 class="card-information__text h5">
-          <a href="{{ product_card_product.url | default: '#' }}" class="full-unstyled-link">
+          <a href="{{ product_card_product.url | default: '#' }}" class="full-unstyled-link prd-link-{{ product_card_product.id }}">
             {{ product_card_product.title | escape }}
           </a>
         </h3>

@@ -17,11 +17,12 @@ $(document).ready(function(){
       $(".c-item").click(function(e){
         
         e.preventDefault();
-        var pid=$(this).data("p-id");
-       var prgrid=$("#prd-"+pid).find(".v-img");
+
+      var u=$(this).data("prd-url");
+      var pid=$(this).data("p-id");
+      var prgrid=$("#prd-"+pid).find(".v-img");
        $(prgrid).each(function(){
         $(this).removeClass("show");
-
        });
         var oth=$(this).siblings('button');
         $(oth).each(function(){
@@ -30,26 +31,26 @@ $(document).ready(function(){
         $(this).find("img").toggleClass("active");
         var vid=$(this).data("v-id");
         $("."+vid).toggleClass("show");
-        
+        $(".prd-link-"+pid).attr("href",u);
       });
-      $(".c-item").hover(function(e){
-          
-        e.preventDefault();
-        var pid=$(this).data("p-id");
-       var prgrid=$("#prd-"+pid).find(".v-img");
-       $(prgrid).each(function(){
-        $(this).removeClass("show");
+      // $(".c-item").focus(function(e){
+        
+      //   e.preventDefault();
+      //   var pid=$(this).data("p-id");
+      //  var prgrid=$(pid).find("img");
+      //  $(prgrid).each(function(){
+      //   $(this).removeClass("show");
 
-       });
-        var oth=$(this).siblings('button');
-        $(oth).each(function(){
-          $(this).find("img").removeClass("active");
-        });
-        $(this).find("img").toggleClass("active");
-        var vid=$(this).data("v-id");
-        $("."+vid).toggleClass("show");
+      //  });
+      //   var oth=$(this).siblings('button');
+      //   $(oth).each(function(){
+      //     $(this).find("img").removeClass("active");
+      //   });
+      //   $(this).find("img").toggleClass("active");
+      //   var vid=$(this).data("v-id");
+      //   $("."+vid).toggleClass("show");
         
-      });
+      // });
       $(".shop-by-color-item").slice(0, 2).show();
       $(".shop-by-color-link").on("click", function(e){
         e.preventDefault();
@@ -104,3 +105,9 @@ $(document).ready(function(){
       }
     });     
   });   
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl,{
+      customClass : 'swatch-tooltip shadow'
+    })
+  })

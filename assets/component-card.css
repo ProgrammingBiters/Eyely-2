@@ -461,3 +461,16 @@ border: 0px;
   visibility: visible;
   background: #fff;
 }
+.swatch-tooltip{
+font-size: 14px;
+font-weight: bold;
+border:0px;
+background: #fff !important;
+color :#000 !important;
+}
+
+
+.tooltip .tooltip-inner {
+  background: #fff !important;
+  color :#000 !important;
+}
