@@ -215,5 +215,16 @@
       display: none !important
     }
   </style>
+
+  {% if template contains 'product' %}
+    <script src="{{ 'recentyview.js' | asset_url }}" defer></script>
+
+    <script>
+      setTimeout(function(){
+      Shopify.Products.recordRecentlyViewed();
+      },4000);
+    </script>
+    
+    {% endif %}
   </body>
 </html>

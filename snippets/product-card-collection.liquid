@@ -231,7 +231,7 @@
           {% for tag in product_card_product.tags %}
           {% if tag == "Room_Outdoor" %}
           
-            <span class="tag-wrap bg-dark color-{{ settings.sale_badge_color_scheme }}">INDOOR / OUTDOOR</span>
+            <span class="tag-wrap color-{{ settings.sale_badge_color_scheme }}">INDOOR / OUTDOOR</span>
         
           {% endif %}
           {% assign show_size = 0 %}
@@ -243,7 +243,7 @@
               {% endfor %}
               {% if show_size == 1 %}
               
-                  <span class="tag-wrap bg-dark color-{{ settings.sale_badge_color_scheme }}">More Style</span>
+                  <span class="tag-wrap  color-{{ settings.sale_badge_color_scheme }}">More Style</span>
               
               {% endif %}
           {% endif %}
