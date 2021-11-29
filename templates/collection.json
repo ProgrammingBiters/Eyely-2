@@ -22,10 +22,16 @@
         "enable_sorting": true,
         "collapse_on_larger_devices": false
       }
+    },
+    "recently-view": {
+      "type": "recently-view",
+      "settings": {
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "recently-view"
   ]
 }

@@ -1,0 +1,134 @@
+<script src="{{ 'recentyview.js' | asset_url }}" defer></script>
+
+    
+
+  <div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+                <header class="section-header">
+                    <h2 class="section-header__title border-bottom">Recently Viewed Products</h2>         
+                </header>  
+        </div>
+    </div>
+      
+            <div id="recently-viewed-products" class="  grid grid--2-col negative-margin product-grid  grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max" >
+            
+            </div>
+         
+  </div>
+      {% raw %}
+      
+      <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+     
+      <div class="grid__item "  itemscope itemtype="http://schema.org/Product" >
+            <div id="product-${handle}" class="products">
+              
+                    <div class="card-wrapper">
+                        <div class="card-information">
+                            <div class="card-information__wrapper">
+                                <h3 class="card-information__text h5 title-${id}">
+                                    <a href="${url}" class="full-unstyled-link prd-link-${id}">
+                                        ${title}
+                                    </a>
+                                  </h3>
+                                
+                                    <div class="reviews-div review-${id}" >
+                                         <div class="yotpo bottomLine"
+                                        data-product-id="${id}">
+                                    
+                                      </div>
+                                    </div>
+                                  
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                        <div class="price price--on-sale">
+                                            {{if price_varies}}
+                                                <div>
+                                                    <div class="price__regular">
+                                                        <span class="price-item price-item--regular"> {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
+
+                                                        </span>
+                                                    </div>
+                                                    <div class="price__sale">
+                                                        <span class="price-item price-item--sale price-item--last">
+                                                        From {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
+                                                        </span>
+                                                        <span>
+                                                        <s class="price-item price-item--regular">  {{html Shopify.formatMoney(compare_at_price_min, window.money_format)}}</s>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            {{else}}
+                                                <div class="price__regular">
+                                                    <span class="price-item price-item--regular">
+                                                        {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
+
+                                                    </span>
+                                                </div>
+                                            {{/if}}
+
+                                        </div>
+                                    </div>
+                                   
+      
+                            </div>
+                        </div>
+                        <div class="card card--product card--outline-collection" tabindex="-1">
+                            <a href="${url}" class="prd-img-link-${id}">
+                                <div class="card__inner">
+                                    <div class="">
+                                        <div id="prd-${id}" class="media media--transparent media--square  media--hover-effect" style="padding-bottom: 100%;">
+                                            <img src="${Shopify.Products.resizeImage(images[1], "medium")}"  loading="lazy"
+                                                class="motion-reduce" />
+                                            
+                                            <img src="${Shopify.Products.resizeImage(images[0], "medium")}"  loading="lazy"
+                                                class="motion-reduce" />
+                                                
+                                        </div>
+                                    </div>
+                                    <div class="badge-bottom">
+                                        {{if !available}}
+                                        {% endraw %}
+                                        <span class=" badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">
+                                        Sold out  
+                                        {% raw %}
+                                        </span>
+                                        {{else}}
+                                        ${( saving = Math.round((variants[(0)].compare_at_price - variants[(0)].price)*100/variants[(0)].compare_at_price) ),''}
+                                        {{if saving > 1}}
+                                        {% endraw %}
+                                        <span class="badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">Save ${saving}%</span>
+                                        {% raw %}
+                                        {{/if}}
+                                      {{/if}}
+                                    </div>
+                                    <div class="badge-wrap">
+                                    
+                                    
+                                         
+                                        <span class="smartwishlist" data-product="${id}" data-variant="${variants[0].id}"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>    
+                    </div>
+
+
+              
+            </div>
+      </div>
+      </script>
+      {% endraw %}
+
+   
+    <script> 
+    setTimeout(function(){
+  Shopify.Products.showRecentlyViewed( { howManyToShow: 8 } );
+},4000);
+  </script>
+  {% schema %}
+{
+  "name": "Recenty View",
+  "class": "spaced-section collection-grid-section",
+  "settings": [
+  ]
+}  {% endschema %}
