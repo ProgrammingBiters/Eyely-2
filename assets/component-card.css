@@ -363,6 +363,12 @@
     border-radius: 5px;
     line-height: 1;
     color: #fff;
+    white-space: nowrap;
+  }
+  @media (max-width: 480px){
+    .badge-wrap .tag-div .tag-wrap {
+      font-size: 12px;
+    }
   }
     .badge-wrap .smartwishlist{
     display : none;
