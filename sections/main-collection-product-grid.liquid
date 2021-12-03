@@ -12,10 +12,10 @@
 
 <div class="container">
   <div class="row my-3 mx-3">
-    <div class="col-6">
+    <div class="col-md-6 col-12">
       <h2> {{ collection.title }} </h2>
     </div>
-    <div class="col-6">
+    <div class="col-md-6 col-12 d-md-block d-none">
      
         <div class="facet-filters sorting caption">
           <div class="facet-filters__field">
@@ -132,7 +132,7 @@
                   <p><a href="{{ paginate.next.url }}" class="btn-show-more button-all m-auto">Load More</a></p>
                 </div>
               <div class="col-12 loader-div  text-center my-3">
-                <img src="{{ 'loader.gif' | asset_img_url : '100x100' }}" class="img-fluid" loading="lazy" height="100" width="150">
+                <img src="{{ 'loader.gif' | asset_img_url : '100x100' }}" class="img-fluid" loading="lazy" height="auto" width="150">
               </div>
                 {% endif %}
             </ul>

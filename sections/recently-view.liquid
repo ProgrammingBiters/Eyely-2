@@ -2,10 +2,10 @@
 
     
 
-  <div class="container my-3">
+<div class="container my-3">
     <div class="row">
         <div class="col-12">
-                <header class="section-header">
+                <header class="section-header my-3">
                     <h2 class="section-header__title border-bottom">Recently Viewed Products</h2>         
                 </header>  
         </div>
@@ -20,115 +20,227 @@
       
       <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
      
-      <div class="grid__item "  itemscope itemtype="http://schema.org/Product" >
-            <div id="product-${handle}" class="products">
-              
-                    <div class="card-wrapper">
-                        <div class="card-information">
-                            <div class="card-information__wrapper">
-                                <h3 class="card-information__text h5 title-${id}">
-                                    <a href="${url}" class="full-unstyled-link prd-link-${id}">
-                                        ${title}
-                                    </a>
-                                  </h3>
+          
+     
+<div class="grid__item "  itemscope itemtype="http://schema.org/Product" >
+    <div id="product-${handle}" class="products">            
+        <div class="card-wrapper">
+
+            <div class="card card--product card--outline-collection" tabindex="-1">
+                <a href="${url}" class="prd-img-link-${id}">
+                    <div class="card__inner">
+                        <div class="">
+                            <div id="prd-${id}" class="media media--transparent media--square  media--hover-effect" style="padding-bottom: 100%;">
+                                <img src="${Shopify.Products.resizeImage(images[1], "medium")}"  loading="lazy"
+                                    class="motion-reduce" />
                                 
-                                    <div class="reviews-div review-${id}" >
-                                         <div class="yotpo bottomLine"
-                                        data-product-id="${id}">
-                                    
-                                      </div>
-                                    </div>
-                                  
-                                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                        <div class="price price--on-sale">
-                                            {{if price_varies}}
-                                                <div>
-                                                    <div class="price__regular">
-                                                        <span class="price-item price-item--regular"> {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
-
-                                                        </span>
-                                                    </div>
-                                                    <div class="price__sale">
-                                                        <span class="price-item price-item--sale price-item--last">
-                                                        From {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
-                                                        </span>
-                                                        <span>
-                                                        <s class="price-item price-item--regular">  {{html Shopify.formatMoney(compare_at_price_min, window.money_format)}}</s>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            {{else}}
-                                                <div class="price__regular">
-                                                    <span class="price-item price-item--regular">
-                                                        {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
-
-                                                    </span>
-                                                </div>
+                                <img src="${Shopify.Products.resizeImage(images[0], "medium")}"  loading="lazy"
+                                    class="motion-reduce" />
+                                    ${( cn = 0 ),''}
+                                    ${( pid = id ),''}
+                                    {{each options}}
+                                    ${( option_name = name.toLowerCase() ),''}
+                                        {{if option_name == 'color' }}
+                                        ${( colorlist = ''),''}
+                                        {{each variants}}
+                                            ${( color = '' )}
+                                            ${( hasColor = '')}
+                                            {{if position == 1}}
+                                            ${( color = variants[($index)].option1 ),''}
                                             {{/if}}
-
-                                        </div>
-                                    </div>
-                                   
-      
+                                            {{if position == 2}}
+                                            ${( color = variants[($index)].option2 ),''}
+                                            {{/if}}
+                                            {{if position == 3}}
+                                            ${( color = variants[($index)].option3 ),''}
+                                            {{/if}}
+                                            {{if colorlist.indexOf(color) <= -1 }}
+                                            
+                                                    ${( colorlist = colorlist.concat(color).concat(' ') ),'' }
+                                                {{if variants[($index)].featured_image != null}}
+                                                    <img src="${Shopify.Products.resizeImage(variants[($index)].featured_image.src, "medium")}" class="v-img v-${variants[($index)].id}">                            			
+                                              		${( c = cn ),''}
+                                                    ${( cn = c + 1),''}
+                                             
+                                                    {{/if}}
+                                                    {{/if}}
+                                            
+                                        {{/each}}
+                                                
+                                        {{/if}}
+                                    {{/each}}   
                             </div>
                         </div>
-                        <div class="card card--product card--outline-collection" tabindex="-1">
-                            <a href="${url}" class="prd-img-link-${id}">
-                                <div class="card__inner">
-                                    <div class="">
-                                        <div id="prd-${id}" class="media media--transparent media--square  media--hover-effect" style="padding-bottom: 100%;">
-                                            <img src="${Shopify.Products.resizeImage(images[1], "medium")}"  loading="lazy"
-                                                class="motion-reduce" />
-                                            
-                                            <img src="${Shopify.Products.resizeImage(images[0], "medium")}"  loading="lazy"
-                                                class="motion-reduce" />
-                                                
-                                        </div>
-                                    </div>
-                                    <div class="badge-bottom">
-                                        {{if !available}}
-                                        {% endraw %}
-                                        <span class=" badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">
-                                        Sold out  
-                                        {% raw %}
-                                        </span>
-                                        {{else}}
-                                        ${( saving = Math.round((variants[(0)].compare_at_price - variants[(0)].price)*100/variants[(0)].compare_at_price) ),''}
-                                        {{if saving > 1}}
-                                        {% endraw %}
-                                        <span class="badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">Save ${saving}%</span>
-                                        {% raw %}
+                        <div class="badge-bottom">
+                            {{if !available}}
+                            {% endraw %}
+                            <span class=" badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">
+                            Sold out  
+                            {% raw %}
+                            </span>
+                            {{else}}
+                            ${( saving = Math.round((variants[(0)].compare_at_price - variants[(0)].price)*100/variants[(0)].compare_at_price) ),''}
+                            {{if saving > 1}}
+                            {% endraw %}
+                            <span class="badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">Save ${saving}%</span>
+                            {% raw %}
+                            {{/if}}
+                            {{/if}}
+                        </div>
+                        <div class="badge-wrap">
+                        	<div class="tag-div">
+                            ${(flag = 0 ),''}
+                               {{each tags}}
+        	                      {{if tags[($index)] == "Room_Outdoor" }}
+                                  {% endraw %}
+                                 <span class="tag-wrap color-{{ settings.sale_badge_color_scheme }}">INDOOR / OUTDOOR</span>
+        						{% raw %}
+                                {{/if}}
+                                {{if tags[($index)] == "light" }}
+                                 {{each options}}
+                                    ${( option_name = name.toLowerCase() ),''}
+                                        {{if option_name == 'size' || option_name == 'style' }}
+                                        ${( flag = 1 ),''}
                                         {{/if}}
-                                      {{/if}}
+                                  {{/each}}      
+                                  {{if flag == 1 }}
+                                 {% endraw %}
+                                 
+                  <span class="tag-wrap  color-{{ settings.sale_badge_color_scheme }}">More Style</span>
+              
+                                 {% raw %}
+                                 {{/if}}
+                                {{/if}}
+                               {{/each}}
+                            </div>   
+                            <span class="smartwishlist" data-product="${id}" data-variant="${variants[0].id}"></span>
+                        </div>
+                    </div>
+                </a>
+            </div> 
+
+            
+            <div class="card-information">
+                <div class="card-information__wrapper">
+                        <div class="collection-swathces">
+                            
+								
+
+                                    <div class="swatch-inner {{if cn <= 5 }} full {{/if}}  ${cn}"> 
+
+                                        {{each options}}
+                                        ${( option_name = name.toLowerCase() ),''}
+                                        {{if option_name == 'color' }}
+                                        ${( colorlist = ''),''}
+                                        {{each variants}}
+                                            ${( color = '' )}
+                                            ${( hasColor = '')}
+                                            {{if position == 1}}
+                                            ${( color = variants[($index)].option1 ),''}
+                                            {{/if}}
+                                            {{if position == 2}}
+                                            ${( color = variants[($index)].option2 ),''}
+                                            {{/if}}
+                                            {{if position == 3}}
+                                            ${( color = variants[($index)].option3 ),''}
+                                            {{/if}}
+                                            {{if colorlist.indexOf(color) <= -1 }}
+                                            
+                                                ${( colorlist = colorlist.concat(color).concat(' ') ),'' }
+                                                {{if variants[($index)].featured_image != null }}
+                                                        <button class="c-item {{if variants[($index)].available == false }}disabled-item  {{/if}}"   {{if variants[($index)].available == false }} disabled {{/if}}  data-p-id="${pid}" data-v-id="v-${variants[($index)].id}" data-img-url="${Shopify.Products.resizeImage(variants[($index)].featured_image.src, "medium")}" data-prd-url="${ variants[($index)].url }">
+                                                            <img data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="${color}" src="${Shopify.Products.resizeImage(variants[($index)].featured_image.src, "medium")}" alt="${color}" width="32" height="40" loading="lazy" />
+                                                        
+                                                        </button>
+                                                {{/if}}
+                                                            
+                                                    {{/if}}
+                                            
+                                            {{/each}}
+                                                    
+                                            {{/if}}
+                                        {{/each}}   
                                     </div>
-                                    <div class="badge-wrap">
-                                    
-                                    
-                                         
-                                        <span class="smartwishlist" data-product="${id}" data-variant="${variants[0].id}"></span>
+                            {{if cn > 5 }} <button class="more-color plus"  data-prd-id="${id}"><span class="pl">+</span><span class="mi">-</span></button> {{/if}}
+                            ${(cn = 0),''}
+                        </div>   
+                </div>
+
+                <h3 class="card-information__text h5 title-${id}">
+                    <a href="${url}" class="full-unstyled-link prd-link-${id}">
+                        ${title}
+                    </a>
+                </h3>
+                
+                    <div class="reviews-div review-${id}" >
+                        <div class="yotpo bottomLine"
+                        data-product-id="${id}">
+                    
+                        </div>
+                    </div>
+                
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="price price--on-sale">
+                            {{if price_varies}}
+                                <div>
+                                    <div class="price__regular">
+                                        <span class="price-item price-item--regular"> {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
+
+                                        </span>
+                                    </div>
+                                    <div class="price__sale">
+                                        <span class="price-item price-item--sale price-item--last">
+                                        From {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
+                                        </span>
+                                        <span>
+                                        <s class="price-item price-item--regular">  {{html Shopify.formatMoney(compare_at_price_min, window.money_format)}}</s>
+                                        </span>
                                     </div>
                                 </div>
-                            </a>
-                        </div>    
+                            {{else}}
+                            <div class="price__sale">
+                                <span class="price-item price-item--sale price-item--last">
+                                {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
+                                </span>
+                                <span>
+                                <s class="price-item price-item--regular">  {{html Shopify.formatMoney(compare_at_price_min, window.money_format)}}</s>
+                                </span>
+                            </div>
+                            {{/if}}
+
+                        </div>
                     </div>
+                    
 
-
-              
             </div>
-      </div>
+            
+        </div>            
+    </div>
+</div>
+     ${( cn = 0),''}
       </script>
       {% endraw %}
 
    
     <script> 
     setTimeout(function(){
-  Shopify.Products.showRecentlyViewed( { howManyToShow: 8 } );
-},4000);
+          $('.recently-viewed-products').hide();
+
+  Shopify.Products.showRecentlyViewed( { howManyToShow: 8,
+                                        onComplete: function() {
+                                          var recentlyViewBlock = $('.recently-viewed-products');
+                                          var recentlyGrid = recentlyViewBlock.find('#recently-viewed-products');
+                                          var productGrid = recentlyGrid.children();
+                                          if(productGrid.length) {
+                                            recentlyViewBlock.show();
+                                          }
+                                        } } );
+},3000);
   </script>
   {% schema %}
 {
   "name": "Recenty View",
-  "class": "spaced-section collection-grid-section",
+  "class": "spaced-section collection-grid-section recently-viewed-products",
   "settings": [
   ]
 }  {% endschema %}
