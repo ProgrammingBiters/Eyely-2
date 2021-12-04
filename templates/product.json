@@ -71,10 +71,16 @@
       "type": "product-recommendations",
       "settings": {
       }
+    },
+    "recently-view": {
+      "type": "recently-view",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "recently-view"
   ]
 }

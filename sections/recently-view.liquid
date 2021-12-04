@@ -1,8 +1,11 @@
 <script src="{{ 'recentyview.js' | asset_url }}" defer></script>
 
-    
-
-<div class="container my-3">
+    <style>
+        .recently-viewed-products{
+display:none;
+        }
+    </style>
+<div class="page-width my-3">
     <div class="row">
         <div class="col-12">
                 <header class="section-header my-3">
@@ -224,7 +227,7 @@
    
     <script> 
     setTimeout(function(){
-          $('.recently-viewed-products').hide();
+     
 
   Shopify.Products.showRecentlyViewed( { howManyToShow: 8,
                                         onComplete: function() {
