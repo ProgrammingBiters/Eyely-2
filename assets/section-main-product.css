@@ -815,4 +815,10 @@ display: none;
 }
 .product-form__input .quantity{
   background-color: #f6f6f6;
+  border-radius: 25px;
+}
+.product-form__input:focus-visible{
+  outline: 0px;
+  box-shadow: none !important;
+
 }
