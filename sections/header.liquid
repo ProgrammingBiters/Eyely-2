@@ -93,7 +93,7 @@
           <div id="menu-drawer" class="menu-drawer motion-reduce" tabindex="-1">
             <div class="menu-drawer__inner-container">
               <div class="menu-drawer__navigation-container">
-              {% include 'nav-bar' %}
+              {% render 'nav-bar' %}
                 <div class="menu-drawer__utility-links">
                   {%- if shop.customer_accounts_enabled -%}
                     <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5">
@@ -329,7 +329,7 @@
                         {% for block in section.blocks %}
                             {% if block.settings.txt == maintitle %}
                             <div class="col-3">
-                              <img class="w-100" src="{{ block.settings.img | img_url:'' }}">
+                              <img class="w-100" src="{{ block.settings.img | img_url : 'original' }}" height="{{ block.settings.img.height }}" width="{{ block.settings.img.width }}" loading="lazy">
                             </div>
                             {% endif %}
                       {% endfor %}
