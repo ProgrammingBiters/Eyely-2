@@ -346,6 +346,7 @@
                         {% for block in section.blocks %}
                             {% if block.settings.txt == maintitle %}
                             <div class="{{ block.settings.img_position }}">
+                            <div class="col-3">
                               <img class="w-100" src="{{ block.settings.img | img_url:'' }}">
                             </div>
                             {% endif %}

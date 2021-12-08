@@ -810,3 +810,34 @@ a.product__text {
   margin: 0;
   width: 2.2rem;
 }
+
+.product-form__input .quantity{
+  background-color: #f6f6f6;
+  border-radius: 25px;
+}
+.product-form__input:focus-visible{
+  outline: 0px;
+  box-shadow: none !important;
+
+}
+.color-label{
+  height: 64px;
+  width: 46px; 
+  border-radius: 0px !important;
+}
+.product-form__input input[type=radio]+label{
+  color : #4d4d4d;
+  border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.product-form__input input[type=radio]:checked+.color-label
+{
+  box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #818181;
+}
+.product-form__input input[type=radio]:checked+label
+{
+    color: #b23c18;
+    background-color: rgba(178,60,24,.06);
+    border-color: rgba(178,60,24,.06);
+  
+  }
