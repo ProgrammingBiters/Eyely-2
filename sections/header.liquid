@@ -345,7 +345,7 @@
                       <div class="row" data-demo="{{ maintitle }}">
                         {% for block in section.blocks %}
                             {% if block.settings.txt == maintitle %}
-                            <div class="col-3">
+                            <div class="{{ block.settings.img_position }}">
                               <img class="w-100" src="{{ block.settings.img | img_url:'' }}">
                             </div>
                             {% endif %}
