@@ -290,7 +290,7 @@
     
       <nav class="header__inline-menu">
         <ul class="list-menu list-menu--inline" role="list">
-          {%- for link in section.settings.menu.links -%}
+          {%- for link in section.settings.menu.links-%}
             <li>
               {%- assign maintitle = link.title -%}
               {%- if link.links != blank -%}
@@ -312,7 +312,7 @@
                                 {{ childlink.title | escape }}
                               </div>
                               <ul class="header__submenu list-menu motion-reduce">
-                                {%- for grandchildlink in childlink.links -%}
+                                {%- for grandchildlink in childlink.links limit: 12 -%}
                                   <li>
                                     <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
                                       <span {% if grandchildlink.title == "Shop By Size" %} style="font-weight:bold;" {% endif %}>{{ grandchildlink.title | escape }}</span>
@@ -323,6 +323,23 @@
                             </details>
                           {%- endif -%}
                         </li>
+                        {% assign flag = 0 %}
+                        {%- for grandchildlink in childlink.links offset: 12 limit: 10 -%}
+                          {% assign flag = 1 %}
+                        {% endfor %}
+                        {% if flag == 1 %}
+                        <li class="col-2">
+                          <ul class="header__submenu list-menu motion-reduce">
+                            {%- for grandchildlink in childlink.links offset: 12 limit: 10 -%}
+                              <li>
+                                <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                  <span {% if grandchildlink.title == "Shop By Size" %} style="font-weight:bold;" {% endif %}>{{ grandchildlink.title | escape }}</span>
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </li>
+                        {% endif %}
                       {%- endfor -%}
                       <li class="col-8">
                       <div class="row" data-demo="{{ maintitle }}">
@@ -709,6 +726,26 @@
         "type": "image_picker",
         "id": "img",
         "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "img_position",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Small"
+          },
+          {
+            "value": "col-3",
+            "label": "Medium"
+          },
+          {
+            "value": "col-4",
+            "label": "Large"
+          }
+        ],
+        "default": "col-3",
+        "label": "Medium"
       }
                 ]
     }
