@@ -8,6 +8,15 @@ $(document).ready(function(){
           $(".mobile_btn").fadeOut("slow");
         }
       });
+      
+      // $(".list-menu li").mouseenter(function(){
+      //   var test = $(this).find("details").attr("open","open");
+      // });
+      // $(".list-menu li").mouseout(function(){
+      //   $(this).find("details").attr();
+      //   console.log("Called!");
+      // });
+
       $(".more-color").click(function(e){
         e.preventDefault();
         $(this).parent().toggleClass("more-view");
