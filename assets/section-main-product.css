@@ -883,3 +883,47 @@ margin-right: 10px;
   display: block;
   margin-bottom: 6px;
 }
+.product__info-wrapper .upsell-addon-container {
+  font-size: 14px;
+}
+.product__info-wrapper .upsell-addon-container .upsell-addonbox {
+  position: relative;
+  padding: 6px!important;
+  box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #8181815c;
+  border-radius: 1px!important;
+  color: #000;
+}
+.product__info-wrapper .upsell-addon-container .upsell-addonbox-col2 .product-single__title {
+  line-clamp: 3;
+  overflow: hidden;
+  display: -webkit-box!important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.product__info-wrapper .upsell-addon-container  .upsell-variant-options select {
+  padding: 4px!important;
+  border: 1px solid #ddd!important;
+  border-radius: 3px;
+}
+.product__info-wrapper .upsell-addon-container  .upsell-variant-options select:focus-visible{
+  box-shadow: none;
+  outline: 0px;
+}
+.product__info-wrapper .upsell-addon-container  .upsell-addonbox-col3 .upsell-price {
+  font-weight: 800;
+  color: #000;
+}
+.product__info-wrapper .upsell-addon-container button{
+    background: #2f2f2f!important;
+    border: none!important;
+    border-radius: 24px!important;
+    color: #fff!important;
+    margin-top: 1rem;
+  }
+  .product__info-wrapper .upsell-addon-container .upsell-addon-img {
+    border-radius: 10px;    
+    height: 50px;
+}
+.upsell-addonbox:hover {
+  box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #818181;
+}
