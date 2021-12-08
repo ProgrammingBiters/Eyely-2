@@ -2209,19 +2209,21 @@ details[open] > .header__icon--menu .icon-hamburger {
 }
 
 .header__menu-item {
-  padding: 1.4rem;
+  padding: 1rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 1);
   font-size: 17px;
 }
 
-.header__menu-item:hover a{
+.list-menu>li:hover>a,.header__menu-item:hover a{
   /* color: rgb(var(--color-foreground)); */
   color: #b23c18;
 }
-.header__menu-item a:hover, .header__menu-item a{
+.header__menu-item a{
   text-decoration: none;
-  color: rgba(var(--color-foreground), 1);
+  color: #484848;
+  /* color: rgba(var(--color-foreground), 1); */
+
 }
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
@@ -2271,9 +2273,9 @@ details[open] > .header__icon--menu .icon-hamburger {
   font-weight: normal;
 }
 
-.header__submenu .header__submenu .header__menu-item {
-  /* padding-left: 3rem; */
-}
+/* .header__submenu .header__submenu .header__menu-item {
+  padding-left: 3rem;
+} */
 
 .header__menu-item .icon-caret {
   right: 0.8rem;
