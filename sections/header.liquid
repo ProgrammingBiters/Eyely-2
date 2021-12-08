@@ -315,7 +315,7 @@
                                 {%- for grandchildlink in childlink.links -%}
                                   <li>
                                     <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
-                                      <span>{{ grandchildlink.title | escape }}</span>
+                                      <span {% if grandchildlink.title == "Shop By Size" %} style="font-weight:bold;" {% endif %}>{{ grandchildlink.title | escape }}</span>
                                     </a>
                                   </li>
                                 {%- endfor -%}
