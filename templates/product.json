@@ -47,7 +47,11 @@
       "settings": {
         "enable_sticky_info": false,
         "hide_variants": false,
-        "enable_video_looping": false
+        "enable_video_looping": false,
+        "moneyback_title": "30 Days Money Back Guarantee.  Easy Returns.",
+        "moneyback_title_sale": "This is a FINAL SALE item. No returns.",
+        "icon_image_moneyback": "shopify:\/\/shop_images\/money-back-guarantee.png",
+        "moneyback_content": "Within 30 days, if you are not completely satisfied, items may be returned for any reason. (We will not refund shipping cost, unless items are defective or damaged.)"
       }
     },
     "product-recommendations": {
