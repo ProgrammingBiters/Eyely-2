@@ -154,11 +154,22 @@
               {%- endform -%}
             </div>
           {%- when 'description' -%}
+            {% if product.metafields.global.Glance_Icons != blank %}
+              <div class="icon_sec">
+                <div class="icon-section">
+                  <p class="title-icon-sec">At a Glance</p>
+                  <div class="icon_inner">
+                    {{ product.metafields.global.Glance_Icons }}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
             {%- if product.description != blank -%}
               <div class="product__description rte">
                 {{ product.description }}
               </div>
             {%- endif -%}
+            
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
           {%- when 'collapsible_tab' -%}
@@ -369,30 +380,50 @@
 
                 {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
-                  <div class="product-form__buttons">
-                    <button
-                      type="submit"
-                      name="add"
-                      class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
-                    {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                    >
-                        <span>
-                          {%- if product.selected_or_first_available_variant.available -%}
-                            {{ 'products.product.add_to_cart' | t }}
-                          {%- else -%}
-                            {{ 'products.product.sold_out' | t }}
-                          {%- endif -%}
-                        </span>
-                        <div class="loading-overlay__spinner hidden">
-                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                          </svg>
-                        </div>
-                    </button>
-                    {%- if block.settings.show_dynamic_checkout -%}
-                      {{ form | payment_button }}
-                    {%- endif -%}
-                  </div>
+                  <div class="row m-auto align-items-center main-button-wrap">
+                    <div class="w-90">
+                      <div class="product-form__buttons">
+                        <button
+                          type="submit"
+                          name="add"
+                          class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                        {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                        >
+                            <span>
+                              {%- if product.selected_or_first_available_variant.available -%}
+                                {{ 'products.product.add_to_cart' | t }}
+                              {%- else -%}
+                                {{ 'products.product.sold_out' | t }}
+                              {%- endif -%}
+                            </span>
+                            <div class="loading-overlay__spinner hidden">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                              </svg>
+                            </div>
+                        </button>
+                      
+                      </div>
+                    </div>
+                    <div class="w-10 px-0">
+                      <div id="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></div>
+                    </div>
+                </div>
+                  {%- if block.settings.show_dynamic_checkout -%}
+                    {{ form | payment_button }}
+                  {%- endif -%}
+                    {% assign show_sale = 0 %}
+                    {% for tag in product.tags %}
+                      {% if tag == "Offers_Final Sale" %}{% assign show_sale = 1 %}{% endif %}
+                    {% endfor %}
+                    {% if show_sale == 1 %}
+                    <div class="money-back my-2">{{section.settings.moneyback_title_sale}} <a href="/pages/easy-returns" class="final_sale">See Details</a></div>
+                    {% else %}
+                    <div class="money-back my-2">{{section.settings.moneyback_title}} <span class="see-details">See Details</span></div>
+                    {% endif %}
+                    {% if show_sale == 1 %}
+                      <input type="hidden" value="FINAL SALE" name="properties[SALE]">
+                    {% endif %}
                 {%- endform -%}
               </product-form>
 
@@ -419,7 +450,7 @@
             </div>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
-          {%- when 'rating' -%}
+            {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid
                assign rating_decimal = 0
@@ -443,6 +474,20 @@
             {%- endif -%}
           {%- endcase -%}
         {%- endfor -%}
+
+          {% if section.settings.moneyback_content != blank  and show_sale == 0 %}
+            <div class="moneyback-main row m-auto " id="moneyback-content">
+              <div class="col-3">
+                <img src="{{ section.settings.icon_image_moneyback | img_url : '200x200' }}" class="img-fluid" height="{{ section.settings.icon_image_moneyback.height }}" width="{{ section.settings.icon_image_moneyback.width }}" loading="lazy">
+              </div>
+              <div class="moneyback-text ml-2 col-9">{{section.settings.moneyback_content}}</div>
+            </div>
+          {% endif %}
+          {% if product.metafields.global.product_video != blank %}
+          <div class="video_sec">
+             {{ product.metafields.global.product_video }}
+          </div>
+          {% endif %}
       </div>
     </div>
   </div>
@@ -905,6 +950,32 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type" : "header",
+      "content" : "Moneyback Statement"
+    },
+    {
+        "type" : "text",
+        "label" : "Moneyback Title",
+        "id" : "moneyback_title",
+        "default" : "30 Days Money Back Guarantee. Easy Returns."
+    },
+    {
+      "type" : "text",
+      "label" : "Moneyback Title Sale",
+      "id" : "moneyback_title_sale",
+      "default" : "This is a FINAL SALE item.No returns.  "
+    },
+    {
+      "type" : "image_picker",
+      "id" : "icon_image_moneyback",
+      "label" : "Icon Image Moneyback"
+    },
+    {
+      "type" : "textarea",
+      "id" : "moneyback_content",
+      "label" : "Moneyback Content"
     }
   ]
 }

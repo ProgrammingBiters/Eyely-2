@@ -226,6 +226,7 @@ fieldset.product-form__input .form__label {
 
 .product-form__submit {
   margin-bottom: 1rem;
+  border-radius: 20px;
 }
 
 .no-js .product-form__submit.button--secondary {
@@ -263,7 +264,7 @@ fieldset.product-form__input .form__label {
 
 .product__info-container .product-form,
 .product__info-container .product__description {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .product__text {
@@ -926,4 +927,91 @@ margin-right: 10px;
 }
 .upsell-addonbox:hover {
   box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #818181;
+}
+.money-back,.moneyback-main,.product__description{
+color : #212529;
+font-size: 15px;
+}
+.product__description .panel{
+display: none;
+}
+.product__description .tab-detail{
+    border: 0;
+    padding: 10px 15px;
+    margin: 15px 0!important;
+    border-radius: 24px;
+    position: relative;
+    cursor: pointer;
+  }
+  .product__description .tab-detail:before {
+    content: "\f107";
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(0,-50%);
+    transition: .5s;
+}
+.product__description  .tab-detail.active:before {
+  transform: translate(0,-50%) rotate(-180deg);
+}
+.product-description .tab-detail p strong {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.final_sale,.see-details {
+  color: #b23c18;
+  cursor: pointer;
+}
+.title-icon-sec {
+  font-weight: 500;
+  padding-left: 15px;
+  font-size: 13px;
+  margin-top: 15px; 
+  color: #212529;
+}
+.icon_inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.icon_inner .icon_box {
+  width: calc(100% / 4 - 10px);
+  text-align: center;
+  margin: 0 5px;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px){
+.icon_inner .icon_box {
+    width: calc(100% / 3 - 10px);
+    text-align: center;
+}
+}
+.icon_inner .icon_box img {
+  height: 70px;
+  width: 70px;
+}
+.icon_inner .icon_box p {
+  font-size: 12px;
+  margin: 5px 0;    
+  color: #212529;
+}
+.w-90{
+  width: 89%;
+}
+.w-10{
+  width: 11%;
+  margin-bottom: 1rem;
+  border: 1px solid;
+  border-radius: 50%;  
+
+}
+.w-10 #bookmarkit{
+  padding:7px !important;
+  display: block;
+    position: relative;
+    height: auto;  
+    font-size: 20px;
 }

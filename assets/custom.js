@@ -8,7 +8,17 @@ $(document).ready(function(){
           $(".mobile_btn").fadeOut("slow");
         }
       });
-      
+      $(".tab-detail").click(function(){
+        $(this).toggleClass("active");
+        $(this).next().slideToggle();
+      });
+      $(".see-details").click(function(){
+        $('html, body').animate({
+          scrollTop: $("#moneyback-content").offset().top
+      }, 2000);
+ 
+
+      });
       // $(".list-menu li").mouseenter(function(){
       //   var test = $(this).find("details").attr("open","open");
       // });

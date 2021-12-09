@@ -6,3 +6,5 @@ ContentForHeaderModification:
   enabled: false
 RequiredLayoutThemeObject:
   enabled: false
+RemoteAsset:
+  enabled: false
