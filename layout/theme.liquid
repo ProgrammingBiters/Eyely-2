@@ -31,7 +31,9 @@
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
-    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }} 
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'slick-theme.min.css' | asset_url | stylesheet_tag }}
    {% comment %}
     --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         
@@ -207,7 +209,8 @@
     <script type="text/javascript">
       (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/KMU4LQfIjYOweMDjz6sU6072Z016GTQeww3apglh/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
     </script>
-
+    <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script> 
+    
  
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script> 
     <script src="{{ 'lazysizes.js' | asset_url }}" async></script>

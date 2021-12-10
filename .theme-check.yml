@@ -8,3 +8,7 @@ RequiredLayoutThemeObject:
   enabled: false
 RemoteAsset:
   enabled: false
+ParserBlockingScriptTag:
+  enabled: false
+AssetUrlFilters:
+  enabled: false

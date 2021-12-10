@@ -1015,3 +1015,90 @@ display: none;
     height: auto;  
     font-size: 20px;
 }
+.product-nav .pro-nav-ul li img {
+    border: 2px solid;
+    border-color: #fff;
+}
+.product-nav .pro-nav-ul{
+  padding: 30px 0px;
+  position: relative;
+}
+@media (max-width:767px){
+  .product-nav .pro-nav-ul{  
+    padding: 0px !important;
+    margin-bottom: 15px !important;
+  }
+}
+.product-nav .pro-nav-ul li{
+  margin-bottom: 5px!important;
+}
+.pro-nav-ul img {
+  margin: auto;
+}
+.product-nav .pro-nav-ul .slick-current img {
+  border-color: #000;
+}
+.product-nav .slick-arrow:before{
+content:"";
+display: none;
+}
+.product-nav .slick-arrow{
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+  left:50% !important;
+  transform: translate(-50%,0%) !important;
+  color: #000;
+}
+.product-nav .slick-arrow.slick-prev{
+  top: 0px !important;  
+  bottom: auto !important;
+}
+.product-nav .slick-arrow.slick-next{
+  top: auto !important;
+  bottom: 0px !important;
+}
+@media (max-width:767px){
+  .product-nav .pro-nav-ul li{
+    margin-bottom: 0px !important;
+  }
+  .product-nav .slick-arrow{
+    top:50% !important;
+    transform: translate(0%,-50%) !important;
+  }
+  .product-nav .slick-arrow.slick-prev{
+    top:50% !important;
+    left: -15px !important;  
+    right: auto !important;
+  }
+  .product-nav .slick-arrow.slick-next{
+    top:50% !important;
+    left: auto !important;
+    right: -15px !important;
+  }
+}
+@media (max-width:360px){
+  .product-nav img{
+    width: 60px;
+    height: auto;
+    max-height: 60px;
+  }
+
+}
+.yotpo-display-wrapper .yotpo-label.yotpo-small-box,.yotpo .yotpo-logo-link-new,.write-review-button{
+display: none !important;
+
+}
+.yotpo-display-wrapper .yotpo-regular-box{
+  border:0px
+}
+.yotpo-review-wrapper ,.yotpo-review{
+  color : #000 !important;
+}
+.reviews-desktop{
+  margin-top: 15px;
+}
+.yotpo  span,.yotpo .yotpo-review .yotpo-header .yotpo-header-element .y-label, .yotpo .yotpo-review .yotpo-header .yotpo-header-element .y-label.yotpo-review-date,.yotpo div,.yotpo-nav-wrapper span{
+  font-size: 18px !important;
+  line-height: 25px;
+}
