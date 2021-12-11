@@ -6,10 +6,12 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
-
+{{ 'photoswipe.min.css' | asset_url | stylesheet_tag }}
+{{ 'default-skin.min.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
-
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+<script src="{{ 'photoswipe-ui-default.min.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {% comment %}
@@ -36,11 +38,11 @@
           </div>
         </div>
         <div class="col-xl-10 col-lg-10 col-md-9 col-12 order-md-2 order-1 px-md-1 px-0">             
-          <div class="product-slider mb-0">
+          <div class="product-slider mb-0 gallery">
             {% for image in product.images %}
               <div class="text-center img_box" >
                 <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                  <a href="{{ image | img_url : 'original' }}" class="slide-link"  data-width="1000" data-height="900" itemprop="contentUrl">
+                  <a href="{{ image | img_url : 'original' }}" class="slide-link open-galley"  data-width="1000" data-height="900" itemprop="contentUrl">
                     <div class="img_wrap">
                   
 
@@ -54,7 +56,12 @@
 
                     </div>
                   </a>
+                  <button  class="product-gallery--expand  clicktozoom d-md-block d-none" data-gallery-expand aria-haspopup="true">
+                    <span class="click-text" tabindex="-1">
+                      {% render 'icon-zoom' %} Click to exapnd 
+                    </span>
                     
+                  </button>
                 </figure>
 
               </div>
@@ -63,6 +70,7 @@
         </div>
       </div>
       <div class="row">
+      
         <div class="col-12 d-md-block d-none">
           <div class="reviews-desktop">
             {% render 'yopto-reviews' %}
@@ -539,6 +547,18 @@
       </div>
     </div>
   </div>
+  <div class="row">
+   
+      <div class="col-12 my-2">
+        {% render 'cevoid_gallery', gallery: 'g-5T5hePq7Mt67DlZogbdWX', productId: product.id %}
+      </div>
+ 
+    <div class="col-12 d-md-none d-block">
+      <div class="reviews-mobile">
+        {% render 'yopto-reviews' %}
+      </div>
+    </div>
+  </div>
 {% comment %}
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
@@ -581,6 +601,53 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+      <!-- Container that holds slides. 
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <!--  Controls are self-explanatory. Order can be changed. -->
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center text-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 {% render 'upsell-addons-app-product-page' %}
 {% javascript %}
@@ -650,7 +717,81 @@
 
   <script src="{{ 'product-model.js' | asset_url }}" defer></script>
 {%- endif -%}
+<script>
 
+
+  setTimeout(function(){
+    
+    $(document).ready(function(){
+
+    // Init empty gallery array
+    let galleryArray = [];
+  
+    // Loop over gallery items and push it to the array
+    $('.gallery').find('figure').each(function() {
+      var $link = $(this).find('a'),
+        item = {
+          src: $link.attr('href'),
+          w: $link.data('width'),
+          h: $link.data('height'),
+        };
+      galleryArray.push(item);
+    });
+    
+    console.log(galleryArray);
+   
+    // Define click event on gallery item
+    $('.open-galley').click(function(event) {
+      // Prevent location change
+      event.preventDefault();
+      if($(window).width() > 767 ){
+      // Define object and gallery options
+      var $pswp = $('.pswp')[0],
+        options = {
+          index: $(this).parent('figure').index(),
+          bgOpacity: 0.7,
+          showHideOpacity: true
+        };
+      
+      // Initialize PhotoSwipe
+      var gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, galleryArray, options);
+      gallery.init();
+    }
+    });
+
+  
+    $(".clicktozoom").click(function(event){
+      event.preventDefault();
+     console.log($(window).width());
+   if($(window).width() > 767 ){
+   // Prevent location change
+ 
+var $pswp = $('.pswp')[0],
+     options = {
+       index: $(".product-slider .slick-active").data("slick-index"),
+       bgOpacity: 1,
+       captionEl: false,
+       tapToClose: true,
+       shareEl: false,
+       fullscreenEl: false,
+       closeOnScroll :true
+     };
+
+   // Initialize PhotoSwipe
+ gallery= new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
+
+    gallery.init();
+   }
+   });
+
+
+  });
+    },4000);
+
+
+
+
+</script>
 <script type="application/ld+json">
   {
     "@context": "http://schema.org/",
