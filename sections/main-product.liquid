@@ -70,6 +70,7 @@
         </div>
       </div>
       <div class="row">
+      
         <div class="col-12 d-md-block d-none">
           <div class="reviews-desktop">
             {% render 'yopto-reviews' %}
@@ -547,6 +548,11 @@
     </div>
   </div>
   <div class="row">
+   
+      <div class="col-12 my-2">
+        {% render 'cevoid_gallery', gallery: 'g-5T5hePq7Mt67DlZogbdWX', productId: product.id %}
+      </div>
+ 
     <div class="col-12 d-md-none d-block">
       <div class="reviews-mobile">
         {% render 'yopto-reviews' %}
@@ -733,12 +739,12 @@
     });
     
     console.log(galleryArray);
-    
+   
     // Define click event on gallery item
     $('.open-galley').click(function(event) {
       // Prevent location change
       event.preventDefault();
-  
+      if($(window).width() > 767 ){
       // Define object and gallery options
       var $pswp = $('.pswp')[0],
         options = {
@@ -750,7 +756,9 @@
       // Initialize PhotoSwipe
       var gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, galleryArray, options);
       gallery.init();
+    }
     });
+
   
     $(".clicktozoom").click(function(event){
       event.preventDefault();
