@@ -2442,3 +2442,13 @@ background-color: #f9efed;
     display: none;
   }
 }
+.icon-account, .icon-wishlist {
+    display: inline-block;
+    padding: 10px;
+    color: #484848;
+    position: relative;
+}
+.header.page-width{
+  max-width: 1630px;
+padding: 0px 15px ;
+}

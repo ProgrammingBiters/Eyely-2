@@ -39,6 +39,7 @@
   .list-menu--inline {
     display: inline-flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   summary.list-menu__item {
@@ -295,7 +296,7 @@
               {%- assign maintitle = link.title -%}
               {%- if link.links != blank -%}
                     <div class="header__menu-item list-menu__item link focus-inset">
-                      <a href="{{ link.url }}"><span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                      <a href="{{ link.url }}"><span {%- if link.child_active %} class="header__active-menu-item"{% endif %} >{{ link.title | escape }}</span>
                       {% render 'icon-caret' %}
                     </a>
                   </div>
@@ -338,7 +339,7 @@
                     </div>
                     </ul>
               {%- else -%}
-                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} style="{% if link.title  contains 'Warehouse' %} color:#b23c18;{% endif %}">
                   <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                 </a>
               {%- endif -%}
@@ -350,6 +351,10 @@
     {%- endif -%}
 
     <div class="header__icons">
+      <a href="/a/wishlist" class="swym-wishlist icon-wishlist">
+        <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/favorites.png?v=1630070978" loading="lazy" height="26" width="28">   
+      </a> 
+      {% comment %}
       <details-modal class="header__search">
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
@@ -422,30 +427,23 @@
           </div>
         </details>
       </details-modal>
-
+    {% endcomment %}
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-          {% render 'icon-account' %}
-          <span class="visually-hidden">
-            {%- liquid
-              if customer
-                echo 'customer.account_fallback' | t
-              else
-                echo 'customer.log_in' | t
-              endif
-            -%}
-          </span>
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %} icon-account">
+          <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/login.png?v=1630070978" loading="lazy" height="26" width="28">
         </a>
       {%- endif -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-        {%- liquid
+       {% comment %} {%- liquid
           if cart == empty
             render 'icon-cart-empty'
           else
             render 'icon-cart'
           endif
         -%}
+       {% endcomment %}
+       <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/cart.png?v=1630070978"  loading="lazy" height="26" width="28">
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
