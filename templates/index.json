@@ -3,8 +3,8 @@
     "16346258161ef8d1b8": {
       "type": "index-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/fall_sale_1_1800x700_a3db6364-1204-4edb-9747-0cbf47bd273b.png",
-        "image_2": "shopify:\/\/shop_images\/fall_sale_1_800x800_879d4f26-3c88-4b27-b718-236881cf2d23.png",
+        "image": "shopify:\/\/shop_images\/extended_1800x700_bd9ae957-c4fc-4fe5-add9-3bde33f083c7.png",
+        "image_2": "shopify:\/\/shop_images\/extended_800x800_2df366ea-abf0-4cb4-ac7f-81b6be38e59f.png",
         "featured_link": "shopify:\/\/collections\/new-arrivals"
       }
     },
@@ -105,8 +105,8 @@
       "type": "index-new-arrival",
       "settings": {
         "enable-section": true,
-        "arrival-banner-img": "shopify:\/\/shop_images\/new_arrivals_banner.png",
-        "mob-arrival-banner-img": "shopify:\/\/shop_images\/eyee.png",
+        "arrival-banner-img": "shopify:\/\/shop_images\/newarrivals_banner.png",
+        "mob-arrival-banner-img": "shopify:\/\/shop_images\/new-arrival.png",
         "link": "shopify:\/\/collections\/new-arrivals"
       }
     },
