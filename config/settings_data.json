@@ -32,6 +32,46 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "1e10c23d-75a1-411e-b3ff-03aa865e7131": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Rugs",
+              "size": "col-2",
+              "linklists": "shop-by-style-rugs"
+            }
+          },
+          "37e87a41-455f-400c-b8c4-c987a64ec3eb": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Rugs",
+              "size": "col-2",
+              "linklists": "shop-by-shape-rugs"
+            }
+          },
+          "d4f632a3-84d0-40fa-b32e-02f37994c26c": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Chandeliers",
+              "size": "col-4",
+              "linklists": "shop-by-style-chandeliers"
+            }
+          },
+          "74880bba-ba24-4ff2-9394-c7daee6b45cb": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Chandeliers",
+              "size": "col-2",
+              "linklists": "shop-by-style-chandeliers-2"
+            }
+          }
+        },
+        "block_order": [
+          "1e10c23d-75a1-411e-b3ff-03aa865e7131",
+          "37e87a41-455f-400c-b8c4-c987a64ec3eb",
+          "d4f632a3-84d0-40fa-b32e-02f37994c26c",
+          "74880bba-ba24-4ff2-9394-c7daee6b45cb"
+        ],
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify:\/\/shop_images\/eyely-logo-png-shopify.png",
