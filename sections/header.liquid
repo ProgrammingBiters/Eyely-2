@@ -293,15 +293,93 @@
         <ul class="list-menu list-menu--inline" role="list">
           {%- for link in section.settings.menu.links -%}
             <li>
+              {% comment %}
               {%- assign maintitle = link.title -%}
               {%- if link.links != blank -%}
                     <div class="header__menu-item list-menu__item link focus-inset">
                       <a href="{{ link.url }}"><span {%- if link.child_active %} class="header__active-menu-item"{% endif %} >{{ link.title | escape }}</span>
-                      {% render 'icon-caret' %}
-                    </a>
-                  </div>
+                        {% render 'icon-caret' %}
+                      </a>
+                    </div>
                     <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
-                    <div class="row">
+                      <div class="row">
+                        {%- for childlink in link.links -%}
+                          <li class="col-2">
+                            {%- if childlink.links == blank -%}
+                              <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                {{ childlink.title | escape }}
+                              </a>
+                            {%- else -%}
+                                <div class="header__menu-item link link--text list-menu__item focus-inset caption-large">
+                                  {{ childlink.title | escape }}
+                                </div>
+                                <ul class="header__submenu list-menu motion-reduce">
+                                  {%- for grandchildlink in childlink.links -%}
+                                    <li>
+                                      <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                        <span {% if grandchildlink.title == "Shop By Size" %} style="font-weight:bold;" {% endif %}>{{ grandchildlink.title | escape }}</span>
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                            {%- endif -%}
+                          </li>
+                        {%- endfor -%}
+                        <li class="col-8">
+                          <div class="row" data-demo="{{ maintitle }}">
+                            {% for block in section.blocks %}
+                                {% if block.settings.txt == maintitle %}
+                                  <div class="col-3">
+                                    <img class="w-100" src="{{ block.settings.img | img_url : 'original' }}" height="{{ block.settings.img.height }}" width="{{ block.settings.img.width }}" loading="lazy">
+                                  </div>
+                                {% endif %}
+                            {% endfor %}
+                          </div>
+                        </li>
+                      </div>
+                    </ul>
+              {%- else -%}
+                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} style="{% if link.title  contains 'Warehouse' %} color:#b23c18;{% endif %}">
+                  <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                </a>
+              {%- endif -%}
+            {% endcomment %}
+              {%- assign maintitle = link.title -%}
+              {%- if link.links != blank -%}
+                <div class="header__menu-item list-menu__item link focus-inset">
+                  <a href="{{ link.url }}"><span {%- if link.child_active %} class="header__active-menu-item"{% endif %} >{{ link.title | escape }}</span>
+                    {% render 'icon-caret' %}
+                  </a>
+                </div>
+                <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
+                  <div class="row">
+                    {% for block in section.blocks %}
+                      {% if block.type == "menu-links" and link.title == block.settings.txt %}
+                        <div class="{{block.settings.size}} {% if block.settings.linklists contains '2' %} mt-4 {% endif %}">
+                          {%- for clink in block.settings.linklists.links -%}
+                            {%- if clink.links == blank -%}
+                              <a href="{{ clink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if clink.current %} list-menu__item--active{% endif %} " {% if clink.current %} aria-current="page"{% endif %}>
+                               <span> {{ clink.title | escape }}</span>
+                              </a>
+                            {%- else -%}
+                                <div class="header__menu-item link link--text list-menu__item focus-inset caption-large">
+                                  {{ clink.title | escape }}
+                                </div>
+                                <ul class="header__submenu list-menu motion-reduce">
+                                  {%- for grandchildlink in clink.links -%}
+                                    <li>
+                                      <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                        <span {% if grandchildlink.title == "Shop By Size" %} style="font-weight:bold;" {% endif %}>{{ grandchildlink.title | escape }}</span>
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                            {%- endif -%}
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                    {% comment %}
                       {%- for childlink in link.links -%}
                         <li class="col-2">
                           {%- if childlink.links == blank -%}
@@ -321,23 +399,23 @@
                                   </li>
                                 {%- endfor -%}
                               </ul>
-                            </details>
                           {%- endif -%}
                         </li>
                       {%- endfor -%}
-                      <li class="col-8">
+                    {% endcomment %}
+                    <li class="col">
                       <div class="row" data-demo="{{ maintitle }}">
                         {% for block in section.blocks %}
-                            {% if block.settings.txt == maintitle %}
-                            <div class="col-3">
-                              <img class="w-100" src="{{ block.settings.img | img_url : 'original' }}" height="{{ block.settings.img.height }}" width="{{ block.settings.img.width }}" loading="lazy">
-                            </div>
+                            {% if block.settings.txt == maintitle  and block.type == "menu" %}
+                              <div class="col-3">
+                                <img class="w-100" src="{{ block.settings.img | img_url : 'original' }}" height="{{ block.settings.img.height }}" width="{{ block.settings.img.width }}" loading="lazy">
+                              </div>
                             {% endif %}
-                      {% endfor %}
+                        {% endfor %}
+                      </div>
+                    </li>
                   </div>
-                      </li>
-                    </div>
-                    </ul>
+                </ul>
               {%- else -%}
                 <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} style="{% if link.title  contains 'Warehouse' %} color:#b23c18;{% endif %}">
                   <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
@@ -696,7 +774,7 @@
 "blocks": [
   {
     "type": "menu",
-    "name": "megamenu",
+    "name": "Megamenu Image",
     "settings": [
       {
         "type": "text",
@@ -704,12 +782,68 @@
         "label": "Handle"
       },
       {
+        "id" : "size",
+        "label" : "Size",
+        "type": "select", 
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
         "type": "image_picker",
         "id": "img",
         "label": "Image"
       }
-                ]
-    }
+    ]
+    },
+    {
+      "type": "menu-links",
+      "name": "Megamenu Linklist",
+      "settings": [
+        {
+          "type": "text",
+          "id": "txt",
+          "label": "Handle"
+        },
+        {
+          "id" : "size",
+          "label" : "Size",
+          "type": "select", 
+          "options": [
+            {
+              "value": "col-2",
+              "label": "Col 2"
+            },
+            {
+              "value": "col-4",
+              "label": "Col 4"
+            },
+            {
+              "value": "col-6",
+              "label": "Col 6"
+            }
+          ],
+          "default": "col-2"
+        },
+        {
+          "type": "link_list",
+          "id": "linklists",
+          "label": "Link Lists"
+        }
+      ]
+      }
   ]
 }
 {% endschema %}
