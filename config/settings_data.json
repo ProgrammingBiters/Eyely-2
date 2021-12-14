@@ -53,7 +53,7 @@
             "type": "menu-links",
             "settings": {
               "txt": "Chandeliers",
-              "size": "col-4",
+              "size": "col-3",
               "linklists": "shop-by-style-chandeliers"
             }
           },
@@ -61,7 +61,7 @@
             "type": "menu-links",
             "settings": {
               "txt": "Chandeliers",
-              "size": "col-2",
+              "size": "col-3",
               "linklists": "shop-by-style-chandeliers-2"
             }
           },
@@ -88,6 +88,54 @@
               "size": "col-2",
               "linklists": "shop-by-style-chandeliers-3"
             }
+          },
+          "e07ea082-c2e2-4db3-b9ce-54fd66c98a05": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Table Lamps",
+              "size": "col-3",
+              "linklists": "shop-by-style-table-lamps"
+            }
+          },
+          "9099059a-cfdd-44d9-94a1-f1b94caaf3b6": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Table Lamps",
+              "size": "col-2",
+              "linklists": "shop-by-style-table-lamps-2"
+            }
+          },
+          "acb56919-9c0d-4579-ace1-12c1339dc039": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Floor Lamps",
+              "size": "col-3",
+              "linklists": "shop-by-style-floor-lamps"
+            }
+          },
+          "a74171b7-e11b-4a96-a743-93c64f3cf3e9": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Floor Lamps",
+              "size": "col-3",
+              "linklists": "shop-by-style-floor-lamps-2"
+            }
+          },
+          "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Wall Lights",
+              "size": "col-3",
+              "linklists": "shop-by-style-wall-lights"
+            }
+          },
+          "de223b70-9acf-452e-ad48-66cc7e0a0982": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Wall Lights",
+              "size": "col-3",
+              "linklists": "shop-by-style-wall-lights-2"
+            }
           }
         },
         "block_order": [
@@ -97,7 +145,13 @@
           "74880bba-ba24-4ff2-9394-c7daee6b45cb",
           "ce0b241b-385a-43a8-b617-b074c66b09ee",
           "3b0ba8dc-cfeb-4c7d-98a1-465ba42a2c14",
-          "f42c210f-e205-4d6c-b6c3-3e4f476592d4"
+          "f42c210f-e205-4d6c-b6c3-3e4f476592d4",
+          "e07ea082-c2e2-4db3-b9ce-54fd66c98a05",
+          "9099059a-cfdd-44d9-94a1-f1b94caaf3b6",
+          "acb56919-9c0d-4579-ace1-12c1339dc039",
+          "a74171b7-e11b-4a96-a743-93c64f3cf3e9",
+          "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c",
+          "de223b70-9acf-452e-ad48-66cc7e0a0982"
         ],
         "settings": {
           "color_scheme": "background-1",
