@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-
 <noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
@@ -35,17 +34,14 @@
     padding: 0;
     margin: 0;
   }
-
   .list-menu--inline {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
   summary.list-menu__item {
     padding-right: 2.7rem;
   }
-
   .list-menu__item {
     display: flex;
     align-items: center;
@@ -352,10 +348,11 @@
                   </a>
                 </div>
                 <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
+                 <div class="sub-wrapper">
                   <div class="row">
                     {% for block in section.blocks %}
                       {% if block.type == "menu-links" and link.title == block.settings.txt %}
-                        <div class="{{block.settings.size}} {% if block.settings.linklists contains '2' or  block.settings.linklists contains '3' %} mt-5 {% endif %}">
+                        <div class="{{block.settings.size}} {% if block.settings.linklists contains '2' or  block.settings.linklists contains '3' %} mt-5 pt-2 {% endif %}">
                           {%- for clink in block.settings.linklists.links -%}
                             {%- if clink.links == blank -%}
                               <a href="{{ clink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if clink.current %} list-menu__item--active{% endif %} " {% if clink.current %} aria-current="page"{% endif %}>
@@ -415,6 +412,7 @@
                       </div>
                     </li>
                   </div>
+                </div>
                 </ul>
               {%- else -%}
                 <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} style="{% if link.title  contains 'Warehouse' %} color:#b23c18;{% endif %}">
@@ -825,10 +823,18 @@
             {
               "value": "col-2",
               "label": "Col 2"
+            }, 
+            {
+              "value": "col-3",
+              "label": "Col 3"
             },
             {
               "value": "col-4",
               "label": "Col 4"
+            },  
+            {
+              "value": "col-5",
+              "label": "Col 5"
             },
             {
               "value": "col-6",

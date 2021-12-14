@@ -2251,7 +2251,7 @@ details[open] > .header__icon--menu .icon-hamburger {
 }
 
 .header__submenu.list-menu {
-  padding: 2rem 0;
+  padding: 0rem 0 2rem 0;
   display: none;
 }
 
@@ -2271,6 +2271,8 @@ details[open] > .header__icon--menu .icon-hamburger {
 
 .header__submenu .header__menu-item span{
   font-weight: normal;
+  color:#000;
+  font-size: 16px;
 }
 
 /* .header__submenu .header__submenu .header__menu-item {
@@ -2451,4 +2453,12 @@ background-color: #f9efed;
 .header.page-width{
   max-width: 1630px;
 padding: 0px 15px ;
+}
+.sub-wrapper {
+max-width: 1630px;
+margin:auto;
+border: 1px solid rgba(var(--color-foreground), 0.2);
+background-color: rgb(var(--color-background));
+padding-top: 20px;
+padding-bottom: 20px;
 }

@@ -64,13 +64,40 @@
               "size": "col-2",
               "linklists": "shop-by-style-chandeliers-2"
             }
+          },
+          "ce0b241b-385a-43a8-b617-b074c66b09ee": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Ceiling Lights",
+              "size": "col-2",
+              "linklists": "shop-by-style-ceiling-lights"
+            }
+          },
+          "3b0ba8dc-cfeb-4c7d-98a1-465ba42a2c14": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Ceiling Lights",
+              "size": "col-2",
+              "linklists": "shop-by-style-ceiling-lights-2"
+            }
+          },
+          "f42c210f-e205-4d6c-b6c3-3e4f476592d4": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Ceiling Lights",
+              "size": "col-2",
+              "linklists": "shop-by-style-chandeliers-3"
+            }
           }
         },
         "block_order": [
           "1e10c23d-75a1-411e-b3ff-03aa865e7131",
           "37e87a41-455f-400c-b8c4-c987a64ec3eb",
           "d4f632a3-84d0-40fa-b32e-02f37994c26c",
-          "74880bba-ba24-4ff2-9394-c7daee6b45cb"
+          "74880bba-ba24-4ff2-9394-c7daee6b45cb",
+          "ce0b241b-385a-43a8-b617-b074c66b09ee",
+          "3b0ba8dc-cfeb-4c7d-98a1-465ba42a2c14",
+          "f42c210f-e205-4d6c-b6c3-3e4f476592d4"
         ],
         "settings": {
           "color_scheme": "background-1",
