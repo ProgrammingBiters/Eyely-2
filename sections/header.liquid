@@ -12,23 +12,19 @@
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
-
 <style>
   header-drawer {
     justify-self: start;
     margin-left: -1.2rem;
   }
-
-  @media screen and (min-width: 990px) {
+  @media screen and (min-width: 1024px) {
     header-drawer {
       display: none;
     }
   }
-
   .menu-drawer-container {
     display: flex;
   }
-
   .list-menu {
     list-style: none;
     padding: 0;
@@ -47,14 +43,12 @@
     align-items: center;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
   }
-
   .list-menu__item--link {
     text-decoration: none;
     padding-bottom: 1rem;
     padding-top: 1rem;
     line-height: calc(1 + 0.8 / var(--font-body-scale));
   }
-
   @media screen and (min-width: 750px) {
     .list-menu__item--link {
       padding-bottom: 0.5rem;
@@ -62,16 +56,13 @@
     }
   }
 </style>
-
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
-
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
   </symbol>
-
   <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
     <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
   </symbol>
@@ -185,7 +176,6 @@
         </details>
       </header-drawer>
     {%- endif -%}
-
     {%- if section.settings.logo_position == 'top-center' or section.settings.menu == blank -%}
       <details-modal class="header__search">
         <details>
@@ -260,7 +250,6 @@
         </details>
       </details-modal>
     {%- endif -%}
-
     {%- if request.page_type == 'index' -%}
       <h1 class="header__heading">
     {%- endif -%}
@@ -282,9 +271,22 @@
     {%- if request.page_type == 'index' -%}
       </h1>
     {%- endif -%}
-
+    <div class="search-wrap-mobile">
+      <form class="search-form-wrapper"  action="/search" method="get">
+        <input class="form-field-input live-search-form-field" type="text" name="q" aria-label="Search" placeholder="What are you looking for?" autocomplete="off" data-live-search-input="">
+        <button class="live-search-button mdc-ripple-surface mdc-ripple-upgraded" type="submit" aria-label="Search" data-live-search-submit="">
+          <span class="search-icon search-icon--inactive">
+            <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+          <path fill="currentColor" fill-rule="evenodd" d="M12.514 14.906a8.264 8.264 0 0 1-4.322 1.21C3.668 16.116 0 12.513 0 8.07 0 3.626 3.668.023 8.192.023c4.525 0 8.193 3.603 8.193 8.047 0 2.033-.769 3.89-2.035 5.307l4.999 5.552-1.775 1.597-5.06-5.62zm-4.322-.843c3.37 0 6.102-2.684 6.102-5.993 0-3.31-2.732-5.994-6.102-5.994S2.09 4.76 2.09 8.07c0 3.31 2.732 5.993 6.102 5.993z"></path>
+          </svg>
+          </span>
+        </button>
+        <ul class="box-results" style="position:absolute;left:0;top:34px;display:none"></ul>
+      </form>
+      
+      {% render 'search-perform' %}
+    </div>
     {%- if section.settings.menu != blank -%}
-    
       <nav class="header__inline-menu">
         <ul class="list-menu list-menu--inline" role="list">
           {%- for link in section.settings.menu.links -%}
@@ -422,10 +424,8 @@
             </li>
           {%- endfor -%}
         </ul>
-      </nav>
-      
+      </nav>  
     {%- endif -%}
-
     <div class="header__icons">
       <a href="/a/wishlist" class="swym-wishlist icon-wishlist">
         <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/favorites.png?v=1630070978" loading="lazy" height="26" width="28">   
@@ -509,7 +509,6 @@
           <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/login.png?v=1630070978" loading="lazy" height="26" width="28">
         </a>
       {%- endif -%}
-
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
        {% comment %} {%- liquid
           if cart == empty
@@ -531,7 +530,6 @@
         {%- endif -%}
       </a>
     </div>
-
     <div class="search-wrap">
       <form class="search-form-wrapper"  action="/search" method="get">
         <input class="form-field-input live-search-form-field" type="text" name="q" aria-label="Search" placeholder="What are you looking for?" autocomplete="off" data-live-search-input="">
@@ -549,27 +547,21 @@
     </div>
   </header>
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
-
 {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
-
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
     }
-
     connectedCallback() {
       this.header = document.getElementById('shopify-section-header');
       this.headerBounds = {};
       this.currentScrollTop = 0;
       this.preventReveal = false;
-
       this.onScrollHandler = this.onScroll.bind(this);
       this.hideHeaderOnScrollUp = () => this.preventReveal = true;
-
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.addEventListener('scroll', this.onScrollHandler, false);
-
       this.createObserver();
     }
 
