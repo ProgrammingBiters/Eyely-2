@@ -378,41 +378,27 @@
                         </div>
                       {% endif %}
                     {% endfor %}
-                    {% comment %}
-                      {%- for childlink in link.links -%}
-                        <li class="col-2">
-                          {%- if childlink.links == blank -%}
-                            <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                              {{ childlink.title | escape }}
-                            </a>
-                          {%- else -%}
-                              <div class="header__menu-item link link--text list-menu__item focus-inset caption-large">
-                                {{ childlink.title | escape }}
-                              </div>
-                              <ul class="header__submenu list-menu motion-reduce">
-                                {%- for grandchildlink in childlink.links -%}
-                                  <li>
-                                    <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
-                                      <span {% if grandchildlink.title == "Shop By Size" %} style="font-weight:bold;" {% endif %}>{{ grandchildlink.title | escape }}</span>
-                                    </a>
-                                  </li>
-                                {%- endfor -%}
-                              </ul>
-                          {%- endif -%}
-                        </li>
-                      {%- endfor -%}
-                    {% endcomment %}
-                    <li class="col">
-                      <div class="row" data-demo="{{ maintitle }}">
+                   
+                    <div class="col">
+                      <div class="row">
+                        {%- assign maintitle = link.title -%}
                         {% for block in section.blocks %}
-                            {% if block.settings.txt == maintitle  and block.type == "menu" %}
-                              <div class="col-3">
+                            {% if block.settings.txt == maintitle  and block.type == "menu-image" %}
+                              <div class="{{ block.settings.size }}">
+                                {% if block.settings.title-position == "top" and block.settings.title != blank and block.settings.featured_link != blank %}
+                                  <h6 class="{{ block.settings.title-align }}"><a href="{{ block.settings.featured_link }}">{{ block.settings.title }}</a></h6>
+                                {% endif %}
+                                {% if block.settings.img != blank and block.settings.featured_link != blank %}
                                 <img class="w-100" src="{{ block.settings.img | img_url : 'original' }}" height="{{ block.settings.img.height }}" width="{{ block.settings.img.width }}" loading="lazy">
+                                {% endif %}
+                                {% if block.settings.title-position == "bottom" and block.settings.title != blank %}
+                                  <h6 class="{{ block.settings.title-align }}"> <a href="{{ block.settings.featured_link }}">{{ block.settings.title }}</a></h6>
+                                {% endif %}
                               </div>
                             {% endif %}
                         {% endfor %}
                       </div>
-                    </li>
+                    </div>
                   </div>
                 </div>
                 </ul>
@@ -677,6 +663,7 @@
 {% schema %}
 {
   "name": "t:sections.header.name",
+  "max_blocks": 100,
   "settings": [
     {
       "type": "select",
@@ -762,42 +749,6 @@
     }
   ],
 "blocks": [
-  {
-    "type": "menu",
-    "name": "Megamenu Image",
-    "settings": [
-      {
-        "type": "text",
-        "id": "txt",
-        "label": "Handle"
-      },
-      {
-        "id" : "size",
-        "label" : "Size",
-        "type": "select", 
-        "options": [
-          {
-            "value": "col-2",
-            "label": "Col 2"
-          },
-          {
-            "value": "col-4",
-            "label": "Col 4"
-          },
-          {
-            "value": "col-6",
-            "label": "Col 6"
-          }
-        ],
-        "default": "col-2"
-      },
-      {
-        "type": "image_picker",
-        "id": "img",
-        "label": "Image"
-      }
-    ]
-    },
     {
       "type": "menu-links",
       "name": "Megamenu Linklist",
@@ -841,7 +792,253 @@
           "label": "Link Lists"
         }
       ]
-      }
+      },
+      {
+        "type": "menu-single",
+        "name": "Megamenu Single Image",
+        "settings": [
+          {
+            "type": "text",
+            "id": "txt",
+            "label": "Handle"
+          },
+          {
+            "id" : "size",
+            "label" : "Size",
+            "type": "select", 
+            "options": [
+              {
+                "value": "col-2",
+                "label": "Col 2"
+              }, 
+              {
+                "value": "col-3",
+                "label": "Col 3"
+              },
+              {
+                "value": "col-4",
+                "label": "Col 4"
+              },  
+              {
+                "value": "col-5",
+                "label": "Col 5"
+              },
+              {
+                "value": "col-6",
+                "label": "Col 6"
+              },
+              {
+                "value": "col-7",
+                "label": "Col 7"
+              },
+              {
+                "value": "col-8",
+                "label": "Col 8"
+              },
+              {
+                "value": "col-9",
+                "label": "Col 9"
+              },
+              {
+                "value": "col-10",
+                "label": "Col 10"
+              },
+              {
+                "value": "col-11",
+                "label": "Col 11"
+              },
+              {
+                "value": "col-12",
+                "label": "Col 12"
+              }
+            ],
+            "default": "col-2"
+          },
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+          },
+          {
+            "type" : "url",
+            "id" : "featured_link",
+            "label" : "Featured Link"
+          },
+          {
+            "type" : "text",
+            "id": "title",
+            "label" : "Title"
+          },
+          {
+            "id" : "title-position",
+            "label" : "Title Position",
+            "type": "select", 
+            "options": [
+              {
+                "value": "top",
+                "label": "top"
+              }, 
+              {
+                "value": "bottom",
+                "label": "bottom"
+              }
+            ],
+            "default" : "top"
+          },
+          {
+            "id" : "title-align",
+            "label" : "Title Alignment",
+            "type": "select", 
+            "options": [
+              {
+                "value": "text-left",
+                "label": "Left"
+              }, 
+              {
+                "value": "text-center",
+                "label": "Center"
+              },
+              {
+                "value": "text-right",
+                "label": "Right"
+              }
+            ],
+            "default" : "text-center"
+          },
+          {
+            "id" : "title-size",
+            "label" : "Title Size",
+            "type": "number", 
+            "info":"Provide Font Size(px)"
+          }
+        ]
+      },
+      {
+        "type": "menu-multi",
+        "name": "Megamenu Two Image",
+        "settings": [
+          {
+            "type": "text",
+            "id": "txt",
+            "label": "Handle"
+          },
+          {
+            "id" : "size",
+            "label" : "Size",
+            "type": "select", 
+            "options": [
+              {
+                "value": "col-2",
+                "label": "Col 2"
+              }, 
+              {
+                "value": "col-3",
+                "label": "Col 3"
+              },
+              {
+                "value": "col-4",
+                "label": "Col 4"
+              },  
+              {
+                "value": "col-5",
+                "label": "Col 5"
+              },
+              {
+                "value": "col-6",
+                "label": "Col 6"
+              },
+              {
+                "value": "col-7",
+                "label": "Col 7"
+              },
+              {
+                "value": "col-8",
+                "label": "Col 8"
+              },
+              {
+                "value": "col-9",
+                "label": "Col 9"
+              },
+              {
+                "value": "col-10",
+                "label": "Col 10"
+              },
+              {
+                "value": "col-11",
+                "label": "Col 11"
+              },
+              {
+                "value": "col-12",
+                "label": "Col 12"
+              }
+            ],
+            "default": "col-2"
+          },
+          {
+            "type": "image_picker",
+            "id": "img-1",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "img-2",
+            "label": "Image"
+          },
+          {
+            "type" : "url",
+            "id" : "featured_link",
+            "label" : "Featured Link"
+          },
+          {
+            "type" : "text",
+            "id": "title",
+            "label" : "Title"
+          },
+          {
+            "id" : "title-position",
+            "label" : "Title Position",
+            "type": "select", 
+            "options": [
+              {
+                "value": "top",
+                "label": "top"
+              }, 
+              {
+                "value": "bottom",
+                "label": "bottom"
+              }
+            ],
+            "default" : "top"
+          },
+          {
+            "id" : "title-align",
+            "label" : "Title Alignment",
+            "type": "select", 
+            "options": [
+              {
+                "value": "text-left",
+                "label": "Left"
+              }, 
+              {
+                "value": "text-center",
+                "label": "Center"
+              },
+              {
+                "value": "text-right",
+                "label": "Right"
+              }
+            ],
+            "default" : "text-center"
+          },
+          {
+            "id" : "title-size",
+            "label" : "Title Size",
+            "type": "number", 
+            "info":"Provide Font Size(px)"
+          }
+        ]
+      }    
+
   ]
 }
 {% endschema %}
