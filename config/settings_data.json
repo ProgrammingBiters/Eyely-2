@@ -136,6 +136,42 @@
               "size": "col-3",
               "linklists": "shop-by-style-wall-lights-2"
             }
+          },
+          "d270e512-8a73-48b2-8bd6-0fcbf29737ba": {
+            "type": "menu-single",
+            "settings": {
+              "txt": "Rugs",
+              "size": "col-3",
+              "img": "shopify:\/\/shop_images\/reds-oranges_d164ff97-6952-486d-8a28-b8ba424cd716.jpg",
+              "featured_link": "#",
+              "title": "",
+              "title-position": "top",
+              "title-align": "text-center"
+            }
+          },
+          "d3e01e4b-e48c-4e38-8f03-8942c51b49bd": {
+            "type": "menu-single",
+            "settings": {
+              "txt": "Rugs",
+              "size": "col-3",
+              "img": "shopify:\/\/shop_images\/blacks-whites_e0c3d2c6-e0ef-4d47-b089-980d3f2a6d10.jpg",
+              "featured_link": "#",
+              "title": "",
+              "title-position": "top",
+              "title-align": "text-center"
+            }
+          },
+          "b2ce8e80-1cf5-42fd-bf37-1c14c9f3c1be": {
+            "type": "menu-single",
+            "settings": {
+              "txt": "Rugs",
+              "size": "col-3",
+              "img": "shopify:\/\/shop_images\/rug-pads_8d650ec9-90bd-46bc-b818-65f515194b6b.jpg",
+              "featured_link": "#",
+              "title": "",
+              "title-position": "top",
+              "title-align": "text-center"
+            }
           }
         },
         "block_order": [
@@ -151,7 +187,10 @@
           "acb56919-9c0d-4579-ace1-12c1339dc039",
           "a74171b7-e11b-4a96-a743-93c64f3cf3e9",
           "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c",
-          "de223b70-9acf-452e-ad48-66cc7e0a0982"
+          "de223b70-9acf-452e-ad48-66cc7e0a0982",
+          "d270e512-8a73-48b2-8bd6-0fcbf29737ba",
+          "d3e01e4b-e48c-4e38-8f03-8942c51b49bd",
+          "b2ce8e80-1cf5-42fd-bf37-1c14c9f3c1be"
         ],
         "settings": {
           "color_scheme": "background-1",

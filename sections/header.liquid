@@ -383,13 +383,13 @@
                       <div class="row">
                         {%- assign maintitle = link.title -%}
                         {% for block in section.blocks %}
-                            {% if block.settings.txt == maintitle  and block.type == "menu-image" %}
+                            {% if block.settings.txt == maintitle  and block.type == "menu-single" %}
                               <div class="{{ block.settings.size }}">
                                 {% if block.settings.title-position == "top" and block.settings.title != blank and block.settings.featured_link != blank %}
                                   <h6 class="{{ block.settings.title-align }}"><a href="{{ block.settings.featured_link }}">{{ block.settings.title }}</a></h6>
                                 {% endif %}
                                 {% if block.settings.img != blank and block.settings.featured_link != blank %}
-                                <img class="w-100" src="{{ block.settings.img | img_url : 'original' }}" height="{{ block.settings.img.height }}" width="{{ block.settings.img.width }}" loading="lazy">
+                                <img class="w-100" src="{{ block.settings.img | img_url : 'original' }}" height="auto" width="{{ block.settings.img.width }}" loading="lazy">
                                 {% endif %}
                                 {% if block.settings.title-position == "bottom" and block.settings.title != blank %}
                                   <h6 class="{{ block.settings.title-align }}"> <a href="{{ block.settings.featured_link }}">{{ block.settings.title }}</a></h6>
