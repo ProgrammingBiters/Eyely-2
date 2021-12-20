@@ -381,6 +381,7 @@
                    
                     <div class="col">
                       <div class="row">
+                        {% comment %}
                         {%- assign maintitle = link.title -%}
                         {% for block in section.blocks %}
                             {% if block.settings.txt == maintitle  and block.type == "menu-single" %}
@@ -397,6 +398,7 @@
                               </div>
                             {% endif %}
                         {% endfor %}
+                      {% endcomment %}
                       </div>
                     </div>
                   </div>
