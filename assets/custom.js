@@ -8,7 +8,17 @@ $(document).ready(function(){
           $(".mobile_btn").fadeOut("slow");
         }
       });
-      
+      $(".tab-detail").click(function(){
+        $(this).toggleClass("active");
+        $(this).next().slideToggle();
+      });
+      $(".see-details").click(function(){
+        $('html, body').animate({
+          scrollTop: $("#moneyback-content").offset().top
+      }, 2000);
+ 
+
+      });
       // $(".list-menu li").mouseenter(function(){
       //   var test = $(this).find("details").attr("open","open");
       // });
@@ -221,5 +231,95 @@ $(document).ready(function(){
       $(window).scroll(function(){
          ScrollExecute();
        }); 
+       $('.product-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.pro-nav-ul',
+              adaptiveHeight:true
      
+      });
+       $('.pro-nav-ul').slick({
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        asNavFor: '.product-slider',
+        dots: false,
+        focusOnSelect: true,
+        vertical:true,
+        arrows:true,
+         cssEase: 'linear',
+         speed: 1000,
+        prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-up' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-down' aria-hidden='true'></i></button>",
+          responsive: [
+         {
+           breakpoint: 768,
+           settings: {
+             vertical:false,
+             slidesToShow:5,
+             slidesToScroll: 1,
+                arrows:true,
+              prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+         speed: 300, 
+             cssEase: 'ease'
+           }
+         },
+            {
+           breakpoint: 720,
+           settings: {
+             vertical:false,
+             slidesToShow:6,
+             slidesToScroll: 1,
+                arrows:true,
+           speed: 300,
+              prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>", 
+             cssEase: 'ease'
+           }
+         },
+         {
+           breakpoint: 600,
+           settings: {
+             vertical:false,
+             slidesToShow: 5,
+             slidesToScroll: 1,
+             arrows:true,
+             prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+              nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+          speed: 300, 
+             cssEase: 'ease'
+     
+           }
+         },
+             {
+           breakpoint: 500,
+           settings: {
+             vertical:false,
+             slidesToShow:4,
+             slidesToScroll: 1,
+             arrows:true,
+             prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+             nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+            speed: 300
+           }
+         },
+         {
+           breakpoint: 480,
+           settings: {
+             vertical:false,
+             slidesToShow: 4,
+             slidesToScroll: 1,
+             arrows:true,
+              speed: 300,
+             prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+            nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
+           }
+         }
+         
+       ]
+     
+      });
+         
      });

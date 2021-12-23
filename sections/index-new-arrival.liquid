@@ -1,6 +1,6 @@
 <div class="index-new-arrival">
     <div class="new_arrival-image">
-        <a href="{{ section.settings.link }}" class="ds-new-arrival">
+        <a href="{{ section.settings.link }}"  class="ds-new-arrival">
             {% if section.settings.arrival-banner-img != blank %}
               {%
                 render 'rimg',
@@ -9,7 +9,7 @@
               %}
             {% endif %}
         </a>
-        <a href="{{ section.settings.link }}" class="mob-new-arrival">
+        <a href="{{ section.settings.link }}"  class="mob-new-arrival">
             {% if section.settings.mob-arrival-banner-img != blank %}
                 {%
                     render 'rimg',
