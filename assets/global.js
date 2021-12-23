@@ -549,6 +549,7 @@ class VariantSelects extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('change', this.onVariantChange);
+    
   }
 
   onVariantChange() {
@@ -571,6 +572,7 @@ class VariantSelects extends HTMLElement {
 
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+
   }
 
   updateMasterId() {
@@ -579,6 +581,11 @@ class VariantSelects extends HTMLElement {
         return this.options[index] === option;
       }).includes(false);
     });
+    console.log("Currant Variant",this.currentVariant);
+    var variant = this.currentVariant;
+    var pos = variant.featured_image.position;
+    console.log("Variant",pos);
+    $('.product-slider').slick('slickGoTo', pos-1);
   }
 
   updateMedia() {
@@ -701,6 +708,7 @@ class VariantRadios extends VariantSelects {
     this.options = fieldsets.map((fieldset) => {
       return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
     });
+    console.log("update",fieldsets)
   }
 }
 
