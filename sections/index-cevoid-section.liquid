@@ -1,0 +1,45 @@
+<div class="container">
+    {%- assign title = section.settings.title -%}
+    {%- assign code = section.settings.div-code -%}
+    <section class="home-section content-area {% if title != blank %}has-heading{% endif %} ">
+      {% if title != blank %}
+        <h2 class="page-title my-md-3 my-3 " style="text-align:center">{{ title }}</h2>
+      {% endif %}
+      <div class="cevoid-wrapper py-3">
+        {{ code }}
+      </div>
+    </section>
+  </div>
+  <style>
+    .cevoid-section .container{
+      max-width:1630px;
+    }
+  </style>
+  {% schema %}
+  {
+    "name": "Cevoid Gallery",
+    "tag": "section",
+    "class": "spaced-section spaced-section--full-width cevoid-section" ,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Pictures from our customers"
+      },
+      {
+        "type": "textarea",
+        "id": "div-code",
+        "label": "Paste Cevoid Gallery code",
+        "placeholder":"Get the Gallery code on the Gallery's page on app.cevoid.com",
+	    "info": "Press save to see your changes"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Index Cevoid",
+        "name": "Cevoid gallery"
+      }
+    ]
+  }
+  {% endschema %}​

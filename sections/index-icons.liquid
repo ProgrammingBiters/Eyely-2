@@ -1,0 +1,59 @@
+<div class="container index-icons">
+    <div class="main_icon_wrap">
+        {% for block in section.blocks %}
+            {% if block.type == "icons" and block.settings.enable %}
+            <div class='item-icon'>
+                {% if block.settings.icon_image != blank %}
+                    {% render 'responsive-image' with image : block.settings.icon_image, image.alt : block.settings.icon_image.alt, max_width : 100, max_height : 100 %}
+                {% endif %}
+                <h3>{{ block.settings.title }}</h3>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{{ 'section-index-icons.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Index-Icons",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "max_blocks":4,
+  "settings":[
+      
+  ],
+  "blocks":[
+            {
+            "type":"icons",
+            "name":"Icons",
+            "settings":[
+                    {
+                    "type" : "checkbox",
+                    "id" : "enable",
+                    "label" : "Enable",
+                    "default" : true
+                    },
+                    {
+                    "type" : "image_picker",
+                    "id" : "icon_image",
+                    "label" : "Icon Image"
+                    },
+                    {
+                        "type" : "text",
+                        "id" : "title",
+                        "label" : "Title"
+                    }
+            ]
+
+  }
+            
+  ],
+  "presets": [
+    {
+      "name": "Index Icons"
+    }
+  ]
+
+}
+{% endschema %}

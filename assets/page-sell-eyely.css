@@ -1,0 +1,231 @@
+.sell-banner .sell-ibanner-img {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sell-banner .sell-ibanner-img:before {
+    content: '';
+    padding-top: 31%;
+    display: block;
+  }
+  .sell-banner .container{
+    max-width: 1600px;
+    }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .sell-banner .sell-ibanner-img:before {
+      padding-top: 35%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .sell-banner .sell-ibanner-img:before {
+      padding-top: 50%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sell-banner .sell-ibanner-img:before {
+      padding-top: 65%;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .sell-banner .sell-ibanner-img:before {
+      padding-top: 91%;
+    }
+  }
+  
+  .sell-banner .sell-ibanner-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-position: center;
+    object-position: center;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  
+  .sell-banner .sell-ibanner-img .sell-banner-overlayer {
+    text-align: center;
+    color: #fff;
+    font-size: 38px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .sell-forms {
+    background-color: #fff;
+    padding: 60px 60px;
+    margin: 0 15px;
+  }
+  .sell-forms .container{
+    max-width: 1600px;
+    }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .sell-forms {
+      padding: 60px 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sell-forms {
+      padding: 60px 40px;
+    }
+  }
+  @media (max-width: 320px){
+    .sell-forms {
+      padding: 60px 11px;
+    }
+  }
+  
+  .sell-forms h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #698c9f;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  .sell-forms .sell-form-input {
+    margin-bottom: 17px;
+  }
+  
+  .sell-forms .sell-form-input label {
+    color: #333333;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: normal;
+  }
+  @media (max-width:375px){
+    .sell-forms .sell-form-add .sell-detail .chat-eyely{
+      font-size:15px;
+    }
+  }
+  
+  
+  .sell-forms .sell-form-input .input-sell-form {
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  
+  .sell-forms .sell-form-input .input-sell-form:focus {
+    -webkit-box-shadow: normal;
+    box-shadow: normal;
+  }
+  
+  .sell-forms .sell-form-input .input-sell-form option {
+    padding: 10px 0;
+  }
+  
+  .sell-forms .sell-form-input .input-choose-file {
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-left: 0;
+  }
+  
+  .sell-forms .sell-form-btn {
+    color: #fff;
+    background: #b23c18;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 34px;
+    border: 1px solid #b23c18;
+  }
+  
+  .sell-forms .sell-form-btn:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  .sell-forms .shopify-linked {
+    margin-top: 11px;
+    text-align: right;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+  }
+  
+  .sell-forms .shopify-linked a {
+    color: #4d6ba6;
+    text-decoration: none;
+    font-weight: normal;
+  }
+  
+  .sell-forms .sell-form-add img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .sell-forms .sell-form-add .chat-eyely i {
+    cursor: pointer;
+    margin-right: 5px;
+    background: #809aad;
+    padding: 5px;
+    color: #fff !important;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    line-height: 18px;
+    text-align: center;
+  }
+  
+  .sell-forms .sell-form-add a {
+    text-decoration: none;
+    color: #b23c18;
+  }
+  
+  .sell-forms .sell-form-add .eyely-date {
+    color: #333333;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .sell-forms .sell-form-add  .sell-detail {
+    line-height: 35px;
+    font-size: 16px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .sell-forms .sell-form-add .sell-detail {
+      line-height: 35px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 767px){
+    .sell-forms .sell-form-add .sell-detail {
+      line-height: 35px;
+      font-size: 14px;
+    }
+  }
+  

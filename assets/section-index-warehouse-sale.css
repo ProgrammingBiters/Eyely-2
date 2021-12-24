@@ -1,0 +1,145 @@
+.warehouse-sale{
+    padding: 40px 0;
+    background: #deebe2;
+}
+.warehouse-sale .container{
+    max-width:1630px;
+}
+.warehouse-sale .back-sec-info {
+    margin-bottom: 30px;
+}
+.warehouse-sale .back-sec-info span {
+    color: #8e9792;
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: block;
+}
+.warehouse-sale .back-sec-info h4{
+color: #2d3654;
+font-size: 40px;
+margin-bottom: 15px;
+}    
+.warehouse-sale .back-sec-info  a{
+color: #2d3654;
+font-size: 19px;
+display: flex;
+align-items: center;
+text-decoration: none;
+}
+
+.warehouse-sale .back-sec-img {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.warehouse-sale .back-sec-p{
+    line-height: 21px;
+    margin-bottom: 0;
+}
+.warehouse-sale .back-sec-info i{
+    margin-left: 15px;
+}
+.warehouse-sale .back-sec-img:before {
+    content: '';
+    padding-top: 60%;
+    display: block;
+}
+.warehouse-sale .back-sec-img a{
+    text-decoration: none;
+    display: block;
+    width:100%;
+}
+.warehouse-sale .back-sec-img img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.warehouse-sale .back-sec-info .back-sec-p1 {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+.warehouse-sale .back-sec-info .btn-view-more {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid #2d3654;
+    padding: 15px 10px;
+    color: #2d3654;
+    margin: auto;
+    margin-top: 18px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .warehouse-sale .back-sec-info span { 
+         font-size: 13px;
+    margin-bottom: 8px;
+    }
+    .warehouse-sale .back-sec-info h4{
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+     .warehouse-sale .back-sec-info a{
+    font-size:14px;
+    }   
+    .warehouse-sale .back-sec-p{
+        line-height:19px;
+    }  
+    .warehouse-sale .back-sec-img:before{
+         padding-top:80%;
+    }
+    .warehouse-sale .back-sec-info .back-sec-p1{
+        font-size:13px;
+    }
+  }
+  @media (max-width: 375px) {
+    .warehouse-sale .back-sec-info span { 
+         font-size: 12px;
+    margin-bottom: 7px;
+    }
+    .warehouse-sale .back-sec-info h4{
+    font-size: 24px;
+    margin-bottom: 8px;
+    }
+    .warehouse-sale .back-sec-info a{
+        font-size:13px;
+    }
+    .warehouse-sale .back-sec-p i{
+        margin-left:5px;
+    }
+    .warehouse-sale .back-sec-img:before{
+        padding-top:90%;
+    } 
+    .warehouse-sale .back-sec-info .back-sec-p1{
+        font-size:13px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .warehouse-sale .back-sec-info h4{    
+        font-size:20px;
+    } 
+    .warehouse-sale .back-sec-info a{
+        font-size:14px;
+    } 
+    .warehouse-sale .back-sec-p i{
+        margin-left:15px;
+        font-size:17px;
+    }
+
+    .warehouse-sale .back-sec-img:before{
+        padding-top:100%;
+    }
+    .warehouse-sale .back-sec-info .back-sec-p1{
+        font-size:12px;
+    }
+  }

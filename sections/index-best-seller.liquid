@@ -1,0 +1,102 @@
+<div class="best-seller mb-5">
+    <div class="container">
+      <div class="best-seller_heading">
+        <h2 class="heading">{{ section.settings.title_txt }}</h3>
+        <p class="shop__p">{{ section.settings.heading_txt }}</p>
+      </div>
+      <div class="main-wrapper row m-auto">
+        {% assign collection =  collections[section.settings.featured_collection] %}
+        {% for product in collection.products limit: 4 %}
+            {% assign initial_image = product.images[1].src %}
+
+            <div class="col-md-3 col-6">
+                <div class="item-wrap">
+                    <a href="{{ product.url }}">
+                        <div class="image_wrap  fst_img-{{ forloop.index }} ">
+                      
+                              {% render 'responsive-image' with image : initial_image , class: 'productitem--image-primary img-fluid', image.alt : initial_image.alt, max_width : 360, max_height : 360 %}
+                                
+                        </div>
+                        <div class="content_wrap">
+                            <div class="item_content">
+                                <p class=" m-0 fw-bold">{{ product.title }}</p>
+                            </div>
+                            <div class="reviews-div">
+                                <div class="yotpo bottomLine" data-product-id="{{ product.id }}">
+                                    {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+                                    {%- assign time_now = 'now' | date: '%s' %}
+                                    {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+                                    {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+                                    {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
+                                    {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+                                    {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+                                            {%- assign yotpo_bottomline_obsolete = false %}
+                                    {%- else %}
+                                        {%- assign yotpo_bottomline_obsolete = true %}
+                                    {%- endif %}
+                    
+                                    {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+                                    {{ product.metafields.yotpo.bottomline }}
+                                    {%- endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discount">
+                           <span>{% if product.compare_at_price > product.price %}
+                            <del style="color:#444">{{ product.compare_at_price | money }}</del>&nbsp;
+                            {% endif %}
+                            {{ product.price | money }}</span>
+                        </div>                    
+                    </a>
+                </div>
+                 
+
+            </div>
+        {% endfor %} 
+      </div>
+
+      <div class="shop_all_btn">
+        <a href="{{ collection.url }}">Shop All Best Sellers</a>
+      </div>
+    </div>
+</div>
+{{ 'section-index-best-seller.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Index Best Seller",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "settings": [
+        {
+            "type":"checkbox",
+            "id":"enable",
+            "label":"Enable",
+            "default":true
+        },
+        {
+            "type":"text",
+            "id":"title_txt",
+            "label":"Title",
+            "default":"Best Seller"
+        },
+        {
+            "type":"textarea",
+            "id":"heading_txt",
+            "label":"Sub Title",
+            "default":"The best of the best. From all we’ve sold here is what most people are purchasing."
+        },
+        {
+            "type":"collection",
+            "id":"featured_collection",
+            "label":"Featured collection"
+        }
+  ],
+"presets":[
+{
+	"name": "Best Sellers",
+	"category":"Best_Sellers"
+}
+]
+}
+{% endschema %}

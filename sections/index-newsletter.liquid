@@ -1,0 +1,67 @@
+<div class="index-newsletter" {% if section.settings.bg_image != blank %} style="background-image:url('{{ section.settings.bg_image | img_url : 'master' }}');" {% endif %}>
+    <div class="container">
+    <h2>{{ section.settings.title_txt }}</h2>
+    {% form 'customer' %}
+    {{ form.errors | default_errors }}
+    {% if form.posted_successfully? %}
+    <p class="form--success">Thanks for subscribing!</p>
+    {% else %}
+    <div class="inputs-wrapper">
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <input type="email"
+           name="contact[email]"
+           id="Email"
+           value="{% if customer %}{{ customer.email }}{% endif %}"
+           placeholder="Email address"
+           autocorrect="off"
+           autocapitalize="off">
+    <button type="submit"class="n-sub-btn" name="subscribe">Subscribe</button>
+    </div> 
+    {% endif %}
+    {% endform %}
+</div>
+</div>
+<style>
+    @font-face {
+        font-family: 'Buenaparkjf';
+        src: url(' {{ 'buenaparkjf.ttf' | asset_url }} ') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    } 
+      @font-face {
+        font-family: 'Glory Medium';
+        src: url(' {{ 'Glory-Medium.ttf' | asset_url }} ') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+</style>
+{{ 'section-index-newsletter.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Index-Newsletter",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "settings" : [
+                {
+                "type": "textarea",
+                "id": "title_txt",
+                "label": "Title Text",
+                "default" : "<b>Yas!</b> Send me exclusive offers, deals, and personalised tips for shopping on Eyely."
+                },
+                {
+                "type" : "image_picker",
+                "id" : "bg_image",
+                "label" : "Background image"
+                }
+
+  ],
+  "presets": [
+    {
+      "name": "Index Newsletter"
+    }
+  ]
+}
+{% endschema %}  

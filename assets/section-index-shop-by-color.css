@@ -1,0 +1,90 @@
+.shop-by-color{
+    margin-top:20px;
+  }
+  .shop-by-color .container{
+    max-width: 1630px;
+  }
+  .shop-by-color .shop-by-color_heading{
+    text-align:center;
+    padding-bottom: 10px;
+  }
+  .shop-by-style .shop-by-color_heading .heading{ 
+    color:#2d3654;
+    }
+  .shop-by-color .shop__p{
+    color: #000;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: var(--font-body-family-other);
+  }
+ .shop-by-color .main_wrapper .shop-by-color-item a{
+    text-decoration: none;
+    color:#2d3654;
+}
+.shop-by-color .main_wrapper   .shop-by-color-item  .content_wrap{
+    padding:20px 0;
+}
+.shop-by-color .main_wrapper .shop-by-color-item  .content_wrap .item_content{
+    text-transform: capitalize;
+    color: #2d3654;
+    font-size: 20px;
+    } 
+    .shop-by-color .main_wrapper .shop-by-color-item .image_wrap{
+        position: relative;
+        padding-bottom: 120%;
+        overflow: hidden;
+        display: block;
+    }
+    .shop-by-color .main_wrapper .shop-by-color-item .image_wrap img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        transform: translate(-50%,-50%);
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height:auto;
+    }
+    @media (max-width: 767px){
+            .shop-by-color .shop-by-color-item {
+                display: none;
+                text-align: center;
+            }
+            .shop-by-color .shop-by-color-item  .wrap{
+                width: 40%;
+            }
+            .shop-by-color .main_wrapper .shop-by-color-item .content_wrap {
+                width: 40%;
+                text-align: left;
+                padding:20px 0px 20px 20px;
+            }
+            .shop-by-color .shop-by-color-item  .shop-by-color-arrow {
+                width: 20%;
+                text-align: right;
+                padding:0px 20px;
+                font-size: 25px;  
+                color: #2d3654;
+            }
+            .shop-by-color-link{
+                text-decoration: none;
+                border: 1px solid #2d3654;
+                color: #2d3654;
+                padding: 15px 30px;
+                margin-top: 20px;
+                display: inline-block;
+                border-radius: 5px;
+                font-weight: 600;
+            }
+            .shop-by-color-link:hover{
+                color: #2d3654;         
+            }
+    }
+    @media (max-width:480px){
+
+        .shop-by-color .main_wrapper .shop-by-color-item  .content_wrap .item_content{
+        font-size:14px;
+        }
+    
+    }

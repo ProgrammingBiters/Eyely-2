@@ -1,0 +1,62 @@
+<script src="{{ 'api.jquery.js' | shopify_asset_url }}" defer></script>
+
+<script type="text/javascript">
+  setTimeout(function(){
+ 
+  jQuery(document).ready(function($) {
+    var currentAjaxRequest = null;
+    var searchForms = $('form[action="/search"]').css('position','relative').each(function() {
+    var input = $(this).find('input[name="q"]');
+    var offSet = input.position().top + input.innerHeight();
+  
+//        $('<ul class="box-results"></ul>').css( { 'position': 'absolute', 'left': '0px', 'top': offSet } ).appendTo(".form-wrapper").hide();
+      input.attr('autocomplete', 'off').bind('keyup change', function() {
+        var term = $(this).val();
+        var form = $(this).closest('form');
+        var searchURL = '/search?type=product&q=' + term ;
+        var resultsList = form.find('.box-results');
+        var b = '&resources[type]=product'
+        $.ajax('/search/suggest.json?q=' + term + b,{
+          type: 'GET',
+          dataType: 'json', 
+          success: function(response) {
+            console.log(response);
+            var data = response.resources.results.products;
+            console.log(data);
+            resultsList.empty();
+            if(data.length == 0) {
+              resultsList.hide();
+            } 
+            else
+            {
+              resultsList.css("display","block");
+              $.each(data, function(index, item) {
+                  if(index <= 5 ){
+                var p=item.price * 100;
+                console.log(p);
+
+                var link = $('<a></a>').attr('href', item.url);
+                link.append('<div class="thumbnail"><img src="' + item.image + '" /></div>');
+                link.append('<div class="title_wrap"><div class="title_name">' + item.title + '</div><div class="price">' + Shopify.formatMoney(p, window.money)  + '</div></div>');
+           
+                
+                link.wrap('<li></li>');
+                resultsList.append(link.parent());
+                  }
+              });
+              if(data.length > 5) {
+                resultsList.append('<li class="text-center"><span class=" btn-results"><a href="' + searchURL + '"> View All Results </a></span></li>');
+              }
+              resultsList.fadeIn(200);
+            } 
+          }
+        });
+
+        
+      });
+  });
+    });
+  },4000);
+  
+  
+</script>

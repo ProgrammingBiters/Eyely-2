@@ -1,0 +1,59 @@
+<div class="index-new-arrival">
+    <div class="new_arrival-image">
+        <a href="{{ section.settings.link }}"  class="ds-new-arrival">
+            {% if section.settings.arrival-banner-img != blank %}
+              {%
+                render 'rimg',
+                class: 'img-fluid ',
+                img: section.settings.arrival-banner-img
+              %}
+            {% endif %}
+        </a>
+        <a href="{{ section.settings.link }}"  class="mob-new-arrival">
+            {% if section.settings.mob-arrival-banner-img != blank %}
+                {%
+                    render 'rimg',
+                    class: 'img-fluid',
+                    img: section.settings.mob-arrival-banner-img
+                  %}
+           {% endif %}       
+        </a>
+      </div>
+</div>
+{{ 'section-index-new-arrival.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Index-New-Arrival",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "settings":[
+    {
+		"type":"checkbox",
+		"id":"enable-section",
+		"label":"Show New-arrival"
+	},
+	{	
+		"type":"image_picker",
+		"id":"arrival-banner-img",
+		"label":"Arrival Image"
+},
+{	
+		"type":"image_picker",
+		"id":"mob-arrival-banner-img",
+		"label":"Mobile Arrival Image"
+},
+{
+"type":"url",
+"id":"link",
+"label":"Link"
+}
+  ],
+  "presets": [
+    {
+      "name": "Index New Arrival"
+    }
+  ]
+
+}
+{% endschema %}

@@ -1,0 +1,281 @@
+{
+  "current": {
+    "colors_solid_button_labels": "#FFFFFF",
+    "colors_accent_1": "#2d3654",
+    "colors_accent_2": "#2d3654",
+    "colors_text": "#2d3654",
+    "colors_outline_button_labels": "#2d3654",
+    "colors_background_1": "#FFFFFF",
+    "colors_background_2": "#F3F3F3",
+    "type_header_font": "josefin_sans_n6",
+    "heading_scale": 120,
+    "type_body_font": "josefin_sans_n7",
+    "body_scale": 100,
+    "type_body_other": "josefin_sans_n3",
+    "social_facebook_link": "https:\/\/facebook.com\/eyelyhome",
+    "social_pinterest_link": "https:\/\/in.pinterest.com\/eyelyhome\/_shop\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/eyelyhome\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UC7Nfh4f1r3DxfDfoZHx8jfQ",
+    "currency_code_enabled": false,
+    "show_countdown": false,
+    "month": 10,
+    "day": 31,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text": "CYBER MONDAY EXTENDED SALE 75% OFF + FREE SHIPPING ON $35+. LIMITED QUANTITIES.",
+          "announcement_color": "#ffffff",
+          "announcement_background": "#020202",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1e10c23d-75a1-411e-b3ff-03aa865e7131": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Rugs",
+              "size": "col-2",
+              "linklists": "shop-by-style-rugs"
+            }
+          },
+          "37e87a41-455f-400c-b8c4-c987a64ec3eb": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Rugs",
+              "size": "col-2",
+              "linklists": "shop-by-shape-rugs"
+            }
+          },
+          "d4f632a3-84d0-40fa-b32e-02f37994c26c": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Chandeliers",
+              "size": "col-3",
+              "linklists": "shop-by-style-chandeliers"
+            }
+          },
+          "74880bba-ba24-4ff2-9394-c7daee6b45cb": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Chandeliers",
+              "size": "col-3",
+              "linklists": "shop-by-style-chandeliers-2"
+            }
+          },
+          "ce0b241b-385a-43a8-b617-b074c66b09ee": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Ceiling Lights",
+              "size": "col-2",
+              "linklists": "shop-by-style-ceiling-lights"
+            }
+          },
+          "3b0ba8dc-cfeb-4c7d-98a1-465ba42a2c14": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Ceiling Lights",
+              "size": "col-2",
+              "linklists": "shop-by-style-ceiling-lights-2"
+            }
+          },
+          "f42c210f-e205-4d6c-b6c3-3e4f476592d4": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Ceiling Lights",
+              "size": "col-2",
+              "linklists": "shop-by-style-chandeliers-3"
+            }
+          },
+          "e07ea082-c2e2-4db3-b9ce-54fd66c98a05": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Table Lamps",
+              "size": "col-3",
+              "linklists": "shop-by-style-table-lamps"
+            }
+          },
+          "9099059a-cfdd-44d9-94a1-f1b94caaf3b6": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Table Lamps",
+              "size": "col-2",
+              "linklists": "shop-by-style-table-lamps-2"
+            }
+          },
+          "acb56919-9c0d-4579-ace1-12c1339dc039": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Floor Lamps",
+              "size": "col-3",
+              "linklists": "shop-by-style-floor-lamps"
+            }
+          },
+          "a74171b7-e11b-4a96-a743-93c64f3cf3e9": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Floor Lamps",
+              "size": "col-3",
+              "linklists": "shop-by-style-floor-lamps-2"
+            }
+          },
+          "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Wall Lights",
+              "size": "col-3",
+              "linklists": "shop-by-style-wall-lights"
+            }
+          },
+          "de223b70-9acf-452e-ad48-66cc7e0a0982": {
+            "type": "menu-links",
+            "settings": {
+              "txt": "Wall Lights",
+              "size": "col-3",
+              "linklists": "shop-by-style-wall-lights-2"
+            }
+          }
+        },
+        "block_order": [
+          "1e10c23d-75a1-411e-b3ff-03aa865e7131",
+          "37e87a41-455f-400c-b8c4-c987a64ec3eb",
+          "d4f632a3-84d0-40fa-b32e-02f37994c26c",
+          "74880bba-ba24-4ff2-9394-c7daee6b45cb",
+          "ce0b241b-385a-43a8-b617-b074c66b09ee",
+          "3b0ba8dc-cfeb-4c7d-98a1-465ba42a2c14",
+          "f42c210f-e205-4d6c-b6c3-3e4f476592d4",
+          "e07ea082-c2e2-4db3-b9ce-54fd66c98a05",
+          "9099059a-cfdd-44d9-94a1-f1b94caaf3b6",
+          "acb56919-9c0d-4579-ace1-12c1339dc039",
+          "a74171b7-e11b-4a96-a743-93c64f3cf3e9",
+          "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c",
+          "de223b70-9acf-452e-ad48-66cc7e0a0982"
+        ],
+        "settings": {
+          "color_scheme": "background-1",
+          "logo": "shopify:\/\/shop_images\/eyely-logo-png-shopify.png",
+          "logo_width": 120,
+          "logo_position": "top-left",
+          "menu": "app-menu",
+          "show_line_separator": true,
+          "enable_sticky_header": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Help",
+              "menu": "help"
+            }
+          },
+          "666284fd-9247-4a85-852a-80683e4718f9": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Guides",
+              "menu": "shop"
+            }
+          },
+          "0cd98fdf-2efb-488f-b5a5-600f68a17907": {
+            "type": "link_list",
+            "settings": {
+              "heading": "About",
+              "menu": "about"
+            }
+          },
+          "2684320c-c622-4f3f-ab0a-e7a0180990ed": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Legal",
+              "menu": "sell"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "666284fd-9247-4a85-852a-80683e4718f9",
+          "0cd98fdf-2efb-488f-b5a5-600f68a17907",
+          "2684320c-c622-4f3f-ab0a-e7a0180990ed"
+        ],
+        "settings": {
+          "show_social": true
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "7570552984445421165": {
+        "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/settings\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "11989736685688860011": {
+        "type": "shopify:\/\/apps\/easy-variant-images\/blocks\/embed_via\/bfecabd5-49af-4d37-8214-f0f4649f4cb3",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "colors_solid_button_labels": "#FFFFFF",
+      "colors_accent_1": "#121212",
+      "colors_accent_2": "#334FB4",
+      "colors_text": "#121212",
+      "colors_outline_button_labels": "#121212",
+      "colors_background_1": "#FFFFFF",
+      "colors_background_2": "#F3F3F3",
+      "type_header_font": "assistant_n4",
+      "type_body_font": "assistant_n4",
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+          }
+        }
+      }
+    },
+    "Craft": {
+      "colors_solid_button_labels": "#EFECEC",
+      "colors_accent_1": "#2A332F",
+      "colors_accent_2": "#476154",
+      "colors_text": "#1C1A1A",
+      "colors_outline_button_labels": "#7B8382",
+      "colors_background_1": "#EFECEC",
+      "colors_background_2": "#C1BCAE",
+      "type_header_font": "americana_n4",
+      "type_body_font": "quattrocento_sans_n4",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "link_list",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "menu"
+          ],
+          "settings": {
+          }
+        }
+      }
+    }
+  }
+}

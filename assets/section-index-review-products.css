@@ -1,0 +1,97 @@
+.review-title {
+    font-family: 'Bookmania Bold';
+    color: #2d3654;
+    margin-top: 20px;
+}
+.review-products .container {
+    max-width: 1600px!important;
+}
+.review-products .main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 30px;
+}
+.review-products .main-wrapper .review-wrap {
+    width: 33.33%;
+    padding: 10px;
+    position: relative;
+    display: flex;
+}
+.fst_img  div {
+    overflow: hidden;
+    border-radius: 0 0 0 50px;
+}
+.third  div {
+    overflow: hidden;
+    border-radius: 0 50px 0 0;
+}
+.review-products .main-wrapper .review-wrap .content_wrap {
+    width: 100%;
+}
+.review-products .fa-star {
+    color: #df685d;
+}
+.review-products .main-wrapper .review-wrap .review_description {
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: #2d3654;   
+    font-weight: 300;
+    line-height: 1.5;
+}
+.review-products .review-wrap .review_content .discount span {
+    font-size: 13px;
+    color: #c66;
+    font-weight: 500;
+}
+.review-products .mobile_btn {
+    display: none;
+}
+.review-products a{
+    text-decoration: none;
+    color: #444;
+}
+
+@media (max-width: 1200px){
+.review-products .main-wrapper .review-wrap {
+    width: 50%;
+    margin: auto;
+}
+.review-products .main-wrapper .review-wrap .image_wrap img {
+    border-radius: 0 30px 0 30px;
+}
+}
+@media (max-width: 768px){
+.review-products .review-wrap {
+    width: 100%!important;
+}
+}
+@media (max-width: 480px){
+    .review-products .main-wrapper .review-wrap {
+        display: none;
+    }
+.review-products .image_wrap img {
+    max-width: 100% !important;
+    height: 100% !important;
+}
+.review-products .mobile_btn {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid #2d3654;
+    padding: 15px 10px;
+    width: 80%;
+    margin: auto; 
+    margin-top: 18px;
+    border-radius: 10px;
+    color:#2d3654;
+}
+.review-products .content_wrap {
+    width: 70%!important;
+    font-size: 12px;
+}
+}

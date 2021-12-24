@@ -1,0 +1,701 @@
+{
+  "sections": {
+    "16346258161ef8d1b8": {
+      "type": "index-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/extended_1800x700_bd9ae957-c4fc-4fe5-add9-3bde33f083c7.png",
+        "image_2": "shopify:\/\/shop_images\/extended_800x800_2df366ea-abf0-4cb4-ac7f-81b6be38e59f.png",
+        "featured_link": "shopify:\/\/collections\/new-arrivals"
+      }
+    },
+    "1634638697d2b5e52a": {
+      "type": "index-icons",
+      "blocks": {
+        "7d791bc1-61ac-4ec2-8f9e-6941fa81a47e": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object.png",
+            "title": "Free Shipping"
+          }
+        },
+        "212c6c4e-a4dd-4ed4-81fd-debb3e060718": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object_1.png",
+            "title": "Secure Ordering"
+          }
+        },
+        "cbc6c6c8-eee5-4d6f-951b-27e584ba4189": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object_2.png",
+            "title": "30 Day Guarantee"
+          }
+        },
+        "6267e923-eaf7-49e9-bc0a-78f425541181": {
+          "type": "icons",
+          "settings": {
+            "enable": true,
+            "icon_image": "shopify:\/\/shop_images\/Vector_Smart_Object_3.png",
+            "title": "Easy Returns"
+          }
+        }
+      },
+      "block_order": [
+        "7d791bc1-61ac-4ec2-8f9e-6941fa81a47e",
+        "212c6c4e-a4dd-4ed4-81fd-debb3e060718",
+        "cbc6c6c8-eee5-4d6f-951b-27e584ba4189",
+        "6267e923-eaf7-49e9-bc0a-78f425541181"
+      ],
+      "settings": {
+      }
+    },
+    "163479756837bdea1f": {
+      "type": "index-review-products",
+      "blocks": {
+        "1b003807-bb93-48ba-b0c2-f9dfd5480820": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "featured_product": "tinos-ourika-moroccan-geometric-textured-area-rug",
+            "review_star": 5,
+            "review_author": "Tammie J.",
+            "review_title": "Rug arrived on time",
+            "review_description": "Rug arrived on time & it was beautiful. Looked exactly like the picture. Size was accurate & it layed flat easily! So happy I purchased it."
+          }
+        },
+        "ee2b460b-031b-4fcc-af5e-2c5b21a30d69": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "featured_product": "kolkata-moroccan-hype-boho-vintage-area-rug",
+            "review_star": 5,
+            "review_author": "Jolene P.",
+            "review_title": "Love It!",
+            "review_description": "Great quality rug at a very reasonable price! It’s exactly what I was expecting. I would definitely purchase rugs from Eyely again!"
+          }
+        },
+        "c3c9dc84-56b6-458d-8398-351573281c6c": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "featured_product": "andromeda-denia-ornate-geometric-medallion-area-rug",
+            "review_star": 5,
+            "review_author": "Candace",
+            "review_title": "This rug is amazing!!",
+            "review_description": "This rug is amazing!! And it was shipped within a day!!"
+          }
+        }
+      },
+      "block_order": [
+        "1b003807-bb93-48ba-b0c2-f9dfd5480820",
+        "ee2b460b-031b-4fcc-af5e-2c5b21a30d69",
+        "c3c9dc84-56b6-458d-8398-351573281c6c"
+      ],
+      "settings": {
+        "enable": true,
+        "title": "Shop Area Rugs Over 10,000 Customers Love",
+        "btnname": "More Review"
+      }
+    },
+    "1634804839b2634194": {
+      "type": "index-new-arrival",
+      "settings": {
+        "enable-section": true,
+        "arrival-banner-img": "shopify:\/\/shop_images\/newarrivals_banner.png",
+        "mob-arrival-banner-img": "shopify:\/\/shop_images\/new-arrival.png",
+        "link": "shopify:\/\/collections\/new-arrivals"
+      }
+    },
+    "1635498049c0a9cf93": {
+      "type": "index-rug-buy-size",
+      "blocks": {
+        "cd9fd099-27a1-483c-9e24-0cb8636ae474": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/round.png",
+            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_round",
+            "heading_txt": "Round",
+            "size_txt": "5x5"
+          }
+        },
+        "119f90ea-7c20-416c-828c-4bcde0af362a": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/runner.png",
+            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_runner",
+            "heading_txt": "Runner",
+            "size_txt": "2x8 | 2x10"
+          }
+        },
+        "d3219c40-2e76-47cc-af85-da442f6d2640": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/medium.png",
+            "logo_url": "https:\/\/www.eyely.com\/collections\/rugs\/shape_rectangle",
+            "heading_txt": "Medium",
+            "size_txt": "3×5 | 4×6 | 5×8"
+          }
+        },
+        "67898db4-0eee-48df-b662-0a9300c613a5": {
+          "type": "Rugs_by_Size",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/large.png",
+            "logo_url": "shopify:\/\/collections\/large-rugs",
+            "heading_txt": "Large",
+            "size_txt": "8×10 | 9×12"
+          }
+        }
+      },
+      "block_order": [
+        "cd9fd099-27a1-483c-9e24-0cb8636ae474",
+        "119f90ea-7c20-416c-828c-4bcde0af362a",
+        "d3219c40-2e76-47cc-af85-da442f6d2640",
+        "67898db4-0eee-48df-b662-0a9300c613a5"
+      ],
+      "settings": {
+        "title_txt": "Rugs By Size",
+        "heading_txt": "The right size rug gives your room the perfect feel. We can help make it easy.",
+        "btn_text": "View all rugs",
+        "btn_url": "shopify:\/\/collections\/rugs"
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "featured_products": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "collection": "all",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "collage": {
+      "type": "collage",
+      "disabled": true,
+      "blocks": {
+        "video": {
+          "type": "video",
+          "settings": {
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "description": "Describe the video",
+            "image_padding": false
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false,
+            "image_padding": false,
+            "secondary_background": false
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image_padding": false,
+            "color_scheme": "background-1"
+          }
+        }
+      },
+      "block_order": [
+        "video",
+        "product",
+        "collection"
+      ],
+      "settings": {
+        "heading": "Multimedia collage",
+        "desktop_layout": "left",
+        "mobile_layout": "collage"
+      }
+    },
+    "video": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "Video",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false
+      }
+    },
+    "multi_column": {
+      "type": "multicolumn",
+      "disabled": true,
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "column2": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "column3": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
+      "settings": {
+        "title": "Multicolumn",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "swipe_on_mobile": false
+      }
+    },
+    "16349005502f579484": {
+      "type": "index-best-seller",
+      "settings": {
+        "enable": true,
+        "title_txt": "Best Seller",
+        "heading_txt": "The best of the best. From all we’ve sold here is what most people are purchasing.",
+        "featured_collection": "new-arrivals"
+      }
+    },
+    "163496890411eb8d52": {
+      "type": "index-shop-by-style",
+      "blocks": {
+        "2a23b3ff-9a47-4d78-93af-4b2ee9a02d15": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/BMF106A-5-ROOM1_327f1ec9-1ff7-4a0b-8753-b511bb995935.jpg",
+            "logo_url": "shopify:\/\/collections\/bohemian",
+            "heading_txt": "Bohemian",
+            "save_txt": "save 70%"
+          }
+        },
+        "03a3d8d5-1657-4ded-9b2f-53601afe83bd": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/NRF102A-2-ROOM.jpg",
+            "logo_url": "\/collections\/rugs\/shape_runner",
+            "heading_txt": "Runners",
+            "save_txt": "save 70%"
+          }
+        },
+        "5d3cc6ae-2a56-4bb3-8b55-1c933b7ae962": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/MCR102B-5-ROOM1.jpg",
+            "logo_url": "\/collections\/shags",
+            "heading_txt": "Shags",
+            "save_txt": "save 70%"
+          }
+        },
+        "d07cac08-79f6-424a-9c5b-14dd0dd5f8e5": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/AMC100B-5-ROOM.jpg",
+            "logo_url": "shopify:\/\/collections\/outdoor",
+            "heading_txt": "Outdoor",
+            "save_txt": "save 70%"
+          }
+        },
+        "f84b3913-0431-42d5-8bd8-bb4462f845ee": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/CTP103A-5-ROOM1.jpg",
+            "logo_url": "shopify:\/\/collections\/contemporary",
+            "heading_txt": "Contemporary",
+            "save_txt": "save 70%"
+          }
+        },
+        "213634a2-7ce5-4043-b099-c1b0fa66ee16": {
+          "type": "shop_by_style",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/MDP400A-5-ROOM1.jpg",
+            "logo_url": "shopify:\/\/collections\/vintage",
+            "heading_txt": "Vintage",
+            "save_txt": "save 70%"
+          }
+        }
+      },
+      "block_order": [
+        "2a23b3ff-9a47-4d78-93af-4b2ee9a02d15",
+        "03a3d8d5-1657-4ded-9b2f-53601afe83bd",
+        "5d3cc6ae-2a56-4bb3-8b55-1c933b7ae962",
+        "d07cac08-79f6-424a-9c5b-14dd0dd5f8e5",
+        "f84b3913-0431-42d5-8bd8-bb4462f845ee",
+        "213634a2-7ce5-4043-b099-c1b0fa66ee16"
+      ],
+      "settings": {
+        "title_txt": "Shop By Style",
+        "heading_txt": "Make finding what you’re looking for easier by narrowing your search by style."
+      }
+    },
+    "163497260307339b36": {
+      "type": "index-shop-by-color",
+      "blocks": {
+        "0ca6d808-24ef-46db-b679-8c7cdbb6e58d": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/5_gray.png",
+            "logo_url": "\/collections\/rugs\/color_gray",
+            "heading_txt": "Gray"
+          }
+        },
+        "aeb6320d-1ff9-4ed4-ad87-60d8c183797a": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/12_navy.png",
+            "logo_url": "\/collections\/rugs\/color_blue",
+            "heading_txt": "Blue"
+          }
+        },
+        "4e5502d1-48f0-4e36-90cb-e3feea4ed570": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/8_black-white.png",
+            "logo_url": "\/collections\/rugs\/color_black+color_white",
+            "heading_txt": "Black & White"
+          }
+        },
+        "36561fd3-a802-41d6-830b-99584018cb36": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/3_multi.png",
+            "logo_url": "\/collections\/rugs\/color_multi",
+            "heading_txt": "Multi"
+          }
+        },
+        "155b882a-6409-446d-a872-8bc73bd9bf60": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/2_green.png",
+            "logo_url": "\/collections\/rugs\/color_green",
+            "heading_txt": "Green"
+          }
+        },
+        "434a3d8b-05e0-44ba-87d9-661f90d19679": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/4_red.png",
+            "logo_url": "\/collections\/rugs\/color_red",
+            "heading_txt": "Red"
+          }
+        },
+        "79749c53-d673-4169-9c50-1d2670dc3c79": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/6_cream.png",
+            "logo_url": "\/collections\/rugs\/color_cream",
+            "heading_txt": "Cream"
+          }
+        },
+        "badce77f-6de3-4fda-aff2-282940306db7": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/7_ivory.png",
+            "logo_url": "\/collections\/rugs\/color_ivory",
+            "heading_txt": "Ivory"
+          }
+        },
+        "a8f5f0fa-319d-46e7-ab94-eb2d7b23e661": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/10_brown.png",
+            "logo_url": "\/collections\/rugs\/color_brown",
+            "heading_txt": "Brown"
+          }
+        },
+        "ba5e0dd5-38fb-4e35-af82-d987fa5d3ee3": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/11_natural.png",
+            "logo_url": "\/collections\/rugs\/color_natural",
+            "heading_txt": "Natural"
+          }
+        },
+        "bdd81a1f-8c9a-4048-bffb-690066a68ad5": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/12_navy.png",
+            "logo_url": "\/collections\/rugs\/color_navy",
+            "heading_txt": "Navy"
+          }
+        },
+        "e223a47e-4daa-44bf-993e-1e0c0882f718": {
+          "type": "shop_by_color",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/13_teal.png",
+            "logo_url": "\/collections\/rugs\/color_teal",
+            "heading_txt": "Teal"
+          }
+        }
+      },
+      "block_order": [
+        "0ca6d808-24ef-46db-b679-8c7cdbb6e58d",
+        "aeb6320d-1ff9-4ed4-ad87-60d8c183797a",
+        "4e5502d1-48f0-4e36-90cb-e3feea4ed570",
+        "36561fd3-a802-41d6-830b-99584018cb36",
+        "155b882a-6409-446d-a872-8bc73bd9bf60",
+        "434a3d8b-05e0-44ba-87d9-661f90d19679",
+        "79749c53-d673-4169-9c50-1d2670dc3c79",
+        "badce77f-6de3-4fda-aff2-282940306db7",
+        "a8f5f0fa-319d-46e7-ab94-eb2d7b23e661",
+        "ba5e0dd5-38fb-4e35-af82-d987fa5d3ee3",
+        "bdd81a1f-8c9a-4048-bffb-690066a68ad5",
+        "e223a47e-4daa-44bf-993e-1e0c0882f718"
+      ],
+      "settings": {
+        "title_txt": "Shop By Color",
+        "heading_txt": "When you need some color assistance, shop by color to complete your palette.",
+        "btn_txt": "More Color"
+      }
+    },
+    "1634984935486e4768": {
+      "type": "index-collection-grid",
+      "blocks": {
+        "7be31ceb-585f-4e81-b624-69b3b32aed63": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL3008A-ON-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/table-lamps",
+            "title": "Table Lamps"
+          }
+        },
+        "57f72f7f-e093-4d1b-a029-396b3fcc74ec": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL7610A-MAIN-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/flush-mounts",
+            "title": "Flush Mounts"
+          }
+        },
+        "8c8428e5-73d8-4beb-b403-685074df5cdc": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL6111A-ON-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/pendants",
+            "title": "Pendants"
+          }
+        },
+        "68e79361-0ca1-47dc-bc13-9f750e0d79e1": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL7424A-ON-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/vanity-lights",
+            "title": "Vanity Lights"
+          }
+        },
+        "bcd8e7f0-8fd1-4e7f-ac5c-ec4f4e284556": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/JYL3022A-ON-ROOM_7cf44211-f70f-4e2e-9608-30cc3deec57f.jpg",
+            "featured_url": "shopify:\/\/collections\/floor-lamps",
+            "title": "Floor Lamps"
+          }
+        },
+        "fdde6371-ff11-471c-9515-3404288ef63b": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/HPM1005C-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/trash-cans",
+            "title": "Trash cans"
+          }
+        },
+        "0d38449a-c432-484c-b5c9-b251e6eb24e0": {
+          "type": "featured_box",
+          "settings": {
+            "featured_image": "shopify:\/\/shop_images\/TBL1014A-ROOM.jpg",
+            "featured_url": "shopify:\/\/collections\/garden-stool",
+            "title": "Garden Stools"
+          }
+        }
+      },
+      "block_order": [
+        "7be31ceb-585f-4e81-b624-69b3b32aed63",
+        "57f72f7f-e093-4d1b-a029-396b3fcc74ec",
+        "8c8428e5-73d8-4beb-b403-685074df5cdc",
+        "68e79361-0ca1-47dc-bc13-9f750e0d79e1",
+        "bcd8e7f0-8fd1-4e7f-ac5c-ec4f4e284556",
+        "fdde6371-ff11-471c-9515-3404288ef63b",
+        "0d38449a-c432-484c-b5c9-b251e6eb24e0"
+      ],
+      "settings": {
+      }
+    },
+    "1634987872fe7e44be": {
+      "type": "index-shop-product",
+      "settings": {
+        "title_txt": "Shop Table Lamps",
+        "heading_txt": "Our table lamps pair up perfectly with any type of rug you have",
+        "collection_main": "table-lamps"
+      }
+    },
+    "1635148724bde69291": {
+      "type": "index-warehouse-sale",
+      "blocks": {
+        "bd09d198-4f4b-426c-9c8c-fc8f468ec424": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-566-ROOM.jpg"
+          }
+        },
+        "00e1ea3a-b88b-4da6-92b3-b89fc3c5c7d0": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-567-ROOM.jpg"
+          }
+        },
+        "65f8c741-ecab-458f-ab73-b165b4a07e4a": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-568-ROOM.jpg"
+          }
+        },
+        "7ce20ac2-3d1b-4588-a684-5b7ec6f63eee": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-293-ROOM1.jpg"
+          }
+        },
+        "5b0967e1-9c1c-4368-a707-7282163f6bbc": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-564-ROOM.jpg"
+          }
+        },
+        "99cfb618-d968-41b8-af46-85aa4ddb8d5f": {
+          "type": "featured_item",
+          "settings": {
+            "link": "shopify:\/\/collections\/warehouse-sale",
+            "back_img": "shopify:\/\/shop_images\/SMP-523-ROOM.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "bd09d198-4f4b-426c-9c8c-fc8f468ec424",
+        "00e1ea3a-b88b-4da6-92b3-b89fc3c5c7d0",
+        "65f8c741-ecab-458f-ab73-b165b4a07e4a",
+        "7ce20ac2-3d1b-4588-a684-5b7ec6f63eee",
+        "5b0967e1-9c1c-4368-a707-7282163f6bbc",
+        "99cfb618-d968-41b8-af46-85aa4ddb8d5f"
+      ],
+      "settings": {
+        "back_span": "Eyelys Picks",
+        "title_txt": "Warehouse Sale",
+        "back_p_url": "shopify:\/\/collections\/warehouse-sale",
+        "back_p": "Shop this unique finds",
+        "info_p": "Shop from our exclusive limited quantity warehouse sale which offers rugs for $49.99. Don't miss out, and grab one while it's still in stock.",
+        "enable_btn": true,
+        "btn_text": "Show Now",
+        "btn_url": "shopify:\/\/collections\/warehouse-sale"
+      }
+    },
+    "163515266224f4e42b": {
+      "type": "index-latest-blogs",
+      "settings": {
+        "title_txt": "Fresh from the blog",
+        "heading_txt": "read the eyely blogs",
+        "link": "shopify:\/\/blogs\/lighting"
+      }
+    },
+    "1635157511e92542d4": {
+      "type": "index-cevoid-section",
+      "settings": {
+        "title": "Pictures from our customers",
+        "div-code": "<div id=\"cevoid-container\" data-gallery=\"g-18uTo2qHb81F5EcXRnzRZ\"><\/div>"
+      }
+    },
+    "16351639957d0d774a": {
+      "type": "index-newsletter",
+      "settings": {
+        "title_txt": "<b>Yas!<\/b> Send me exclusive offers, deals, and personalised tips for shopping on Eyely.",
+        "bg_image": "shopify:\/\/shop_images\/gradient.png"
+      }
+    }
+  },
+  "order": [
+    "16346258161ef8d1b8",
+    "1634638697d2b5e52a",
+    "163479756837bdea1f",
+    "1634804839b2634194",
+    "1635498049c0a9cf93",
+    "rich_text",
+    "featured_products",
+    "collage",
+    "video",
+    "multi_column",
+    "16349005502f579484",
+    "163496890411eb8d52",
+    "163497260307339b36",
+    "1634984935486e4768",
+    "1634987872fe7e44be",
+    "1635148724bde69291",
+    "163515266224f4e42b",
+    "1635157511e92542d4",
+    "16351639957d0d774a"
+  ]
+}

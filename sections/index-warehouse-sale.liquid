@@ -1,0 +1,127 @@
+
+<div class="warehouse-sale">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-3 col-md-6  col-sm-6 col-12">
+                <div class="back-sec-info">
+                  <span>{{ section.settings.back_span }}</span>
+                  <h4>{{ section.settings.title_txt }}</h4>
+                  <a href="{{ section.settings.back_p_url }}">
+                    <p class="back-sec-p">{{ section.settings.back_p }}</p><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              {% for block in section.blocks %}
+                {% if block.type == 'featured_item' %}
+                 <div class="col-xl-3 col-lg-3 col-md-6 col-6">
+
+                   <div class="back-sec-img">
+                        <a href="{{ block.settings.link }}">
+                        {% if block.settings.back_img != blank %} 
+                          {%
+                            render 'rimg',
+                            class: 'img-fluid',
+                            img: block.settings.back_img,
+                            size: '300x300'
+                          %}
+                        {% endif %}
+                        </a>
+                   </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                
+               
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                  <div class="back-sec-info">
+                    <p class="back-sec-p1">{{ section.settings.info_p }}</p>
+                   {% if section.settings.enable_btn %} <a href="{{section.settings.btn_url}}" class=" btn-view-more">{{section.settings.btn_text}}</a>{% endif %}
+                  </div>
+                </div>
+
+
+        </div>
+    </div>
+</div>
+
+{{ 'section-index-warehouse-sale.css' | asset_url | stylesheet_tag }}
+{% schema %}
+{
+  "name": "Index-Warehouse Sale",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "max_blocks": 6,
+  "settings":[
+    {
+        "type" : "text",
+        "id" : "back_span",
+        "label" : "Text",
+        "default":"Eyelys Picks"
+      },
+      {
+        "type" : "text",
+        "id" : "title_txt",
+        "label" : "Title",
+        "default":"Warehouse Sale"
+      },
+      {
+        "type" : "url",
+        "id" : "back_p_url",
+        "label" : "Url"
+      },
+      {
+        "type" : "text",
+        "id" : "back_p",
+        "label" : "Text",
+        "default" : "Shop this unique finds"
+      },
+      {
+          "type" : "textarea",
+          "id" : "info_p",
+          "label" : "Info",
+          "default" : "Shop from our exclusive limited quantity warehouse sale which offers rugs for $49.99. Dont miss out, and grab one while its still in stock."
+      },
+      {
+      "type" : "checkbox",
+      "id" : "enable_btn",
+      "label" : "Enable Btn",
+      "default" : true
+      },
+      {
+      "type" : "text",
+      "id" : "btn_text",
+      "label" : "Button Text",
+      "default" : "Show Now"
+      },
+      {
+        "type" : "url",
+        "id" : "btn_url",
+        "label" : "Button Url"
+      }
+
+  ],
+    "blocks":[
+      {
+      "type": "featured_item",
+      "name": "Featured Item",
+        "settings": [
+            {
+            "type": "url",
+            "id": "link",
+            "label": "Featured Link"
+           },
+          {
+            "type":"image_picker",
+            "id":"back_img",
+            "label":"Image"
+          }
+        ]
+      }
+    ],
+  "presets": [
+    {
+      "name": "Index Warehouse sale"
+    }
+  ]
+
+}
+{% endschema %}

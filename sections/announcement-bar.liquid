@@ -1,0 +1,68 @@
+
+      <div class="announcement-bar  gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}  style="color: {{ section.settings.announcement_color }}; background: {{ section.settings.announcement_background }};">
+        {%- if section.settings.text != blank -%}
+          {%- if section.settings.link != blank -%}
+            <a href="{{ section.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+          {%- endif -%}
+              <p class="announcement-bar__message">
+                {{ section.settings.text | escape }}
+
+                  {% if settings.show_countdown %}
+                      <span class="timer_wrap">  
+                        <span class="example" id="example">
+                          <span><span class="days">00</span><span class="pl-2 days_text">Days</span></span>
+                          <span class="seperator px-2">:</span>
+                          <span><span class="hours">00</span><span class=" pl-2 hours_text">Hours</span></span>
+                          <span class="seperator px-2">:</span>
+                          <span><span class="minutes">00</span><span class="pl-2 minutes_text">Minutes</span></span>
+                          <span class="seperator px-2">:</span>
+                          <span><span class="seconds">00</span><span class="pl-2 seconds_text">Seconds</span></span>
+                        </span>
+                      </span>
+                      <input type="hidden" id="days-data" value="{{ settings.day }}">
+                      <input type="hidden" id="month-data" value="{{ settings.month }}">
+                      <input type="hidden" id="year-data" value="{{ settings.year }}">
+                  {% endif %}
+                {%- if section.settings.link != blank -%}
+                  {% render 'icon-arrow' %}
+                {%- endif -%}
+
+
+              </p>
+          {%- if section.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+ 
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "settings":[
+    {
+      "type": "text",
+      "id": "text",
+      "default": "Welcome to our store",
+      "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+    },
+    
+    {
+      "id":  "announcement_color",
+      "type":  "color",
+      "label":  "Text color",
+      "default":  "#fff"
+    },
+    {
+      "id":  "announcement_background",
+      "type":  "color",
+      "label":  "Background color",
+      "default":  "#000"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+    }
+  ]
+}
+{% endschema %}
