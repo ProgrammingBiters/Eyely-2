@@ -8,9 +8,8 @@
 .collection-grid-section .container{
   max-width: 1630px;
 }
-
 .filter-div{
-  width: 20%;
+  width: 250px;
   margin-left: 20px;
 }
 .color__list{

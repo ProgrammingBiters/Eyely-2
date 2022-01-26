@@ -1,0 +1,217 @@
+{% assign collect = collections[section.settings.featured_collection] %}
+{%- assign min = 10 -%}
+{%- assign max = collect.all_products_count-%}
+{%- assign date_fract = "now" | date: "%N" -%}
+{%- assign diff = max | minus: min -%}
+{%- assign random_number = "now" | date: "%N" | modulo: diff -%}
+{%- assign random_number = random_number | plus: min -%}
+{% if random_number >= max %}
+{% assign random_number = random_number | minus:25 %}
+{% endif %}
+{% assign rem = max | minus:random_number %}
+{% if rem <= 20 %}
+{% assign random_number  =random_number  | minus: 15 %}
+
+{% endif %}
+<section class="e-prd">
+  <div class="container">
+{% paginate collect.products by collect.all_products_count %}
+
+    <h3 class="e-prd-title"> {{section.settings.title}}</h3>
+    <p class="e-prd-p">{{section.settings.subtitle}}</p>
+    {% if section.settings.featured_collection != blank %}
+
+    <div class="row e-slider"> 
+    {% for product in collect.products limit:20 offset:random_number %}
+   
+      <div class="col-sm-12 col-6">
+        <div class="all-prd-main content">
+        <a href="{{product.url}}">
+      	<div class="prd-main-div">
+          {% if product.featured_image  != blank %}
+          <div class="prd-main-div-img">
+          	<img src="{{product.featured_image | img_url:'300x'}}">
+          </div>
+          {% endif %}
+          <div class="prd-main-div-info">
+            <h3 class="b-headings"><span class="prd-main-div-title">{{product.title}} </span>  <span class="prd-main-div-price">{{product.price |money}}</span></h3>
+          </div>
+        </div>
+        </a>
+<!--         <div class="prd-cart">
+          <button type="button" class="css-1jg1bx">
+          		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div> -->
+        </div>
+      </div>    
+     
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="load-more-btn">
+      <a href="#" id="loadMore">view more</a>
+    </div>
+    {% endpaginate %}
+<!--     <div class="row e-slider">
+      <div class="col-xl-3">
+        <div class="all-prd-main">
+        <a href="#">
+      	<div class="prd-main-div">
+          <div class="prd-main-div-img">
+          	<img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/pr1.jpg?v=1625899445">
+            
+          </div>
+          <div class="prd-main-div-info">
+            <h3><span class="prd-main-div-title">Brass Standing Weather Station</span><span class="prd-main-div-price">$54.99</span></h3>
+          </div>
+        </div>
+        </a>
+        <div class="prd-cart">
+          <button type="button" class="css-1jg1bx">
+          		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="all-prd-main">
+        <a href="#">
+      	<div class="prd-main-div">
+          <div class="prd-main-div-img">
+          	<img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/pr1.jpg?v=1625899445">
+            
+          </div>
+          <div class="prd-main-div-info">
+            <h3><span class="prd-main-div-title">Brass Standing Weather Station</span><span class="prd-main-div-price">$54.99</span></h3>
+          </div>
+        </div>
+        </a>
+        <div class="prd-cart">
+          <button type="button" class="css-1jg1bx">
+          		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="all-prd-main">
+        <a href="#">
+      	<div class="prd-main-div">
+          <div class="prd-main-div-img">
+          	<img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/pr1.jpg?v=1625899445">
+            
+          </div>
+          <div class="prd-main-div-info">
+            <h3><span class="prd-main-div-title">Brass Standing Weather Station</span><span class="prd-main-div-price">$54.99</span></h3>
+          </div>
+        </div>
+        </a>
+        <div class="prd-cart">
+          <button type="button" class="css-1jg1bx">
+          		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="all-prd-main">
+        <a href="#">
+      	<div class="prd-main-div">
+          <div class="prd-main-div-img">
+          	<img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/pr1.jpg?v=1625899445">
+            
+          </div>
+          <div class="prd-main-div-info">
+            <h3><span class="prd-main-div-title">Brass Standing Weather Station</span><span class="prd-main-div-price">$54.99</span></h3>
+          </div>
+        </div>
+        </a>
+        <div class="prd-cart">
+          <button type="button" class="css-1jg1bx">
+          		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="all-prd-main">
+        <a href="#">
+      	<div class="prd-main-div">
+          <div class="prd-main-div-img">
+          	<img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/pr1.jpg?v=1625899445">
+            
+          </div>
+          <div class="prd-main-div-info">
+            <h3><span class="prd-main-div-title">Brass Standing Weather Station</span><span class="prd-main-div-price">$54.99</span></h3>
+          </div>
+        </div>
+        </a>
+        <div class="prd-cart">
+          <button type="button" class="css-1jg1bx">
+          		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="all-prd-main">
+        <a href="#">
+      	<div class="prd-main-div">
+          <div class="prd-main-div-img">
+          	<img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/pr1.jpg?v=1625899445">
+            
+          </div>
+          <div class="prd-main-div-info">
+            <h3><span class="prd-main-div-title">Brass Standing Weather Station</span><span class="prd-main-div-price">$54.99</span></h3>
+          </div>
+        </div>
+        </a>
+        <div class="prd-cart">
+          <button type="button" class="css-1jg1bx">
+          		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "blog-product",
+    "settings": [
+	{
+		"type":"textarea",
+        "id":"title",
+        "label":"Title",
+		"default":"New to <span>The Shop</span>"
+	},
+	{
+      "type":"text",
+      "id":"subtitle",
+      "label":"Subtitle",
+      "default":"Our newest additions that we can't stop talking about"
+      },
+      {
+      "type":"collection",
+      "id":"featured_collection",
+      "label":"Featured Collection"
+      }
+],
+    "presets": [
+        {
+        "name": "Blog product",
+        "category": "Blog"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -139,7 +139,42 @@ $(document).ready(function(){
     })
   })
 
+  function openPopup(pageName){
+    $('body').addClass('static-page-popup');
+    $(".popup-content-loader").show();
+    $(".light-page-popup").addClass('light-popup');
+    $(".guid-popup").hide();
+    //$("#boxtxt").load('/pages/'+pageName);
+    //$("."+className).show();
+      // $(".lighting-static-popups").load('/pages/'+pageName, function(){
+      //$(".popup-content-loader").hide();
+      // });
+        $.ajax({
+    url:'/pages/'+pageName,
+    type:'GET',
+    dataType : 'json',
+    success: function(data){
+    console.log(data.page.body_html );
+    //console.log("Data Object",data);
+  //     var content = $(data).find('#site-main');
+  //    console.log("content",content);
+    $("#boxtxt").html(data.page.body_html);
+    }
+  });
+  }
 
+  $(".modal-light-close").on('click', function(){
+    $('body').removeClass('static-page-popup');
+    $(".light-page-popup").removeClass('light-popup');
+    $(".guid-popup").hide();
+    $(".lighting-static-popups").empty();
+  });
+  
+  $(".modal-size-close").on('click', function(){
+    $('body').removeClass('static-page-popup');
+    $(".size-popup").removeClass('light-popup');
+    $(".guid-popup").hide();
+  });
 
   // collection loadmore
   function isVisible($el) {

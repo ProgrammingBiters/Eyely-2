@@ -8,7 +8,7 @@
         {% for block in section.blocks %}
             {% if block.settings.enable %}
                 {% assign product =all_products[block.settings.featured_product] %}
-                {% assign initial_image = product.images[1].src %}
+                {% assign initial_image = block.settings.img %}
 
                 <div class="review-wrap ">
             
@@ -54,10 +54,9 @@
                                 </a>
                                         <div class="discount mt-2">
                                             <a href="{{ product.url }}">
-                                                <span>{% if product.compare_at_price > product.price %}
-                                                <del style="color:#444">{{ product.compare_at_price | money }}</del>&nbsp;
-                                                {% endif %}
-                                                    {{ product.price | money }}</span>
+                                                <span>
+                                                <del style="color:#444">{{ block.settings.compare_at_price }}</del>&nbsp;                                                
+                                                    {{ block.settings.price }}</span>
                                             </a>
                                         </div>
                                     </div>
@@ -76,6 +75,7 @@
 {% schema %}
 {
   "name": "Review",
+
   "tag":"section",
   "class": "spaced-section spaced-section--full-width",
   "settings": [
@@ -110,11 +110,10 @@
 "default": true
 },
 {
-"type": "image_picker",
-"id": "featured_product",
-"label": "Featured Product"
-}
-,
+    "type": "image_picker",
+    "id": "img",
+    "label": "Image"
+},
 {
 "type": "range",
 "id": "review_star",
@@ -141,7 +140,17 @@
 "id": "review_description",
 "label": "Review Description",
 "default": "This rug is gorgeous in person.It has a vintage, faded look with muted colors.it looks.."
-}
+},
+    {
+        "type": "text",
+        "id": "compare_at_price",
+        "label": "Compare Price"
+    },
+    {
+        "type": "text",
+        "id": "price",
+        "label": "Price"
+    }
 ]
 
 
