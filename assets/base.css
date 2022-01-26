@@ -2547,3 +2547,15 @@ padding-bottom: 20px;
 .half-wrapper p{
   font-size: 16px;
 }
+.breadcrumb a {
+  color: #b23c18;
+  text-decoration: none;
+}
+.breadcrumb .arrow {
+  font-size: 2rem;
+  line-height: calc(1 + .2 / var(--font-body-scale));
+  padding: 0 6px 0 8px;
+}
+.breadcrumb span {
+  color: #949494;
+}

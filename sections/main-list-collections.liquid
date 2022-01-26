@@ -2,8 +2,7 @@
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {% assign pagination = section.settings.pagination %}
 <div class="container">
-  <h1 class="title title--primary">{{ section.settings.title | escape }}</h1>
-
+  {% render 'breadcrumb' %}
   {%- liquid
     case section.settings.sort
       when 'products_high' or 'products_low'
@@ -77,14 +76,9 @@
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",
-  "class": "spaced-section collection-list-section",
+  "class": "collection-list-section",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "t:sections.main-list-collections.settings.title.label",
-      "default": "Collections"
-    },
+  
     {
       "type": "select",
       "id": "sort",
