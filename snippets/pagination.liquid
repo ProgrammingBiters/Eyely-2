@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="{{ 'component-pagination.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-pagination.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- if paginate.parts.size > 0 -%}
+{% comment %}{%- if paginate.parts.size > 0 -%}
   <div class="pagination-wrapper">
     <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
       <ul class="pagination__list list-unstyled" role="list">
@@ -51,3 +51,79 @@
     </nav>
   </div>
 {%- endif -%}
+{% endcomment %}
+{% assign grid_list = grid_list | default: nil %}
+
+{% if paginate.previous or paginate.next %}
+  <nav class="pagination--container" aria-label="Pagination">
+    <ul class="pagination--inner">
+
+      {% if paginate.previous %}
+        <li class="pagination--previous">
+          <a
+            class="pagination--item"
+            href="{{- paginate.previous.url -}}{%- if grid_list -%}&grid_list{%- endif -%}"
+            aria-label="Go to previous page"
+          >
+            <span class="pagination--chevron-left" aria-hidden="true">
+              {% render 'icon-chevron-down-small' %}
+            </span>
+
+            {{ 'general.pagination.previous' | t }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% for part in paginate.parts %}
+        {% if part.is_link %}
+          <li>
+            <a
+              class="pagination--item"
+              href="{{ part.url }}{% if grid_list %}&grid_list{% endif %}"
+              aria-label="Go to page {{ part.title }}"
+            >
+              {{ part.title }}
+            </a>
+          </li>
+      
+        {% else %}
+          {% if part.title == '&hellip;' %}
+        {% comment %}    
+      	<li class="pagination--ellipsis">
+              <span class="pagination--item">
+                {{ part.title }}
+              </span>
+            </li>
+      {% endcomment %}
+          {% else %}
+            <li
+              class="pagination--active"
+              aria-label="Page {{ part.title }}"
+              aria-current="true"
+            >
+              <span class="pagination--item">
+                {{ part.title }}
+              </span>
+            </li>
+          {% endif %}
+      
+        {% endif %}
+      {% endfor %}
+      {% if paginate.next %}
+        <li class="pagination--next">
+          <a
+            class="pagination--item"
+            href="{{- paginate.next.url -}}{%- if grid_list -%}&grid_list{%- endif -%}"
+            aria-label="Go to next page"
+          >
+            {{ 'general.pagination.next' | t }}
+            <span class="pagination--chevron-right" aria-hidden="true">
+              {% render 'icon-chevron-down-small' %}
+            </span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
+

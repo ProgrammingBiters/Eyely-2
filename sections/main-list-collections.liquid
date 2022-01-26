@@ -1,7 +1,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
-
-<div class="page-width">
+{% assign pagination = section.settings.pagination %}
+<div class="container">
   <h1 class="title title--primary">{{ section.settings.title | escape }}</h1>
 
   {%- liquid
@@ -16,14 +16,14 @@
       assign collections = collections | reverse
     endif
   -%}
-
-  <ul class="collection-list grid grid--1-col grid--3-col-tablet" role="list">
+  {% paginate collections by pagination %}
+  <ul class="collection-list grid grid--2-col grid--4-col-tablet" role="list">
     {%- for collection in collections -%}
       <li class="collection-list__item grid__item">
         <a{% if collection.all_products_count > 0 %} href="{{ collection.url }}"{% endif %}
           class="card animate-arrow{% if collection.featured_image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %}{% unless section.settings.image_padding %} card--light-border{% endunless %}"
         >
-          <div class="card--stretch card-colored color-{{ section.settings.color_scheme }}">
+          <div class="card--stretch card-colored ">
             {%- if collection.featured_image != blank -%}
               <div{% if section.settings.image_padding %} class="card__media-spacer"{% endif %}>
                 {% if section.settings.image_padding %}<div class="overlay-card"></div>{% endif %}
@@ -49,7 +49,7 @@
               </div>
               <div class="card__text card__text-spacing card__text-hover">
                 {% unless section.settings.image_padding %}<div class="overlay-card"></div>{% endunless %}
-                <h2 class="h3">{{- collection.title -}}<span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span></h2>
+                <h2 class="h3">{{- collection.title -}}{% comment %}<span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>{% endcomment %}</h2>
               </div>
             {%- else -%}
               <div class="overlay-card"></div>
@@ -70,12 +70,14 @@
       </li>
     {%- endfor -%}
   </ul>
+  {% render 'pagination', paginate: paginate %}
+  {% endpaginate %}
 </div>
 
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",
-  "class": "spaced-section",
+  "class": "spaced-section collection-list-section",
   "settings": [
     {
       "type": "text",
@@ -137,39 +139,21 @@
       "info": "t:sections.main-list-collections.settings.image_ratio.info"
     },
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.main-list-collections.settings.color_scheme.options__1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.main-list-collections.settings.color_scheme.options__2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.main-list-collections.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.main-list-collections.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.main-list-collections.settings.color_scheme.options__5.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.main-list-collections.settings.color_scheme.label"
-    },
-    {
       "type": "checkbox",
       "id": "image_padding",
       "default": false,
       "label": "t:sections.main-list-collections.settings.image_padding.label"
-    }
+    },
+    {
+    "type":"range",
+  "id":"pagination",
+  "label":"Pagination Value",
+  "step":4,
+  "min":4,
+  "max":24,
+  "default":12
+  }
+    
   ]
 }
 {% endschema %}
