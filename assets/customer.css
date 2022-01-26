@@ -11,14 +11,26 @@
   }
 }
 
+.btn-card a{
+  color:#b23d25;
+}
+
+.txt-black{
+  color:black !important;
+}
+
 .customer form {
   margin-top: 4rem;
 }
 
 .customer button {
-  margin: 4rem 0 1.5rem;
+  margin: 2em 0 1.5rem;
+  border-radius: 4px;
+  background-color: #b23d25;
 }
-
+.pl-23{
+padding-left: 23px;;
+}
 .customer ul {
   line-height: calc(1 + 0.6 / var(--font-body-scale));
   padding-left: 4.4rem;

@@ -56,44 +56,155 @@
     "163479756837bdea1f": {
       "type": "index-review-products",
       "blocks": {
-        "1b003807-bb93-48ba-b0c2-f9dfd5480820": {
-          "type": "featured_product",
-          "settings": {
-            "enable": true,
-            "featured_product": "tinos-ourika-moroccan-geometric-textured-area-rug",
-            "review_star": 5,
-            "review_author": "Tammie J.",
-            "review_title": "Rug arrived on time",
-            "review_description": "Rug arrived on time & it was beautiful. Looked exactly like the picture. Size was accurate & it layed flat easily! So happy I purchased it."
-          }
-        },
         "ee2b460b-031b-4fcc-af5e-2c5b21a30d69": {
           "type": "featured_product",
           "settings": {
             "enable": true,
-            "featured_product": "kolkata-moroccan-hype-boho-vintage-area-rug",
+            "img": "shopify:\/\/shop_images\/original1_1X_3d5d948d-9336-4347-b750-ba8c52810e97.png",
             "review_star": 5,
             "review_author": "Jolene P.",
             "review_title": "Love It!",
-            "review_description": "Great quality rug at a very reasonable price! It’s exactly what I was expecting. I would definitely purchase rugs from Eyely again!"
+            "review_description": "Great quality rug at a very reasonable price! It’s exactly what I was expecting. I would definitely purchase rugs from Eyely again!",
+            "compare_at_price": "$85.66",
+            "price": "$25.99"
+          }
+        },
+        "1b003807-bb93-48ba-b0c2-f9dfd5480820": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/Layer_1_1X_2.png",
+            "review_star": 5,
+            "review_author": "Christina D.",
+            "review_title": "Love It!",
+            "review_description": "Perfect match for my dining table to add color😊the quality is great. Love it!",
+            "compare_at_price": "$150.52",
+            "price": "$45.99"
           }
         },
         "c3c9dc84-56b6-458d-8398-351573281c6c": {
           "type": "featured_product",
           "settings": {
             "enable": true,
-            "featured_product": "andromeda-denia-ornate-geometric-medallion-area-rug",
+            "img": "shopify:\/\/shop_images\/original3_1X_54796229-42e3-4510-9cca-e0df966b641f.png",
             "review_star": 5,
-            "review_author": "Candace",
-            "review_title": "This rug is amazing!!",
-            "review_description": "This rug is amazing!! And it was shipped within a day!!"
+            "review_author": "Michaela P.",
+            "review_title": "Draco Area Rug",
+            "review_description": "BEAUTIFUL rug—I’ve received so many compliments on it.",
+            "compare_at_price": "$85.66",
+            "price": "$25.99"
+          }
+        },
+        "ed786815-2a67-4b12-b053-b5a448a7dba2": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/original4_1X_7461b1fb-c77b-453e-a31b-e3f45a12ab91.png",
+            "review_star": 5,
+            "review_author": "Barbara B.",
+            "review_title": "Beautiful",
+            "review_description": "It’s so beautiful! Just as described! All I needed \u0003in my living room. I am really satisfied.",
+            "compare_at_price": "$174.29",
+            "price": "$52.99"
+          }
+        },
+        "f51de571-f94d-4222-bee8-d7bc698580fb": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/original5_1X_532f9a18-2c0d-40d5-8fc1-9ddfa6a07c56.png",
+            "review_star": 5,
+            "review_author": "Marmar A.",
+            "review_title": "Stellar table lamp",
+            "review_description": "Stellar table lamp\nAbsolutely stunning crystal lamp with a bold gold starburst. Amazing quality, very well made, modern yet classy, very happy with my purchase. Excellent and accessible customer service, packed well and shipped fast.",
+            "compare_at_price": "$647.96",
+            "price": "$161.99"
+          }
+        },
+        "472495b6-11c1-4008-8bce-7813cb74d083": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/original7_1X_c60de5fc-d718-40dc-b28e-729841c8a121.png",
+            "review_star": 5,
+            "review_author": "Courtney C.",
+            "review_title": "Pleasantly surprised!",
+            "review_description": "Pleasantly surprised!\nI wasn’t sure what to expect but for the price paid I absolutely love this rug! Shipping was extremely fast and the rug is exactly what I was looking for!",
+            "compare_at_price": "$85.66",
+            "price": "$25.99"
+          }
+        },
+        "ce4bb798-cb1d-4c38-bc77-05422ec6ac02": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/original8_1X_bc5316c1-7e8e-4703-b23c-db7e6def1fd1.png",
+            "review_star": 5,
+            "review_author": "Barbara B.",
+            "review_title": "Obsessed with my rug! Best ever!",
+            "review_description": "Obsessed with my rug! Best ever!\nObsessed with my rug! It is literally the softest rug I have ever owned. And I can’t wait to purchase more from Eyely for my other rooms! You seriously won’t regret this.",
+            "compare_at_price": "$100.23",
+            "price": "$30.99"
+          }
+        },
+        "91ce8e3d-7284-4e00-a92f-1906ebbddcee": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/IMG_1663_1X_466a60a1-d2dd-4ac6-9397-a5a08dae32ac.png",
+            "review_star": 5,
+            "review_author": "Kelly C.",
+            "review_title": "In Love!",
+            "review_description": "I am absolutely infatuated with this rug! After receiving the first one, I immediately went online to order another for a different room.",
+            "compare_at_price": "$76.86",
+            "price": "$23.99"
+          }
+        },
+        "35ed330c-93d5-42c1-b5ef-74382d462d91": {
+          "type": "featured_product",
+          "disabled": true,
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/IMG_1650_1X_e09a2d64-5491-449a-9271-86843b5f9255.png",
+            "review_star": 5,
+            "review_author": "Natalie E.",
+            "review_title": "Gorgeous rug",
+            "review_description": "Pretty satisfied with my purchase :)",
+            "compare_at_price": "$76.86",
+            "price": "$23.99"
+          }
+        },
+        "7ba4b7ff-8057-4f0a-9987-1a903fc96c09": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "img": "shopify:\/\/shop_images\/original9_1X_fdd2be13-76a7-4d31-850c-c432d8688ddb.png",
+            "review_star": 5,
+            "review_author": "Rayane C.",
+            "review_title": "Beautiful lamp",
+            "review_description": "I am beyond happy with this table lamp! It looks \u0003just like in the picture. It matches perfectly with my house decor.",
+            "compare_at_price": "$363.96",
+            "price": "$90.99"
           }
         }
       },
       "block_order": [
-        "1b003807-bb93-48ba-b0c2-f9dfd5480820",
         "ee2b460b-031b-4fcc-af5e-2c5b21a30d69",
-        "c3c9dc84-56b6-458d-8398-351573281c6c"
+        "1b003807-bb93-48ba-b0c2-f9dfd5480820",
+        "c3c9dc84-56b6-458d-8398-351573281c6c",
+        "ed786815-2a67-4b12-b053-b5a448a7dba2",
+        "f51de571-f94d-4222-bee8-d7bc698580fb",
+        "472495b6-11c1-4008-8bce-7813cb74d083",
+        "ce4bb798-cb1d-4c38-bc77-05422ec6ac02",
+        "91ce8e3d-7284-4e00-a92f-1906ebbddcee",
+        "35ed330c-93d5-42c1-b5ef-74382d462d91",
+        "7ba4b7ff-8057-4f0a-9987-1a903fc96c09"
       ],
       "settings": {
         "enable": true,

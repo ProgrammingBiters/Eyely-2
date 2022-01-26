@@ -1,0 +1,56 @@
+<section class="v-article">
+    <div class="container">
+      <div class="row align-items-center text-center">
+        <div class="col-xl-5  pr-xl-0 pr-lg-0 col-lg-5  order-div">
+          <div class="article-detail">
+            <div class="redirect-aritcle">
+              {% assign article = articles[section.settings.featured_article] %}
+              <h3 class="spotlight">spotlight</h3>
+              <a href="{{article.url}}"><h2 class="v-article-title b-headings">
+                {{article.title}}
+                </h2></a>
+              {%- if article.excerpt.size > 0 -%}
+              <p class="article-content">{{ article.excerpt }}</p>
+              {%- else -%}
+              <p class="article-content">{{ article.content | strip_html | truncate: 150 }}</p>
+              {%- endif -%}
+              <a href="{{article.url}}" class="shop-now-prd">{{section.settings.view_article_label}}<i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        {% if article.image != blank %}
+        <div class="col-xl-7 pl-xl-0 pl-lg-0 col-lg-7">
+          <div class="v-article-img">
+            <a href="{{article.url}}"><img src="{{article.image| img_url:'original'}}" class="img-fluid"></a>
+          </div>
+        </div>
+        {% endif %}
+  
+      </div>
+    </div>
+  </section>
+  {% schema %}
+  {
+  "name": "featured Article",
+  "settings": [
+  {
+  "type":"article",
+  "id":"featured_article",
+  "label":"Featured Article"
+  },
+  {
+  "type":"text",
+  "id":"view_article_label",
+  "label":"View Article label",
+  "default":"view article"
+  }
+  ]
+  }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  
