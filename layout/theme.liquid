@@ -16,6 +16,10 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
+    {% if template contains 'blog' %}
+      {{ 'blog.scss' | asset_url | stylesheet_tag }}
+    {% endif %}
+
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -38,6 +42,9 @@
     --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         
    {% endcomment %}
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
@@ -221,9 +228,23 @@
       display: none !important
     }
   </style>
-
-  {% if template contains 'product' %}
-    <script src="{{ 'recentyview.js' | asset_url }}" defer></script>
+   {% comment %}Lighting Guide page popups{% endcomment %}
+   {% if page.handle == 'lighting-guide' or page.handle == 'rug-guide' %}
+    <div class="modal light-page-popup" data-modal-container aria-label="modal window" data-trap-focus>
+      <div class="modal-inner" data-modal-inner>
+        <button class="modal-close modal-light-close" type="button" aria-label="{{ 'general.accessibility.close' | t }}" data-modal-close>
+          {% render 'icon-menu-close' %}
+        </button>
+        <span class="atc-button--icon popup-content-loader">
+          {%- render 'icon-spinner' -%}
+        </span>
+        <div id="boxtxt" class="modal-content lighting-static-popups" data-modal-content></div>
+      </div>
+    </div>
+    {% endif %}
+  
+{% if template contains 'product' %}
+  <script src="{{ 'recentyview.js' | asset_url }}" defer></script>
 
     <script>
       setTimeout(function(){
