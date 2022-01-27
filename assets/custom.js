@@ -356,5 +356,38 @@ $(document).ready(function(){
        ]
      
       });
-         
+      $('.e-slider').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots:false,
+        responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+              arrows:true
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+              arrows:true
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: 'unslick'
+          }
+        ]
+    
+      });
+    
      });

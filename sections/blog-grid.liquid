@@ -1,0 +1,58 @@
+
+{% if section.settings.fblog != blank %}
+    {% assign blog = blogs[section.settings.fblog] %}
+    <section class="blog-grid">
+      <div class="container">
+        <h3 class="blog-grid-heading b-headings">{{section.settings.title}}<a href="{{blog.url}}" class="shop-now-prd">view all<i class="fa fa-angle-right"></i></a></h3>
+        <div class="row">
+          {% for article in blog.articles %}
+          <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+            <div class="b-grid-div">
+              {% if article.image != blank %}
+              <div class="b-grid-img">
+                <a href="{{article.url}}"><img src="{{article.image | img_url:'original'}}" class="img-fluid"></a>
+              </div>
+              {% endif %}
+              <div class="b-grid-content">
+                <div class="prd-main-div-info">
+                  <h3 class="b-headings"><a href="{{article.url}}">{{article.title}}</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+    </section>
+    {% endif %}
+    {% schema %}
+      {
+        "name": "Blog Grid",
+        "settings": [
+        {
+        "type":"blog",
+        "id":"fblog",
+        "label":"Featured Blog"
+        },
+        {
+        "type":"text",
+        "id":"title",
+        "label":"Title",
+        "default":"Our Newest Recipes"
+        }
+        ],
+        "presets": [
+          {
+            "name": "Blog Grid"
+          }
+        ]
+      }
+    {% endschema %}
+    
+    {% stylesheet %}
+    {% endstylesheet %}
+    
+    {% javascript %}
+    {% endjavascript %}
+    

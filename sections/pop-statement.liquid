@@ -1,0 +1,282 @@
+
+{% liquid
+    assign enable_autoplay = section.settings.enable_autoplay
+    assign autoplay_interval = section.settings.autoplay_duration
+    assign show_pagination = true
+    assign mobile_navigation_adjust = true
+    assign slideshow_classes = 'slideshow--height-' | append: section.settings.slideshow_height | append: ' slideshow--width-' | append: section.settings.slideshow_width
+  %}
+  
+  
+  
+  <script type="application/pxs-animation-mapping+json">
+    {
+      "blocks": [".slideshow-slide"],
+      "elements": [
+        ".slideshow-slide__heading",
+        ".slideshow-slide__text",
+        ".slideshow-slide__button"
+      ]
+    }
+  </script>
+  
+  <script
+    type="application/json"
+    data-section-type="pxs-slideshow"
+    data-section-id="{{ section.id }}"
+    data-section-data
+  >
+    {
+      "enable_autoplay": {{ enable_autoplay | json }},
+      "autoplay_interval": {{ autoplay_interval | json }},
+      "mobile_navigation_adjust": {{ mobile_navigation_adjust | json }},
+      "transition_fade": {{ transition_fade | json }},
+      "slide_attraction": {{ slide_attraction | json }},
+      "slide_friction": {{ slide_friction | json }},
+      "next_text": {{ 'sections.slideshow.next_slide' | t | json }},
+      "previous_text": {{ 'sections.slideshow.previous_slide' | t | json }}
+    }
+  </script>
+  
+  <section
+    class="
+      slideshow
+      {{ slideshow_classes }} pop-statement-main
+    "
+    aria-label="{{ 'sections.slideshow.slideshow' | t }}"
+    data-autoplay="{% if enable_autoplay %}true{% else %}false{% endif %}"
+    data-autoplay-interval="{{ autoplay_interval }}"
+  >
+    {%- if slideshow_heading != blank -%}
+      <h2 class="slideshow__heading">
+        {{ slideshow_heading }}
+      </h2>
+    {%- endif -%}
+  
+    <div
+      class="slideshow__wrapper {{ wrapper_classes }}"
+      data-slideshow-wrapper
+    >
+      {%- for block in section.blocks -%}
+        {%
+          render 'slideshow-slide-blog',
+          section: section,
+          block: block,
+          block_index: forloop.index0,
+        %}
+      {%- endfor -%}
+    </div>
+  
+  
+    <div
+      class="slideshow__current-slide visually-hidden"
+      aria-live="polite"
+      aria-atomic="true"
+      data-slide-counter
+      data-counter-template="{{ 'sections.slideshow.slide_counter' | t }}"
+    >
+    </div>
+  </section>
+  {% comment %}
+  <section class="homepage-value">
+    <div class="desk-image">
+    {%- if section.settings.bg_image  != blank -%}
+          {%
+            render 'rimg',
+            img: section.settings.bg_image,
+            class: 'slideshow-slide__image',
+        
+            crop:false,
+            lazy: true
+          %}
+        {%- else -%}
+          {{ placeholder |  placeholder_svg_tag: 'slideshow-slide__image slideshow-slide__placeholder' }}
+        {%- endif -%}
+    </div>
+    <div class="mobile-image">
+    {%- if section.settings.mobile_image  != blank -%}
+          {%
+            render 'rimg',
+            img: section.settings.mobile_image,
+            class: 'slideshow-slide__image',
+            crop:false,
+            lazy: true
+          %}
+        {%- else -%}
+          {{ placeholder |  placeholder_svg_tag: 'slideshow-slide__image slideshow-slide__placeholder' }}
+        {%- endif -%}
+    </div>
+    
+    <div class="home-pagevalue-pop">
+      <div class="home-pop-container">
+        <div>
+        <p class="home-page-pop-statment">{{section.settings.description}}</p>
+        <p class="homepage-value-prop__phrase">{{section.settings.small_text}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endcomment %}
+  {% schema %}
+    {
+      "name": "Pop Statement",
+      "class": "slideshow--section value-statement",
+      "settings": [
+  
+      {
+        "id": "slideshow_width",
+        "type": "select",
+        "label": "Slide width",
+        "options": [
+          {
+            "value": "full",
+            "label": "Full width"
+          },
+          {
+            "value": "content",
+            "label": "Content width"
+          }
+        ],
+        "default": "full"
+      },
+      {
+        "id": "slideshow_height",
+        "type": "select",
+        "label": "Slide height",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "fullscreen",
+            "label": "Fullscreen"
+          },
+          {
+            "value": "original",
+            "label": "Original aspect ratio"
+          }
+        ],
+        "default": "medium"
+      }
+      
+  
+  ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "id": "background_image",
+            "type": "image_picker",
+            "label": "Background image",
+            "info": "1800x1000 recommended"
+          },
+           {
+            "id": "mobile_image",
+            "type": "image_picker",
+            "label": "Mobile image",
+            "info": "800x800 recommended"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Heading",
+            "default": "Slideshow"
+          },
+          {
+            "id": "text",
+            "type": "textarea",
+            "label": "Subheading",
+            "default": "Introduce customers to your shop with lifestyle and product imagery"
+          }, 
+          {
+            "id": "smalltext",
+            "type": "text",
+            "label": "Small Subheading",
+            "default": "Introduce customers to your shop with lifestyle and product imagery"
+          },
+          {
+            "id": "color",
+            "type": "color",
+            "label": "Text color",
+            "default": "#FFFFFF"
+          },
+          {
+            "id": "link",
+            "type": "url",
+            "label": "Background link"
+          },
+          {
+            "id": "text_alignment",
+            "type": "select",
+            "label": "Text alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+          },     
+         
+          {
+            "type": "header",
+            "content": "Overlay"
+          },
+          {
+            "id": "show_overlay",
+            "type": "checkbox",
+            "label": "Show overlay",
+            "default": true
+          },
+          {
+            "id": "overlay_color",
+            "type": "color",
+            "label": "Color",
+            "default": "#000000"
+          },
+          {
+            "id": "overlay_opacity",
+            "type": "range",
+            "label": "Opacity",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "default": 50
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Pop Statement"
+      }
+    ]
+    }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  

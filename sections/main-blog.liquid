@@ -1,8 +1,12 @@
 {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
-
-
+{{ 'blog.css' | asset_url | stylesheet_tag }}
+<style>
+  .blogs-page .blog-page-b-show .b-Recipes {
+  background-image: url(' {{ 'download.svg' | asset_url }}');
+}
+</style>
 {% assign featuredBlogs = 'home-care-tips,lighting,rugs' | split:',' %}
 {% assign featuredArticles = false %}
 {% for featuredBlog in featuredBlogs %}

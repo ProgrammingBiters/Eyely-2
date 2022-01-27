@@ -1,0 +1,109 @@
+<section class="feature-video">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-5 col-lg-5 col-md-12 col-12">
+          <div class="f-video-detail">
+            {%  if section.settings.small_title != blank %}
+            <h3>{{section.settings.small_title}}</h3>
+            {% endif %}
+            {% if section.settings.title %}
+            <h2 class="b-headings">{{section.settings.title}}</h2>
+            {% endif %}
+            {% if section.settings.description != blank %}
+            <p>{{section.settings.description}}</p>
+            {% endif %}
+            {% if section.settings.button_label !=  blank and section.settings.button_url != blank %}
+            <a href="{{section.settings.button_url}}">{{section.settings.button_label}}</a>
+            {% endif %}
+            
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-12 col-12">
+            {% if section.settings.vid_url != blank and section.settings.video_type == "custom" %}
+            <div class="w-100 vid_div">
+              <video>
+                <source src="{{section.settings.vid_url}}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            {% elsif section.settings.vid_url != blank and section.settings.video_type == "youtube" %}
+            <div class="w-100 youtube_div">
+              <iframe src="{{ section.settings.vid_url}}"  frameborder="0"></iframe>
+            </div>
+            {% endif %}
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+  {% schema %}
+    {
+      "name": "Featured Video",
+      "settings": [
+      {
+          "type":"text",
+          "id":"small_title",
+          "label":"Small title",
+          "default":"Featured Video"
+      },	
+      {
+          "type":"text",
+          "id":"title",
+          "label":"title",
+          "default":"Sohla's Magic Ratio for Turning Any Fruit into a Crumble"
+      },
+      {
+          "type":"textarea",
+          "id":"description",
+          "label":"Description",
+          "default":"Go on—pick a fruit, any fruit. Resident Sohla El-Waylly will show you how to turn it into a streusel-crowned crumble."
+      },
+      {
+          "type":"text",
+          "label":"Read More Button Label",
+          "id":"button_label",
+          "default":"Read More"
+      },
+      {
+      "type":"url",
+      "id":"button_url",
+      "label":"Read More url"
+      },
+      {
+      "type":"url",
+      "id":"vid_url",
+      "label":"Video Url"
+      },
+          {
+            "type": "select",
+            "id": "video_type",
+            "label": "Video Type",
+            "options": [
+              {
+                "value": "custom",
+                "label": "Custom"
+              },
+              {
+                "value": "youtube",
+                "label": "Youtube"
+              }
+            ]
+          }
+  
+  ],
+  "presets": [
+    {
+      "name": "Featured Video"
+    }
+  ]
+    }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  

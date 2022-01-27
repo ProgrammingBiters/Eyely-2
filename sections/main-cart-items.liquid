@@ -254,9 +254,7 @@
     <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
   </form>
 </cart-items>
-<script id="docapp-discount-speedup">
-  (() => { if (!document.documentElement.innerHTML.includes('\\/shop' + '\\/js' + '\\/discount-on-cart-pro.min.js') || window.discountOnCartProAppLoaded) return; let script = document.createElement('script'); script.src = "https://d9fvwtvqz2fm1.cloudfront.net/shop/js/discount-on-cart-pro.min.js?shop=eyely-home.myshopify.com"; document.getElementById('docapp-discount-speedup').after(script); })();
-  </script>{% render 'upsell-addons-app-cart-page' %}
+
 {% schema %}
 {
   "name": "t:sections.main-cart-items.name",

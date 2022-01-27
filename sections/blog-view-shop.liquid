@@ -1,0 +1,75 @@
+<section class="view-more-shop">
+    <div class="container">
+      <div class="shop-category">
+        <span class="shop-category-headline">{{section.settings.title}}</span>
+       {% if section.blocks.size > 0 %}
+        <ul>
+         {% for block in section.blocks %}
+          {% if block.type == "featured_link" and block.settings.enable and block.settings.link != blank and block.settings.link_title != blank %}
+          <li><a href="{{block.settings.link}}">{{block.settings.link_title}}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if section.settings.view_link != blank and section.settings.view_all_title != blank %}
+        <span class="view-all"><a href="{{section.settings.view_link}}">{{section.settings.view_all_title}}</a></span>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% schema %}
+    {
+      "name": "View Shop",
+      "max_blocks":5,
+      "settings": [
+      {
+          "type":"text",
+          "id":"title",
+          "label":"Title",
+          "default":"shop by:"
+      },
+      {
+          "type":"text",
+          "id":"view_all_title",
+          "label":"View All Title Link",
+          "default":"view all shop"
+      },
+      {
+          "type":"url",
+          "id":"view_link",
+          "label":"View All Link"
+      }
+          ],
+  "blocks":[
+      {
+          "type":"featured_link",
+          "name":"Featured Link",
+          "settings":[	
+          {
+          "type":"checkbox",
+          "id":"enable",
+          "label":"Enable",
+          "default":true
+          },
+          {
+          "type":"text",
+          "id":"link_title",
+          "label":"Link Title"
+          },
+          {
+          "type":"url",
+          "label":"Link",
+          "id":"link"
+          }	
+          ]
+      }
+  ]
+    }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  

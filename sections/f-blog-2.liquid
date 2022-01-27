@@ -1,0 +1,109 @@
+
+{% if section.settings.fblog != blank %}
+    {% assign blog = blogs[section.settings.fblog] %}
+    <section class="f-blog  my-md-4  my-2">
+      <div class="container">
+        <h2 class="f-blog-heading b-headings"><a href="{{blog.url}}">{{blog.title}}</a></h2>
+        <div class="row">
+          <div class="col-xl-7 col-lg-7">
+           
+                   {% for article in blog.articles limit:1 %}
+                <div class="f-blog-img">
+                  <a href="{{article.url}}">  
+                    {% if article.image %}
+               
+                     {%
+                render 'rimg',
+                img: article.image,
+                class: 'product-gallery--loaded-image'
+                size: 'x800',
+                lazy: true,
+                canvas: true
+              %}
+              {% endif %}{% comment %}<img src="{{article.image|img_url:'x700'}}" class="img-fluid">{% endcomment %}</a>
+                </div>
+                <div class="img-content border-bottom-0">
+                                  {%- if article.tags.size > 0 -%}
+                                <div class="d-flex">
+                                  {%- for tag in article.tags -%}
+                                  <div class=" mr-2">
+                                    <a class="tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                                  </div>
+                                  {%- endfor -%}
+                                </div>
+                                {%- endif -%}
+                                  <h2 class="f-blog-i-name b-headings"><a href="{{article.url}}">{{article.title}}</a></h2>
+                                {%- if article.excerpt.size > 0 -%}
+                                <div class="f-blog-i-p"> {{ article.excerpt }}</div>
+                                {%- else -%}
+                                <div class="f-blog-i-p">{{ article.content | strip_html | truncate: 40 }}</div>
+                                {%- endif -%}
+            
+                </div>
+                {%endfor %}
+           
+          </div>
+          <div class="col-xl-5 col-lg-5">
+            {% if section.settings.right_title != blank %}
+            <div class="f-blog-content">
+              <div class="content-header">{{section.settings.right_title}}</div>
+            </div>
+            {% endif %}
+            {% for article in blog.articles limit:3 offset:1 %}
+            <div class="f-blog-content-info {% if forloop.last %}  border-bottom-0{% endif %}">
+             {%- if article.tags.size > 0 -%}
+              <div class="d-flex">
+                {%- for tag in article.tags -%}
+                <div class=" mr-2">
+                  <a class="tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                </div>
+                {%- endfor -%}
+              </div>
+              {%- endif -%}
+              <h2 class="f-blog-name b-headings"><a href="{{article.url}}">{{article.title}}</a></h2>
+              {%- if article.excerpt.size > 0 -%}
+              <div class="f-blog-p"> {{ article.excerpt }}</div>
+              {%- else -%}
+              <div class="f-blog-p">{{ article.content | strip_html | truncate: 40 }}</div>
+              {%- endif -%}
+              
+            </div>
+            
+            {% endfor %}
+        
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+    
+    {% schema %}
+      {
+        "name": "Feartured Blog 2",
+        "settings": [
+        {
+        "type":"blog",
+        "id":"fblog",
+        "label":"Featured Blog"
+        },
+        {
+        "type":"text",
+        "id":"right_title",
+        "label":"Right Title",
+        "default":"Latest"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Feartured Blog 2"
+      }
+    ]
+      }
+    {% endschema %}
+    
+    {% stylesheet %}
+    {% endstylesheet %}
+    
+    {% javascript %}
+    {% endjavascript %}
+    

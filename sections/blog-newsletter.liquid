@@ -1,0 +1,142 @@
+{%comment %}
+{% assign form_id = form_id | default: nil %}
+{% assign newsletter_tags = 'prospect' %}
+<section class="newslatter">
+  <div class="home-page-newslatter ">
+    {%- if ection.settings.mobile-image != blank -%}
+    {%
+                  render 'rimg',
+    class: 'img-fluid mob-img',
+    img: section.settings.mobile-image,
+    size: '800x800',
+    lazy:true
+    %}
+    {% endif %}
+      {%- if section.settings.desk-image != blank -%}
+        {%
+          render 'rimg',
+          img: section.settings.desk-image,
+          class: 'slideshow-slide__image',
+          size: '2000x2000',
+          crop: block_crop_images,
+          lazy: true,
+          canvas: true,
+        %}
+    {% endif %}
+    <div class="home-page-n-container container">
+      <div class="mailing-list">
+        <div class="mailing-list__copy">
+          <h4 class="mailing-list-header b-headings">{{section.settings.title}}</h4>
+          <p class="mailing-list-info">{{section.settings.description}}</p>
+        </div>
+     
+        <div class="mailing-list__form-container">  
+          <div class="klaviyo_messages">
+                    <div class="success_message" style="display:none;"></div>
+                    <div class="error_message" style="display:none;"></div>
+                  </div>
+         <form class="Form mailing-list__form" id="email_signup" method="GET" target="_blank" novalidate="novalidate" action="//manage.kmail-lists.com/subscriptions/subscribe">
+  <input type="hidden" name="g" value="N2qdGK">
+
+
+          {% if form.posted_successfully? %}
+          <div><p class="newsletter-success">
+            {{ 'general.newsletter.success' | t }}
+            </p></div>
+          {% else %}
+             <div>
+              <label>
+                <span class="n-email">Email</span>
+              </label>
+              <input type="email"   id="k_id_email"  name="email"  class="mailing-list__form-input" placeholder="hello@eyely.com">
+            </div>
+            <button  name="submit"
+            type="submit" class="btn newslatter-btn">sign up</button>
+      		{% endif %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endcomment %}
+
+<section class="n-subscribe n-blogs"  {% if section.settings.desk-image != blank %}  {% endif %}>
+    <div><h3>{{ section.settings.title }}</h3>
+    <p>{{section.settings.description}}</p>
+    </div>
+    {% form 'customer' %}
+    {{ form.errors | default_errors }}
+    {% if form.posted_successfully? %}
+    <p class="form--success">Thanks for subscribing!</p>
+    {% else %}
+  
+  
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <input type="email"
+           name="contact[email]"
+           id="Email"
+           value="{% if customer %}{{ customer.email }}{% endif %}"
+           placeholder="Email address"
+           autocorrect="off"
+           autocapitalize="off">
+    <button type="submit"class="btn n-sub-btn" name="subscribe">Subscribe</button>
+  
+    {% endif %}
+    {% endform %}
+   
+  </section>
+  <script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+  
+  <script type="text/javascript">
+   KlaviyoSubscribe.attachToForms('#email_signup', {
+   hide_form_on_success: true,
+     extra_properties: {
+        $source: 'BlogPage',
+        Brand: 'Klaviyo'
+      },   success_message: "Thank you for signing up! Your special offer is on its way!",
+  
+     success: function ($form) {
+     $form.hide();
+      }
+   });
+  </script>
+  
+  {% schema %}
+    {
+      "name": "Blog Newsletter",
+      "settings": [
+      {
+      "type":"text",
+      "label":"title",
+      "id":"title",
+      "default":"Want more Food52?"
+      },
+      {
+      "type":"textarea",
+  "id":"description",
+  "label":"Description",
+  "default":"Our best tips for eating thoughtfully and living joyfully, right to your inbox."
+      },
+  {
+  "type":"image_picker",
+  "id":"desk-image",
+  "label":"Desk Image"
+  }
+  
+  
+  ],
+  "presets": [
+    {
+      "name": "Blog Newsletter"
+    }
+  ]
+    }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  

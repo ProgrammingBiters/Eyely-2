@@ -1,0 +1,74 @@
+{% assign collect = collections[section.settings.featured_collection] %}
+{%- assign min = 5 -%}
+{%- assign max = collect.all_products_count-%}
+{%- assign date_fract = "now" | date: "%N" -%}
+{%- assign diff = max | minus: min -%}
+{%- assign random_number = "now" | date: "%N" | modulo: diff -%}
+{%- assign random_number = random_number | plus: min -%}
+{% if random_number >= max %}
+{% assign random_number = random_number | minus:25 %}
+{% endif %}
+
+{% if section.settings.featured_collection != blank %}
+<section class="e-prd blog-grid">
+  <div class="container">
+    <h3 class="blog-grid-heading b-headings">{{section.settings.title}} {% if section.settings.view_title  != blank %}<a href="{{collect.url}}" class="shop-now-prd">{{section.settings.view_title}}<i class="fa fa-angle-right"></i></a>{% endif %}</h3>
+        <div class="row">
+   	  	   {% for product in collect.products limit:4 offset:random_number %}
+                 <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+              <div class="all-prd-main">
+              <a href="{{product.url}}">
+              <div class="prd-main-div">
+                <div class="prd-main-div-img">
+    <img src="{{product.featured_image|img_url:'original'}}" class="img-fluid">
+                </div>
+                <div class="prd-main-div-info">
+                  <h3><span class="prd-main-div-title b-headings">{{product.title}}</span><span class="prd-main-div-price">{{product.price|money}}</span></h3>
+                </div>
+              </div>
+              </a>
+
+              </div>
+            </div>
+
+          {% endfor %}
+
+    </div>
+  </div>
+</section>
+{% endif %}
+{% schema %}
+  {
+    "name": "Perfect For Home",
+    "settings": [
+{
+		"type":"text",
+        "id":"title",
+        "label":"Title",
+		"default":"Perfect For Home"
+	},
+	{
+    "type":"collection",
+    "id":"featured_collection",
+    "label":"Featured Collection"
+	},
+	{
+    "type":"text",
+    "label":"view all title",
+    "id":"view_title",
+    "default":"View All"
+	}
+],
+"presets": [
+  {
+    "name": "Perfect For Home"
+  }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

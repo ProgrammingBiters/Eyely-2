@@ -13,6 +13,12 @@
 {% assign random_number  =random_number  | minus: 15 %}
 
 {% endif %}
+<style>
+  .e-prd .e-prd-title span{
+    background-image:url({{ 'shop.svg' | asset_url }});
+  }
+</style>
+
 <section class="e-prd">
   <div class="container">
 {% paginate collect.products by collect.all_products_count %}
