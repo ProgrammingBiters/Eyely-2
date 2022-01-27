@@ -31,7 +31,7 @@
       <div class="js-contents">
         {%- if cart != empty -%}
           <table class="cart-items">
-            <thead>
+           {% comment  %} <thead>
               <tr>
                 <th class="caption-with-letter-spacing" colspan="2" scope="col">{{ 'sections.cart.headings.product' | t }}</th>
                 <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
@@ -39,7 +39,7 @@
                 <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
               </tr>
             </thead>
-
+{% endcomment %}
             <tbody>
               {%- for item in cart.items -%}
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
@@ -188,11 +188,6 @@
                       </button>
                     </quantity-input>
 
-                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                        {% render 'icon-remove' %}
-                      </a>
-                    </cart-remove-button>
                   </td>
 
                   <td class="cart-item__totals right small-hide">
@@ -241,6 +236,13 @@
                         </div>
                       {%- endif -%}
                     </div>
+                  </td>
+                  <td>
+                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                        {% render 'icon-remove' %}
+                      </a>
+                    </cart-remove-button>
                   </td>
                 </tr>
               {%- endfor -%}
