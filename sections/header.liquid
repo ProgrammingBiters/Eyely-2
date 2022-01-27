@@ -483,7 +483,55 @@
                               {% endif %}
                             </div>
                           {% endif %}
+                        {% elsif if link.title == "Chandeliers" %}
+
+                            {% if settings.chandeliers1_mega_enable %}
+                              <div class="{{ settings.chandeliers1_mega_size1 }}">
+                                
+                                {% if settings.chandeliers1_mega_image1 != blank and settings.chandeliers1_mega_url1 != blank %}
+                                  <a href="{{ settings.chandeliers1_mega_url1 }}" class="p-2">
+                                    <img class="w-100" src="{{ settings.chandeliers1_mega_image1 | img_url : 'original' }}" height="auto" width="{{ settings.chandeliers1_mega_image1.width }}" loading="lazy">
+                                  </a>
+                                {% endif %}
+                              
+                              </div>
                             {% endif %}
+                            {% if settings.chandeliers2_mega_enable %}
+                            <div class="{{ settings.chandeliers1_mega_size2 }}">
+                              
+                              {% if settings.chandeliers1_mega_image2 != blank and settings.chandeliers1_mega_url2 != blank %}
+                                <a href="{{ settings.chandeliers1_mega_url2 }}" class="p-2">
+                                  <img class="w-100" src="{{ settings.chandeliers1_mega_image2 | img_url : 'original' }}" height="auto" width="{{ settings.chandeliers1_mega_image2.width }}" loading="lazy">
+                                </a>
+                              {% endif %}
+                            
+                            </div>
+                          {% endif %}
+                          {% if settings.chandeliers3_mega_enable %}
+                          <div class="{{ settings.chandeliers1_mega_size3 }}">
+                            
+                            {% if settings.chandeliers1_mega_image3 != blank and settings.chandeliers1_mega_url3 != blank %}
+                              <a href="{{ settings.chandeliers1_mega_url3 }}" class="p-2">
+                                <img class="w-100" src="{{ settings.chandeliers1_mega_image3 | img_url : 'original' }}" height="auto" width="{{ settings.chandeliers1_mega_image3.width }}" loading="lazy">
+                              </a>
+                            {% endif %}
+                          
+                          </div>
+                        {% endif %}
+                        {% if settings.chandeliers4_mega_enable %}
+                        <div class="{{ settings.chandeliers1_mega_size4 }}">
+                          
+                          {% if settings.chandeliers1_mega_image4 != blank and settings.chandeliers1_mega_url4 != blank %}
+                            <a href="{{ settings.chandeliers1_mega_url4 }}" class="p-2">
+                              <img class="w-100" src="{{ settings.chandeliers1_mega_image4 | img_url : 'original' }}" height="auto" width="{{ settings.chandeliers1_mega_image4.width }}" loading="lazy">
+                            </a>
+                          {% endif %}
+                        
+                        </div>
+                      {% endif %}
+                        {% endif %}
+
+
                       </div>
                     </div>
                   </div>
