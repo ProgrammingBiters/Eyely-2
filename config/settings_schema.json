@@ -1218,6 +1218,763 @@
 
     ]
   
-  }
+  },
+  {
+    "name": "Megamenu Ceiling Lights",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Ceiling Lights Mega menu1"
+        },
+        {
+          "type": "checkbox",
+          "id": "ceilinglights1_mega_enable",
+          "label": "Ceiling Lights Megamenu 1 Enable",
+          "default": true
+         },
+         {
+          "type": "image_picker",
+          "id": "ceilinglights1_mega_image1",
+          "label": "Featured Image"
+        },
+        {
+         "type": "url",
+         "id": "ceilinglights1_mega_url1",
+         "label": "Url For Image"
+        },
+        {
+          "type":"select",
+          "id":"ceilinglights1_mega_size1",
+          "options": [
+            {
+              "value": "col-1",
+              "label": "Col-1"
+            },
+            {
+              "value": "col-2",
+              "label": "Col-2"
+            },
+            {
+              "value": "col-3",
+              "label": "Col-3"
+            },
+            {
+              "value": "col-4",
+              "label": "Col-4"
+            },
+            {
+              "value": "col-5",
+              "label": "Col-5"
+            },
+            {
+              "value": "col-6",
+              "label": "Col-6"
+            },
+            {
+              "value": "col-7",
+              "label": "Col-7"
+            },
+            {
+              "value": "col-8",
+              "label": "Col-8"
+            },
+            {
+              "value": "col-9",
+              "label": "Col-9"
+            },
+            {
+              "value": "col-10",
+              "label": "Col-10"
+            },
+            {
+              "value": "col-12",
+              "label": "Col-12"
+            }
+          ],
+          "default":"col-2"
+        },
+        {
+          "type":"text",
+          "id":"ceilinglights1_title1",
+          "label":"Title For Ceiling Lights Menu"
+        },
+        {
+          "type":"select",
+          "id":"ceilinglights1_title_pos1",
+          "options": [
+            {
+              "value": "Top",
+              "label": "Top"
+            },
+            {
+              "value": "Bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default":"Bottom"
+        },
+        {
+          "type": "header",
+          "content": "Ceiling Lights Mega menu2"
+          },
+          {
+            "type": "checkbox",
+            "id": "ceilinglights2_mega_enable",
+            "label": "Ceiling Lights Megamenu 2 Enable",
+            "default": true
+           },
+           {
+            "type": "image_picker",
+            "id": "ceilinglights1_mega_image2",
+            "label": "Featured Image"
+          },
+          {
+           "type": "url",
+           "id": "ceilinglights1_mega_url2",
+           "label": "Url For Image"
+          },
+          {
+            "type":"select",
+            "id":"ceilinglights1_mega_size2",
+            "options": [
+              {
+                "value": "col-1",
+                "label": "Col-1"
+              },
+              {
+                "value": "col-2",
+                "label": "Col-2"
+              },
+              {
+                "value": "col-3",
+                "label": "Col-3"
+              },
+              {
+                "value": "col-4",
+                "label": "Col-4"
+              },
+              {
+                "value": "col-5",
+                "label": "Col-5"
+              },
+              {
+                "value": "col-6",
+                "label": "Col-6"
+              },
+              {
+                "value": "col-7",
+                "label": "Col-7"
+              },
+              {
+                "value": "col-8",
+                "label": "Col-8"
+              },
+              {
+                "value": "col-9",
+                "label": "Col-9"
+              },
+              {
+                "value": "col-10",
+                "label": "Col-10"
+              },
+              {
+                "value": "col-12",
+                "label": "Col-12"
+              }
+            ],
+            "default":"col-2"
+          },
+          {
+            "type":"text",
+            "id":"ceilinglights1_title2",
+            "label":"Title For Ceiling Lights Menu"
+          },
+          {
+            "type":"select",
+            "id":"ceilinglights1_title_pos2",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "Bottom",
+                "label": "Bottom"
+              }
+            ],
+            "default":"Bottom"
+          },
+          {
+            "type": "header",
+            "content": "Ceiling Lights Mega menu3"
+            },
+            {
+              "type": "checkbox",
+              "id": "ceilinglights3_mega_enable",
+              "label": "Ceiling Lights Megamenu 3 Enable",
+              "default": true
+             },
+             {
+              "type": "image_picker",
+              "id": "ceilinglights1_mega_image3",
+              "label": "Featured Image"
+            },
+            {
+             "type": "url",
+             "id": "ceilinglights1_mega_url3",
+             "label": "Url For Image"
+            },
+            {
+              "type":"select",
+              "id":"ceilinglights1_mega_size3",
+              "options": [
+                {
+                  "value": "col-1",
+                  "label": "Col-1"
+                },
+                {
+                  "value": "col-2",
+                  "label": "Col-2"
+                },
+                {
+                  "value": "col-3",
+                  "label": "Col-3"
+                },
+                {
+                  "value": "col-4",
+                  "label": "Col-4"
+                },
+                {
+                  "value": "col-5",
+                  "label": "Col-5"
+                },
+                {
+                  "value": "col-6",
+                  "label": "Col-6"
+                },
+                {
+                  "value": "col-7",
+                  "label": "Col-7"
+                },
+                {
+                  "value": "col-8",
+                  "label": "Col-8"
+                },
+                {
+                  "value": "col-9",
+                  "label": "Col-9"
+                },
+                {
+                  "value": "col-10",
+                  "label": "Col-10"
+                },
+                {
+                  "value": "col-12",
+                  "label": "Col-12"
+                }
+              ],
+              "default":"col-2"
+            },
+            {
+              "type":"text",
+              "id":"ceilinglights1_title3",
+              "label":"Title For Ceiling Lights Menu"
+            },
+            {
+              "type":"select",
+              "id":"ceilinglights1_title_pos3",
+              "options": [
+                {
+                  "value": "top",
+                  "label": "Top"
+                },
+                {
+                  "value": "Bottom",
+                  "label": "Bottom"
+                }
+              ],
+              "default":"Bottom"
+            },
+        {
+          "type": "header",
+          "content": "Ceiling Lights Mega menu4"
+          },
+          {
+            "type": "checkbox",
+            "id": "ceilinglights4_mega_enable",
+            "label": "Ceiling Lights Megamenu 4 Enable",
+            "default": true
+           },
+           {
+            "type": "image_picker",
+            "id": "ceilinglights1_mega_image4",
+            "label": "Featured Image"
+          },
+          {
+           "type": "url",
+           "id": "ceilinglights1_mega_url4",
+           "label": "Url For Image"
+          },
+          {
+            "type":"select",
+            "id":"ceilinglights1_mega_size4",
+            "options": [
+              {
+                "value": "col-1",
+                "label": "Col-1"
+              },
+              {
+                "value": "col-2",
+                "label": "Col-2"
+              },
+              {
+                "value": "col-3",
+                "label": "Col-3"
+              },
+              {
+                "value": "col-4",
+                "label": "Col-4"
+              },
+              {
+                "value": "col-5",
+                "label": "Col-5"
+              },
+              {
+                "value": "col-6",
+                "label": "Col-6"
+              },
+              {
+                "value": "col-7",
+                "label": "Col-7"
+              },
+              {
+                "value": "col-8",
+                "label": "Col-8"
+              },
+              {
+                "value": "col-9",
+                "label": "Col-9"
+              },
+              {
+                "value": "col-10",
+                "label": "Col-10"
+              },
+              {
+                "value": "col-12",
+                "label": "Col-12"
+              }
+            ],
+            "default":"col-2"
+          },
+          {
+            "type":"text",
+            "id":"ceilinglights1_title4",
+            "label":"Title For Ceiling Lights Menu"
+          },
+          {
+            "type":"select",
+            "id":"ceilinglights1_title_pos4",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "Bottom",
+                "label": "Bottom"
+              }
+            ],
+            "default":"Bottom"
+          },
+          {
+            "type": "header",
+            "content": "Ceiling Lights Mega menu5"
+            },
+            {
+              "type": "checkbox",
+              "id": "ceilinglights5_mega_enable",
+              "label": "Ceiling Lights Megamenu 5 Enable",
+              "default": true
+             },
+             {
+              "type": "image_picker",
+              "id": "ceilinglights1_mega_image5",
+              "label": "Featured Image"
+            },
+            {
+             "type": "url",
+             "id": "ceilinglights1_mega_url5",
+             "label": "Url For Image"
+            },
+            {
+              "type":"select",
+              "id":"ceilinglights1_mega_size5",
+              "options": [
+                {
+                  "value": "col-1",
+                  "label": "Col-1"
+                },
+                {
+                  "value": "col-2",
+                  "label": "Col-2"
+                },
+                {
+                  "value": "col-3",
+                  "label": "Col-3"
+                },
+                {
+                  "value": "col-4",
+                  "label": "Col-4"
+                },
+                {
+                  "value": "col-5",
+                  "label": "Col-5"
+                },
+                {
+                  "value": "col-6",
+                  "label": "Col-6"
+                },
+                {
+                  "value": "col-7",
+                  "label": "Col-7"
+                },
+                {
+                  "value": "col-8",
+                  "label": "Col-8"
+                },
+                {
+                  "value": "col-9",
+                  "label": "Col-9"
+                },
+                {
+                  "value": "col-10",
+                  "label": "Col-10"
+                },
+                {
+                  "value": "col-12",
+                  "label": "Col-12"
+                }
+              ],
+              "default":"col-2"
+            },
+            {
+              "type":"text",
+              "id":"ceilinglights1_title5",
+              "label":"Title For Ceiling Lights Menu"
+            },
+            {
+              "type":"select",
+              "id":"ceilinglights1_title_pos5",
+              "options": [
+                {
+                  "value": "top",
+                  "label": "Top"
+                },
+                {
+                  "value": "Bottom",
+                  "label": "Bottom"
+                }
+              ],
+              "default":"Bottom"
+            },
+            {
+              "type": "header",
+              "content": "Ceiling Lights Mega menu6"
+              },
+              {
+                "type": "checkbox",
+                "id": "ceilinglights6_mega_enable",
+                "label": "Ceiling Lights Megamenu 6 Enable",
+                "default": true
+               },
+               {
+                "type": "image_picker",
+                "id": "ceilinglights1_mega_image6",
+                "label": "Featured Image"
+              },
+              {
+               "type": "url",
+               "id": "ceilinglights1_mega_url6",
+               "label": "Url For Image"
+              },
+              {
+                "type":"select",
+                "id":"ceilinglights1_mega_size6",
+                "options": [
+                  {
+                    "value": "col-1",
+                    "label": "Col-1"
+                  },
+                  {
+                    "value": "col-2",
+                    "label": "Col-2"
+                  },
+                  {
+                    "value": "col-3",
+                    "label": "Col-3"
+                  },
+                  {
+                    "value": "col-4",
+                    "label": "Col-4"
+                  },
+                  {
+                    "value": "col-5",
+                    "label": "Col-5"
+                  },
+                  {
+                    "value": "col-6",
+                    "label": "Col-6"
+                  },
+                  {
+                    "value": "col-7",
+                    "label": "Col-7"
+                  },
+                  {
+                    "value": "col-8",
+                    "label": "Col-8"
+                  },
+                  {
+                    "value": "col-9",
+                    "label": "Col-9"
+                  },
+                  {
+                    "value": "col-10",
+                    "label": "Col-10"
+                  },
+                  {
+                    "value": "col-12",
+                    "label": "Col-12"
+                  }
+                ],
+                "default":"col-2"
+              },
+              {
+                "type":"text",
+                "id":"ceilinglights1_title6",
+                "label":"Title For Ceiling Lights Menu"
+              },
+              {
+                "type":"select",
+                "id":"ceilinglights1_title_pos6",
+                "options": [
+                  {
+                    "value": "top",
+                    "label": "Top"
+                  },
+                  {
+                    "value": "Bottom",
+                    "label": "Bottom"
+                  }
+                ],
+                "default":"Bottom"
+              },
+              {
+                "type": "header",
+                "content": "Ceiling Lights Mega menu7"
+                },
+                {
+                  "type": "checkbox",
+                  "id": "ceilinglights7_mega_enable",
+                  "label": "Ceiling Lights Megamenu 7 Enable",
+                  "default": true
+                 },
+                 {
+                  "type": "image_picker",
+                  "id": "ceilinglights1_mega_image7",
+                  "label": "Featured Image"
+                },
+                {
+                 "type": "url",
+                 "id": "ceilinglights1_mega_url7",
+                 "label": "Url For Image"
+                },
+                {
+                  "type":"select",
+                  "id":"ceilinglights1_mega_size7",
+                  "options": [
+                    {
+                      "value": "col-1",
+                      "label": "Col-1"
+                    },
+                    {
+                      "value": "col-2",
+                      "label": "Col-2"
+                    },
+                    {
+                      "value": "col-3",
+                      "label": "Col-3"
+                    },
+                    {
+                      "value": "col-4",
+                      "label": "Col-4"
+                    },
+                    {
+                      "value": "col-5",
+                      "label": "Col-5"
+                    },
+                    {
+                      "value": "col-6",
+                      "label": "Col-6"
+                    },
+                    {
+                      "value": "col-7",
+                      "label": "Col-7"
+                    },
+                    {
+                      "value": "col-8",
+                      "label": "Col-8"
+                    },
+                    {
+                      "value": "col-9",
+                      "label": "Col-9"
+                    },
+                    {
+                      "value": "col-10",
+                      "label": "Col-10"
+                    },
+                    {
+                      "value": "col-12",
+                      "label": "Col-12"
+                    }
+                  ],
+                  "default":"col-6"
+                },
+                {
+                  "type":"text",
+                  "id":"ceilinglights1_title7",
+                  "label":"Title For Ceiling Lights Menu"
+                },
+                {
+                  "type":"select",
+                  "id":"ceilinglights1_title_pos7",
+                  "options": [
+                    {
+                      "value": "top",
+                      "label": "Top"
+                    },
+                    {
+                      "value": "Bottom",
+                      "label": "Bottom"
+                    }
+                  ],
+                  "default":"Bottom"
+                },
+                {
+                  "type": "header",
+                  "content": "Ceiling Lights Mega menu8"
+                  },
+                  {
+                    "type": "checkbox",
+                    "id": "ceilinglights8_mega_enable",
+                    "label": "Ceiling Lights Megamenu 8 Enable",
+                    "default": true
+                   },
+                   {
+                    "type": "image_picker",
+                    "id": "ceilinglights1_mega_image8",
+                    "label": "Featured Image"
+                  },
+                  {
+                   "type": "url",
+                   "id": "ceilinglights1_mega_url8",
+                   "label": "Url For Image"
+                  },
+                  {
+                    "type":"select",
+                    "id":"ceilinglights1_mega_size8",
+                    "options": [
+                      {
+                        "value": "col-1",
+                        "label": "Col-1"
+                      },
+                      {
+                        "value": "col-2",
+                        "label": "Col-2"
+                      },
+                      {
+                        "value": "col-3",
+                        "label": "Col-3"
+                      },
+                      {
+                        "value": "col-4",
+                        "label": "Col-4"
+                      },
+                      {
+                        "value": "col-5",
+                        "label": "Col-5"
+                      },
+                      {
+                        "value": "col-6",
+                        "label": "Col-6"
+                      },
+                      {
+                        "value": "col-7",
+                        "label": "Col-7"
+                      },
+                      {
+                        "value": "col-8",
+                        "label": "Col-8"
+                      },
+                      {
+                        "value": "col-9",
+                        "label": "Col-9"
+                      },
+                      {
+                        "value": "col-10",
+                        "label": "Col-10"
+                      },
+                      {
+                        "value": "col-12",
+                        "label": "Col-12"
+                      }
+                    ],
+                    "default":"col-6"
+                  },
+                  {
+                    "type":"text",
+                    "id":"ceilinglights1_title8",
+                    "label":"Title For Ceiling Lights Menu"
+                  },
+                  {
+                    "type":"select",
+                    "id":"ceilinglights1_title_pos8",
+                    "options": [
+                      {
+                        "value": "top",
+                        "label": "Top"
+                      },
+                      {
+                        "value": "Bottom",
+                        "label": "Bottom"
+                      }
+                    ],
+                    "default":"Bottom"
+                  }
 
+    ]  
+  },
+  {
+    "name": "Megamenu Table Lamps",
+    "settings": [      {
+      "type": "header",
+      "content": "Table Lamps Mega menu1"
+      }
+    ]
+  },
+  {
+    "name": "Megamenu Floor Lamps",
+    "settings": [      {
+      "type": "header",
+      "content": "Floor Lamps Mega menu1"
+      }
+    ]  
+  },
+  {
+    "name": "Megamenu Wall Lights",
+    "settings": [      {
+      "type": "header",
+      "content": "Wall Lights Mega menu1"
+      }
+    ]  
+  }
 ]
