@@ -337,7 +337,7 @@
                       </div>
                     </ul>
               {%- else -%}
-                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} style="{% if link.title  contains 'Warehouse' %} color:#b23c18;{% endif %}">
+                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} {% if link.title  contains 'Warehouse' %} style="color : #b23c18 ;" {% endif %} >
                   <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                 </a>
               {%- endif -%}
@@ -399,13 +399,98 @@
                             {% endif %}
                         {% endfor %}
                       {% endcomment %}
+                            {% if link.title == "Rugs" %}
+                                {% if settings.rug1_mega_enable %}
+                                  <div class="{{ settings.rug1_mega_size1 }}">
+                                    
+                                    {% if settings.rug1_mega_image1 != blank and settings.rug1_mega_url1 != blank %}
+                                    <a href="{{ settings.rug1_mega_url1 }}">
+                                      <img class="w-100" src="{{ settings.rug1_mega_image1 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image1.width }}" loading="lazy">
+                                    </a>
+                                    {% endif %}
+                                  
+                                  </div>
+                                {% endif %}
+                                {% if settings.rug2_mega_enable %}
+                                  <div class="{{ settings.rug1_mega_size2 }}">
+                                    
+                                    {% if settings.rug1_mega_image2 != blank and settings.rug1_mega_url2 != blank %}
+                                    <a href="{{ settings.rug1_mega_url2 }}">
+                                      <img class="w-100" src="{{ settings.rug1_mega_image2 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image2.width }}" loading="lazy">
+                                    </a>
+                                    {% endif %}
+                                  
+                                  </div>
+                                {% endif %}
+                                  {% if settings.rug3_mega_enable %}
+                                  <div class="{{ settings.rug1_mega_size3 }}">
+                                    
+                                    {% if settings.rug1_mega_image3 != blank and settings.rug1_mega_url3 != blank %}
+                                    <a href="{{ settings.rug1_mega_url3 }}">
+                                      <img class="w-100" src="{{ settings.rug1_mega_image3 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image3.width }}" loading="lazy">
+                                    </a>
+                                    {% endif %}
+                                  
+                                  </div>
+                                {% endif %}
+
+                                {% if settings.rug4_mega_enable %}
+                                <div class="{{ settings.rug1_mega_size4 }}">
+                                  
+                                  {% if settings.rug1_mega_image4 != blank and settings.rug1_mega_url4 != blank %}
+                                  <a href="{{ settings.rug1_mega_url4 }}">
+                                    <img class="w-100" src="{{ settings.rug1_mega_image4 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image4.width }}" loading="lazy">
+                                  </a>
+                                  {% endif %}
+                                
+                                </div>
+                              {% endif %}
+                              {% if settings.rug5_mega_enable %}
+                              <div class="{{ settings.rug1_mega_size5 }}">
+                                
+                                {% if settings.rug1_mega_image5 != blank and settings.rug1_mega_url5 != blank %}
+                                <a href="{{ settings.rug1_mega_url5 }}">
+                                  <img class="w-100" src="{{ settings.rug1_mega_image5 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image5.width }}" loading="lazy">
+                                </a>
+                                {% endif %}
+                              
+                              </div>
+                            {% endif %}
+                            {% if settings.rug6_mega_enable %}
+                              <div class="{{ settings.rug1_mega_size6 }}">
+                                
+                                {% if settings.rug1_mega_image6 != blank and settings.rug1_mega_url6 != blank %}
+                                <a href="{{ settings.rug1_mega_url6 }}">
+                                  <img class="w-100" src="{{ settings.rug1_mega_image6 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image6.width }}" loading="lazy">
+                                </a>
+                                {% endif %}
+                              
+                              </div>
+                            {% endif %}
+
+                            {% if settings.rug7_mega_enable %}
+                            <div class="{{ settings.rug1_mega_size7 }}">
+                              
+                              {% if settings.rug1_mega_image7 != blank and settings.rug1_mega_url7 != blank %}
+                              <a href="{{ settings.rug1_mega_url7 }}">
+                                <img class="w-100" src="{{ settings.rug1_mega_image7 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image7.width }}" loading="lazy">
+                              </a>
+                              {% endif %}
+                              {% if settings.rug1_mega_image8 != blank and settings.rug1_mega_url8 != blank %}
+                              <a href="{{ settings.rug1_mega_url8 }}">
+                                <img class="w-100" src="{{ settings.rug1_mega_image8 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image8.width }}" loading="lazy" class="mt-2">
+                              </a>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                            {% endif %}
                       </div>
                     </div>
                   </div>
                 </div>
                 </ul>
               {%- else -%}
-                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} style="{% if link.title  contains 'Warehouse' %} color:#b23c18;{% endif %}">
+                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %} {% if link.title  contains 'Warehouse' %}style=" color: #b23c18;" {% endif %}>
                   <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                 </a>
               {%- endif -%}
