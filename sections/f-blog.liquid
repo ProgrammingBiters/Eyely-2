@@ -1,3 +1,9 @@
+<style>
+  .f-blog .f-blog-content:after{
+    content: "";
+    background-image: url('{{ 'food-blog.svg' | asset_url }}');
+  }
+</style>
 {% if section.settings.fblog != blank %}
     {% assign blog = blogs[section.settings.fblog] %}
     <section class="f-blog my-md-4  my-2">

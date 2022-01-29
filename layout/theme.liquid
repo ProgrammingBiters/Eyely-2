@@ -16,10 +16,6 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    {% if template contains 'blog' %}
-      {{ 'blog.scss' | asset_url | stylesheet_tag }}
-    {% endif %}
-
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -52,6 +48,13 @@
       %}
 
     {% style %}
+    @font-face {
+      font-family: 'Arvo Bold';
+      src: url(' {{ 'Arvo-Bold.ttf' | asset_url }} ') format('ttf');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
     {% assign n = settings.type_body_other.family | remove : '"' | append: "-light" %}
         @font-face {
           font-family: 'Bookmania Bold';

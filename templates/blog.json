@@ -2,11 +2,207 @@
   "sections": {
     "main": {
       "type": "main-blog",
+      "blocks": {
+        "3870e422-a964-4d0b-b03f-f3813da21592": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "fproduct": "african-drum-173-white-marble-finish-ceramic-garden-stool",
+            "badge_title": "in the shop",
+            "short_info": "",
+            "enable_link": true,
+            "link_label": "Shop Now"
+          }
+        },
+        "6c1c0ad3-9b95-4708-a9da-9d26953d7023": {
+          "type": "featured_product",
+          "settings": {
+            "enable": true,
+            "fproduct": "badger-155-metal-led-semi-flush-mount",
+            "badge_title": "in the shop",
+            "short_info": "",
+            "enable_link": true,
+            "link_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "3870e422-a964-4d0b-b03f-f3813da21592",
+        "6c1c0ad3-9b95-4708-a9da-9d26953d7023"
+      ],
       "settings": {
+        "latest_article": "Latest Article"
+      }
+    },
+    "1643345791a6cc4a9c": {
+      "type": "blog-product",
+      "settings": {
+        "title": "New to <span>The Shop<\/span>",
+        "subtitle": "Our newest additions that we can't stop talking about",
+        "featured_collection": "table-lamp-sets"
+      }
+    },
+    "164334583373f91c35": {
+      "type": "blog-post-view",
+      "blocks": {
+        "006ce456-4cba-46ec-9843-5db4fba93e7c": {
+          "type": "featured_link",
+          "settings": {
+            "enable": true,
+            "link_title": "Ceiling Fans",
+            "link": "shopify:\/\/collections\/ceiling-fans"
+          }
+        },
+        "58ddb07d-d73c-4be6-a834-6c199069f25c": {
+          "type": "featured_link",
+          "settings": {
+            "enable": true,
+            "link_title": "Ceiling Lights",
+            "link": "shopify:\/\/collections\/ceiling-lights"
+          }
+        },
+        "64513a29-67fc-4d06-bcf6-0b961d6b901c": {
+          "type": "featured_link",
+          "settings": {
+            "enable": true,
+            "link_title": "Garden stool",
+            "link": "shopify:\/\/collections\/garden-stool"
+          }
+        },
+        "2e2d1c6f-a1b2-4e76-adf3-2d3e0391af51": {
+          "type": "featured_link",
+          "settings": {
+            "enable": true,
+            "link_title": "Happimess",
+            "link": "shopify:\/\/collections\/happimess"
+          }
+        },
+        "29dd9989-f7c2-4708-a9ea-37f8c6f961e0": {
+          "type": "featured_link",
+          "settings": {
+            "enable": true,
+            "link_title": "Lighting",
+            "link": "shopify:\/\/collections\/lighting"
+          }
+        }
+      },
+      "block_order": [
+        "006ce456-4cba-46ec-9843-5db4fba93e7c",
+        "58ddb07d-d73c-4be6-a834-6c199069f25c",
+        "64513a29-67fc-4d06-bcf6-0b961d6b901c",
+        "2e2d1c6f-a1b2-4e76-adf3-2d3e0391af51",
+        "29dd9989-f7c2-4708-a9ea-37f8c6f961e0"
+      ],
+      "settings": {
+        "title": "shop by:",
+        "view_all_title": "view all shop",
+        "view_link": "shopify:\/\/collections"
+      }
+    },
+    "1643346033eed0bfbc": {
+      "type": "featured-article",
+      "settings": {
+        "featured_article": "rugs\/2021-buying-guide-for-runner-rugs-improve-the-aesthetic-of-your-bedroom",
+        "view_article_label": "view article"
+      }
+    },
+    "1643346095b9c82cd7": {
+      "type": "team-product",
+      "settings": {
+        "title": "Let's Hear It for Teamwork!",
+        "featured_collection": "pendants"
+      }
+    },
+    "1643346130594e71b7": {
+      "type": "featured-video-blog",
+      "settings": {
+        "small_title": "Featured Video",
+        "title": "Sohla's Magic Ratio for Turning Any Fruit into a Crumble",
+        "description": "Go on—pick a fruit, any fruit. Resident Sohla El-Waylly will show you how to turn it into a streusel-crowned crumble.",
+        "button_label": "Read More",
+        "button_url": "",
+        "vid_url": "https:\/\/www.youtube.com\/embed\/gL6JBa_fWts",
+        "video_type": "youtube"
+      }
+    },
+    "16433461786e16b463": {
+      "type": "f-blog",
+      "settings": {
+        "fblog": "lighting",
+        "right_title": "Latest"
+      }
+    },
+    "164334624172fe5651": {
+      "type": "blog-grid",
+      "settings": {
+        "fblog": "lighting",
+        "title": "Our Newest Recipes"
+      }
+    },
+    "1643346204b7c3f83d": {
+      "type": "f-blog-2",
+      "settings": {
+        "fblog": "rugs",
+        "right_title": "Latest"
+      }
+    },
+    "1643346279d5566230": {
+      "type": "perfect-for-home",
+      "settings": {
+        "title": "Perfect For Home",
+        "featured_collection": "chandeliers",
+        "view_title": "View All"
+      }
+    },
+    "1643346320cefd8100": {
+      "type": "pop-statement",
+      "blocks": {
+        "95e18995-2798-439b-9eae-66aef28d1913": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/top_1425x297_crop_center_60911ad8-bcee-48f0-bbbc-c351966de6ad.png",
+            "mobile_image": "shopify:\/\/shop_images\/footer_mobile_2_8d017ccc-07c6-43e7-bada-b521bc5a4ef7.png",
+            "title": "Slideshow",
+            "text": "Introduce customers to your shop with lifestyle and product imagery",
+            "smalltext": "Introduce customers to your shop with lifestyle and product imagery",
+            "color": "#FFFFFF",
+            "link": "",
+            "text_alignment": "center",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        }
+      },
+      "block_order": [
+        "95e18995-2798-439b-9eae-66aef28d1913"
+      ],
+      "settings": {
+        "slideshow_width": "full",
+        "slideshow_height": "medium"
+      }
+    },
+    "16433465957e7c5ffe": {
+      "type": "blog-newsletter",
+      "settings": {
+        "title": "Want more Food52?",
+        "description": "Our best tips for eating thoughtfully and living joyfully, right to your inbox.",
+        "desk-image": "shopify:\/\/shop_images\/footer_desktop_1_6e03502f-e0ab-47ee-8f1d-ccb31bbe46bb.png"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1643345791a6cc4a9c",
+    "164334583373f91c35",
+    "1643346033eed0bfbc",
+    "1643346095b9c82cd7",
+    "1643346130594e71b7",
+    "16433461786e16b463",
+    "164334624172fe5651",
+    "1643346204b7c3f83d",
+    "1643346279d5566230",
+    "1643346320cefd8100",
+    "16433465957e7c5ffe"
   ]
 }

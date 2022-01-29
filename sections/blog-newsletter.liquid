@@ -61,7 +61,7 @@
 </section>
 {% endcomment %}
 
-<section class="n-subscribe n-blogs"  {% if section.settings.desk-image != blank %}  {% endif %}>
+<section class="n-subscribe n-blogs"  {% if section.settings.desk-image != blank %}  {% endif %} style="background-image: url('{{ section.settings.desk-image | img_url: '' }}');">
     <div><h3>{{ section.settings.title }}</h3>
     <p>{{section.settings.description}}</p>
     </div>
