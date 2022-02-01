@@ -676,6 +676,154 @@
                         {% endif %}
                         {% elsif link.title == "Table Lamps" %}
 
+                        {% if settings.tablelamp1_mega_enable %}
+                            
+                        <div class="{{ settings.tablelamp1_mega_size1 }}">
+                        {% if settings.tablelamp1_title_pos1 == "Top" and settings.tablelamp1_title1 != blank and settings.tablelamp1_mega_url1 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url1 }}"  class="text-decoration-none">{{settings.tablelamp1_title1  }}</a></h5>
+                        {% endif %}
+                          {% if settings.tablelamp1_mega_image1 != blank and settings.tablelamp1_mega_url1 != blank %}
+                            <a href="{{ settings.tablelamp1_mega_url1 }}" class="p-2">
+                              <img class="w-100" src="{{ settings.tablelamp1_mega_image1 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image1.width }}" loading="lazy">
+                            </a>
+                          {% endif %}
+                          {% if settings.tablelamp1_title_pos1 == "Bottom" and settings.tablelamp1_title1 != blank and settings.tablelamp1_mega_url1 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url1 }}"  class="text-decoration-none">{{settings.tablelamp1_title1  }}</a></h5>
+                        {% endif %}
+                        </div>
+                  
+                      {% endif %}
+
+
+                      {% if settings.tablelamp2_mega_enable %}
+                       
+                        <div class="{{ settings.tablelamp1_mega_size2 }}">
+                          {% if settings.tablelamp1_title_pos2 == "Top" and settings.tablelamp1_title1 != blank and settings.tablelamp1_mega_url2 != blank %}
+                            <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url2 }}"  class="text-decoration-none">{{settings.tablelamp1_title2  }}</a></h5>
+                          {% endif %}
+                          {% if settings.tablelamp1_mega_image2 != blank and settings.tablelamp1_mega_url2 != blank %}
+                            <a href="{{ settings.tablelamp1_mega_url2 }}" class="p-2">
+                              <img class="w-100" src="{{ settings.tablelamp1_mega_image2 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image2.width }}" loading="lazy">
+                            </a>
+                          {% endif %}
+                            {% if settings.tablelamp1_title_pos2 == "Bottom" and settings.tablelamp1_title2 != blank and settings.tablelamp1_mega_url2 != blank %}
+                              <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url2 }}"  class="text-decoration-none">{{settings.tablelamp1_title2  }}</a></h5>
+                            {% endif %}
+                        </div>
+                  
+                      {% endif %}
+                      {% if settings.tablelamp3_mega_enable %}
+                       
+                      <div class="{{ settings.tablelamp1_mega_size3 }}">
+                        {% if settings.tablelamp1_title_pos3 == "Top" and settings.tablelamp1_title3 != blank and settings.tablelamp1_mega_url3 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url3 }}"  class="text-decoration-none">{{settings.tablelamp1_title3  }}</a></h5>
+                        {% endif %}
+                        {% if settings.tablelamp1_mega_image3 != blank and settings.tablelamp1_mega_url3 != blank %}
+                          <a href="{{ settings.tablelamp1_mega_url3 }}" class="p-2">
+                            <img class="w-100" src="{{ settings.tablelamp1_mega_image3 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image3.width }}" loading="lazy">
+                          </a>
+                        {% endif %}
+                          {% if settings.tablelamp1_title_pos3 == "Bottom" and settings.tablelamp1_title3 != blank and settings.tablelamp1_mega_url3 != blank %}
+                            <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url3 }}" class="text-decoration-none">{{settings.tablelamp1_title3  }}</a></h5>
+                          {% endif %}
+                      </div>
+                
+                    {% endif %}
+                    {% if settings.tablelamp4_mega_enable %}
+                       
+                      <div class="{{ settings.tablelamp1_mega_size4 }}">
+                        {% if settings.tablelamp1_title_pos4 == "Top" and settings.tablelamp1_title4 != blank and settings.tablelamp1_mega_url4 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url4 }}"  class="text-decoration-none">{{settings.tablelamp1_title4  }}</a></h5>
+                        {% endif %}
+                        {% if settings.tablelamp1_mega_image4 != blank and settings.tablelamp1_mega_url4 != blank %}
+                          <a href="{{ settings.tablelamp1_mega_url4 }}" class="p-2">
+                            <img class="w-100" src="{{ settings.tablelamp1_mega_image4 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image4.width }}" loading="lazy">
+                          </a>
+                        {% endif %}
+                          {% if settings.tablelamp1_title_pos4 == "Bottom" and settings.tablelamp1_title4 != blank and settings.tablelamp1_mega_url4 != blank %}
+                            <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url4 }}"  class="text-decoration-none">{{settings.tablelamp1_title4  }}</a></h5>
+                          {% endif %}
+                      </div>
+                
+                    {% endif %}
+
+                    {% if settings.tablelamp5_mega_enable %}
+                       
+                      <div class="{{ settings.tablelamp1_mega_size5 }}">
+                        {% if settings.tablelamp1_title_pos5 == "Top" and settings.tablelamp1_title5 != blank and settings.tablelamp1_mega_url5 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url5 }}"  class="text-decoration-none">{{settings.tablelamp1_title5 }}</a></h5>
+                        {% endif %}
+                        {% if settings.tablelamp1_mega_image5 != blank and settings.tablelamp1_mega_url5 != blank %}
+                          <a href="{{ settings.tablelamp1_mega_url5 }}" class="p-2">
+                            <img class="w-100" src="{{ settings.tablelamp1_mega_image5 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image5.width }}" loading="lazy">
+                          </a>
+                        {% endif %}
+                          {% if settings.tablelamp1_title_pos5 == "Bottom" and settings.tablelamp1_title5 != blank and settings.tablelamp1_mega_url5 != blank %}
+                            <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url5 }}"  class="text-decoration-none">{{settings.tablelamp1_title5  }}</a></h5>
+                          {% endif %}
+                      </div>
+                
+                    {% endif %}
+
+                    {% if settings.tablelamp6_mega_enable %}
+                       
+                    <div class="{{ settings.tablelamp1_mega_size6 }}">
+                      {% if settings.tablelamp1_title_pos6 == "Top" and settings.tablelamp1_title6 != blank and settings.tablelamp1_mega_url6 != blank %}
+                        <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url6 }}"  class="text-decoration-none">{{settings.tablelamp1_title6 }}</a></h5>
+                      {% endif %}
+                      {% if settings.tablelamp1_mega_image6 != blank and settings.tablelamp1_mega_url6 != blank %}
+                        <a href="{{ settings.tablelamp1_mega_url6 }}" class="p-2">
+                          <img class="w-100" src="{{ settings.tablelamp1_mega_image6 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image6.width }}" loading="lazy">
+                        </a>
+                      {% endif %}
+                        {% if settings.tablelamp1_title_pos6 == "Bottom" and settings.tablelamp1_title6 != blank and settings.tablelamp1_mega_url6 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url6 }}"  class="text-decoration-none">{{settings.tablelamp1_title6  }}</a></h5>
+                        {% endif %}
+                    </div>
+              
+                  {% endif %}
+
+                  {% if settings.tablelamp7_mega_enable %}
+                       
+                    <div class="{{ settings.tablelamp1_mega_size7 }}">
+                      {% if settings.tablelamp1_title_pos7 == "Top" and settings.tablelamp1_title7 != blank and settings.tablelamp1_mega_url7 != blank %}
+                        <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url7 }}"  class="text-decoration-none">{{settings.tablelamp1_title7 }}</a></h5>
+                      {% endif %}
+                      {% if settings.tablelamp1_mega_image7 != blank and settings.tablelamp1_mega_url7 != blank %}
+                        <a href="{{ settings.tablelamp1_mega_url7 }}" class="p-2">
+                          <img class="w-100" src="{{ settings.tablelamp1_mega_image7 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image7.width }}" loading="lazy">
+                        </a>
+                      {% endif %}
+                        {% if settings.tablelamp1_title_pos7 == "Bottom" and settings.tablelamp1_title7 != blank and settings.tablelamp1_mega_url7 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url7 }}"  class="text-decoration-none">{{settings.tablelamp1_title7  }}</a></h5>
+                        {% endif %}
+                    </div>
+            
+                  {% endif %}
+                  
+                  {% if settings.tablelamp8_mega_enable %}
+                       
+                    <div class="{{ settings.tablelamp1_mega_size8 }}">
+                      {% if settings.tablelamp1_title_pos8 == "Top" and settings.tablelamp1_title8 != blank and settings.tablelamp1_mega_url8 != blank %}
+                        <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url8 }}"  class="text-decoration-none">{{settings.tablelamp1_title8 }}</a></h5>
+                      {% endif %}
+                      {% if settings.tablelamp1_mega_image8 != blank and settings.tablelamp1_mega_url8 != blank %}
+                        <a href="{{ settings.tablelamp1_mega_url8 }}" class="p-2">
+                          <img class="w-100" src="{{ settings.tablelamp1_mega_image8 | img_url : 'original' }}" height="auto" width="{{ settings.tablelamp1_mega_image8.width }}" loading="lazy">
+                        </a>
+                      {% endif %}
+                        {% if settings.tablelamp1_title_pos8 == "Bottom" and settings.tablelamp1_title8 != blank and settings.tablelamp1_mega_url8 != blank %}
+                          <h5 class="text-center"><a href="{{ settings.tablelamp1_mega_url8 }}"  class="text-decoration-none">{{settings.tablelamp1_title8  }}</a></h5>
+                        {% endif %}
+                    </div>
+            
+                  {% endif %}
+
+
+
+
+
+
                         {% elsif link.title == "Floor Lamps" %}
 
                         {% elsif link.title == "Wall Lights" %}
