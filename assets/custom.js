@@ -38,8 +38,7 @@ $(document).ready(function(){
       });
       //Swatch-item Js   start
 
-      $(".c-item").click(function(e){
-        
+      $(".c-item").hover(function(e){
         e.preventDefault();
         var fg=false;
         var vid=$(this).data("v-id");
@@ -264,7 +263,7 @@ $(document).ready(function(){
               
     $(document).ready(function () {
       $(window).scroll(function(){
-         ScrollExecute();
+        // ScrollExecute();
        }); 
        $('.product-slider').slick({
         slidesToShow: 1,

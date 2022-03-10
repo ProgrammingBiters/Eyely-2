@@ -19,7 +19,7 @@
      
         <div class="facet-filters sorting caption">
           <div class="facet-filters__field">
-            <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+           {% comment %}  <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>{% endcomment %}
             <div class="select">
               {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
               <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
@@ -127,6 +127,11 @@
                   %}
                 </li>
               {%- endfor -%}
+                {%
+                render 'pagination', paginate: paginate,
+                grid_list: true
+                %}
+                {% comment %}
               {% if paginate.next %}
                 <div id="more" class="col-12  mt-4 d-none">
                   <p><a href="{{ paginate.next.url }}" class="btn-show-more button-all m-auto">Load More</a></p>
@@ -135,16 +140,7 @@
                 <img src="{{ 'loader.gif' | asset_img_url : '100x100' }}" class="img-fluid" loading="lazy" height="auto" width="150">
               </div>
                 {% endif %}
-            </ul>
-         
-           {% comment %}    
-            {%- if paginate.pages > 1 -%}
-
-             
-              {% render 'pagination', paginate: paginate, anchor: '' %}
-             
-            {%- endif -%} {% endcomment %}
-            
+                {% endcomment %}
           </div>
         {%- endif -%}
         {%- endpaginate -%}
