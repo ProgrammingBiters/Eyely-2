@@ -24,6 +24,12 @@
           "settings": {
           }
         },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -35,6 +41,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "buy_buttons",
         "description"
       ],
       "settings": {
