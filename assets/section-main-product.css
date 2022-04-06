@@ -1130,3 +1130,7 @@ position: absolute;
 .yotpo-bottomline-empty-state{
 display: none;
 }
+.more-color-link{
+color:#000;
+text-decoration:none;
+}
