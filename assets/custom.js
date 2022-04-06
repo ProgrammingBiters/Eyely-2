@@ -1,4 +1,70 @@
 $(document).ready(function(){
+$(".qty-select").change(function(e){
+e.preventDefault();
+var newval=parseInt($(this).val());
+
+var i=$(this).data("cartitem-index");
+updateQty(newval,i);
+if(newval == 10){
+$("#qty-num-"+i).removeClass("visually-hidden");
+$("#qty-select-"+i).addClass("visually-hidden");
+$("#qty-num-"+i).val("10");
+}
+else{
+  $("#qty-num-"+i).addClass("visually-hidden");
+  $("#qty-select-"+i).removeClass("visually-hidden");
+}
+});
+function updateQty(newval,i){
+  $.ajax({
+    url: "/cart/change.js",
+    data: { quantity: newval, line: i },
+    dataType: "json",
+    success: function (data, status, xhr) {
+  console.log(data.items);
+  $(data.items).each(function(index,d){
+    var vv=index+1;
+
+  if(i == vv){
+    var el=$(".price-"+i);
+    $(el).each(function(){
+      $(this).html(Shopify.formatMoney(d.final_line_price, window.money));
+    });
+  
+  }
+  })
+  $("#Quantity-"+i).val(newval);
+  $(".upsell-custom-regular-price").html(Shopify.formatMoney(data.total_price, window.money));
+    }
+  });
+
+}
+$(".qty-num-new").change(function(e){
+  e.preventDefault();
+  var i=$(this).data("cartitem-index");
+  var v=$(this).val();
+  if(v.match(/^\d+$/)) {
+    // your code here
+v=parseInt($(this).val());
+
+updateQty(v,i);
+if(v >= 10){
+  $("#qty-num-"+i).removeClass("visually-hidden");
+  $("#qty-select-"+i).addClass("visually-hidden");
+  }
+  else{
+    $("#qty-num-"+i).addClass("visually-hidden");
+    $("#qty-select-"+i).removeClass("visually-hidden");
+    $("#qty-select-"+i).val(v);
+  }
+}
+else{
+$(this).focus();
+$(this).val(10);
+updateQty(10,i);
+}
+});
+
     $(".review-wrap").slice(0, 1).show();
     $(".mobile_btn").on("click", function(e){
         e.preventDefault();
