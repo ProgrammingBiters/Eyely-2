@@ -1,3 +1,4 @@
+import 'blog.scss';
 $(document).ready(function(){
 $(".qty-select").change(function(e){
 e.preventDefault();
@@ -338,6 +339,7 @@ updateQty(10,i);
         fade: true,
         asNavFor: '.pro-nav-ul',
               adaptiveHeight:true
+<<<<<<< HEAD
      
       });
        $('.pro-nav-ul').slick({
@@ -391,6 +393,61 @@ updateQty(10,i);
           speed: 300, 
              cssEase: 'ease'
      
+=======
+     
+      });
+       $('.pro-nav-ul').slick({
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        asNavFor: '.product-slider',
+        dots: false,
+        focusOnSelect: true,
+        vertical:true,
+        arrows:true,
+         cssEase: 'linear',
+         speed: 1000,
+        prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-up' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-down' aria-hidden='true'></i></button>",
+          responsive: [
+         {
+           breakpoint: 768,
+           settings: {
+             vertical:false,
+             slidesToShow:5,
+             slidesToScroll: 1,
+                arrows:true,
+              prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+         speed: 300, 
+             cssEase: 'ease'
+           }
+         },
+            {
+           breakpoint: 720,
+           settings: {
+             vertical:false,
+             slidesToShow:6,
+             slidesToScroll: 1,
+                arrows:true,
+           speed: 300,
+              prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>", 
+             cssEase: 'ease'
+           }
+         },
+         {
+           breakpoint: 600,
+           settings: {
+             vertical:false,
+             slidesToShow: 5,
+             slidesToScroll: 1,
+             arrows:true,
+             prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+              nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+          speed: 300, 
+             cssEase: 'ease'
+     
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
            }
          },
              {
@@ -421,6 +478,7 @@ updateQty(10,i);
        ]
      
       });
+<<<<<<< HEAD
       $('.e-slider').slick({
         infinite: true,
         slidesToShow: 5,
@@ -455,4 +513,7 @@ updateQty(10,i);
     
       });
     
+=======
+         
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
      });

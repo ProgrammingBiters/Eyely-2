@@ -23,6 +23,9 @@
 -%}
 <div class="row m-auto">
 <div class="facets-container col-12">
+  {%- unless collapse_on_larger_devices -%}
+    <facet-filters-form class="facets  d-md-block d-none">
+      <form id="FacetFiltersForm" class="facets__form">
 
 {% assign tag_limit = 5 | times: 1 %}
 

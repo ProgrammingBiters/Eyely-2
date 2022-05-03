@@ -16,6 +16,8 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
+  
+
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -34,6 +36,7 @@
     {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }} 
     {{ 'slick.css' | asset_url | stylesheet_tag }}
     {{ 'slick-theme.min.css' | asset_url | stylesheet_tag }}
+    {{ 'blog.scss.liquid' | asset_url | stylesheet_tag }}
    {% comment %}
     --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         

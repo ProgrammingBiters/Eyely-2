@@ -1129,8 +1129,11 @@ position: absolute;
 }
 .yotpo-bottomline-empty-state{
 display: none;
+<<<<<<< HEAD
 }
 .more-color-link{
 color:#000;
 text-decoration:none;
+=======
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
 }

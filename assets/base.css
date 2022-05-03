@@ -2547,6 +2547,7 @@ padding-bottom: 20px;
   max-width: 880px;
   margin: 0 auto;
 }
+<<<<<<< HEAD
 
 .half-wrapper p{
   font-size: 16px;
@@ -2715,3 +2716,8 @@ font-size: 13px;
   display: flex;
   flex-wrap: wrap;
 }
+=======
+.half-wrapper p{
+  font-size: 16px;
+}
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708

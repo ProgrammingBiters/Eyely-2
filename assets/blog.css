@@ -1,4 +1,15 @@
 @font-face {
+<<<<<<< HEAD
+=======
+  font-family: 'Arvo Bold';
+  src: url(' {{ 'Arvo-Bold.eot' | asset_url }} ');
+  src: url(' {{ 'Arvo-Bold.woff2' | asset_url }} ') format('woff2'), url(' {{ 'Arvo-Bold.woff' | asset_url }} ') format('woff'), url(' {{ 'Arvo-Bold.ttf' | asset_url }} ') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
   font-family: 'Josefin Sans Medium';
   src: url(' {{ 'JosefinSans-Medium.eot' | asset_url }} ');
   src: url(' {{ 'JosefinSans-Medium.woff2' | asset_url }} ') format('woff2'), url(' {{ 'JosefinSans-Medium.woff' | asset_url }} ') format('woff'), url(' {{ 'JosefinSans-Medium.ttf' | asset_url }} ') format('truetype');
@@ -13,10 +24,13 @@
   font-style: normal;
   font-display: swap;
 }
+<<<<<<< HEAD
 a{
   text-decoration: none;
   color: #444;
 }
+=======
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
 .b-headings {
   font-family: 'Arvo Bold' !important;
 }
@@ -2797,7 +2811,11 @@ ul {
 }
 .a-blog-post-infotmation .main-blog-content .content__text-container .aricle-gallery .article-body .card-type:after {
   text-align: center;
+<<<<<<< HEAD
   background-image: url(' {{ 'download.svg' | asset_url }}');
+=======
+  background-image: url(' {{ 'download.svg' | assets_url }}');
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
   background-repeat: no-repeat;
   content: '';
   display: block;
@@ -3938,6 +3956,7 @@ ul {
 #shopify-section-blog-newsletter {
   background-image: url('//cdn.shopify.com/s/files/1/0553/3053/7657/files/footer_desktop_1.png?v=1631864950');
 }
+<<<<<<< HEAD
 .n-subscribe {
   background-repeat: no-repeat;
   background-position-x: center;
@@ -4357,3 +4376,5 @@ ul {
             animation-play-state: running;
           }
         }
+=======
+>>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
