@@ -320,7 +320,7 @@
                       {% if option_name == 'color' %}
                           {% assign swatch_option_key = 'option' | append: forloop.index %}
                         <fieldset class="js product-form__input color-options">
-                          <legend class="form__label {% if product.metafields.global.check_more.value != blank and option.name contains "Color" or option.name contains "color" %} d-flex justify-content-between {% endif %}">{{ option.name }} {% if product.metafields.global.check_more.value != blank and option.name contains "Color" or option.name contains "color" %}<span class="option-name"><a href="{{product.metafields.global.check_more.value}}" class="more-color-link"><span > Check more colors</span></a></span>{% endif %}</legend>
+                          <legend class="form__label">{{ option.name }}</legend>
                           {%- for value in option.values -%}
                              
                               {% for variant in product.variants %}
@@ -335,7 +335,7 @@
                                   form="product-form-{{ section.id }}"
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
-                            <label  style="background-image : url( {{ v_img | img_url : '40x40' }} )"  class="color-label" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ value }}" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                            <label  style="background-image : url({{ v_img | img_url : '40x40' }});"  class="color-label" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ value }}" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
                              
                             </label>
                         
@@ -345,7 +345,7 @@
                         
                       {% else %}
                       <fieldset class="js product-form__input">
-                        <legend class="form__label">{{ option.name }} </legend>
+                        <legend class="form__label">{{ option.name }}</legend>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"

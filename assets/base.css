@@ -1,8 +1,8 @@
 /* Color custom properties */
 ul {
-list-style-type: none;
-padding: 0;
-}
+  list-style-type: none;
+  padding: 0;
+  }
 
 :root,
 .color-background-1 {
@@ -2547,7 +2547,22 @@ padding-bottom: 20px;
   max-width: 880px;
   margin: 0 auto;
 }
-<<<<<<< HEAD
+
+.half-wrapper p{
+  font-size: 16px;
+}
+.breadcrumb a {
+  color: #b23c18;
+  text-decoration: none;
+}
+.breadcrumb .arrow {
+  font-size: 2rem;
+  line-height: calc(1 + .2 / var(--font-body-scale));
+  padding: 0 6px 0 8px;
+}
+.breadcrumb span {
+  color: #949494;
+}
 
 .half-wrapper p{
   font-size: 16px;
@@ -2716,8 +2731,3 @@ font-size: 13px;
   display: flex;
   flex-wrap: wrap;
 }
-=======
-.half-wrapper p{
-  font-size: 16px;
-}
->>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708

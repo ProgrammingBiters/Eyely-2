@@ -1,72 +1,71 @@
-import 'blog.scss';
 $(document).ready(function(){
-$(".qty-select").change(function(e){
-e.preventDefault();
-var newval=parseInt($(this).val());
-
-var i=$(this).data("cartitem-index");
-updateQty(newval,i);
-if(newval == 10){
-$("#qty-num-"+i).removeClass("visually-hidden");
-$("#qty-select-"+i).addClass("visually-hidden");
-$("#qty-num-"+i).val("10");
-}
-else{
-  $("#qty-num-"+i).addClass("visually-hidden");
-  $("#qty-select-"+i).removeClass("visually-hidden");
-}
-});
-function updateQty(newval,i){
-  $.ajax({
-    url: "/cart/change.js",
-    data: { quantity: newval, line: i },
-    dataType: "json",
-    success: function (data, status, xhr) {
-  console.log(data.items);
-  $(data.items).each(function(index,d){
-    var vv=index+1;
-
-  if(i == vv){
-    var el=$(".price-"+i);
-    $(el).each(function(){
-      $(this).html(Shopify.formatMoney(d.final_line_price, window.money));
-    });
-  
-  }
-  })
-  $("#Quantity-"+i).val(newval);
-  $(".upsell-custom-regular-price").html(Shopify.formatMoney(data.total_price, window.money));
+  $(".qty-select").change(function(e){
+    e.preventDefault();
+    var newval=parseInt($(this).val());
+    
+    var i=$(this).data("cartitem-index");
+    updateQty(newval,i);
+    if(newval == 10){
+    $("#qty-num-"+i).removeClass("visually-hidden");
+    $("#qty-select-"+i).addClass("visually-hidden");
+    $("#qty-num-"+i).val("10");
     }
-  });
+    else{
+      $("#qty-num-"+i).addClass("visually-hidden");
+      $("#qty-select-"+i).removeClass("visually-hidden");
+    }
+    });
+    function updateQty(newval,i){
+      $.ajax({
+        url: "/cart/change.js",
+        data: { quantity: newval, line: i },
+        dataType: "json",
+        success: function (data, status, xhr) {
+      console.log(data.items);
+      $(data.items).each(function(index,d){
+        var vv=index+1;
+    
+      if(i == vv){
+        var el=$(".price-"+i);
+        $(el).each(function(){
+          $(this).html(Shopify.formatMoney(d.final_line_price, window.money));
+        });
+      
+      }
+      })
+      $("#Quantity-"+i).val(newval);
+      $(".upsell-custom-regular-price").html(Shopify.formatMoney(data.total_price, window.money));
+        }
+      });
+    
+    }
+    $(".qty-num-new").change(function(e){
+      e.preventDefault();
+      var i=$(this).data("cartitem-index");
+      var v=$(this).val();
+      if(v.match(/^\d+$/)) {
+        // your code here
+    v=parseInt($(this).val());
+    
+    updateQty(v,i);
+    if(v >= 10){
+      $("#qty-num-"+i).removeClass("visually-hidden");
+      $("#qty-select-"+i).addClass("visually-hidden");
+      }
+      else{
+        $("#qty-num-"+i).addClass("visually-hidden");
+        $("#qty-select-"+i).removeClass("visually-hidden");
+        $("#qty-select-"+i).val(v);
+      }
+    }
+    else{
+    $(this).focus();
+    $(this).val(10);
+    updateQty(10,i);
+    }
+    });
 
-}
-$(".qty-num-new").change(function(e){
-  e.preventDefault();
-  var i=$(this).data("cartitem-index");
-  var v=$(this).val();
-  if(v.match(/^\d+$/)) {
-    // your code here
-v=parseInt($(this).val());
-
-updateQty(v,i);
-if(v >= 10){
-  $("#qty-num-"+i).removeClass("visually-hidden");
-  $("#qty-select-"+i).addClass("visually-hidden");
-  }
-  else{
-    $("#qty-num-"+i).addClass("visually-hidden");
-    $("#qty-select-"+i).removeClass("visually-hidden");
-    $("#qty-select-"+i).val(v);
-  }
-}
-else{
-$(this).focus();
-$(this).val(10);
-updateQty(10,i);
-}
-});
-
-    $(".review-wrap").slice(0, 1).show();
+        $(".review-wrap").slice(0, 1).show();
     $(".mobile_btn").on("click", function(e){
         e.preventDefault();
         console.log("hii");
@@ -105,7 +104,7 @@ updateQty(10,i);
       });
       //Swatch-item Js   start
 
-      $(".c-item").hover(function(e){
+      $(".c-item").click(function(e){
         e.preventDefault();
         var fg=false;
         var vid=$(this).data("v-id");
@@ -330,7 +329,7 @@ updateQty(10,i);
               
     $(document).ready(function () {
       $(window).scroll(function(){
-        // ScrollExecute();
+        //  ScrollExecute();
        }); 
        $('.product-slider').slick({
         slidesToShow: 1,
@@ -339,7 +338,6 @@ updateQty(10,i);
         fade: true,
         asNavFor: '.pro-nav-ul',
               adaptiveHeight:true
-<<<<<<< HEAD
      
       });
        $('.pro-nav-ul').slick({
@@ -393,61 +391,6 @@ updateQty(10,i);
           speed: 300, 
              cssEase: 'ease'
      
-=======
-     
-      });
-       $('.pro-nav-ul').slick({
-        slidesToShow: 8,
-        slidesToScroll: 1,
-        asNavFor: '.product-slider',
-        dots: false,
-        focusOnSelect: true,
-        vertical:true,
-        arrows:true,
-         cssEase: 'linear',
-         speed: 1000,
-        prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-up' aria-hidden='true'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-down' aria-hidden='true'></i></button>",
-          responsive: [
-         {
-           breakpoint: 768,
-           settings: {
-             vertical:false,
-             slidesToShow:5,
-             slidesToScroll: 1,
-                arrows:true,
-              prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-         speed: 300, 
-             cssEase: 'ease'
-           }
-         },
-            {
-           breakpoint: 720,
-           settings: {
-             vertical:false,
-             slidesToShow:6,
-             slidesToScroll: 1,
-                arrows:true,
-           speed: 300,
-              prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>", 
-             cssEase: 'ease'
-           }
-         },
-         {
-           breakpoint: 600,
-           settings: {
-             vertical:false,
-             slidesToShow: 5,
-             slidesToScroll: 1,
-             arrows:true,
-             prevArrow:"<button type='button' class='slick-prev'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-              nextArrow:"<button type='button' class='slick-next'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-          speed: 300, 
-             cssEase: 'ease'
-     
->>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
            }
          },
              {
@@ -478,7 +421,6 @@ updateQty(10,i);
        ]
      
       });
-<<<<<<< HEAD
       $('.e-slider').slick({
         infinite: true,
         slidesToShow: 5,
@@ -511,9 +453,5 @@ updateQty(10,i);
           }
         ]
     
-      });
-    
-=======
-         
->>>>>>> b29b5c39f83b90a30ddd0a1069f175dc762c4708
+      });         
      });
