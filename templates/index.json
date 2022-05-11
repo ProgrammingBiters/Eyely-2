@@ -3,8 +3,8 @@
     "16346258161ef8d1b8": {
       "type": "index-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/extended_1800x700_bd9ae957-c4fc-4fe5-add9-3bde33f083c7.png",
-        "image_2": "shopify:\/\/shop_images\/extended_800x800_2df366ea-abf0-4cb4-ac7f-81b6be38e59f.png",
+        "image": "shopify:\/\/shop_images\/Untitled_1800_x_700_px.png",
+        "image_2": "shopify:\/\/shop_images\/Yellow_and_Black_Danger_Square_Safety_Sticker.png",
         "featured_link": "shopify:\/\/collections\/new-arrivals"
       }
     },
@@ -87,7 +87,7 @@
           "type": "featured_product",
           "settings": {
             "enable": true,
-            "img": "shopify:\/\/shop_images\/original3_1X_54796229-42e3-4510-9cca-e0df966b641f.png",
+            "img": "shopify:\/\/shop_images\/original9_1X_4c773a3d-60fa-4822-a46c-cda6d6a33b59.png",
             "review_star": 5,
             "review_author": "Michaela P.",
             "review_title": "Draco Area Rug",
@@ -184,7 +184,7 @@
           "type": "featured_product",
           "settings": {
             "enable": true,
-            "img": "shopify:\/\/shop_images\/original9_1X_fdd2be13-76a7-4d31-850c-c432d8688ddb.png",
+            "img": "shopify:\/\/shop_images\/IMG_1650_b9496c2d-d7b1-4ae9-9693-b1b0b0dd8342.png",
             "review_star": 5,
             "review_author": "Rayane C.",
             "review_title": "Beautiful lamp",
@@ -435,7 +435,7 @@
         "2a23b3ff-9a47-4d78-93af-4b2ee9a02d15": {
           "type": "shop_by_style",
           "settings": {
-            "featured_image": "shopify:\/\/shop_images\/BMF106A-5-ROOM1_327f1ec9-1ff7-4a0b-8753-b511bb995935.jpg",
+            "featured_image": "shopify:\/\/shop_images\/MOH302A-5-ROOM1.jpg",
             "logo_url": "shopify:\/\/collections\/bohemian",
             "heading_txt": "Bohemian",
             "save_txt": "save 70%"
@@ -444,7 +444,7 @@
         "03a3d8d5-1657-4ded-9b2f-53601afe83bd": {
           "type": "shop_by_style",
           "settings": {
-            "featured_image": "shopify:\/\/shop_images\/NRF102A-2-ROOM.jpg",
+            "featured_image": "shopify:\/\/shop_images\/AMC100B-28-ROOM.jpg",
             "logo_url": "\/collections\/rugs\/shape_runner",
             "heading_txt": "Runners",
             "save_txt": "save 70%"
@@ -454,7 +454,7 @@
           "type": "shop_by_style",
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/MCR102B-5-ROOM1.jpg",
-            "logo_url": "\/collections\/shags",
+            "logo_url": "shopify:\/\/collections\/shags",
             "heading_txt": "Shags",
             "save_txt": "save 70%"
           }
@@ -462,7 +462,7 @@
         "d07cac08-79f6-424a-9c5b-14dd0dd5f8e5": {
           "type": "shop_by_style",
           "settings": {
-            "featured_image": "shopify:\/\/shop_images\/AMC100B-5-ROOM.jpg",
+            "featured_image": "shopify:\/\/shop_images\/SMB110B-5-ROOM1.jpg",
             "logo_url": "shopify:\/\/collections\/outdoor",
             "heading_txt": "Outdoor",
             "save_txt": "save 70%"
@@ -471,7 +471,7 @@
         "f84b3913-0431-42d5-8bd8-bb4462f845ee": {
           "type": "shop_by_style",
           "settings": {
-            "featured_image": "shopify:\/\/shop_images\/CTP103A-5-ROOM1.jpg",
+            "featured_image": "shopify:\/\/shop_images\/SOR203A-5-ROOM1_335x335_e97efedd-6b04-4ecb-b3f2-ad5c14f53b01.png",
             "logo_url": "shopify:\/\/collections\/contemporary",
             "heading_txt": "Contemporary",
             "save_txt": "save 70%"
@@ -480,7 +480,7 @@
         "213634a2-7ce5-4043-b099-c1b0fa66ee16": {
           "type": "shop_by_style",
           "settings": {
-            "featured_image": "shopify:\/\/shop_images\/MDP400A-5-ROOM1.jpg",
+            "featured_image": "shopify:\/\/shop_images\/MDP100A-5-ROOM1_335x335_371323ca-da4a-47d8-b1fe-547901c6c0e8.png",
             "logo_url": "shopify:\/\/collections\/vintage",
             "heading_txt": "Vintage",
             "save_txt": "save 70%"
