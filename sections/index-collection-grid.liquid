@@ -7,6 +7,9 @@
                 {% if block.type == "featured_box" and block.settings.featured_image != blank and block.settings.featured_url != blank %}
                 <div class="unique-sec-img {% if forloop.first %} grid_join {% endif %}">
                     <a href="{{ block.settings.featured_url }}" class="img_wrap"> 
+                            {% if block.settings.title_per != blank %}
+                            <span class="per_off">{{block.settings.title_per }}</span>
+                            {% endif %}
                             {% if forloop.first %}
                             {% render 'responsive-image' with image : block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt : block.settings.featured_image.alt, max_width : 500, max_height : 500 %}
                              {% else %} 
@@ -52,6 +55,12 @@
                         "id" : "title",
                         "label" : "Title",
                         "default" : "Lights"
+                    },
+                    {
+                        "type" : "text",
+                        "id" : "title_per",
+                        "label" : "Title For Percentage Off",
+                        "default" : "70%"
                     }
             ]
         }

@@ -324,7 +324,7 @@
           "2684320c-c622-4f3f-ab0a-e7a0180990ed"
         ],
         "settings": {
-          "show_social": true
+          "show_social": false
         }
       }
     },

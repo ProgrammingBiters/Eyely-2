@@ -1,5 +1,7 @@
-<div class="index-newsletter" {% if section.settings.bg_image != blank %} style="background-image:url('{{ section.settings.bg_image | img_url : 'master' }}');" {% endif %}>
+{% assign img_bg =  section.settings.bg_image | img_url : 'master' %}
+<div class="index-newsletter" {% if section.settings.bg_image != blank %} style="background-image:url(' {{ img_bg }} ');" {% else %}style="background-color:{{section.settings.bg_color}};"{% endif %}>
     <div class="container">
+      {% comment %}
     <h2>{{ section.settings.title_txt }}</h2>
     {% form 'customer' %}
     {{ form.errors | default_errors }}
@@ -19,19 +21,53 @@
     </div> 
     {% endif %}
     {% endform %}
+    {% endcomment %}
+
+    <div class="row align-items-center">
+      <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12">
+        <h3>{{ section.settings.title_txt }}</h3>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        {% form 'customer' %}
+        {{ form.errors | default_errors }}
+        {% if form.posted_successfully? %}
+        <p class="form--success">Thanks for subscribing!</p>
+        {% else %}
+        <div class="d-flex justify-center">
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email"
+                 name="contact[email]"
+                 id="Email"
+                 value="{% if customer %}{{ customer.email }}{% endif %}"
+                 placeholder="Email address"
+                 autocorrect="off"
+                 autocapitalize="off">
+          <button type="submit"class="btn n-sub-btn" name="subscribe">Subscribe</button>          
+        </div>
+        {% endif %}
+        {% endform %} 
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        {% render 'social-list' %}
+      </div>
+    </div>
+
+
 </div>
+
 </div>
 <style>
     @font-face {
         font-family: 'Buenaparkjf';
-        src: url(' {{ 'buenaparkjf.ttf' | asset_url }} ') format('truetype');
+        src: url(" {{ 'buenaparkjf.ttf' | asset_url }} ") format('truetype');
         font-weight: 900;
         font-style: normal;
         font-display: swap;
     } 
       @font-face {
         font-family: 'Glory Medium';
-        src: url(' {{ 'Glory-Medium.ttf' | asset_url }} ') format('truetype');
+        src: url(" {{ 'Glory-Medium.ttf' | asset_url }} ") format('truetype');
         font-weight: bold;
         font-style: normal;
         font-display: swap;
@@ -55,7 +91,14 @@
                 "type" : "image_picker",
                 "id" : "bg_image",
                 "label" : "Background image"
-                }
+                },
+                {
+                  "type":"color",
+                  "id":"bg_color",
+                  "label":"Background Color",
+                  "default":"#deece3"
+                  }
+                    
 
   ],
   "presets": [

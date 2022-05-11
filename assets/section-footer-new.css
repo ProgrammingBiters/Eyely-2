@@ -1,13 +1,13 @@
 footer{
     padding:40px 0px;
-    background-color: #2d3654;
-    color: #fff;
+    background-color: #ebecf0;
+    color: #2d3654;
 }
 footer .container{
     max-width: 1630px;
 }
 footer .heading-wrap h4{
-    color: #fff;   
+    color: #2d3654;   
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: 18px;
@@ -15,7 +15,7 @@ footer .heading-wrap h4{
 }
 footer .link-wrapper .footer-block__details-content li a{
     text-decoration: none;
-    color:#fff;
+    color:#2d3654;
     line-height: 1.5;
 }
 footer .accordion-item{
@@ -25,7 +25,7 @@ footer .accordion-item{
 
 footer .accordion-item h2 .accordion-button{
     background-color: transparent;
-    color: #fff;
+    color: #2d3654;
     font-size: 18px;
     font-family: 'Bookmania Bold';
 }
@@ -49,10 +49,10 @@ footer .accordion-item  .accordion-button[aria-expanded="true"]::after{
 }
 
 footer .accordion-item .accordion-body ul li a{
-    color:#fff;
+    color:#2d3654;
 }
 footer .list-social__item svg{
-    color:#fff;
+    color:#2d3654;
     height: 2.5rem !important;
     width: 2.5rem !important;
 }
@@ -65,7 +65,7 @@ footer .list-social{
     justify-content: flex-start;
 }
 footer .footer-bottom a{
-color:#fff;
+color:#2d3654;
 text-decoration: none;
 }
 footer .footer-bottom  .opacity-75{
