@@ -79,16 +79,6 @@
         width: 100px;
         border-radius: 12px;
 
-    }.social-link {
-        height: 36px;
-        width: 36px;
-        margin: 4px 15px 4px 0;
-        color:transparent;
-    }.social-link svg {    position: relative;
-        display: inline-block;
-        fill: #2b3757;
-        height: 40px;
-        width: 40px;
     }
 @media (max-width: 600px) {
     .collection-grid .grid-wrap{

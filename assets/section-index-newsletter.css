@@ -17,15 +17,20 @@
 .index-newsletter h2 b{
     font-family : 'Buenaparkjf'
 }
-
+.index-newsletter .container{
+max-width: 1630px;
+}
 .index-newsletter input {
     color: #2d3654;
     outline: 0;
-    background: 0 0;
+    background: #fff;
     border: 2px solid #000;
-    border-radius: 10px;
-    text-align: center;
-    padding: 6px 30px;
+    border-radius: 6px;
+    padding: 6px 30px;  
+      font-size: 13px;
+}
+.index-newsletter  h3 b {
+    font-family: BuenaParkJf;
 }
 .index-newsletter input:focus-visible {
 outline: 0px;
@@ -33,11 +38,22 @@ box-shadow: none;
 }
 .index-newsletter .n-sub-btn {
     color: #2d3654;
-    background: 0 0;
+    background:transparent;
     outline: 0;
     font-weight: 700;
     letter-spacing: 1px;
     border: 0px;
+    font-size: 17px;
+}.social-link ,.social-link:hover{
+    height: 36px;
+    width: 36px;
+    margin: 4px 15px 4px 0;
+    color:transparent;
+}.social-link svg {    position: relative;
+    display: inline-block;
+    fill: #2b3757;
+    height: 40px;
+    width: 40px;
 }
 @media (max-width:480px){
     .index-newsletter{
