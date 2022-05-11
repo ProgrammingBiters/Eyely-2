@@ -9,7 +9,7 @@
 <cart-items class="page-width{% if cart == empty %} is-empty{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
+   <a href="/checkout" class="btn checkout-link">{% include 'icon-checkout' %}  Checkout</a>
   </div>
 
   <div class="cart__warnings">
@@ -31,14 +31,7 @@
       <div class="js-contents">
         {%- if cart != empty -%}
           <table class="cart-items">
-            <thead>
-              <tr>
-                <th class="caption-with-letter-spacing" colspan="2" scope="col">{{ 'sections.cart.headings.product' | t }}</th>
-                <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
-                <th class="cart-items__heading--wide small-hide caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.quantity' | t }}</th>
-                <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
-              </tr>
-            </thead>
+         
 
             <tbody>
               {%- for item in cart.items -%}
@@ -132,19 +125,19 @@
                             {{ 'products.product.price.regular_price' | t }}
                           </dt>
                           <dd>
-                            <s class="cart-item__old-price price price--end">
+                            <s class="cart-item__old-price price price--end price-{{ item.index | plus : 1 }}">
                               {{ item.original_line_price | money }}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
-                          <dd class="price price--end">
+                          <dd class="price price--end price-{{ item.index | plus : 1 }}">
                             {{ item.final_line_price | money }}
                           </dd>
                         </dl>
                       {%- else -%}
-                        <span class="price price--end">
+                      <span class="price price--end price-{{ item.index | plus : 1 }}">
                           {{ item.original_line_price | money }}
                         </span>
                       {%- endif -%}
@@ -165,34 +158,48 @@
                   </td>
 
                   <td class="cart-item__quantity">
-                    <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
+                    <div class="form-quntity">
+                    <label class="" for="Quantity-{{ item.index | plus: 1 }}">
                       {{ 'products.product.quantity.label' | t }}
                     </label>
-                    <quantity-input class="quantity">
-                      <button class="quantity__button no-js-hidden" name="minus" type="button">
+                    <quantity-input class="quantity visually-hidden">
+                      <button id="minus-{{item.index | plus: 1}}" class="quantity__button visually-hidden no-js-hidden" name="minus" type="button">
                         <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
                         {% render 'icon-minus' %}
                       </button>
-                      <input class="quantity__input"
+                      <input class="quantity__input visually-hidden"
                         type="number"
                         name="updates[]"
                         value="{{ item.quantity }}"
-                        min="0"
-                        aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+	@@ -182,12 +183,31 @@
                         id="Quantity-{{ item.index | plus: 1 }}"
                         data-index="{{ item.index | plus: 1 }}"
                       >
-                      <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <button id="plus-{{item.index | plus: 1}}" class="quantity__button  visually-hidden no-js-hidden" name="plus" type="button">
                         <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
                         {% render 'icon-plus' %}
                       </button>
                     </quantity-input>
+                    <select class="form-field-input form-field-select form-field-filled qty-select " id="qty-select-{{item.index | plus : 1}}" aria-label="Quantity" data-quantity-select="" data-cartitem-index="{{item.index | plus: 1 }}" data-old-qty="{{ item.quantity }}">             
+                      {% for i in (1..9) %}
 
-                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                        {% render 'icon-remove' %}
-                      </a>
-                    </cart-remove-button>
+                      <option value="{{i}}" {% if item.quantity == i %}selected{% endif %}>{{i}}</option>
+
+                      {% endfor %}
+                      <option value="10">10+</option>
+
+                  </select>  
+                <input type="text" pattern="\d*" id="qty-num-{{ item.index | plus: 1}}" value="10" data-cartitem-index="{{item.index | plus: 1 }}"  min="1" class="qty-num-new visually-hidden">
+             {% if item.quantity >= 10 %}
+             {% assign in=item.index | plus: 1 %}
+             <script>
+                  $(document).ready(function(){
+                        $("#qty-num-{{in}}").removeClass("visually-hidden");
+                        $("#qty-select-{{in}}").addClass("visually-hidden"); 
+                  });
+              </script>  
+              {% endif %}
+              </div>
                   </td>
 
                   <td class="cart-item__totals right small-hide">
@@ -211,19 +218,19 @@
                             {{ 'products.product.price.regular_price' | t }}
                           </dt>
                           <dd>
-                            <s class="cart-item__old-price price price--end">
+                            <s class="cart-item__old-price price price--end price-{{ item.index | plus : 1 }}">
                               {{ item.original_line_price | money }}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
-                          <dd class="price price--end">
+                          <dd class="price price--end price-{{ item.index | plus : 1 }}">
                             {{ item.final_line_price | money }}
                           </dd>
                         </dl>
                       {%- else -%}
-                        <span class="price price--end">
+                      <span class="price price--end price-{{ item.index | plus : 1 }}">
                           {{ item.original_line_price | money }}
                         </span>
                       {%- endif -%}
@@ -242,6 +249,13 @@
                       {%- endif -%}
                     </div>
                   </td>
+                  <td class="text-center mr-2">
+                    <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                      <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                        {% render 'icon-close-small' %}
+                      </a>
+                    </cart-remove-button>
+                  </td>
                 </tr>
               {%- endfor -%}
             </tbody>
@@ -254,6 +268,7 @@
     <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
   </form>
 </cart-items>
+<div id="upsell-container"></div>
 
 {% schema %}
 {
