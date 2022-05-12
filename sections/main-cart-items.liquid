@@ -9,7 +9,22 @@
 <cart-items class="page-width{% if cart == empty %} is-empty{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-   <a href="/checkout" class="btn checkout-link">{% include 'icon-checkout' %}  Checkout</a>
+  <div class="d-flex">   
+      <div class="cart-total cart-total-top">
+          <div class="cart__blocks"> 
+            <div class="js-contents">
+              <div class="totals top-total">
+                <h3 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h3>
+                <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+   <div> 
+     <a href="/checkout" class="btn checkout-link">{% include 'icon-checkout' %}  Checkout</a>
+   </div>
+  </div> 
   </div>
 
   <div class="cart__warnings">
@@ -269,7 +284,10 @@
   </form>
 </cart-items>
 <div id="upsell-container"></div>
-
+<script id="docapp-discount-speedup">
+  (() => { if (!document.documentElement.innerHTML.includes('\\/shop' + '\\/js' + '\\/discount-on-cart-pro.min.js') || window.discountOnCartProAppLoaded) return; let script = document.createElement('script'); script.src = "https://d9fvwtvqz2fm1.cloudfront.net/shop/js/discount-on-cart-pro.min.js?shop=eyely-home.myshopify.com"; document.getElementById('docapp-discount-speedup').after(script); })();
+  </script>{% render 'upsell-addons-app-cart-page' %}
+  
 {% schema %}
 {
   "name": "t:sections.main-cart-items.name",

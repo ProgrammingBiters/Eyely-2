@@ -86,6 +86,35 @@ text-decoration: none;
   margin: 0;
   padding: 0;
 }
+.top-total{
+  display: block!important;
+}
+.top-total h3{
+  text-align: right;
+  color: #949494;  
+  font-size: 14px !important;
+  margin-bottom: 10px;
+}
+.cart-total-top{
+margin-right: 10px;
+
+}
+.upsell-addon-container .upsell-addonbox .product-single__title{
+  line-clamp: 3!important;
+  overflow: hidden;
+  display: -webkit-box!important;
+  -webkit-line-clamp: 3!important;
+  -webkit-box-orient: vertical!important;
+  line-height: 15px;
+
+}
+.upsell-cartpage .upsell-addToCart{
+  background-color: #2d3654 !important;    
+  border: none!important;
+  border-radius: 24px!important;
+  color: #fff!important;
+  justify-content: center;
+}
 
 .cart-item__discounted-prices dd {
   margin: 0;
@@ -109,7 +138,24 @@ text-decoration: none;
   display: inline-block;
   margin-left: 1rem;
 }
-
+.cart__footer{
+  border-top:1px solid rgba(0,0,0,.15);
+}
+#upsell-container .upsell-header{
+text-align: left;
+}
+.upsell-addon-container {
+  justify-content: flex-start !important;
+}
+.continue-link,.continue-link:hover  {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #b23c18;   
+   font-size: 14px;
+  text-decoration: none;
+  padding: 10px;
+  transition: color .1s cubic-bezier(.4,0,.2,1);
+}
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .cart-item cart-remove-button {
     width: 4.5rem;
