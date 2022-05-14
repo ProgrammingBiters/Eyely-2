@@ -36,7 +36,7 @@
 }
 
 .cart-item__details {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   line-height: calc(1 + 0.4 / var(--font-body-scale));
 }
 .cart-item__details a:hover{
@@ -129,7 +129,7 @@ margin-right: 10px;
 }
 
 .product-option {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   word-break: break-all;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
 }
@@ -173,7 +173,10 @@ cart-remove-button .button {
   background-color: #2223;
   border-radius: 50%;
 }
-
+.cart-item__details a{
+font-size:1.6rem;
+max-width: 100%;
+}
 cart-remove-button .button svg{
 fill:#222;
 color:#222;
@@ -259,6 +262,7 @@ cart-remove-button .icon-remove {
   text-transform: uppercase;
 }
 
+
 @media screen and (max-width: 749px) {
   .cart-items,
   .cart-items thead,
@@ -276,8 +280,9 @@ cart-remove-button .icon-remove {
 
   .cart-item {
     display: grid;
-    grid-template: repeat(2, auto) / repeat(4, 1fr);
+    /* grid-template: repeat(2, auto) / repeat(4, 1fr); */
     gap: 1.5rem;
+    grid-template-columns: 150px 1fr auto;
     margin-bottom: 3.5rem;
   }
 
@@ -290,12 +295,15 @@ cart-remove-button .icon-remove {
   }
 
   .cart-item__details {
-    grid-column: 2 / 4;
+    /* grid-column: 2 / 3; */
+    grid-column: 2 / span 2;
+
   }
 
   .cart-item__quantity {
-    grid-column: 2 / 5;
+    grid-column: 2 / 3;
     flex-wrap: wrap;
+    justify-content: space-between
   }
 
   .cart-item__totals {
@@ -382,10 +390,10 @@ cart-remove-button .icon-remove {
   .cart-items thead th:first-child {
     width: 60%;
   }
-}.cart-item__quantity{
+}
+.cart-item__quantity{
   position: relative;
-  
-  }
+    }
   .form-quntity{
   position: relative;
   
@@ -447,4 +455,38 @@ cart-remove-button .icon-remove {
 .checkout-link svg{
 margin-right: 10px;
 
+}
+@media (max-width:480px){
+  .cart-item{
+    grid-template-columns: 90px 1fr auto;  
+      gap: 1rem;
+  }
+  .cart-item__details{
+    font-size: 1rem;
+  }
+  .cart-item__name{
+font-size: 1.2rem;
+  }
+  .form-quntity{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .cart-item__quantity .cart-item__totals {
+font-size: 14px;
+
+  }
+
+}
+@media (max-width:540px){
+  .cart-total-top .top-total h3{
+text-align: left !important;
+  }
+  .cart-total-top .upsell-subtotal-price-block{
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+  }
+  .main-wrap-total{
+    width:100% !important;
+    justify-content: space-between !important;
+  }
 }

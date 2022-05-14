@@ -8,37 +8,33 @@
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% endif %}">
   <div class="title-wrapper-with-link">
-    <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-  <div class="d-flex">   
-      <div class="cart-total cart-total-top">
-          <div class="cart__blocks"> 
-            <div class="js-contents">
-              <div class="totals top-total">
-                <h3 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h3>
-                <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      <div class="d-flex main-wrap-total">   
+          <div class="cart-total cart-total-top">
+              <div class="cart__blocks"> 
+                <div class="js-contents">
+                  <div class="totals top-total">
+                    <h3 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h3>
+                    <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-       
-   <div> 
-     <a href="/checkout" class="btn checkout-link">{% include 'icon-checkout' %}  Checkout</a>
-   </div>
-  </div> 
+          
+      <div> 
+        <a href="/checkout" class="btn checkout-link">{% include 'icon-checkout' %}  Checkout</a>
+        <a href="{{ routes.all_products_collection_url }}" class="continue-link">
+          {{ 'general.continue_shopping' | t }} {% render 'icon-arrow-cart', id: 'icon-signpost-arrow' %}
+        </a>
+      </div>
+      </div> 
   </div>
 
   <div class="cart__warnings">
-    <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="button">
-      {{ 'general.continue_shopping' | t }}
+    <h4 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h4>
+    <a href="{{ routes.all_products_collection_url }}" class="button ">
+      {% include 'icon-checkout' %}   {{ 'general.continue_shopping' | t }}
     </a>
-
-    {%- if shop.customer_accounts_enabled -%}
-      <h2 class="cart__login-title">{{ 'sections.cart.login.title' | t }}</h2>
-      <p class="cart__login-paragraph">
-        {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
-      </p>
-    {%- endif -%}
   </div>
 
   <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
@@ -113,7 +109,7 @@
                         </li>
                       {%- endfor -%}
                     </ul>
-
+                      <p><span><strong>Price </strong></span>{{item.price | money }}</p>
                     <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
                       <small class="cart-item__error-text"></small>
                       <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 13 13">
@@ -125,96 +121,97 @@
                     </div>
                   </td>
 
-                  <td class="cart-item__totals right medium-hide large-up-hide">
-                    <div class="loading-overlay hidden">
-                      <div class="loading-overlay__spinner">
-                        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="cart-item__price-wrapper">
-                      {%- if item.original_line_price != item.final_line_price -%}
-                        <dl class="cart-item__discounted-prices">
-                          <dt class="visually-hidden">
-                            {{ 'products.product.price.regular_price' | t }}
-                          </dt>
-                          <dd>
-                            <s class="cart-item__old-price price price--end price-{{ item.index | plus : 1 }}">
-                              {{ item.original_line_price | money }}
-                            </s>
-                          </dd>
-                          <dt class="visually-hidden">
-                            {{ 'products.product.price.sale_price' | t }}
-                          </dt>
-                          <dd class="price price--end price-{{ item.index | plus : 1 }}">
-                            {{ item.final_line_price | money }}
-                          </dd>
-                        </dl>
-                      {%- else -%}
-                      <span class="price price--end price-{{ item.index | plus : 1 }}">
-                          {{ item.original_line_price | money }}
-                        </span>
-                      {%- endif -%}
-
-                      {%- if item.variant.available and item.unit_price_measurement -%}
-                        <div class="unit-price caption">
-                          <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-                          {{ item.variant.unit_price | money }}
-                          <span aria-hidden="true">/</span>
-                          <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
-                          {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
-                            {{- item.variant.unit_price_measurement.reference_value -}}
-                          {%- endif -%}
-                          {{ item.variant.unit_price_measurement.reference_unit }}
-                        </div>
-                      {%- endif -%}
-                    </div>
-                  </td>
+                 
 
                   <td class="cart-item__quantity">
                     <div class="form-quntity">
-                    <label class="" for="Quantity-{{ item.index | plus: 1 }}">
-                      {{ 'products.product.quantity.label' | t }}
-                    </label>
-                    <quantity-input class="quantity visually-hidden">
-                      <button id="minus-{{item.index | plus: 1}}" class="quantity__button visually-hidden no-js-hidden" name="minus" type="button">
-                        <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
-                        {% render 'icon-minus' %}
-                      </button>
-                      <input class="quantity__input visually-hidden"
-                        type="number"
-                        name="updates[]"
-                        value="{{ item.quantity }}"
-	@@ -182,12 +183,31 @@
-                        id="Quantity-{{ item.index | plus: 1 }}"
-                        data-index="{{ item.index | plus: 1 }}"
-                      >
-                      <button id="plus-{{item.index | plus: 1}}" class="quantity__button  visually-hidden no-js-hidden" name="plus" type="button">
-                        <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
-                        {% render 'icon-plus' %}
-                      </button>
-                    </quantity-input>
-                    <select class="form-field-input form-field-select form-field-filled qty-select " id="qty-select-{{item.index | plus : 1}}" aria-label="Quantity" data-quantity-select="" data-cartitem-index="{{item.index | plus: 1 }}" data-old-qty="{{ item.quantity }}">             
-                      {% for i in (1..9) %}
+                      <label class="" for="Quantity-{{ item.index | plus: 1 }}">
+                        {{ 'products.product.quantity.label' | t }}
+                      </label>
+                      <quantity-input class="quantity visually-hidden">
+                        <button id="minus-{{item.index | plus: 1}}" class="quantity__button visually-hidden no-js-hidden" name="minus" type="button">
+                          <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+                          {% render 'icon-minus' %}
+                        </button>
+                        <input class="quantity__input visually-hidden"
+                          type="number"
+                          name="updates[]"
+                          value="{{ item.quantity }}"
+    @@ -182,12 +183,31 @@
+                          id="Quantity-{{ item.index | plus: 1 }}"
+                          data-index="{{ item.index | plus: 1 }}"
+                        >
+                        <button id="plus-{{item.index | plus: 1}}" class="quantity__button  visually-hidden no-js-hidden" name="plus" type="button">
+                          <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+                          {% render 'icon-plus' %}
+                        </button>
+                      </quantity-input>
+                      <select class="form-field-input form-field-select form-field-filled qty-select " id="qty-select-{{item.index | plus : 1}}" aria-label="Quantity" data-quantity-select="" data-cartitem-index="{{item.index | plus: 1 }}" data-old-qty="{{ item.quantity }}">             
+                        {% for i in (1..9) %}
 
-                      <option value="{{i}}" {% if item.quantity == i %}selected{% endif %}>{{i}}</option>
+                        <option value="{{i}}" {% if item.quantity == i %}selected{% endif %}>{{i}}</option>
 
-                      {% endfor %}
-                      <option value="10">10+</option>
+                        {% endfor %}
+                        <option value="10">10+</option>
 
-                  </select>  
-                <input type="text" pattern="\d*" id="qty-num-{{ item.index | plus: 1}}" value="10" data-cartitem-index="{{item.index | plus: 1 }}"  min="1" class="qty-num-new visually-hidden">
-             {% if item.quantity >= 10 %}
-             {% assign in=item.index | plus: 1 %}
-             <script>
-                  $(document).ready(function(){
-                        $("#qty-num-{{in}}").removeClass("visually-hidden");
-                        $("#qty-select-{{in}}").addClass("visually-hidden"); 
-                  });
-              </script>  
-              {% endif %}
-              </div>
+                      </select>  
+                      <input type="text" pattern="\d*" id="qty-num-{{ item.index | plus: 1}}" value="10" data-cartitem-index="{{item.index | plus: 1 }}"  min="1" class="qty-num-new visually-hidden">
+                      {% if item.quantity >= 10 %}
+                        {% assign in=item.index | plus: 1 %}
+                        <script>
+                            $(document).ready(function(){
+                                  $("#qty-num-{{in}}").removeClass("visually-hidden");
+                                  $("#qty-select-{{in}}").addClass("visually-hidden"); 
+                            });
+                        </script>  
+                      {% endif %}
+                    </div>
+                    <div class="cart-item__totals medium-hide large-up-hide">
+                      <div class="loading-overlay hidden">
+                        <div class="loading-overlay__spinner">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="cart-item__price-wrapper">
+                        {%- if item.original_line_price != item.final_line_price -%}
+                          <dl class="cart-item__discounted-prices">
+                            <dt class="visually-hidden">
+                              {{ 'products.product.price.regular_price' | t }}
+                            </dt>
+                            <dd>
+                              <s class="cart-item__old-price price price--end price-{{ item.index | plus : 1 }}">
+                                {{ item.original_line_price | money }}
+                              </s>
+                            </dd>
+                            <dt class="visually-hidden">
+                              {{ 'products.product.price.sale_price' | t }}
+                            </dt>
+                            <dd class="price price--end price-{{ item.index | plus : 1 }}">
+                              {{ item.final_line_price | money }}
+                            </dd>
+                          </dl>
+                        {%- else -%}
+                        <span class="price price--end price-{{ item.index | plus : 1 }}">
+                            {{ item.original_line_price | money }}
+                          </span>
+                        {%- endif -%}
+
+                        {%- if item.variant.available and item.unit_price_measurement -%}
+                          <div class="unit-price caption">
+                            <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+                            {{ item.variant.unit_price | money }}
+                            <span aria-hidden="true">/</span>
+                            <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                            {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
+                              {{- item.variant.unit_price_measurement.reference_value -}}
+                            {%- endif -%}
+                            {{ item.variant.unit_price_measurement.reference_unit }}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
                   </td>
 
                   <td class="cart-item__totals right small-hide">
