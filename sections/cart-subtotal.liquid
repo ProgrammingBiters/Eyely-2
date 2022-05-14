@@ -1,0 +1,3 @@
+{%- if cart != empty -%}
+ <div class="total-cart-notification"><p><span>Cart Subtotal </span> {{cart.total_price | money }}</p></div>
+{%- endif -%}

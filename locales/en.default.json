@@ -39,7 +39,7 @@
       "search": "Search"
     },
     "cart": {
-      "view": "View my cart ({{ count }})",
+      "view": "View cart ({{ count }})",
       "item_added": "Item added to your cart"
     },
     "share": {

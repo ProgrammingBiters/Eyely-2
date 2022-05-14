@@ -36,6 +36,7 @@ class CartNotification extends HTMLElement {
       this.getSectionsToRender().forEach((section => {
         document.getElementById(section.id).innerHTML =
           this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+          console.log(this.getSectionInnerHTML(parsedState.sections[section.id], section.selector));
       }));
 
       if (this.header) this.header.reveal();
@@ -53,6 +54,9 @@ class CartNotification extends HTMLElement {
       },
       {
         id: 'cart-icon-bubble'
+      },
+      {
+        id: 'cart-subtotal'
       }
     ];
   }
@@ -61,6 +65,7 @@ class CartNotification extends HTMLElement {
     return new DOMParser()
       .parseFromString(html, 'text/html')
       .querySelector(selector).innerHTML;
+  
   }
 
   handleBodyClick(evt) {
