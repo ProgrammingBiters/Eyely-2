@@ -454,7 +454,8 @@ position: relative;
   display: none;
 }
 .collection-swathces.more-view{
-  max-height: 100%; transition: height 4s;
+  max-height: 100%;
+  transition: height 4s;
 
 }
 .v-img{
