@@ -2722,12 +2722,22 @@ position: relative;
 font-size: 13px;
   line-height: 18px;
   display: flex;
+  color: #444;
+  margin-bottom: 5px;
 }
 .productgrid--sidebar-item-swatches-grid .filter-item a{
-  padding: 0;
+  padding: 0;  
+  color: #444;
     margin: 0;
+    text-decoration: none;
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
 .productgrid--sidebar-item-swatches-grid, .productgrid--sidebar-item-grid{
   display: flex;
   flex-wrap: wrap;
+}
+.productgrid--sidebar-filters--current svg{
+width: 20px;
+height: 20px;
 }

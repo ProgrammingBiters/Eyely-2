@@ -149,6 +149,7 @@
       "apply": "Apply",
       "clear": "Clear",
       "clear_all": "Clear all",
+      "remove_all": "Remove all",
       "from": "From",
       "filter_and_sort": "Filter and sort",
       "filter_by_label": "Filter:",

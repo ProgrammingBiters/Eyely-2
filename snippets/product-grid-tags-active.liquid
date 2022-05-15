@@ -3,7 +3,7 @@
 
 {%- capture tag_icon -%}
   <span class="filter-icon--remove">
-    {% render 'icon-remove' %}
+    {% render 'icon-close-small' %}
     <span class="visually-hidden">
       {{ 'product_grid.filters.remove_filter' | t }}
     </span>
@@ -37,14 +37,14 @@
         {{- tag_icon -}}
       {%- endcapture -%}
 
-      {{ tag_text | link_to_remove_tag: tag | replace: '" title="', '&grid_list" title=""' }}
+      {{ tag_text | link_to_remove_tag: tag  }}
     </li>
   {% endfor %}
 
   {% if current_tags.size > 1 %}
     <li class="filter-item--grid-simple">
       <a href="{{ collection.url }}">
-        {{ 'product_grid.filters.remove_all' | t }}
+        Remove all filters
       </a>
     </li>
   {% endif %}

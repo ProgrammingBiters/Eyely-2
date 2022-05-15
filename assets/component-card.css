@@ -462,7 +462,8 @@ position: relative;
   visibility: hidden;
 }
 .c-item img.active{
-  box-shadow: 0px 0px 0px 4px #61616161;
+  /* box-shadow: 0px 0px 0px 4px #61616161; */
+  box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #818181;
 }
 .v-img.show{
   opacity: 1  !important;

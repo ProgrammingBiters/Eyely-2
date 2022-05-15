@@ -19,8 +19,7 @@
      
         <div class="facet-filters sorting caption">
           <div class="facet-filters__field">
-                {% comment %}  <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>{% endcomment %}
-
+           {% comment %}  <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>{% endcomment %}
             <div class="select">
               {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
               <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
@@ -52,50 +51,11 @@
       {%- endif -%}
     </div>
     <div class="col">
-      <div class="active-facets active-facets-desktop my-3">
-        {%- for filter in results.filters -%}
-          {%- for value in filter.active_values -%}
-            <facet-remove>
-              <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                <span class="active-facets__button-inner button button--tertiary">
-                  {{ value.label | escape }}
-                  {% render 'icon-close-small' %}
-                  <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                </span>
-              </a>
-            </facet-remove>
-          {%- endfor -%}
-          {% if filter.type == "price_range" %}
-            {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-              <facet-remove>
-                <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                  <span class="active-facets__button-inner button button--tertiary">
-                    {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
-                    {% render 'icon-close-small' %}
-                    <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                  </span>
-                </a>
-              </facet-remove>
-            {%- endif -%}
-          {% endif %}
-         
-        {%- endfor -%}
-        {%- liquid
-          assign sort_by = results.sort_by | default: results.default_sort_by
-        
-          if results.url
-            assign results_url = results.url
-          else 
-            assign terms = results.terms | escape
-            assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
-          endif
-        -%}
-        <facet-remove class="active-facets__button-wrapper">
-          <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
-            <span>{{ 'products.facets.clear_all' | t }}</span>
-          </a>
-        </facet-remove>
-      </div>
+      {% if current_tags.size > 0 %}
+        <div class="productgrid--sidebar-item productgrid--sidebar-filters--current d-md-block d-none">
+          {%- render 'product-grid-tags-active' -%}
+        </div>
+      {% endif %}
       <div id="ProductGridContainer">
         {%- paginate collection.products by section.settings.products_per_page -%}
         {%- if collection.products.size == 0 -%}
@@ -103,9 +63,12 @@
             <div class="loading-overlay gradient"></div>
             <div class="title-wrapper center">
               <h2 class="title title--primary">
-                {{ 'sections.collection_template.empty' | t }}<br>
-                {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
-              </h2>
+                There are no products matching your search
+                <br>
+               
+              </h2> <a class="productgrid--no-results-button" href="/collections/all">
+                View all products
+              </a>
             </div>
           </div>
         {%- else -%}
@@ -128,11 +91,12 @@
                   %}
                 </li>
               {%- endfor -%}
-              {%
+                {%
                 render 'pagination', paginate: paginate,
                 grid_list: true
-                %}           
-                {% comment %}   {% if paginate.next %}
+                %}
+                {% comment %}
+              {% if paginate.next %}
                 <div id="more" class="col-12  mt-4 d-none">
                   <p><a href="{{ paginate.next.url }}" class="btn-show-more button-all m-auto">Load More</a></p>
                 </div>
@@ -141,7 +105,6 @@
               </div>
                 {% endif %}
                 {% endcomment %}
-                      
           </div>
         {%- endif -%}
         {%- endpaginate -%}
