@@ -788,4 +788,8 @@ li[data-address] > h2 {
   margin-bottom:20px;
 }
 
-.customer form .field input
+.customer form .field input{
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+
+}
