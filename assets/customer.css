@@ -781,5 +781,7 @@ li[data-address] > h2 {
 .customer form{
   max-width:640px;
 }
-
+.customer form .field{
+      width: calc(50% - 20px);
+}
 
