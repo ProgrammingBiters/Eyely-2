@@ -1506,7 +1506,7 @@ details:hover > .share-button__fallback {
 /*   color: rgba(var(--color-foreground), 0.75); */
          color: #949494;
   letter-spacing: 0.1rem;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 .field__input:focus ~ .field__label,
