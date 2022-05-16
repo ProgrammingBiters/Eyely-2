@@ -2741,3 +2741,10 @@ font-size: 13px;
 width: 20px;
 height: 20px;
 }
+a{
+  text-decoration:none;
+  color: #2d3654;
+}
+a:hover{ text-decoration:none;
+  color:#959595;
+}

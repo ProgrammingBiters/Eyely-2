@@ -7,9 +7,9 @@
           "type": "featured_product",
           "settings": {
             "enable": true,
-            "fproduct": "african-drum-173-white-marble-finish-ceramic-garden-stool",
+            "fproduct": "double-happiness-18-chinoiserie-ceramic-drum-garden-stool",
             "badge_title": "in the shop",
-            "short_info": "",
+            "short_info": "Our drum-shaped ceramic Chinese garden stool brings good fortune...",
             "enable_link": true,
             "link_label": "Shop Now"
           }
@@ -18,9 +18,9 @@
           "type": "featured_product",
           "settings": {
             "enable": true,
-            "fproduct": "badger-155-metal-led-semi-flush-mount",
+            "fproduct": "gimignano-12-moravian-star-metalclear-glass-led-flush-mount",
             "badge_title": "in the shop",
-            "short_info": "",
+            "short_info": "A European tradition dating back to the 19th century, Moravian stars like...",
             "enable_link": true,
             "link_label": "Shop Now"
           }
@@ -39,7 +39,7 @@
       "settings": {
         "title": "New to <span>The Shop<\/span>",
         "subtitle": "Our newest additions that we can't stop talking about",
-        "featured_collection": "table-lamp-sets"
+        "featured_collection": "table-lamps"
       }
     },
     "164334583373f91c35": {
@@ -109,7 +109,7 @@
     "1643346095b9c82cd7": {
       "type": "team-product",
       "settings": {
-        "title": "Let's Hear It for Teamwork!",
+        "title": "Our Best Selling Pendants",
         "featured_collection": "pendants"
       }
     },
@@ -117,10 +117,10 @@
       "type": "featured-video-blog",
       "settings": {
         "small_title": "Featured Video",
-        "title": "Sohla's Magic Ratio for Turning Any Fruit into a Crumble",
-        "description": "Go on—pick a fruit, any fruit. Resident Sohla El-Waylly will show you how to turn it into a streusel-crowned crumble.",
+        "title": "How to Flatten Your Rug | Remove Creases & Dents",
+        "description": "Here are a few helpful tips and tricks on how to make your new rug flat fast",
         "button_label": "Read More",
-        "button_url": "",
+        "button_url": "shopify:\/\/blogs\/rugs\/how-to-play-with-area-rug-patterns-guide-to-fitting-the-perfect-rug",
         "vid_url": "https:\/\/www.youtube.com\/embed\/gL6JBa_fWts",
         "video_type": "youtube"
       }
@@ -136,7 +136,7 @@
       "type": "blog-grid",
       "settings": {
         "fblog": "lighting",
-        "title": "Our Newest Recipes"
+        "title": "Our Newest"
       }
     },
     "1643346204b7c3f83d": {
@@ -149,7 +149,7 @@
     "1643346279d5566230": {
       "type": "perfect-for-home",
       "settings": {
-        "title": "Perfect For Home",
+        "title": "Our Best Selling Chandeliers",
         "featured_collection": "chandeliers",
         "view_title": "View All"
       }
@@ -162,11 +162,11 @@
           "settings": {
             "background_image": "shopify:\/\/shop_images\/top_1425x297_crop_center_60911ad8-bcee-48f0-bbbc-c351966de6ad.png",
             "mobile_image": "shopify:\/\/shop_images\/footer_mobile_2_8d017ccc-07c6-43e7-bada-b521bc5a4ef7.png",
-            "title": "Slideshow",
-            "text": "Introduce customers to your shop with lifestyle and product imagery",
-            "smalltext": "Introduce customers to your shop with lifestyle and product imagery",
-            "color": "#FFFFFF",
-            "link": "",
+            "title": "",
+            "text": "Make your house a <span>home<\/span> with eyely.",
+            "smalltext": "Create your own haven.",
+            "color": "#ffffff",
+            "link": "#",
             "text_alignment": "center",
             "show_overlay": true,
             "overlay_color": "#000000",
@@ -186,7 +186,7 @@
       "type": "blog-newsletter",
       "settings": {
         "title": "Want more Food52?",
-        "description": "Our best tips for eating thoughtfully and living joyfully, right to your inbox.",
+        "description": "Sign up for our newsletter to receive exclusive offers, deals, tips and more.",
         "desk-image": "shopify:\/\/shop_images\/footer_desktop_1_6e03502f-e0ab-47ee-8f1d-ccb31bbe46bb.png"
       }
     }

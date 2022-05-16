@@ -454,5 +454,63 @@ $(".close-filter").click(function(e){
           }
         ]
     
-      });         
+      });   
+      $('.slide-prd-video').slick({
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows:true,
+        responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+             settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+      $('div[itemprop="aggregateRating"]').hide();    
+      setTimeout(() => {
+        console.log("this is the first message")
+$(".yotpo-nav-tab:first-child").hide();
+}, 6000);
+$('.conversastion-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots:false
+
+});$(".content").slice(0, 4).show();
+$("#loadMore").on("click", function(e){
+  e.preventDefault();
+  $(".content:hidden").slice(0, 2).slideDown();
+  if($(".content:hidden").length == 0) {
+//       $("#loadMore").text("No Content").addClass("noContent");
+     $("#loadMore").fadeOut("slow");
+  }
+});
+
+$('.mailing-list__form-input').focusin(function(){
+  $(".n-email").css("opacity","1");
+});
+$('body').focusout(function(){
+  $(".n-email").css("opacity","0");
+});
+
+
      });
