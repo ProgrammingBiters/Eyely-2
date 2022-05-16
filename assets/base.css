@@ -1519,10 +1519,11 @@ details:hover > .share-button__fallback {
 .customer .field input:focus ~ label,
 .customer .field input:not(:placeholder-shown) ~ label,
 .customer .field input:-webkit-autofill ~ label {
-/*   font-size: 1rem; */
-  font-size:13px;
-  top: 0.3em;
+/*   font-size: 1rem;
+  top: 0.3em; */
   letter-spacing: 0.04rem;
+   font-size:13px;
+  top:0.8em;
 }
 
 .field__input:focus,
