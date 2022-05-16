@@ -1436,14 +1436,17 @@ details:hover > .share-button__fallback {
       border-color: #bebebe;
     }
 
-.field__input:focus,
-.select__select:focus,
-.customer .field input:focus,
-.customer select:focus,
-.localization-form__select:focus {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.75);
-  outline: transparent;
-}
+  .field__input:focus,
+  .select__select:focus,
+  .customer .field input:focus,
+    .customer select:focus,
+    .localization-form__select:focus {
+      /*   box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.75);
+      outline: transparent; */
+      border-color: #818181;
+      outline:0;
+      box-shadow: 0 2px 6px #00000026, 0 0 0 0.5px #919191;
+    }
 
 .text-area,
 .select {
