@@ -46,6 +46,7 @@
       width: 100%;
       pointer-events: auto;
       outline: 0;
+      position: relative;  
   }
   .productgrid--sidebar-section{
     border: 1px solid rgba(0,0,0,.2);
@@ -76,5 +77,51 @@
       display: block;
       visibility: visible;
       opacity: 1;
+    }
+    .filter-open{
+      display: flex;
+      color: #b23c18;
+      text-decoration: none;
+      background: transparent;
+      border: 0px;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+    }
+    .sort-open{
+      display: flex;
+      color: #b23c18;
+      text-decoration: none;
+      background: transparent;
+      border: 0px;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+    }
+  .close-filter{
+    position: absolute;
+
+    top: 13px;
+    right: 18px;
+
+    width:15px;
+    z-index: 10000;
+    color:#222;
+  }
+  .close-filter svg{
+    fill: #222;
+  }
+    .filter-open  .utils-filter-icon{
+    display: table-cell;
+    padding-right: 11px;
+    vertical-align: middle;
+    }
+
+    .filter-open  .utils-filter-icon svg{
+      display: block;
+      width: 19px;
+      height: 13px;
+      transition: fill .1s cubic-bezier(.4,0,.2,1);
+      fill: currentColor;
     }
 }

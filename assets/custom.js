@@ -141,8 +141,16 @@ $(document).ready(function(){
 
       });
     //Swatch-item Js end
+$(".filter-open").click(function(e){
+e.preventDefault();
+$("#main-collection-filters").toggleClass("active");
 
-
+});
+$(".close-filter").click(function(e){
+  e.preventDefault();
+  $("#main-collection-filters").toggleClass("active");
+  
+  });
        $(".shop-by-color-item").slice(0, 2).show();
       $(".shop-by-color-link").on("click", function(e){
         e.preventDefault();

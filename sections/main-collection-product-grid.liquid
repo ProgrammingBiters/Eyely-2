@@ -11,7 +11,7 @@
   
 
 <div class="container">
-  <div class="row my-3 mx-3">
+  <div class="row my-3 mx-md-3 mx-0">
     <div class="col-md-6 col-12">
       <h2> {{ collection.title }} </h2>
     </div>
@@ -38,7 +38,43 @@
 
     </div>
   </div>
+<div class="row">
+  <div class="d-md-none d-block  col-md-6 col-sm-6 col-12 py-3">
+    <button class="utils-filter-button filter-open" type="button" aria-label="Filters" >
+        <span class="utils-filter-icon">
+            <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13">
+            <path fill="currentColor" fill-rule="evenodd" d="M16.516 2.25h2.474v1.5h-2.474a2.626 2.626 0 0 1-5.032 0H0v-1.5h11.484a2.626 2.626 0 0 1 5.032 0zm-9 7h11.472v1.5H7.516a2.626 2.626 0 0 1-5.032 0H0v-1.5h2.484a2.626 2.626 0 0 1 5.032 0zM5 11.375a1.375 1.375 0 1 1 0-2.75 1.375 1.375 0 0 1 0 2.75zm9-7a1.375 1.375 0 1 1 0-2.75 1.375 1.375 0 0 1 0 2.75z"></path>
+            </svg>
+        </span>
+        <span class="utils-filter-text">Filters</span>
+    </button>
 
+  </div>
+  <div class="d-md-none d-block  col-md-6 col-sm-6 col-12 py-3">
+    <button class="utils-filter-button sort-open ms-auto" type="button">
+      <span class="utils-filter-text">Sort by</span>
+  </button>
+
+    <div class="facet-filters facet-filter-mobile sorting caption d-none">
+      <div class="facet-filters__field">
+        <label class="facet-filters__label caption-large d-md-block d-none" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+        <div class="select">
+          {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+          <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
+            {%- for option in results.sort_options -%}
+              <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
+            {%- endfor -%}
+          </select>
+          {% render 'icon-caret' %}
+        </div>
+      </div>
+
+      <noscript>
+        <button type="submit" class="facets__button-no-js button button--tertiary">{{ 'products.facets.sort_button' | t }}</button>
+      </noscript>
+    </div>
+  </div>
+</div>
   <div class="row">
     <div class="filter-div">
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
