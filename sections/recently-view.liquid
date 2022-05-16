@@ -246,46 +246,28 @@ display:none;
                                               var pid=$(this).data("p-id");
                                               var prgrid=$("#prd-"+pid).find(".v-img");
                                               $(prgrid).each(function(){
-                                                if( $(".v-"+vid).hasClass("show") ){
-                                                  fg=true;
-                                                }else{
                                                   $(this).removeClass("show");
-                                                }
                                               });     
-                                                $("."+vid).toggleClass("show");
-                                      
-                                              var oth=$(this).siblings('button');
-                                              var c=$(this).find('img');
-                                              
-                                              $(oth).each(function(){
-                                                  $(this).find("img").removeClass("active");
-                                               });
+                                                $("."+vid).addClass("show");
+                                                    var oth=$(this).siblings('button');
+                                                    var c=$(this).find('img');
+                                                        
+                                                        $(oth).each(function(){
+                                                            $(this).find("img").removeClass("active");
+                                                        });
                                              
-                                                $(this).find("img").toggleClass("active");
-                                             
-                                               if(fg){  
-                                                  var m=u.split("?");
-                                                  $(".prd-link-"+pid).attr("href",m[0]);  
-                                                  $(".prd-img-link-"+pid).attr("href",m[0]);
-                                               }
-                                               else{
-                                                $(".prd-link-"+pid).attr("href",u);
-                                                $(".prd-img-link-"+pid).attr("href",u);
-                                            }
-                                      
-                                            });
+                                                $(this).find("img").addClass("active");
+                                             });
                                             $(".more-color").click(function(e){
                                                 e.preventDefault();
-                                                var pp=$(this).parent();
-                                                
+                                                var pp=$(this).parent();                                             
                                                 if($(pp).hasClass("more-view")){
                                                     $(pp).removeClass("more-view");
                                                 }
                                                 else{
                                                 $(pp).addClass("more-view");
                                                 }
-                                               
-                                                    if($(this).hasClass("minus")){
+                                                 if($(this).hasClass("minus")){
                                                             $(this).removeClass("minus");
                                                             $(this).addClass("plus"); 
                                                     }else{
@@ -293,7 +275,6 @@ display:none;
                                                         $(this).addClass("minus");
                                                     }
                                                     var pid=$(this).data("prd-id");
-                            
                                                     if($(".review-"+pid).hasClass("d-none")){
                                                         $(".review-"+pid).removeClass("d-none");
                                                     }else{

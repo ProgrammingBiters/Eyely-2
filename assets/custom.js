@@ -94,75 +94,117 @@ $(document).ready(function(){
       // });
 var v=$("#template").val();
 if(v != "product" && v != "collection"){
-      $(".more-color").click(function(e){
-        e.preventDefault();
-                               if($(this).parent().hasClass("more-view")){
-                                  $(this).removeClass("more-view");
-                               }
-                               else{
-                                $(this).addClass("more-view");
-                               }
-                               console.log($(this).hasClass("minus"));
-                                if($(this).hasClass("minus")){
-                                     $(this).removeClass("minus");
-                                     $(this).addClass("plus"); 
-                                }else{
-                                  $(this).removeClass("plus");
-                                  $(this).addClass("minus");
-                                }
-                                var pid=$(this).data("prd-id");
-                               
-                                if($(".review-"+pid).hasClass("d-none")){
-                                  $(".review-"+pid).removeClass("d-none");
-                                }else{
-                                $(".review-"+pid).addClass("d-none");
-                                }
-                                if($(".title-"+pid).hasClass("d-none")){
-                                  $(".title-"+pid).removeClass("d-none");
-                              }else{
-                                $(".title-"+pid).addClass("d-none");
-                                }
-      });
-      //Swatch-item Js   start
-
-      $(".c-item").click(function(e){
-        e.preventDefault();
-        var fg=false;
-        var vid=$(this).data("v-id");
-        var u=$(this).data("prd-url");
-        var pid=$(this).data("p-id");
-        var prgrid=$("#prd-"+pid).find(".v-img");
-      $(prgrid).each(function(){
-        if( $(".v-"+vid).hasClass("show") ){
-          fg=true;
-        }else{
-          $(this).removeClass("show");
-
-        }
-        });     
-       $(".v-"+vid).toggleClass("show");
-
+$(".c-item").click(function(e){
+  e.preventDefault();
+  var fg=false;
+  var vid=$(this).data("v-id");
+  var u=$(this).data("prd-url");
+  var pid=$(this).data("p-id");
+  var prgrid=$("#prd-"+pid).find(".v-img");
+  $(prgrid).each(function(){
+      $(this).removeClass("show");
+  });     
+    $("."+vid).addClass("show");
         var oth=$(this).siblings('button');
         var c=$(this).find('img');
-        console.log(oth);
-        $(oth).each(function(){
-            $(this).find("img").removeClass("active");
-         });
-       
-          $(this).find("img").addClass("active");
-       
-         if(fg){  
-            var m=u.split("?");
-            $(".prd-link-"+pid).attr("href",m[0]);  
-            $(".prd-img-link-"+pid).attr("href",m[0]);
-         }else{
-          $(".prd-link-"+pid).attr("href",u);
-          $(".prd-img-link-"+pid).attr("href",u);
-         }
-
-      });
+            
+            $(oth).each(function(){
+                $(this).find("img").removeClass("active");
+            });
+  
+    $(this).find("img").addClass("active");
+  });
+$(".more-color").click(function(e){
+  e.preventDefault();
+  var pp=$(this).parent();                                             
+  if($(pp).hasClass("more-view")){
+      $(pp).removeClass("more-view");
+  }
+  else{
+  $(pp).addClass("more-view");
+  }
+    if($(this).hasClass("minus")){
+              $(this).removeClass("minus");
+              $(this).addClass("plus"); 
+      }else{
+          $(this).removeClass("plus");
+          $(this).addClass("minus");
+      }
+      var pid=$(this).data("prd-id");
+      if($(".review-"+pid).hasClass("d-none")){
+          $(".review-"+pid).removeClass("d-none");
+      }else{
+      $(".review-"+pid).addClass("d-none");
+      }
+      if($(".title-"+pid).hasClass("d-none")){
+          $(".title-"+pid).removeClass("d-none");
+      }else{
+      $(".title-"+pid).addClass("d-none");
+      }
+});
     }
-    //Swatch-item Js end
+    setTimeout(function(){
+var d=jQuery.cookie('shopify_recently_viewed');
+var f=false;
+if(v == "product" || v == "collection" ){
+  f=true;
+}
+if((d == undefined || d == null) && f ){
+
+  //Swatch-item Js   start
+  $(".c-item").click(function(e){
+    e.preventDefault();
+    var fg=false;
+    var vid=$(this).data("v-id");
+    var u=$(this).data("prd-url");
+    var pid=$(this).data("p-id");
+    var prgrid=$("#prd-"+pid).find(".v-img");
+    $(prgrid).each(function(){
+        $(this).removeClass("show");
+    });     
+      $("."+vid).addClass("show");
+          var oth=$(this).siblings('button');
+          var c=$(this).find('img');
+              
+              $(oth).each(function(){
+                  $(this).find("img").removeClass("active");
+              });
+   
+      $(this).find("img").addClass("active");
+   });
+   $(".more-color").click(function(e){
+    e.preventDefault();
+    var pp=$(this).parent();                                             
+    if($(pp).hasClass("more-view")){
+        $(pp).removeClass("more-view");
+    }
+    else{
+    $(pp).addClass("more-view");
+    }
+     if($(this).hasClass("minus")){
+                $(this).removeClass("minus");
+                $(this).addClass("plus"); 
+        }else{
+            $(this).removeClass("plus");
+            $(this).addClass("minus");
+        }
+        var pid=$(this).data("prd-id");
+        if($(".review-"+pid).hasClass("d-none")){
+            $(".review-"+pid).removeClass("d-none");
+        }else{
+        $(".review-"+pid).addClass("d-none");
+        }
+        if($(".title-"+pid).hasClass("d-none")){
+            $(".title-"+pid).removeClass("d-none");
+        }else{
+        $(".title-"+pid).addClass("d-none");
+        }
+});
+}
+
+},4000);
+
+
 $(".filter-open").click(function(e){
 e.preventDefault();
 $("#main-collection-filters").toggleClass("active");
@@ -286,52 +328,9 @@ $(".close-filter").click(function(e){
     $(".size-popup").removeClass('light-popup');
     $(".guid-popup").hide();
   });
-
-  // collection loadmore
-  // function isVisible($el) {
-  //   var winTop = $(window).scrollTop();
-  //   var winBottom = winTop + $(window).height();
-  //   var elTop = $el.offset().top;
-  //   var elBottom = elTop + $el.height();
-  //   return ((elBottom<= winBottom) && (elTop >= winTop));
-  // }
-    // let triggered = false;
-  
-    // function ScrollExecute() {
-    //   let moreButon = $('#more');
-    //   let nextUrl = $(moreButon).find('a').attr("href");
-    //   let loader=$(".loader-div");
-    //   if ((triggered == false) && nextUrl != undefined && isVisible(loader)) {
-           
-    //       $(moreButon).remove();
-  
-    //       triggered = true;
-    //       $.ajax({url: nextUrl,
-    //         dataType: "html",
-    //         success: function (data, status, xhr) {// success callback function
-    //                           console.log(data);
-    //                           $(loader).remove();
-  
-    //                           $('#product-grid').append($(data).find('#product-grid').html());
-    //                           triggered = false;
-                            
-    //                           //            $(".loader-div").toggleClass("hide");
-    //                           var api = new Yotpo.API(yotpo);
-    //                           api.refreshWidgets();
-  
-    //                 }
-    //               });
-        
-         
-
-        
-    //   }
-    // }
               
     $(document).ready(function () {
-      // $(window).scroll(function(){
-      //   //  ScrollExecute();
-      //  }); 
+ 
        $('.product-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
