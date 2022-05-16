@@ -39,7 +39,7 @@
     </div>
   </div>
 <div class="row">
-  <div class="d-md-none d-block  col-md-6 col-sm-6 col-12 py-3">
+  <div class="d-md-none d-block  col-md-6 col-sm-6 col-6 py-3">
     <button class="utils-filter-button filter-open" type="button" aria-label="Filters" >
         <span class="utils-filter-icon">
             <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13">
@@ -50,29 +50,69 @@
     </button>
 
   </div>
-  <div class="d-md-none d-block  col-md-6 col-sm-6 col-12 py-3">
+  <div class="d-md-none d-block  col-md-6 col-sm-6 col-6 py-3">
     <button class="utils-filter-button sort-open ms-auto" type="button">
       <span class="utils-filter-text">Sort by</span>
-  </button>
+  </button>{% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
-    <div class="facet-filters facet-filter-mobile sorting caption d-none">
-      <div class="facet-filters__field">
-        <label class="facet-filters__label caption-large d-md-block d-none" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-        <div class="select">
-          {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
-          <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
-            {%- for option in results.sort_options -%}
-              <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
-            {%- endfor -%}
-          </select>
-          {% render 'icon-caret' %}
+<div class="sort-by-mobile-wrapper">
+  <div class="sort-by-inner" data-modal-inner="" >
+    <button class="sort-close" type="button" aria-label="Close" data-modal-close="">
+        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+        <path fill="currentColor" fill-rule="evenodd" d="M5.306 6.5L0 1.194 1.194 0 6.5 5.306 11.806 0 13 1.194 7.694 6.5 13 11.806 11.806 13 6.5 7.694 1.194 13 0 11.806 5.306 6.5z"></path>
+        </svg>
+    </button>
+    <div class="sort-content" >
+            <span class="utils-sortby--modal-title">
+            Sort by
+            </span>
+
+      <ul class="utils-sortby--modal-list">
+         <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button {% if sort_by == "manual" %}utils-sortby--modal-button--active{% endif %}" value="manual" data-productgrid-trigger-sort-button="" {% if sort_by == "manual" %}disabled=""{% endif %}>
+            Featured
+          </button>
+        </li>    
+        <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button {% if sort_by == "best-selling" %}utils-sortby--modal-button--active{% endif %}" value="best-selling" data-productgrid-trigger-sort-button=""  {% if sort_by == "best-selling" %}disabled=""{% endif %} >
+            Best selling
+          </button>
+        </li>   
+        <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button  {% if sort_by == "title-ascending" %}utils-sortby--modal-button--active{% endif %}" value="title-ascending" data-productgrid-trigger-sort-button="" {% if sort_by == "title-ascending" %}disabled=""{% endif %}>
+            Alphabetically, A-Z
+          </button>
+        </li>    
+        <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button  {% if sort_by == "title-descending" %}utils-sortby--modal-button--active{% endif %}" value="title-descending" data-productgrid-trigger-sort-button=""  {% if sort_by == "title-descending" %}disabled=""{% endif %}>
+            Alphabetically, Z-A
+          </button>
+        </li>       
+        <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button  {% if sort_by == "price-ascending" %}utils-sortby--modal-button--active{% endif %}" value="price-ascending" data-productgrid-trigger-sort-button=""  {% if sort_by == "price-ascending" %}disabled=""{% endif %}>
+            Price, low to high
+          </button>
+        </li>
+        <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button  {% if sort_by == "price-descending" %}utils-sortby--modal-button--active{% endif %}" value="price-descending" data-productgrid-trigger-sort-button=""  {% if sort_by == "price-descending" %}disabled=""{% endif %}>
+            Price, high to low
+          </button>
+        </li>
+        <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button  {% if sort_by == "created-ascending" %}utils-sortby--modal-button--active{% endif %}" value="created-ascending" data-productgrid-trigger-sort-button=""  {% if sort_by == "created-ascending" %}disabled=""{% endif %}>
+            Date, old to new
+          </button>
+        </li>
+        <li class="utils-sortby--modal-item">
+          <button class="utils-sortby--modal-button {% if sort_by == "created-descending" %}utils-sortby--modal-button--active{% endif %}" value="created-descending" data-productgrid-trigger-sort-button="" {% if sort_by == "created-descending" %}disabled=""{% endif %}>
+            Date, new to old
+          </button>
+        </li>
+      </ul>
         </div>
-      </div>
-
-      <noscript>
-        <button type="submit" class="facets__button-no-js button button--tertiary">{{ 'products.facets.sort_button' | t }}</button>
-      </noscript>
-    </div>
+  </div>
+</div>
+    
   </div>
 </div>
   <div class="row">
@@ -171,12 +211,7 @@
     Shopify.queryParams.sort_by = value;
     location.search = new URLSearchParams(Shopify.queryParams).toString();
   });
-   document.querySelector('#SortBy-mobile').addEventListener('change', function(e) {
-    var value = e.target.value;
-
-    Shopify.queryParams.sort_by = value;
-    location.search = new URLSearchParams(Shopify.queryParams).toString();
-  });
+  
 </script>
 {% schema %}
 {

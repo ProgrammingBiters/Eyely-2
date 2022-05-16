@@ -239,7 +239,6 @@ display:none;
                                             var api = new Yotpo.API(yotpo);
                                             api.refreshWidgets();
                                             $(".c-item").click(function(e){
-                      
                                               e.preventDefault();
                                               var fg=false;
                                               var vid=$(this).data("v-id");
@@ -247,14 +246,13 @@ display:none;
                                               var pid=$(this).data("p-id");
                                               var prgrid=$("#prd-"+pid).find(".v-img");
                                               $(prgrid).each(function(){
-                                                if( $("."+vid).hasClass("show") ){
+                                                if( $(".v-"+vid).hasClass("show") ){
                                                   fg=true;
                                                 }else{
                                                   $(this).removeClass("show");
-                                      
                                                 }
-                                                });     
-                                             $("."+vid).toggleClass("show");
+                                              });     
+                                                $("."+vid).toggleClass("show");
                                       
                                               var oth=$(this).siblings('button');
                                               var c=$(this).find('img');
@@ -269,22 +267,45 @@ display:none;
                                                   var m=u.split("?");
                                                   $(".prd-link-"+pid).attr("href",m[0]);  
                                                   $(".prd-img-link-"+pid).attr("href",m[0]);
-                                               }else{
+                                               }
+                                               else{
                                                 $(".prd-link-"+pid).attr("href",u);
                                                 $(".prd-img-link-"+pid).attr("href",u);
-                                               }
+                                            }
                                       
                                             });
                                             $(".more-color").click(function(e){
-                                              e.preventDefault();
-                                              $(this).parent().toggleClass("more-view");
-                                              $(this).toggleClass("minus");
-                                              $(this).toggleClass("plus");
-                                              var pid=$(this).data("prd-id");
-                                              $(".review-"+pid).toggleClass("d-none");
-                                              $(".title-"+pid).toggleClass("d-none");
-                                            });
-                                          }
+                                                e.preventDefault();
+                                                var pp=$(this).parent();
+                                                
+                                                if($(pp).hasClass("more-view")){
+                                                    $(pp).removeClass("more-view");
+                                                }
+                                                else{
+                                                $(pp).addClass("more-view");
+                                                }
+                                               
+                                                    if($(this).hasClass("minus")){
+                                                            $(this).removeClass("minus");
+                                                            $(this).addClass("plus"); 
+                                                    }else{
+                                                        $(this).removeClass("plus");
+                                                        $(this).addClass("minus");
+                                                    }
+                                                    var pid=$(this).data("prd-id");
+                            
+                                                    if($(".review-"+pid).hasClass("d-none")){
+                                                        $(".review-"+pid).removeClass("d-none");
+                                                    }else{
+                                                    $(".review-"+pid).addClass("d-none");
+                                                    }
+                                                    if($(".title-"+pid).hasClass("d-none")){
+                                                        $(".title-"+pid).removeClass("d-none");
+                                                    }else{
+                                                    $(".title-"+pid).addClass("d-none");
+                                                    }
+    });
+                                        }
                                         } } );
 },3000);
   </script>

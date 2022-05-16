@@ -21,7 +21,7 @@
 }
 
 @media screen and (max-width:767px){
-  #main-collection-filters{
+  .sort-by-mobile-wrapper, #main-collection-filters{
     display: none;
     position: fixed;
     top: 0px;
@@ -34,10 +34,10 @@
     visibility: hidden;   
     overflow: auto;
     outline: 0;    
-    padding: 15px; 
-    
+    padding: 15px;  
     }
-    .facets-container{
+
+    .sort-by-inner,.facets-container{
       max-width: 31.25rem;
       margin-right: auto;
       margin-left: auto;   
@@ -48,7 +48,7 @@
       outline: 0;
       position: relative;  
   }
-  .productgrid--sidebar-section{
+ .sort-content, .productgrid--sidebar-section{
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 0.3rem;
     padding: 5px;
@@ -73,7 +73,7 @@
   font-size: 13px;
   font-weight: 500;
 }
-  #main-collection-filters.active{
+.sort-by-mobile-wrapper.active, #main-collection-filters.active{
       display: block;
       visibility: visible;
       opacity: 1;
@@ -98,17 +98,17 @@
       padding: 0.5rem 1rem;
       font-weight: 700;
     }
-  .close-filter{
+ .sort-close, .close-filter{
     position: absolute;
-
     top: 13px;
     right: 18px;
-
     width:15px;
     z-index: 10000;
     color:#222;
+    border: 0px;
+    background-color: transparent;
   }
-  .close-filter svg{
+  .sort-close svg,.close-filter svg{
     fill: #222;
   }
     .filter-open  .utils-filter-icon{
@@ -124,4 +124,40 @@
       transition: fill .1s cubic-bezier(.4,0,.2,1);
       fill: currentColor;
     }
+    
+   .utils-sortby--modal-title{
+    font-style: normal;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1.25rem;
+    color: #2d3654;
+  }
+  .utils-sortby--modal-list{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  .utils-sortby--modal-item:first-child {
+    margin-top: 0;
+  }
+  .utils-sortby--modal-item {
+    margin-top: 0.75rem;
+}
+.utils-sortby--modal-button {
+  display: block;
+  width: 100%;
+  transition-duration: 0ms;
+  color: #b23c18;
+  background-color: #fff;
+  border: 1px solid #dddddd;   
+  cursor: pointer;
+  border-radius: 3px;
+  text-transform: none;  
+  padding: 0.625rem 1rem;
+}
+.utils-sortby--modal-button--active{
+  color: #fff;
+    background: #b23c18;
+}
 }
