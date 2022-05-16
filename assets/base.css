@@ -1489,12 +1489,12 @@ details:hover > .share-button__fallback {
   flex-wrap: wrap;
 }
 
-.field__input,
-.customer .field input {
-  flex-grow: 1;
-  text-align: left;
-  padding: 1.5rem;
-}
+  .field__input,
+  .customer .field input {
+    flex-grow: 1;
+    text-align: left;
+    padding: 1.5rem;
+  }
 
   .field__label,
   .customer .field label {
