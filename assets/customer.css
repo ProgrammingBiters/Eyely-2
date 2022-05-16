@@ -778,13 +778,19 @@ li[data-address] > h2 {
   margin-bottom:10px;
 }
 
-/* .customer form{
-  max-width:640px;
-} */
+.customer form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
 .customer form .field{
   width: calc(50% - 23px);
-  display: inline-block;
-  margin:0 8px;
+/*   display: inline-block; */
+  margin:0 10px;
   margin-bottom:20px;
 }
 /* 
