@@ -1570,7 +1570,7 @@ details:hover > .share-button__fallback {
 .field__input:-webkit-autofill ~ .field__button,
 .field__input:-webkit-autofill ~ .field__label,
 .customer .field input:-webkit-autofill ~ label {
-  color: rgb(0, 0, 0);
+/*   color: rgb(0, 0, 0); */
 }
 
 /* Text area */
