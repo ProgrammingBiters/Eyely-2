@@ -784,5 +784,6 @@ li[data-address] > h2 {
 .customer form .field{
   width: calc(50% - 20px);
   display: inline-block;
+  margin:0 10px 20px;
 }
 
