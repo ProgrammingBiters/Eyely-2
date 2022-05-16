@@ -1493,7 +1493,8 @@ details:hover > .share-button__fallback {
   .customer .field input {
     flex-grow: 1;
     text-align: left;
-    padding: 1.5rem;
+/*     padding: 1.5rem; */
+    padding:24px 10px 6px;
   }
 
   .field__label,
