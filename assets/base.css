@@ -1504,6 +1504,7 @@ details:hover > .share-button__fallback {
   transition: top var(--duration-short) ease,
     font-size var(--duration-short) ease;
 /*   color: rgba(var(--color-foreground), 0.75); */
+         color: #949494;
   letter-spacing: 0.1rem;
   line-height: 1.5;
 }
