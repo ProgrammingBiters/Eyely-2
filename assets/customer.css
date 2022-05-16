@@ -788,9 +788,9 @@ li[data-address] > h2 {
 
 
 .customer form .field{
-  width: calc(50% - 23px);
+  width: calc(50% - 19px);
 /*   display: inline-block; */
-  margin:0 10px;
+  margin:0 8px;
   margin-bottom:20px;
 }
 /* 
