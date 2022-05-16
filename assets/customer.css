@@ -23,18 +23,10 @@
   margin-top: 4rem;
 }
 
-
-.customer  .btn_div{
-  display:flex;
-  align-items: baseline;
-}
-
-
 .customer button {
-/*   margin: 2em 0 1.5rem; */
+  margin: 2em 0 1.5rem;
   border-radius: 4px;
   background-color: #b23d25;
-
 }
 .pl-23{
 padding-left: 23px;;
@@ -772,39 +764,3 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
 }
-
-
-
-
-/* update account css */
-.customer{
-  max-width:640px !important;
-}
-
-.customer .h1{
-  font-size:36px;
-  margin-bottom:10px;
-}
-
-.customer form{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-
-
-
-.customer form .field{
-  width: calc(50% - 19px);
-/*   display: inline-block; */
-  margin:0 8px;
-  margin-bottom:20px;
-}
-/* 
-.customer form .field input{
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  box-shadow:none;
-
-} */

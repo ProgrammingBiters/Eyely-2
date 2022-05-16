@@ -1406,15 +1406,13 @@ details:hover > .share-button__fallback {
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
-/*   border: 0.1rem solid transparent; */
-   border: 1px solid #dddddd;
-/*   border-radius: 0; */
-   border-radius: 3px;
+  border: 0.1rem solid transparent;
+  border-radius: 0;
   color: rgb(var(--color-foreground));
   font-size: 1.6rem;
   width: 100%;
-/*   box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.55); */
-  height: 5.6rem;
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.55);
+  height: 4.5rem;
   box-sizing: border-box;
   transition: box-shadow var(--duration-short) ease;
 }
@@ -1427,26 +1425,22 @@ details:hover > .share-button__fallback {
   color: rgba(var(--color-foreground), 0.75);
 }
 
-  .field__input:hover,
-  .select__select:hover,
-  .customer .field input:hover,
-    .customer select:hover,
-    .localization-form__select:hover {
-      /*   box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.55); */
-      border-color: #bebebe;
-    }
+.field__input:hover,
+.select__select:hover,
+.customer .field input:hover,
+.customer select:hover,
+.localization-form__select:hover {
+  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.55);
+}
 
-  .field__input:focus,
-  .select__select:focus,
-  .customer .field input:focus,
-    .customer select:focus,
-    .localization-form__select:focus {
-      /*   box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.75);
-      outline: transparent; */
-      border-color: #818181;
-      outline:0;
-      box-shadow: 0 2px 6px #00000026, 0 0 0 0.5px #919191;
-    }
+.field__input:focus,
+.select__select:focus,
+.customer .field input:focus,
+.customer select:focus,
+.localization-form__select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.75);
+  outline: transparent;
+}
 
 .text-area,
 .select {
@@ -1489,30 +1483,27 @@ details:hover > .share-button__fallback {
   flex-wrap: wrap;
 }
 
-  .field__input,
-  .customer .field input {
-    flex-grow: 1;
-    text-align: left;
-/*     padding: 1.5rem; */
-    padding:24px 10px 6px;
-  }
+.field__input,
+.customer .field input {
+  flex-grow: 1;
+  text-align: left;
+  padding: 1.5rem;
+}
 
-  .field__label,
-  .customer .field label {
-    font-size: 1.6rem;
-    left: 1rem;
-    top: 1.7rem;
-    margin-bottom: 0;
-    pointer-events: none;
-    position: absolute;
-    transition: top var(--duration-short) ease,
-      font-size var(--duration-short) ease;
-        /*   color: rgba(var(--color-foreground), 0.75); */
-        color: #949494;
-        letter-spacing: 0.1rem;
-        line-height: 1;
-        font-weight: 300;    
-        }
+.field__label,
+.customer .field label {
+  font-size: 1.6rem;
+  left: 1.5rem;
+  top: 1rem;
+  margin-bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: top var(--duration-short) ease,
+    font-size var(--duration-short) ease;
+  color: rgba(var(--color-foreground), 0.75);
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
 
 .field__input:focus ~ .field__label,
 .field__input:not(:placeholder-shown) ~ .field__label,
@@ -1520,11 +1511,9 @@ details:hover > .share-button__fallback {
 .customer .field input:focus ~ label,
 .customer .field input:not(:placeholder-shown) ~ label,
 .customer .field input:-webkit-autofill ~ label {
-/*   font-size: 1rem;
-  top: 0.3em; */
+  font-size: 1rem;
+  top: 0.3em;
   letter-spacing: 0.04rem;
-   font-size:13px;
-  top:0.8em;
 }
 
 .field__input:focus,
@@ -1533,7 +1522,7 @@ details:hover > .share-button__fallback {
 .customer .field input:focus,
 .customer .field input:not(:placeholder-shown),
 .customer .field input:-webkit-autofill {
-/*   padding: 2.2rem 1.5rem 0.8rem; */
+  padding: 2.2rem 1.5rem 0.8rem;
 }
 
 .field__input::-webkit-search-cancel-button,
@@ -1571,8 +1560,7 @@ details:hover > .share-button__fallback {
 .field__input:-webkit-autofill ~ .field__button,
 .field__input:-webkit-autofill ~ .field__label,
 .customer .field input:-webkit-autofill ~ label {
-/*   color: rgb(0, 0, 0); */
-    top: 0.8rem;
+  color: rgb(0, 0, 0);
 }
 
 /* Text area */
