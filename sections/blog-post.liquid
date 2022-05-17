@@ -1,0 +1,602 @@
+{% if article.image %}
+{% assign social_image = article.image | img_url: '1024x' %}
+{% endif %}
+{% assign social_url = shop.url | append: article.url %}
+{% assign share_url = social_url | url_param_escape %}
+{% assign share_title = artilce.title | url_param_escape %}
+{% assign share_image = false %}
+{% if social_image %}
+{% assign share_image = social_image | url_param_escape %}
+{% endif %}
+
+{% assign my_article_description = article.content | split: '<!-- split -->' %}
+<section class="a-blog-post-head">
+  <div class="a-blog-post-content">
+    <div class="container">
+      <div class="a-blog-post-header">
+
+        <div >
+          <div class="tag mx-2">
+            <a href="{{ blog.url }}">{{ blog.title }}</a>
+          </div>
+        </div>
+        <h2 class="b-headings">{{ article.title }}</h2>
+        {%- if article.excerpt.size > 0 -%}
+        <div> <p>{{ article.excerpt }}</p></div>
+        {%- else -%}
+        <div><p>{{ article.content | strip_html | truncate: 50 }}</p></div>
+        {%- endif -%}
+        <div class="author-detail">
+          <ul class="article-blogger-info">
+
+            <li>
+              <span class="article-span">
+                <span>{{ article.published_at | date: "%b %d, %Y"  }}</span>
+              </span>
+            </li>
+            <li>
+              <span class="article-span">
+                <span class="comment-icone"></span>
+                <span> {{article.comments_count}}</span>
+                <span class="article-in text-capitalize">Comments</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="a-blog-post-media">
+
+          <ul>
+            <li>
+              <a class="share-buttons--button share-buttons--facebook"
+                 target="_blank" href="//www.facebook.com/sharer.php?u={{ share_url }}">
+                <i class="fa fa-facebook f-icone"></i>
+              </a></li>
+            <li> <a
+                    class="share-buttons--button share-buttons--twitter"
+                    target="_blank"
+                    href="//twitter.com/share?url={{ share_url }}"><i class="fa fa-twitter t-icone"></i>
+              </a></li>
+            <li>{% if share_image %}
+              <a
+                 class="share-buttons--button share-buttons--pinterest"
+                 target="_blank"
+                 href="//pinterest.com/pin/create/button/?url={{ share_url }}&amp;media={{ share_image }}&amp;description={{ share_title }}">
+                <i class="fa fa-pinterest-p p-icone"></i> </a>
+              {% endif %}</li>
+            <li><a
+                   class="share-buttons--button share-buttons--linkedin"
+                   target="_blank"
+                   href="//www.linkedin.com/shareArticle?mini=true&url={{ share_url }}&title={{ share_title }}">
+              <i class="fa fa-linkedin"></i>    </a></li>
+            {% comment %} <li><a href="mailto:&subject={{social_title}}&body={{ share_url }}"><i class="fa fa-envelope e-icone"></i></a></li>{% endcomment %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="a-blog-post-infotmation">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8 col-md-12 col-12">
+        <div class="main-blog-content">
+          {%- if article.image  != blank -%}
+          <div class="blog-post-content-img">
+            <a href="{{article.url}}"><img src="{{article.image | img_url:"original"}}" class="img-fluid"></a>
+          </div>
+          {%- endif -%}
+          {{my_article_description[0]}}
+          <div class="user-actions--hero">
+            <div class="user-action-btn">
+              <button class="btn btn-user comment-btn"> <span class="comment-icone"></span> {{article.comments_count}} comment</button>
+            </div>
+            <div class="a-blog-post-media d-md-block d-none">
+              <ul>
+                <li>
+                  <a class="share-buttons--button share-buttons--facebook"
+                     target="_blank" href="//www.facebook.com/sharer.php?u={{ share_url }}">
+                    <i class="fa fa-facebook f-icone"></i>
+                  </a></li>
+                <li> <a
+                        class="share-buttons--button share-buttons--twitter"
+                        target="_blank"
+                        href="//twitter.com/share?url={{ share_url }}"><i class="fa fa-twitter t-icone"></i>
+                  </a></li>
+                <li>{% if share_image %}
+                  <a
+                     class="share-buttons--button share-buttons--pinterest"
+                     target="_blank"
+                     href="//pinterest.com/pin/create/button/?url={{ share_url }}&amp;media={{ share_image }}&amp;description={{ share_title }}">
+                    <i class="fa fa-pinterest-p p-icone"></i> </a>
+                  {% endif %}</li>
+                <li><a
+                       class="share-buttons--button share-buttons--linkedin"
+                       target="_blank"
+                       href="//www.linkedin.com/shareArticle?mini=true&url={{ share_url }}&title={{ share_title }}">
+                  <i class="fa fa-linkedin"></i>    </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="content__text-container">
+            {{my_article_description[1]}}
+
+
+            {% for block in section.blocks %}
+            {% if block.type == "featured_collection"  and block.settings.featured_coll != blank %}{% comment %}and  block.settings.featured_blog == blog.handle{% endcomment %}
+            <div class="a-article-product">
+              <div class="product-well__label">{{block.settings.title}}</div>
+              <div class="row">
+                {% for product in collections[block.settings.featured_coll].products limit:3 %}
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                  <div class="all-prd-main">
+                    <a href="{{product.url}}">
+                      <div class="prd-main-div">
+                        <div class="prd-main-div-img">
+                          <img src="{{product.featured_image|img_url:'original'}}">
+
+                        </div>
+                        <div class="prd-main-div-info">
+                          <h3 class="b-headings"><span class="prd-main-div-title">{{product.title}}</span><span class="prd-main-div-price">{{product.price|money}}</span></h3>
+                        </div>
+                      </div>
+                    </a>
+                    <!--                         <div class="prd-cart">
+<button type="button" class="css-1jg1bx">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div> -->
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% if blog.next_article or blog.previous_article %}
+            {% assign current_found = false %}
+            {% assign done = false %}
+            {% for a in blog.articles %}
+            {% if current_found and done == false %}
+            {% assign next_article = a %}
+            {% assign done = true %}
+            {% endif %}
+
+            {% unless done %}
+            {% if a.id == article.id %}
+            {% assign current_found = true %}
+            {% else %}
+            {% assign prev_article = a %}
+            {% endif %}
+            {% endunless %}
+            {% endfor %}
+            <div class="content-gallery">
+              {% if prev_article %}
+              <div class="content-gallery-item">
+                <div class="card">
+                  <div>
+                    {% if prev_article.image != blank %}
+                    <div class="card-img">
+                      <a href="{{ prev_article.url}}"><img class="card-img-top" src="{{prev_article.image|img_url:'original'}}" alt="{{prev_article.title | escape}}"></a>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                      <div class="card-type"></div>
+                      <h2 class="card-title b-headings"><a href="{{ prev_article.url}}">{{prev_article.title | escape}}</a></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% if next_article %}
+              <div class="content-gallery-item">
+                <div class="card">
+                  <div>
+                    {% if next_article.image != blank %}
+                    <div class="card-img">
+                      <a href="{{ next_article.url}}"><img class="card-img-top" src="{{next_article.image|img_url:'original'}}" alt="{{next_article.title | escape}}"></a>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                      <div class="card-type"></div>
+                      <h2 class="card-title b-headings"><a href="{{ next_article.url}}">{{next_article.title | escape}}</a></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {% endif %}
+            </div>
+            {% endif %}
+
+            {{my_article_description[2]}}
+
+
+            {% for block in section.blocks %}
+
+            {% if block.type == "featured_video" and  block.settings.featured_blog == blog.handle and block.settings.vid_url != blank and block.settings.video_type == "custom" %}
+            <div class="more-for-food">
+              <center><em>{{block.settings.toptitle}}</em></center>
+              <div class="more-div-food-video">
+
+                <style>
+                  .more-for-food .more-div-food-video:before{
+                    content:"{{block.settings.title}}";
+                  }
+
+                </style>
+                <div class="w-100 video_img">
+                  <video  controls="">
+                    <source src="{{block.settings.vid_url}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <figcaption class="media-embed__text">{{block.settings.smalldescription}}</figcaption>
+                </div>
+              </div>
+            </div>
+            {% elsif  block.type == "featured_video" and  block.settings.featured_blog == blog.handle and block.settings.vid_url != blank and block.settings.video_type == "youtube" %}
+            <div class="more-for-food">
+              <center><em>{{block.settings.toptitle}}</em></center>
+              <div class="more-div-food-video">
+
+                <style>
+                  .more-for-food .more-div-food-video:before{
+                    content:"{{block.settings.title}}";
+                  }
+
+                </style>
+                <div class="w-100 video_img">
+                  <iframe src="{{ block.settings.vid_url}}"  frameborder="0"></iframe>
+                  <figcaption class="media-embed__text">{{block.settings.smalldescription}}</figcaption>
+                </div>
+              </div>
+            </div>
+
+            {% endif %}
+            {% endfor %}
+            {% comment %}
+            <div class="video_img">
+              <video controls="" autoplay="" name="media"><source src="{{ section.settings.video_url }}" type="video/mp4"></video>
+
+            </div>
+            {% endcomment %}
+            {{my_article_description[3]}}
+
+
+            {%- if article.tags.size > 0 -%}
+            <div class="aricle-tag">
+              <span>tags:</span>
+              <ul class="tag-list">
+                {%- for tag in article.tags -%}
+                <li class=" mx-2">
+                  <a  class="tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+            {%- endif -%}
+
+
+            <div class="comments-teaser">
+              <div class="comments-teaser__icons">
+                <span class="icon__comments"></span>
+                <span class="icon__comments"></span>
+              </div>
+              <h3 class="b-headings"><button class="btn">{{section.settings.join_title}}</button></h3>
+              <p>{{section.settings.join_subtitle}}</p>
+              <button class="btn btn-user comment-btn"><span class="comment-icone"></span> comment</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+        <aside class="sidebar" id="myHeader">
+          <div class="sidebar__content">
+            <div class="sidebar__content-collection">
+              <h3 class="sidebar__content-collection-title b-headings">{{section.settings.sidebarsubtitle}}<span>{{section.settings.sidebartitle}}</span></h3>
+              <ul>
+                {% for block in section.blocks %}
+                {% if block.type == "sidebar-links" and  block.settings.featured_blog == blog.handle %}
+                <li>
+                  <div class="css-cgbl8k">
+                    {% if block.settings.featured_image  != blank %}
+                    <div class="s-collection-img">
+                      <a href="{{block.settings.link_url}}"><img src="{{block.settings.featured_image | img_url:'100x100'}}"></a>
+                    </div>
+                    {% endif %}
+                    <div class="s-collection-info">
+                      <h5 class="b-headings"><a href="{{block.settings.link_url}}">{{block.settings.link_title}}</a></h5>
+
+                      <p>{{block.settings.count}} items</p>
+                    </div>
+                  </div>  	
+                </li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          {% for block in section.blocks %}
+
+          {% if block.type == "featured_video" and  block.settings.featured_blog == blog.handle and block.settings.vid_url != blank and block.settings.video_type == "custom" %}
+          <div class="w-100 video_img">
+            <video  controls="">
+              <source src="{{block.settings.vid_url}}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          {% elsif  block.type == "featured_video" and  block.settings.featured_blog == blog.handle and block.settings.vid_url != blank and block.settings.video_type == "youtube" %}
+          <div class="w-100 video_img">
+            <iframe src="{{ block.settings.vid_url}}"  frameborder="0"></iframe>
+          </div>
+          {% endif %}
+          {% endfor  %}
+          {% comment %} 
+          <div class="video_img">
+            <video controls="" austoplay="" name="media"><source src="{{ section.settings.video_url }}" type="video/mp4"></video>
+          </div>
+          {% endcomment %}
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+{% assign form_id = form_id | default: nil %}
+{% assign newsletter_tags = 'prospect' %}
+{% comment %}
+<section class="blog-post-banner">
+  <div class="blog-post-b-img">
+    {% if section.settings.newsletter_image != blank %}
+    <img src="{{section.settings.newsletter_image | img_url:'original'}}">
+    {% endif %}
+    <div class="b-p-banner-detail">
+      <h4 class="b-headings">{{section.settings.newsletter_title}}</h4>
+      <p>{{section.settings.newsletter_description}}</p>
+      <div class="mailing-list__form-container">
+        <form class="Form mailing-list__form" id="email_signup" method="GET" target="_blank" novalidate="novalidate" action="//manage.kmail-lists.com/subscriptions/subscribe">
+          <input type="hidden" name="g" value="N2qdGK">
+
+
+          {% if form.posted_successfully? %}
+          <div><p class="newsletter-success">
+            {{ 'general.newsletter.success' | t }}
+            </p></div>
+          {% else %}
+
+          <input  type="email" id="k_id_email"  name="email"  class="mailing-list__form-input" placeholder="hello@eyely.com">
+
+          <button name="submit"
+                  type="submit"  class="btn newslatter-btn">i'm in</button>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endcomment %}
+<section class="article-popular">
+  <div class="container">
+    <h3 class="a-popular-heading b-headings">{{section.settings.popular_title}}</h3>
+  </div>
+  <div class="content-gallery">
+    {% for art in blog.articles offset:3 limit:3 %}
+    {% assign c = 0 %}
+    {% if art.handle == article.handle %}
+    {% elsif c <=3  %}
+    {% assign c=c|plus:1%}
+    <div class="content-gallery-item">
+      <div class="card">
+        <div>
+          <div class="card-img">
+            <a href="{{art.url}}"><img class="card-img-top" src="{{art.image|img_url:'original'}}" alt="{{art.title}}"></a>
+          </div>
+          <div class="card-body">
+            <div class="card-type"></div>
+            <h2 class="card-title b-headings"><a href="{{art.url}}">{{art.title}}</a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+</section>
+
+<script>
+  window.onscroll = function() {myFunction()};
+
+  var header = document.getElementById("myHeader");
+  var sticky = header.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+  $(".comment-btn").click(function(){
+    var getElem = "#article-comment";
+    var targetDistance = 50;
+    if ($(getElem).length) {
+      var getOffset = $(getElem).offset().top;
+      $('html,body').animate({
+        scrollTop: getOffset-targetDistance
+      }, 1000);
+    }
+    return false;
+  });
+</script> 
+{% schema %}
+{
+"name": "Article",
+"settings": [
+{
+"type":"text",
+"id":"sidebartitle",
+"label":"Sidebar Title",
+"default":"F52er's Collections"
+}, 
+{
+"type":"text",
+"id":"sidebarsubtitle",
+"label":"Sidebar Sub Title",
+"default":"APPEARS IN THESE"
+},
+{
+"type":"image_picker",
+"id":"newsletter_image",
+"label":"Newsletter BG Image"
+} ,
+{
+"type":"text",
+"id":"newsletter_title",
+"label":"Newsletter Title",
+"default":"Want more Food52?"
+},
+{
+"type":"textarea",
+"id":"newsletter_description",
+"label":"Newsletter Description",
+"default":"Our best tips for eating thoughtfully and living joyfully, right to your inbox."
+
+},
+{
+"type":"text",
+"id":"join_title",
+"label":"Join Title",
+"default":"Join the Conversation"
+},
+{"type":"text",
+"id":"join_subtitle",
+"label":"Join Sub Title",
+"default":"See what other Food52 readers are saying."
+},
+{
+"type":"text",
+"id":"popular_title",
+"label":"Popular Title",
+"default":"Popular on Eyely"
+}
+
+
+],
+"blocks":[
+{
+"type":"sidebar-links",
+"name":"Sidebar Links",
+"settings":[
+{
+"type":"blog",
+"id":"featured_blog",
+"label":"Featured Blog"
+},
+{
+"type":"image_picker",
+"id":"featured_image",
+"label":"Featured Image"
+},
+{
+"type":"text",
+"id":"link_title",
+"label":"Link Title"
+},
+{
+"type":"url",
+"id":"link_url",
+"label":"Link Url"
+},{
+"type":"text",
+"label":"Name",
+"id":"name",
+"default":"Sandip"
+},
+{
+"type":"text",
+"label":"Count",
+"id":"count",
+"default":"6"
+}
+]
+},
+{
+"type":"featured_video",
+"name":"Featured Video",
+"settings":[
+{
+"type":"blog",
+"id":"featured_blog",
+"label":"Featured Blog"
+},{
+"type":"text",
+"id":"toptitle",
+"label":"Top Title",
+"default":"What are your favorite Ottolenghi treasures? Let us know in the comments below!"
+},
+{
+"type":"text",
+"id":"title",
+"label":"Title"
+},
+{
+"type":"url",
+"id":"vid_url",
+"label":"Video Url"
+},
+{
+"type": "select",
+"id": "video_type",
+"label": "Video Type",
+"options": [
+{
+"value": "custom",
+"label": "Custom"
+},
+{
+"value": "youtube",
+"label": "Youtube"
+}
+]
+},
+{
+"type":"textarea",
+"id":"smalldescription",
+"label":"Small Description"
+}
+
+
+]
+},
+{
+"type":"featured_collection",
+"name":"Featured Collection",
+"settings":[
+{
+"type":"blog",
+"id":"featured_blog",
+"label":"Featured Blog"
+},
+{
+"type":"text",
+"id":"title",
+"label":"Title",
+"default":"From Our Shop"
+},
+{
+"type":"collection",
+"id":"featured_coll",
+"label":"Featured Collection"
+}
+]
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

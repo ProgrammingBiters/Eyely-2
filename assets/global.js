@@ -271,8 +271,8 @@ class MenuDrawer extends HTMLElement {
     super();
 
     this.mainDetailsToggle = this.querySelector('details');
-    const summaryElements = this.querySelectorAll('summary');
-    this.addAccessibilityAttributes(summaryElements);
+    //const summaryElements = this.querySelectorAll('summary');
+    // this.addAccessibilityAttributes(summaryElements);
 
     if (navigator.platform === 'iPhone') document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
 

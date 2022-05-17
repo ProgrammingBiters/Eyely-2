@@ -1,0 +1,183 @@
+.container { width: 100%; max-width: 1440px; margin: 0 auto; }
+
+
+.static-page { margin-top: 0; color: #567788; }
+.static-page .static-heading { font-size: 40px; line-height: 1.5; font-weight: 700; color: #567788; word-break: break-all; margin-top: 0; margin-bottom: 15px; }
+.static-page .static-img { display: block; margin-bottom: 15px; }
+.static-page .static-img img { display: block; margin: 0 auto; }
+.static-page .static-txt { margin-bottom: 35px; }
+.static-page .static-txt p { margin-top: 0; margin-bottom: 15px; }
+.static-page .static-txt p:last-child { margin-bottom: 0; }
+.static-page .page-masthead {  max-width: 100%; background-color: #fff; padding-left: 0; padding-right: 0; margin-top: 0; margin-bottom: 30px; }
+.static-page .page-masthead .page-title { max-width: 1440px; margin: 0 auto; padding: 10px 15px; font-size: 30px; font-weight: 500; color: #3b3b3b; line-height: normal; text-align: left; }
+.static-page .page-content { margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; }
+.static-page .page-content img { display: block; margin: 0 auto; }
+.static-page .static-content { background-color: #fff; padding: 60px 60px; margin: 0 15px; }
+
+.static-page .contact-page-content { padding-left: 0; padding-right: 0; margin-top: 0; margin-bottom: 30px; max-width: 100%; }
+.static-page .contact-page-content h3 { font-size: 17px; font-weight: 500; color:#567788; margin-top: 0; margin-bottom: 15px; }
+.static-page .contact-page-content .form-field-title { display: block; position: relative; top: 0; left: 0; font-size: 13px; font-weight: 500; color: #3b3b3b; line-height: normal; margin-bottom: 5px; }
+.static-page .contact-page-content .form-field-input { padding: 10px 10px; }
+.static-page .contact-page-content .button-primary { width: 100%; text-transform: uppercase; }
+.static-page #address-section i.fa { cursor: pointer; margin-right: 5px; background: #809aad; padding: 5px; color: #fff !important; border-radius: 50%; width: 28px; height: 28px; line-height: 18px; text-align: center; }
+
+.sub-heading { margin:0 0 10px 0 !important; font-size:24px !important; font-weight:600; line-height:initial; color:#567788 !important; text-align:center; }
+.wpb_wrapper p { margin:0; font-size:17px; line-height: 1.7; color:#567788; font-weight:300; }
+.wpb_wrapper p.subject-text { font-size:12px; color:#000; }
+.pinterest-icon-rugs { display: block; position:absolute; top:0; right:15px; padding:8px; background:#fff; border-radius:0px 0px 0px 10px; z-index:1; }
+.pinterest-icon-rugs img { display: block; }
+
+.static-page .static-content .about-img { text-align: center; margin-bottom: 35px; }
+.static-page .static-content .about-text { font-size: 20px; font-weight: 500; line-height: 1.7; text-align: center; margin-bottom: 35px; }
+.static-page .static-content .about-text p { margin-top: 0; margin-bottom: 1rem; }
+.static-page .static-content .about-text p:last-child { margin-bottom: 0; }
+
+.popup-block .popup-img-link { display: block; margin-bottom: 1rem; cursor: pointer; }
+.popup-block .popup-img-link img { display: block; margin: 0 auto; }
+.popup-block .popup-img-link:hover img { opacity: 1; -webkit-filter: brightness(50%); filter: brightness(50%); }
+.popup-block .wpb_wrapper { margin-bottom: 35px; }
+.popup-block .wpb_wrapper { margin-bottom: 35px; }
+
+.bg-grid .col-lg-4 { margin-bottom: 30px; }
+.bg-grid .gray-box { background-color: #e7e7e9; height: 100%; padding: 25px 25px; }
+.bg-grid .gray-box p:last-child { margin-bottom: 0; }
+
+.static-faq .faq-heading { position: relative; background-color: #809aad; border-radius: 5px; margin-bottom: 5px; }
+.static-faq .faq-heading .arrow-svg { position: absolute; top: 50%; left: 10px; transform: translate(0, -50%); }
+.static-faq .faq-heading .arrow-svg svg { width: 12px; height: 10px; }
+.static-faq .faq-heading.active .arrow-svg svg { transform: rotate(180deg); }
+.static-faq .faq-heading .sub-heading { font-size: 18px !important; font-weight: normal; line-height: 1; margin-bottom: 0 !important; }
+.static-faq .faq-heading a { display: block; color: #fff; padding: 14px 20px 14px 30px; }
+.static-faq .faq-txt { min-height: 10px; padding: 14px 20px; }
+
+
+
+
+.finance-page .page-masthead { display: none; }
+.finance-page .static-content { padding: 0 0; background-color: transparent; }
+.finance-page .container { max-width: 100%; }
+.finance-page .row { margin: 0 0; }
+.finance-page .page-content { max-width: 100%; }
+.finance-page .financ-div { margin: 0 -15px; }
+.finance-page .top-banner { padding: 0 15px; }
+.finance-page .blue-bg { background-color: #e4f0f9; padding: 35px 15px; margin: 35px 0 40px; }
+.finance-page .subject-div { margin-top: 35px; padding-top: 35px; border-top: 3px solid #dcdcdc; }
+.finance-page .blue-bg .container, .finance-page .rugs-light .container, .finance-page .subject-div .container { max-width: 1440px; }
+
+@media screen and (max-width: 991px) {
+    .static-page .page-masthead .page-title { text-align: center; }
+}
+
+@media screen and (max-width: 767px) {
+    .static-page .static-content { padding: 20px 20px; }
+    .static-page .static-content .about-text { font-size: 16px; }
+    .static-page .static-heading { font-size: 28px; }
+    .sub-heading { font-size: 20px !important; }
+    
+    .finance-page .static-content { padding: 0 0; }
+    .finance-page .financ-div { margin: 0 0; }
+    .finance-page .top-banner { padding: 0 0; }
+    .finance-page .blue-bg { margin: 0 -15px 35px; }
+    .finance-page .subject-div { margin: 0 -15px; }
+}
+
+.static-faq .faq-heading .sub-heading-left{
+text-align:left;
+} 
+
+  #tracktorOrderForm h1 span{
+    font-size:48px;
+  }
+
+  @media (max-width:480px){
+    #tracktorOrderForm h1 span{
+      font-size:40px;
+    }
+  }
+
+  
+  .page-width{
+  padding:0 15px;
+  }
+  @media (max-width:480px){
+    .page-width{
+    padding:0 5px;
+    }
+}
+
+.static-heading{
+margin-top:32px;
+  margin-bottom:16px;
+}
+
+.text-left{
+text-align:left;
+}
+
+
+
+.static-img img{
+margin-top:15px;
+  margin-bottom:15px;
+}
+
+.static-txt h4{
+letter-spacing:0;
+}
+
+
+.view-btn .mdc-ripple-surface{
+color:#212529;
+}
+
+.view-btn .button-primary:hover{
+    background: rgb(186,80,47);
+    border: 1px solid rgb(186,80,47);
+    color: #000;
+      box-shadow: 0 3px 8px #0000001a;
+}
+
+
+/* Financing */
+.rugs-light h2{
+margin-top:42px;
+  margin-bottom:50px !important;
+}
+
+.rugs-light h4{
+margin-top:32px;
+  margin-bottom:16px;
+}
+.rugs-light h4 a{
+  text-decoration:none;
+  color: #b23c18;
+  transition: color .1s cubic-bezier(.4,0,.2,1);
+  background-color: transparent;
+  font-size:24px;
+  font-weight:500;
+}
+.rugs-light h4 a:hover{
+    color: #973314;
+}
+
+.spaced-section{
+margin-top:50px;
+  
+}
+.spaced-section:last-child {
+margin-bottom:50px;
+}
+
+.page-width p{
+font-weight:300;
+  letter-spacing:0;
+}
+
+.page-width .rte a{
+ text-decoration:none;
+    color: #b23c18;
+  font-weight:300;
+}
+.page-width .rte  a:hover{
+    color: #973314;
+}

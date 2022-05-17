@@ -1,0 +1,88 @@
+{
+    "sections": {
+      "main": {
+        "type": "faq_content",
+        "blocks": {
+          "aa6cda87-5a80-4890-92b3-bf2beddc7ac9": {
+            "type": "faq",
+            "settings": {
+              "title": "When will my order ship?",
+              "answer": "Orders that are in-stock ship within 1-2 business days (M-F). When your order ships, you will receive an email confirmation with tracking information. Please check your spam folder if you did not receive the email."
+            }
+          },
+          "e5993a12-d0c4-43c7-9a30-35eeda95be9b": {
+            "type": "faq",
+            "settings": {
+              "title": "I signed up for the welcome email but didn't receive my promo code",
+              "answer": "The promo code should be emailed to you immediately, but sometimes your email provider can hold the email. In some cases, it can take up to an hour to receive."
+            }
+          },
+          "7792c46f-71eb-447b-a8ed-fa317e5d365e": {
+            "type": "faq",
+            "settings": {
+              "title": "I love what I ordered but I need to make a small change. How do I do that?",
+              "answer": "Once an order is placed, we cannot make any changes. Although we do not process standard exchanges, you may request a return label and re-purchase the item that you prefer."
+            }
+          },
+          "5d707127-8149-4069-a2d3-bb72529afb4d": {
+            "type": "faq",
+            "settings": {
+              "title": "What is your return policy?",
+              "answer": "We want you to be happy with your purchase! Eligible items can be returned with a complimentary return label when a return is requested within <strong>30 days of receiving your purchase. We do not refund original shipping charges<\/strong>. If your item was purchased during a sale promotion, an <strong>$8 return shipping charge<\/strong> will be deducted from the original price of your item. Please go to “My Account” to request the return label. It will be send to you by email within 1-2 business days.<br>\nAll items must be sent back in the original packaging. If original packaging is unavailable, the customer is responsible for arranging equivalent packaging. If your item was sent via freight or white glove as indicated by an oversized or white glove charge, you will be responsible for the return shipping charges. If your item is marked as <strong>FINAL SALE or MADE TO ORDER, it is not eligible for return<\/strong>."
+            }
+          },
+          "b44c52d0-1f93-4d7d-bdcb-527378f867fc": {
+            "type": "faq",
+            "settings": {
+              "title": "I just received my tracking number, but it's not working",
+              "answer": "Please allow 2-3 business days for tracking information to update. We often send tracking when the label is created so it sometimes needs time to leave the warehouse."
+            }
+          },
+          "cd34cc7e-c7ae-4e9c-acc7-571498ddcf76": {
+            "type": "faq",
+            "settings": {
+              "title": "What is the wait time for items on the waitlist?",
+              "answer": "Every product has its own timeline. Be sure to join the waitlist for items you are coveting, and you’ll be notified as soon as the product becomes available for purchase."
+            }
+          },
+          "91b6e279-9541-4428-8ffc-432965428b11": {
+            "type": "faq",
+            "settings": {
+              "title": "Do you ship internationally? Or to hawaii or alaska?",
+              "answer": "Not at this time. We currently only ship to the 48 contiguous states, although we do hope to expand our delivery range overseas in the future."
+            }
+          },
+          "2911e4f6-2c62-4597-a22e-a59c93e4d40a": {
+            "type": "faq",
+            "settings": {
+              "title": "Do you have samples of your rugs?",
+              "answer": "We don’t provide samples, but we do offer easy returns on most items if you find that it doesn’t work well with your space (see return details above). If you have any decor questions, please feel free to email us at: and one of our designers can assist you."
+            }
+          },
+          "2e8337f5-1dbf-43da-90ff-5e2e9931bba0": {
+            "type": "faq",
+            "settings": {
+              "title": "Can I cancel or alter my order once I place it?",
+              "answer": "When an order is placed, it is instantly sent to our distribution warehouse for processing and shipping preparation. This means that unfortunately once an order is placed, we cannot alter or change it on our end either."
+            }
+          }
+        },
+        "block_order": [
+          "aa6cda87-5a80-4890-92b3-bf2beddc7ac9",
+          "e5993a12-d0c4-43c7-9a30-35eeda95be9b",
+          "7792c46f-71eb-447b-a8ed-fa317e5d365e",
+          "5d707127-8149-4069-a2d3-bb72529afb4d",
+          "b44c52d0-1f93-4d7d-bdcb-527378f867fc",
+          "cd34cc7e-c7ae-4e9c-acc7-571498ddcf76",
+          "91b6e279-9541-4428-8ffc-432965428b11",
+          "2911e4f6-2c62-4597-a22e-a59c93e4d40a",
+          "2e8337f5-1dbf-43da-90ff-5e2e9931bba0"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }

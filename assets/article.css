@@ -265,7 +265,7 @@ ul {
 }
 .blogs-page .blog-page-b-show .b-Recipes {
   text-align: center;
-  background-image: url(" {{ 'download.svg' | assets_url }} ");
+  background-image: url(" {{ 'download.svg' | assets_url }}  ");
   font-weight: 400;
   background-repeat: no-repeat;
   background-size: 60px 15px;
@@ -288,9 +288,6 @@ ul {
     font-size: 26px;
   }
 }
-/* .blogs-page .blog-page-b-show .b-div .b-img {
-          height:135px;
-} */
 @media (min-width: 992px) and (max-width: 1199px) {
   .blogs-page .blog-page-b-show .b-div .b-img {
     width: 104%;
@@ -1698,16 +1695,7 @@ ul {
   text-align: center;
   /*     background-color: #57696d; */
 }
- /*.homepage-value .home-pagevalue-pop .home-pop-container {
-        background-position: center;
-  background-origin: padding-box;
-  background-repeat: no-repeat; */
-  /*       background-image:url(' {{ 'home-page.svg' | assets_url }}'); */
-  /*                 @media (max-width:425px){
-  background-size:392px 377px;
-  background-position: center left -119px;
-} 
-}*/
+
 .homepage-value .home-pagevalue-pop .home-pop-container .home-page-pop-statment {
   font-weight: 500;
   color: #fff;
@@ -1840,11 +1828,11 @@ ul {
     text-align: center;
   }
 }
-@media (max-width: 425px) {
-  /* .newslatter .home-page-newslatter .home-page-n-container .mailing-list .mailing-list__copy .mailing-list-header {
+/* @media (max-width: 425px) {
+  .newslatter .home-page-newslatter .home-page-n-container .mailing-list .mailing-list__copy .mailing-list-header {
                     background-position:center;
-  } */
-}
+  }
+} */
 .newslatter .home-page-newslatter .home-page-n-container .mailing-list .mailing-list__copy .mailing-list-info {
   font-size: 11px;
 }
@@ -3936,13 +3924,13 @@ ul {
 }
 .n-blogs p {
   font-family: "Josefin Sans Medium";
-    text-align: left;
-    margin-bottom: 0px;
-    color: #2d3654;
-    font-size: 17px;
-    font-weight: normal;
-    letter-spacing: .5px;
-  
+  text-align: left;
+  margin-bottom: 0px;
+  color: #2d3654;
+  font-size: 17px;
+  font-weight: normal;
+  letter-spacing: .5px;
+
 }
 @media (max-width: 767px) {
   .n-blogs p {
@@ -3964,14 +3952,14 @@ ul {
 .pop-statement-main {
   margin-top: 0px;
 }
-#shopify-section-blog-newsletter {
+/* #shopify-section-blog-newsletter {
   background-image: url('//cdn.shopify.com/s/files/1/0553/3053/7657/files/footer_desktop_1.png?v=1631864950');
-}
+} */
 
 .n-subscribe {
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-position-x: center;
-  background-size: cover;
+  background-size: cover; */
   text-align: center;
   padding: 70px 20px;
 }
@@ -4034,8 +4022,15 @@ ul {
   }
 }
 .n-subscribe form{
-	width:27%;
+  width:27%;
 }
+@media (max-width:767px){
+
+.n-subscribe form{
+  width:90%;
+}
+}
+
 .n-subscribe .n-sub-btn {
   color: #2d3654;
   background: none;
@@ -4046,7 +4041,7 @@ ul {
 }
 .n-subscribe .n-sub-btn:focus {
   box-shadow: none;
- 
+
 }
 @media (max-width: 480px) {
   .n-subscribe {
@@ -4397,4 +4392,67 @@ ul {
             animation-play-state: running;
           }
         }
-   
+        .form-fields-columns{
+          display: flex;
+        }
+        .form-fields-columns .form-field{
+          margin-bottom: 15px;
+          width: calc(50% - 9px);
+        }
+        .form-fields-columns .form-field:not(:last-child){
+          margin-right:15px;
+        }
+        .article--comments-title{
+          margin-bottom:20px;
+          margin-top:68px;
+        }
+        .article--comments-required{
+          margin-top:20px;
+          font-size:13px;
+        }
+        .form-fields-columns .form-field .form-field-input{
+          width:100%;
+          border: 1px solid #dddddd;
+          font-size: 16px;
+          text-transform: capitalize;
+          padding: 14px 22px;
+        }
+        .form-field .form-field-input{
+          width:100%;
+          border: 1px solid #dddddd;
+          font-size:16px;
+          font-weight: 400;
+          z-index: 1;
+          width: 100%;
+          padding: 14px 22px;
+          color: #4d4d4d;
+          background-color: #fff;
+          border: 1px solid #dddddd;
+          border-radius: 3px;
+          outline:none;
+          box-shadow:none;
+        }
+        .form-field:focus-visible{
+          box-shadow:none;
+          outline:none;
+        }
+        .form-field textarea{
+          max-height:200px;
+        }
+        .comment-btn{
+          background: rgb(186,80,47);
+          border: 1px solid rgb(186,80,47)!important;
+          color: #fff;
+          box-shadow: 0 3px 8px #0000001a;
+          letter-spacing: 0em;
+          border-radius: 6px;
+          font-size: 18px;
+          margin-top: 1.75rem;
+          padding: 11px 20px; 
+        }
+        .comment-btn:hover{
+        	color:#000;
+        }
+        .article--comments{
+        	margin-bottom:15px;
+        }

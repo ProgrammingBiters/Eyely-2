@@ -10,6 +10,17 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "0c0db054-92d4-45c6-871c-056017202a37": {
+          "type": "menu",
+          "settings": {
+            "menu": "test-menu"
+          }
+        }
+      },
+      "block_order": [
+        "0c0db054-92d4-45c6-871c-056017202a37"
+      ],
       "settings": {
         "products_per_page": 16,
         "image_ratio": "square",

@@ -1,0 +1,91 @@
+
+{{ 'faq_page.css' | asset_url | stylesheet_tag }}
+
+
+<article class="site-page static-page" data-template-page>
+    <header class="page-masthead">
+      <div class="container">
+        <h1 class="page-title">
+          {{ page.title }}
+        </h1>
+      </div>
+    </header>
+    
+    <div class="container">
+      <div class="static-content">
+        <div class="page-content rte">
+          <div class="static-faq">
+            {% for block in section.blocks %}
+            {% if block.settings.title != blank and block.settings.answer != blank %}
+            <div class="faq-heading{% if forloop.index == 1 %} active{% endif %}">
+              <h4 class="sub-heading text-left sub-heading-left">
+                <a>
+                  <span class="arrow-svg">
+                    <svg aria-hidden="true" focusable="false" role="presentation" width="8" height="6" viewbox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="icon-chevron-down-left" d="M4 4.5L7 1.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"></path>
+                      <path class="icon-chevron-down-right" d="M4 4.5L1 1.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"></path>
+                    </svg>
+                  </span>
+                  {{ block.settings.title }}
+                </a>
+              </h4>
+            </div>
+            <div class="faq-txt"{% unless forloop.index == 1 %}  style="display: none;"{% endunless %}>
+              <div class="wpb_wrapper">
+                <p>{{ block.settings.answer }}</p>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  
+  
+  
+  <script>
+  $(document).ready(function () {
+  $(".faq-heading").on('click', function(){
+    if(!$(this).hasClass('active')){
+      $(".faq-heading").removeClass('active');
+        $(this).addClass('active');
+        $('.faq-txt').slideUp();
+        $(this).next().slideDown();
+    }
+  });
+  });
+  </script>
+  
+  {% schema %}
+    {
+      "name": "FAQ Page",
+      "blocks":[
+        {
+            "type":"faq",
+            "name": "FAQ",
+            "settings":[
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Question"
+              },
+            {
+              "type": "textarea",
+              "id": "answer",
+              "label": "Answer"
+              }
+            ]
+        }
+      ]
+  
+    }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+  

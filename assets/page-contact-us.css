@@ -1,3 +1,12 @@
+@media (min-width:768px) and (max-width:991px){
+  .cont-banner{
+    padding-left:8px;
+    padding-right:8px;
+  }
+}
+
+
+
 .cont-banner .cont-ibanner-img {
     position: relative;
     overflow: hidden;
@@ -52,7 +61,9 @@
   .cont-banner .cont-ibanner-img .cont-banner-overlayer {
     text-align: center;
     color: #fff;
-    font-size: 38px;
+    font-size: 40.8px;
+    font-weight:500;
+        font-family: 'Bookmania Bold';
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
@@ -69,6 +80,20 @@
     -ms-flex-align: center;
     align-items: center;
   }
+
+@media (min-width:768px) and (max-width:991px){
+  .cont-banner .cont-ibanner-img .cont-banner-overlayer {
+    font-size:33.75px}  
+} 
+
+@media (max-width:480px){
+  .cont-banner .cont-ibanner-img .cont-banner-overlayer {
+    font-size:27px; 
+}
+}
+
+
+
   .contect-forms {
     background-color: #fff;
     padding: 60px 60px;

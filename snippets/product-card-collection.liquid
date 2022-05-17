@@ -222,16 +222,43 @@
           <span class=" badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
         {%- elsif product_card_product.compare_at_price > product_card_product.price and product_card_product.available -%}
         {% assign sales_saved = product_card_product.compare_at_price | minus: product_card_product.price %}
-
-        <span class="badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">Save {{ sales_saved | times: 100.0 | divided_by: product_card_product.compare_at_price | round }}%</span>
+{% comment %}{{ sales_saved | times: 100.0 | divided_by: product_card_product.compare_at_price | round }}%{% endcomment %}
+        <span class="badge--bottom-left color-{{ settings.sale_badge_color_scheme }} bg-dark">Save </span>
         {%- endif -%}
+
+        {% for tag in product_card_product.tags %}
+
+                {% if tag == "WASHABLE" or tag == "Washable" %}
+                <span class="color-{{ settings.sale_badge_color_scheme }}  tag-new-wrap d-flex justify-content-end">Machine Washable</span> 
+                {% endif %}
+            {% assign show_size = 0 %}
+              {% if tag == "light" %}
+                  {% for product_option in product_card_product.options_with_values %}
+                    {% if product_option.name == "Size" or product_option.name == "Style" %}
+                    {% assign show_size = 1 %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if show_size == 1 %}
+            {% comment %}
+                      <span  class="color-{{ settings.sale_badge_color_scheme }} bg-dark   tag-new-wrap d-flex justify-content-end">More Styles</span>
+            {%endcomment %}
+                  {% endif %}
+              {% endif %}
+      {% endfor %}
+      
+
       </div>
       <div class="badge-wrap">
         <div class="tag-div">
           {% for tag in product_card_product.tags %}
+          {% if tag == "New" %}
+           
+                  <span class="tag-wrap">New</span>
+        
+          {% endif %}
+                
           {% if tag == "Room_Outdoor" %}
-          
-            <span class="tag-wrap color-{{ settings.sale_badge_color_scheme }}">INDOOR / OUTDOOR</span>
+            <span class="tag-wrap">INDOOR / OUTDOOR</span>
         
           {% endif %}
           {% assign show_size = 0 %}
@@ -242,13 +269,14 @@
                 {% endif %}
               {% endfor %}
               {% if show_size == 1 %}
-              
-                  <span class="tag-wrap  color-{{ settings.sale_badge_color_scheme }}">More Style</span>
-              
+        
+                  <span class="tag-wrap bg-dark">More Style</span>
+        
               {% endif %}
           {% endif %}
           {% endfor %}
-        </div>
+          </div>
+      
         <span class="smartwishlist" data-product="{{ product_card_product.id }}" data-variant="{{ product_card_product.variants.first.id }}"></span>
       </div>
 
@@ -257,7 +285,7 @@
   </a>
   </div>
 </div>
-<script>
+<!-- <script>
   setTimeout(function(){
 $(document).ready(function(){
 //Swatch-item Js   start
@@ -305,4 +333,4 @@ $(".c-item").click(function(e){
 });
 
   },6000);
-</script>
+</script> -->

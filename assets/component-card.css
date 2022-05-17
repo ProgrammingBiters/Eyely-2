@@ -349,22 +349,31 @@
     top: 0px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100%;  
+      height: 100%;
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px
   }
   .badge-wrap .tag-div{
+    position: absolute;
+    left: 0;
+    top: 0;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    white-space: nowrap;
   }
   .badge-wrap .tag-div .tag-wrap {
     margin-right: 8px;
-    font-size: 14px;
-    padding: 3px 5px;
-    border-radius: 5px;
-    line-height: 1;
+    font-size: 16px;
+    padding: 3px 8px;
     color: #fff;
+    background: #000;
     white-space: nowrap;
   }
+  .tag-wrap:first-child {
+    border-radius: 10px 0 10px;
+}
   @media (max-width: 480px){
     .badge-wrap .tag-div .tag-wrap {
       font-size: 12px;
@@ -394,15 +403,32 @@
 
   .badge-bottom{
     position: absolute;
-    bottom: 4px;
+    bottom: 0px;
     left: 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
   }
+  .tag-wrap:nth-child(2) {
+    border-radius: 0 0 0 10px;
+}.tag-new-wrap {
+  position: absolute;
+  left: auto;
+  right: 0px;
+  border-radius: 10px 0 10px;
+  font-size: 14px;
+  padding: 10px;
+  color: #fff;   
+     background: #000
+}
   .badge-bottom .badge--bottom-left{
     margin-right: 8px;
     font-size: 14px;
     padding: 10px;
-    border-radius: 0 0 0px 10px;
-    color: #fff;
+    color: #fff;  
+      border-radius: 0px 10px 0px 10px;
+
   }
   .collection-swathces{
     display: flex;

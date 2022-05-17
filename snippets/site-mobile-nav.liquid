@@ -1,0 +1,50 @@
+<div class="site-mobile-nav">
+    <div class="mobile-nav-panel">
+      <div class="controls">
+        <div class="mobile-menu-header">  
+          <div class="mobile-menu-header-top">
+            <span>Main Menu</span>
+            <button type="button" class="btn slide-menu-control back-btn" data-action="back"> Back</button>
+            <a
+               class="mobile-nav-close"
+               href="#"
+               data-mobile-nav-close>
+              {% render 'icon-menu-close' %}
+              <span class="visually-hidden">{{ 'general.accessibility.close' | t }}</span>
+            </a>
+          </div>
+          <div class="mobile-menu-header-bottom">
+            <ul>
+              <li class="account"><a href="{% if customer %}/account/{% else %}/account/login{% endif %}">Account</a></li>
+              <li class="cart"><a href="/cart">Cart</a></li>
+              <li class="wishlist"><a  href="/a/wishlist">Wishlist</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <div class="mobile-nav-content">
+        {%
+          render 'mobile-nav-list',
+        menu: section.settings.mobile_menu,
+        sale_text: section.settings.mobile_sale_text,
+        sale_url: section.settings.mobile_sale_url,
+        blocks: blocks,
+        image1:section.settings.link_image1,
+        link1:section.settings.link1,
+        image2:section.settings.link_image2,
+        link2:section.settings.link2,
+        image3:section.settings.link_image3,
+        link3:section.settings.link3,
+        image4:section.settings.link_image4,
+        link4:section.settings.link4,
+        %}
+      </div>
+  
+    </div>
+  
+    </div>
+  
+    <div class="mobile-nav-overlay" data-mobile-nav-overlay></div>
+
+  

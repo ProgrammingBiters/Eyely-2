@@ -1,40 +1,160 @@
 {
   "sections": {
-    "main": {
-      "type": "main-article",
+    "article1": {
+      "type": "blog-post",
       "blocks": {
-        "featured_image": {
-          "type": "featured_image",
+        "970e00b8-3803-4819-93c7-0436a5ac5a2e": {
+          "type": "sidebar-links",
           "settings": {
+            "featured_blog": "lighting",
+            "featured_image": "shopify:\/\/shop_images\/chandeliers.png",
+            "link_title": "Ceiling Fans",
+            "link_url": "shopify:\/\/collections\/ceiling-fans",
+            "name": "Sandip",
+            "count": "6"
           }
         },
-        "title": {
-          "type": "title",
+        "fcf99335-36ab-48eb-a7c0-1ed55ee604b7": {
+          "type": "sidebar-links",
           "settings": {
+            "featured_blog": "rugs",
+            "featured_image": "shopify:\/\/shop_images\/rug_256x256_9ea25b33-cd15-4587-9bcf-56e39ebd8b63.webp",
+            "link_title": "Bohemian",
+            "link_url": "shopify:\/\/collections\/bohemian",
+            "name": "Sandip",
+            "count": "6"
           }
         },
-        "content": {
-          "type": "content",
+        "b4889b37-4bc4-4017-98d3-b6ba64dc417e": {
+          "type": "sidebar-links",
           "settings": {
+            "featured_blog": "lighting",
+            "featured_image": "shopify:\/\/shop_images\/ceiling_256x256_f17378be-9935-404b-b91d-d95634d8f668.webp",
+            "link_title": "Happimess",
+            "link_url": "shopify:\/\/collections\/happimess",
+            "name": "Sandip",
+            "count": "6"
           }
         },
-        "share": {
-          "type": "share",
+        "830fed87-edaf-4d1b-8df5-141b944d8f43": {
+          "type": "sidebar-links",
           "settings": {
+            "featured_blog": "lighting",
+            "featured_image": "shopify:\/\/shop_images\/storage-benches_256x256_3c951b23-30e2-452a-ba09-82630fb591b2.webp",
+            "link_title": "Lighting",
+            "link_url": "shopify:\/\/collections\/lighting",
+            "name": "Sandip",
+            "count": "6"
+          }
+        },
+        "c7eddf8b-abec-44c5-9e23-1c1e431a6b78": {
+          "type": "sidebar-links",
+          "settings": {
+            "featured_blog": "lighting",
+            "featured_image": "shopify:\/\/shop_images\/outdoor_256x256_55a67087-8086-4acc-a9a6-6179331fc1b2.webp",
+            "link_title": "Neon Lights",
+            "link_url": "shopify:\/\/collections\/neon-lights",
+            "name": "Sandip",
+            "count": "6"
+          }
+        },
+        "5699d094-d387-4433-9818-81949ae47ceb": {
+          "type": "sidebar-links",
+          "settings": {
+            "featured_blog": "lighting",
+            "featured_image": "shopify:\/\/shop_images\/ceiling-fan_256x256_b6469cbf-8c7b-4fa1-bd50-8d78ff9cfefb.webp",
+            "link_title": "Smart Plugs",
+            "link_url": "shopify:\/\/collections\/smart-plugs",
+            "name": "Sandip",
+            "count": "6"
+          }
+        },
+        "fca2276a-6d69-4a10-876c-9f26a2c2f16b": {
+          "type": "featured_video",
+          "settings": {
+            "featured_blog": "news",
+            "toptitle": "What are your favorite Ottolenghi treasures? Let us know in the comments below!",
+            "title": "MORE FROM eyely",
+            "vid_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0267\/1096\/6306\/files\/river_sunset_boat_dusk_twilight_603.mp4?v=1623751113",
+            "video_type": "custom",
+            "smalldescription": "Yotam Ottolenghi's Squash With Chile Yogurt and Cilantro Sauce | Genius Recipes"
+          }
+        },
+        "cd5d7584-37c3-4b8e-a95d-e05e51a6b601": {
+          "type": "featured_collection",
+          "settings": {
+            "featured_blog": "news",
+            "title": "From Our Shop",
+            "featured_coll": "ceiling-fans"
           }
         }
       },
       "block_order": [
-        "featured_image",
-        "title",
-        "share",
-        "content"
+        "970e00b8-3803-4819-93c7-0436a5ac5a2e",
+        "fcf99335-36ab-48eb-a7c0-1ed55ee604b7",
+        "b4889b37-4bc4-4017-98d3-b6ba64dc417e",
+        "830fed87-edaf-4d1b-8df5-141b944d8f43",
+        "c7eddf8b-abec-44c5-9e23-1c1e431a6b78",
+        "5699d094-d387-4433-9818-81949ae47ceb",
+        "fca2276a-6d69-4a10-876c-9f26a2c2f16b",
+        "cd5d7584-37c3-4b8e-a95d-e05e51a6b601"
       ],
+      "settings": {
+        "sidebartitle": "F52er's Collections",
+        "sidebarsubtitle": "APPEARS IN THESE",
+        "newsletter_title": "Want more Food52?",
+        "newsletter_description": "Our best tips for eating thoughtfully and living joyfully, right to your inbox.",
+        "join_title": "Join the Conversation",
+        "join_subtitle": "See what other Food52 readers are saying.",
+        "popular_title": "Popular on Eyely"
+      }
+    },
+    "article2": {
+      "type": "pop-statement",
+      "blocks": {
+        "c15194ae-d261-497a-a5db-86d3a3725090": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/top_256x256_9516c189-873d-4c1b-bed0-ac45927bdeb2.webp",
+            "mobile_image": "shopify:\/\/shop_images\/footer_mobile_2_256x256_b85ea95b-19c9-4b98-a1c1-e0e6b1ebb0e4.webp",
+            "title": "",
+            "text": "Make your house a <span>home<\/span> with eyely.",
+            "smalltext": "Create your own haven.",
+            "color": "#ffffff",
+            "link": "",
+            "text_alignment": "center",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        }
+      },
+      "block_order": [
+        "c15194ae-d261-497a-a5db-86d3a3725090"
+      ],
+      "settings": {
+        "slideshow_width": "full",
+        "slideshow_height": "medium"
+      }
+    },
+    "article3": {
+      "type": "blog-newsletter",
+      "settings": {
+        "title": "Want more eyely?",
+        "description": "Sign up for our newsletter to receive exclusive offers, deals, tips and more.",
+        "desk-image": "shopify:\/\/shop_images\/footer_desktop_1_2fa5f3fa-a6b2-425a-b9bf-6c0a736340d3.png"
+      }
+    },
+    "article4": {
+      "type": "article-comment",
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "article1",
+    "article2",
+    "article3",
+    "article4"
   ]
 }

@@ -258,6 +258,223 @@
               "size": "col-3",
               "linklists": "shop-by-style-wall-lights-2"
             }
+          },
+          "e54ca53e-80df-4593-b4de-654a6b28e0ec": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Rugs",
+              "menu_main_image": "shopify:\/\/shop_images\/all_rug.png"
+            }
+          },
+          "3cd3582a-0c68-4798-ba9b-81c2557f04b1": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Storage Benches",
+              "menu_main_image": "shopify:\/\/shop_images\/12.png"
+            }
+          },
+          "1fb24a58-92c8-44ad-8ea9-aa6d6295c3f2": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Storage Trunks",
+              "menu_main_image": "shopify:\/\/shop_images\/13.png"
+            }
+          },
+          "b615aa66-9b91-463c-be78-e5780e64a4ea": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Trash Cans",
+              "menu_main_image": "shopify:\/\/shop_images\/11.png"
+            }
+          },
+          "d594391f-95ce-4c5a-b3b7-d01a90629f34": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Chandeliers",
+              "menu_main_image": "shopify:\/\/shop_images\/5_77b4dcc2-8a24-4588-8f2e-536060ee090a.png"
+            }
+          },
+          "02a3f4af-d975-4f71-96b6-94afd60d0c1e": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Table Lamps",
+              "menu_main_image": "shopify:\/\/shop_images\/2.png"
+            }
+          },
+          "ac040f2d-b14d-49b0-a70f-1cbd4ce64e1e": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Floor Lamps",
+              "menu_main_image": "shopify:\/\/shop_images\/3-1.png"
+            }
+          },
+          "0c578458-9609-4933-a108-65d6544fae0e": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Ceiling Lights",
+              "menu_main_image": "shopify:\/\/shop_images\/4.png"
+            }
+          },
+          "389b020c-f7f6-4e51-be7b-ff6a137babb5": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Wall Lights",
+              "menu_main_image": "shopify:\/\/shop_images\/6_578d5501-969a-436e-ad2c-a2c582c21f90.png"
+            }
+          },
+          "36b784c5-fb1a-4ae8-b7bc-f94bd3c3a956": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Outdoor Lights",
+              "menu_main_image": "shopify:\/\/shop_images\/7_c7168ab3-29e4-43d5-b871-ec90a5d5d25e.png"
+            }
+          },
+          "18c92048-1579-453d-a846-ec27cd13df9a": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Ceiling Fans",
+              "menu_main_image": "shopify:\/\/shop_images\/8_5cc635d4-490c-4878-a08e-0ee96d88f9f2.png"
+            }
+          },
+          "229f739e-0ac1-4e60-8514-308886bc16b1": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Garden Stools",
+              "menu_main_image": "shopify:\/\/shop_images\/9_01a1b5b5-3601-4841-9c8f-a8c20a77a208.png"
+            }
+          },
+          "7789328f-b14a-49d7-b810-bce567bb67d5": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Neon Lighting",
+              "menu_main_image": "shopify:\/\/shop_images\/10_a452e757-5399-4e17-9f75-03fcd657b553.png"
+            }
+          },
+          "419e03cc-4792-42fa-8087-166d3a0fda24": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Indoor \/ Outdoor",
+              "menu_main_image": "shopify:\/\/shop_images\/indoor-outdoor.jpg"
+            }
+          },
+          "701359c1-a01d-49a1-9d8d-32b585e3baa3": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "New Rugs",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_19.png"
+            }
+          },
+          "c38244f4-d98b-422e-9d1d-0c7e351d02b7": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "All Rugs",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_20.png"
+            }
+          },
+          "dca89905-c63f-46c1-a26f-89099dcdd3a8": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Bohemian",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_21.png"
+            }
+          },
+          "a42b83fc-d6e1-4614-8d93-9ea76c1c4dbb": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Contemporary",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_22.png"
+            }
+          },
+          "91147423-f6cd-41cf-b31c-9a57d0f26ee2": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Moroccan",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_23.png"
+            }
+          },
+          "2a97702c-b7c0-4af8-bca7-875cb3af1148": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Natural Fiber",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_24.png"
+            }
+          },
+          "a96a90e2-21de-4531-9a34-66b842ca26e6": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Shags",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_25.png"
+            }
+          },
+          "c77e7577-69fc-42f0-9019-c185e8636009": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Southwestern",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_26.png"
+            }
+          },
+          "fb5986c6-b590-431b-bd7f-d7cd2042b647": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Traditional",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_27.png"
+            }
+          },
+          "d35b08fc-2328-410c-9a5d-c2e78b19da8b": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Transitional",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_28.png"
+            }
+          },
+          "9289605e-e292-4262-8f31-51da9fd5506b": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Vintage",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_29.png"
+            }
+          },
+          "92976a96-6214-4be3-b0d1-a99e6025e10e": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Indoor \/ Outdoor Rugs",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_30.png"
+            }
+          },
+          "189ecc23-30a9-4315-937e-5866d524219a": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Tans & Ivories",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_31.png"
+            }
+          },
+          "3db04c3b-5148-4913-a377-67cb016b6543": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Blues & Greens",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_32.png"
+            }
+          },
+          "2d94e115-27c6-4985-adfd-61b910daede4": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Reds & Oranges",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_33.png"
+            }
+          },
+          "31062f28-7472-41e0-9dfc-6a692a5d90d5": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Blacks & Whites",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_34_ff274809-b6e2-444f-b6ce-74160af8f98a.png"
+            }
+          },
+          "f1b81705-7c27-4855-9dd0-128aea34dbe9": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Machine Washable",
+              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_35.png"
+            }
           }
         },
         "block_order": [
@@ -273,7 +490,38 @@
           "acb56919-9c0d-4579-ace1-12c1339dc039",
           "a74171b7-e11b-4a96-a743-93c64f3cf3e9",
           "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c",
-          "de223b70-9acf-452e-ad48-66cc7e0a0982"
+          "de223b70-9acf-452e-ad48-66cc7e0a0982",
+          "e54ca53e-80df-4593-b4de-654a6b28e0ec",
+          "3cd3582a-0c68-4798-ba9b-81c2557f04b1",
+          "1fb24a58-92c8-44ad-8ea9-aa6d6295c3f2",
+          "b615aa66-9b91-463c-be78-e5780e64a4ea",
+          "d594391f-95ce-4c5a-b3b7-d01a90629f34",
+          "02a3f4af-d975-4f71-96b6-94afd60d0c1e",
+          "ac040f2d-b14d-49b0-a70f-1cbd4ce64e1e",
+          "0c578458-9609-4933-a108-65d6544fae0e",
+          "389b020c-f7f6-4e51-be7b-ff6a137babb5",
+          "36b784c5-fb1a-4ae8-b7bc-f94bd3c3a956",
+          "18c92048-1579-453d-a846-ec27cd13df9a",
+          "229f739e-0ac1-4e60-8514-308886bc16b1",
+          "7789328f-b14a-49d7-b810-bce567bb67d5",
+          "419e03cc-4792-42fa-8087-166d3a0fda24",
+          "701359c1-a01d-49a1-9d8d-32b585e3baa3",
+          "c38244f4-d98b-422e-9d1d-0c7e351d02b7",
+          "dca89905-c63f-46c1-a26f-89099dcdd3a8",
+          "a42b83fc-d6e1-4614-8d93-9ea76c1c4dbb",
+          "91147423-f6cd-41cf-b31c-9a57d0f26ee2",
+          "2a97702c-b7c0-4af8-bca7-875cb3af1148",
+          "a96a90e2-21de-4531-9a34-66b842ca26e6",
+          "c77e7577-69fc-42f0-9019-c185e8636009",
+          "fb5986c6-b590-431b-bd7f-d7cd2042b647",
+          "d35b08fc-2328-410c-9a5d-c2e78b19da8b",
+          "9289605e-e292-4262-8f31-51da9fd5506b",
+          "92976a96-6214-4be3-b0d1-a99e6025e10e",
+          "189ecc23-30a9-4315-937e-5866d524219a",
+          "3db04c3b-5148-4913-a377-67cb016b6543",
+          "2d94e115-27c6-4985-adfd-61b910daede4",
+          "31062f28-7472-41e0-9dfc-6a692a5d90d5",
+          "f1b81705-7c27-4855-9dd0-128aea34dbe9"
         ],
         "settings": {
           "color_scheme": "background-1",
@@ -282,7 +530,18 @@
           "logo_position": "top-left",
           "menu": "app-menu",
           "show_line_separator": true,
-          "enable_sticky_header": false
+          "enable_sticky_header": false,
+          "mobile_menu": "mobile-menu",
+          "mobile_sale_text": "",
+          "mobile_sale_url": "shopify:\/\/collections\/warehouse-sale",
+          "link_image1": "shopify:\/\/shop_images\/track.png",
+          "link1": "shopify:\/\/pages\/track-order",
+          "link_image2": "shopify:\/\/shop_images\/returns.png",
+          "link2": "shopify:\/\/pages\/easy-returns",
+          "link_image3": "shopify:\/\/shop_images\/rug_care_guide.png",
+          "link3": "shopify:\/\/pages\/rug-guide",
+          "link_image4": "shopify:\/\/shop_images\/buy_now_pay_letter.png",
+          "link4": "shopify:\/\/pages\/financing"
         }
       },
       "footer": {

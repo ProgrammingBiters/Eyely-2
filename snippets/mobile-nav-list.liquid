@@ -1,0 +1,189 @@
+{% comment %}
+  This is the nav list for the mobile menu.
+
+  @param menu LinkedList
+    The menu handle to look up.
+
+  @param blocks Array
+    Array of blocks possibly containing meganav information
+
+{% endcomment %}
+
+{% assign menu_list = linklists[menu].links %}
+{% assign menu_title = linklists[menu].title %}
+
+{% comment %}
+<ul
+  class="navmenu navmenu-depth-1"
+  data-navmenu
+  {% if menu_title %}aria-label="{{ menu_title }}"{% endif %}
+>
+  {% for menu_item in menu_list %}
+    {% assign show_subnav = true %}
+    {% if linklists[menu_item.handle] == blank %}
+      {% assign show_subnav = false %}
+    {% endif %}
+
+    {% assign meganav_block = null %}
+    {% assign meganav_trigger = null %}
+    {% if blocks.size > 0 %}
+      {% for block in blocks %}
+        {% if block.type == 'meganav_images' %}
+          {% assign meganav_trigger = block.settings.meganav_trigger | handle | strip %}
+        {% endif %}
+
+        {% if menu_item.handle == meganav_trigger and menu_item.links.size > 0 %}
+          {% assign meganav_block = block %}
+        {% elsif menu_item.title == meganav_trigger %}
+          {% assign meganav_block = block %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {%- capture navmenu_item_classes -%}
+      navmenu-item
+      {% if show_subnav %}navmenu-item-parent{% endif %}
+      navmenu-id-{{ menu_item.handle }}
+    {%- endcapture -%}
+
+    <li
+      class="{{ navmenu_item_classes | strip_newlines }}"
+      {% if show_subnav %}data-navmenu-parent{% endif %}
+    >
+      <a
+        class="navmenu-link {% if show_subnav %}navmenu-link-parent{% endif %} {% if menu_item.active %}navmenu-link-active{% endif %}"
+        href="{{ menu_item.url }}"
+        {% if show_subnav %}
+          aria-haspopup="true"
+          aria-expanded="false"
+        {% endif %}
+      >
+        {{ menu_item.title }}
+      </a>
+
+      {% if show_subnav %}
+        {%
+          render 'mobile-navmenu-button',
+          button_label: menu_item.title,
+        %}
+      {% endif %}
+
+      {% assign accordion_level = 2 %}
+      {% if meganav_block %}
+        {% assign accordion_level = 3 %}
+        <div class="navmenu-submenu navmenu-meganav" data-navmenu-submenu data-accordion-content>
+        {%
+          render 'meganav-promo',
+          block: meganav_block,
+          position: 'first'
+        %}
+      {% endif %}
+
+      {% if show_subnav %}
+        {%
+          render 'navlist',
+          menu_list: linklists[menu_item.handle].links,
+          menu_title: menu_title,
+          depth: 2,
+          max_depth: 3,
+          show_arrows: true,
+          aria_expanded: false,
+          is_mobile: true,
+          accordion_level: accordion_level,
+        %}
+      {% endif %}
+
+      {% if meganav_block %}
+        {%
+          render 'meganav-promo',
+          block: meganav_block,
+          position: 'last'
+        %}
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endcomment %}
+
+<div class="slide-menu" id="mobile_menu">
+    <div class="slide-wrapper">
+        <div class="slider">
+            <div class="menu-mobile-main-menu-container">
+                <div class="slider">
+                    <ul id="mobile-main-menu" class="menu">
+                     
+                        <li class="large-menu large-text mdiscount-banner text-center menu-item">
+                            <a href="{{ sale_url }}">  {{ sale_text }}</a>
+                        </li>
+                     
+                        {% for menu_item in menu_list %}
+                        {% assign bg_image = '' %}
+                          {% for block in blocks %}
+                            {% if block.type == 'mobile_menu_bg' %}
+                              {% if block.settings.menu_main_label == menu_item.title %}
+                                    {% assign bg_image = block.settings.menu_main_image | img_url:'master' %}
+                              {% endif %}
+                            {% endif %}
+                          {% endfor %}
+                        {% assign titleDown = menu_item.title | downcase %}
+                        <li class="{% if titleDown == 'colors' or titleDown == 'styles' or titleDown == 'sizes' %}small-inline-menu {{titleDown}}-bg {% else %}large-menu{% endif %} {{ menu_item.title | handleize }} menu-item{% if menu_item.links.size > 0 %} menu-item-has-children{% endif %}{% if titleDown == 'styles' %}{% endif %}" style="background-color:#d4d4d4;{% if bg_image != blank %}background-image:url('{{ bg_image }}') !important;{% endif %}" >
+                          <a href="{% unless menu_item.links.size > 0 %}{{ menu_item.url}}{% else %}javascript:void(0);{% endunless %}" >  
+                                        
+                         {{ menu_item.title }}</a>
+                            {% if menu_item.links.size > 0 %}
+                            <ul class="sub-menu">
+                                {% for submenu in menu_item.links %}
+                                {% assign sub_bg_image = '' %}
+                                {% for block in blocks %}
+                                {% if block.type == 'mobile_menu_bg' %}
+                                {% if block.settings.menu_main_label == submenu.title %}
+                                {% assign sub_bg_image = block.settings.menu_main_image | img_url: 'master' %}
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                                {% assign subTitleDown = submenu.title | downcase %}
+                                <li class="menu-item{% if titleDown == 'colors' %}{% if sub_bg_image != blank %} thumb-icon{% elsif subTitleDown == 'multi-colored' %} clear{% endif %}{% endif %}{% if titleDown == 'sizes' %}{% if subTitleDown contains 'all' %} clear{% endif %}{% unless subTitleDown contains ' x ' or subTitleDown contains 'all' %} thumb-icon{% endunless %}{% endif %}"  style="{% unless menu_item.title == 'Colors' and sub_bg_image != blank  %}background-color: #d4d4d4;{% endunless %} {% unless  menu_item.title  == 'Colors' %} background-image:url({{sub_bg_image}});{% endunless %}">
+                                    <a href="{{ submenu.url }}"{% if sub_bg_image != blank %} class="menu-image-title-after menu-image-not-hovered"{% endif %}>
+                                        {% if  menu_item.title  == 'Colors' %} {% if sub_bg_image != blank %}<img width="48" height="48" src="{{ sub_bg_image }}" class="menu-image menu-image-title-after" alt="">{% endif %}{% endif %}
+                                        <span class="menu-image-title-after menu-image-title">{{ submenu.title }}</span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                          <li class="large-menu-icon track-banner menu-item mt-2 text-center">
+                            <a href="{{link1}}">
+                              {% render 'responsive-image' with image : image1 , class: 'productitem--image-primary img-fluid', image.alt : image1.alt, max_width : 100, max_height : 100 %}
+                          </a>
+                        </li>
+
+                        <li class="large-menu-icon returns-banner menu-item  mt-2 text-center">
+                            <a href="{{link2}}">     
+                                     {% render 'responsive-image' with image : image2 , class: 'productitem--image-primary img-fluid', image.alt : image2.alt, max_width : 100, max_height : 100 %}
+               
+                          </a>
+                        </li>
+
+                        <li class="large-menu-icon rug-care-banner menu-item text-center">
+                            <a href="{{link3}}">       
+                               {% render 'responsive-image' with image : image3 , class: 'productitem--image-primary img-fluid', image.alt : image3.alt, max_width : 100, max_height : 100 %}
+               
+                </a>
+                        </li>
+
+                        <li class="large-menu-icon affirm-banner menu-item text-center">
+                            <a href="{{link4}}">      
+                              {% render 'responsive-image' with image : image4 , class: 'productitem--image-primary img-fluid', image.alt : image4.alt, max_width : 100, max_height : 100 %}
+               
+                          </a>
+                        </li>
+       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
