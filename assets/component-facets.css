@@ -150,7 +150,9 @@ text-transform: capitalize;
 .facet-filters button {
   margin-left: 2.5rem;
 }
-
+.facet-filters__sort  option {
+min-height:2em;
+}
 .facet-filters__sort {
   font-size: 1.4rem;
   height: auto;
@@ -158,6 +160,7 @@ text-transform: capitalize;
   margin: 0;
   padding-left: 0;
   padding-right: 1.75rem;
+  border:0px;
 }
 
 @media screen and (forced-colors: active) {
@@ -247,6 +250,9 @@ text-transform: capitalize;
 
 .facets__disclosure {
   margin-right: 0.5rem;
+}
+.filter-item--hidden{
+  display: none;
 }
 
 .facets__summary {

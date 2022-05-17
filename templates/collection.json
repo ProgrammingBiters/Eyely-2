@@ -22,7 +22,7 @@
         "0c0db054-92d4-45c6-871c-056017202a37"
       ],
       "settings": {
-        "products_per_page": 16,
+        "products_per_page": 24,
         "image_ratio": "square",
         "show_secondary_image": true,
         "add_image_padding": true,

@@ -114,6 +114,30 @@ $(".c-item").click(function(e){
   
     $(this).find("img").addClass("active");
   });
+
+  
+                                             $(".c-item").mouseover(function(e){
+                                              e.preventDefault();
+                                              console.log("hiii");
+                                              var fg=false;
+                                              var vid=$(this).data("v-id");
+                                              var u=$(this).data("prd-url");
+                                              var pid=$(this).data("p-id");
+                                              var prgrid=$("#prd-"+pid).find(".v-img");
+                                              $(prgrid).each(function(){
+                                                  $(this).removeClass("show");
+                                              });     
+                                                $("."+vid).addClass("show");
+                                                    var oth=$(this).siblings('button');
+                                                    var c=$(this).find('img');
+                                                        
+                                                        // $(oth).each(function(){
+                                                        //     $(this).find("img").removeClass("active");
+                                                        // });
+                                             
+                                                // $(this).find("img").addClass("active");
+                                             });
+
 $(".more-color").click(function(e){
   e.preventDefault();
   var pp=$(this).parent();                                             
@@ -172,6 +196,29 @@ if((d == undefined || d == null) && f ){
    
       $(this).find("img").addClass("active");
    });
+   
+                                             $(".c-item").mouseover(function(e){
+                                              e.preventDefault();
+                                              console.log("hiii");
+                                              var fg=false;
+                                              var vid=$(this).data("v-id");
+                                              var u=$(this).data("prd-url");
+                                              var pid=$(this).data("p-id");
+                                              var prgrid=$("#prd-"+pid).find(".v-img");
+                                              $(prgrid).each(function(){
+                                                  $(this).removeClass("show");
+                                              });     
+                                                $("."+vid).addClass("show");
+                                                    var oth=$(this).siblings('button');
+                                                    var c=$(this).find('img');
+                                                        
+                                                //         $(oth).each(function(){
+                                                //             $(this).find("img").removeClass("active");
+                                                //         });
+                                             
+                                                // $(this).find("img").addClass("active");
+                                             });
+
    $(".more-color").click(function(e){
     e.preventDefault();
     var pp=$(this).parent();                                             

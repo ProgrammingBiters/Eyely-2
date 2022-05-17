@@ -22,12 +22,12 @@
       {%- assign swatch_trigger = settings.swatches_swatch_trigger | strip | downcase -%}
       {%- assign option_name = option.name | downcase -%}
       {%- if option_name == swatch_trigger -%}
-        {% comment %}
+   
             {%- assign show_swatches = true -%}
         {%- assign swatch_values = option.values -%}
         {%- assign swatch_values_count = option.values.size -%}
         {%- assign swatch_option_key = 'option' | append: forloop.index -%}
-      {% endcomment %}
+ 
         {%- break -%}
 
       {%- endif -%}
@@ -59,16 +59,27 @@
     {% assign c = 0 %}
     {% capture swatches %}
     
-
+  
     {% for option in product_card_product.options %}
       {% if option == 'Color' %}
         {% assign index = forloop.index0 %}
         {% assign colorlist = '' %}
         {% assign color = '' %}
         {% assign img_list = '' %}
+        {% assign checked = false %}
         {% for variant in product_card_product.variants %}
           {% capture color %}{{ variant.options[index] }}{% endcapture %}
+       
           {% unless colorlist contains color %}
+
+          {% for tag in current_tags %}
+          {% assign t = tag | split: "_" %}
+          {% assign cc = variant.options[index] | downcase %}
+          {% assign che = t[1] | downcase %}
+          {% if cc contains che %}
+            {% assign checked = true %}
+          {% endif %}
+          {% endfor %}
             {% assign c = c | plus : 1 %}
             {% capture imgs %}<img src="{{ variant.image | img_url: 'original' }}"  srcset="{%- if variant.image.width >= 165 -%}{{ variant.image | img_url: '165x' }} 165w,{%- endif -%}
             {%- if variant.image.width >= 360 -%}{{ variant.image | img_url: '360x' }} 360w,{%- endif -%}
@@ -79,7 +90,7 @@
             {{ initial_image | img_url: 'master' }} {{ variant.image.width }}w"
           src="{{ variant.image | img_url: '533x' }}"
           sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-         alt="{{ color }}" width="{{ variant.image.width }}" height="{{ variant.image.height }}" loading="lazy" class="v-img v-{{ variant.id }}">
+         alt="{{ color }}" width="{{ variant.image.width }}" height="{{ variant.image.height }}" loading="lazy" class="v-img v-{{ variant.id }}  ">
          {% endcapture %}
          
            {% assign img_list = img_list | append : imgs | append : ' ' %} 
@@ -87,7 +98,7 @@
 
 
             {% assign colorlist = tempList %}
-            <button class="c-item {% unless variant.available %} disabled-item {% endunless%} "  {% unless variant.available %} disabled {% endunless%}  data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ color }}" src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy" />  </button>
+            <button class="c-item   {% unless variant.available %} disabled-item {% endunless%} "  {% unless variant.available %} disabled {% endunless%}  data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img  {% if checked == true %} class='active'{% assign checked = false %} {% endif %}data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ color }}" src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy" />  </button>
             {% capture tempList %}{{ colorlist | append: color | append: ' ' }}{% endcapture %}
             {% assign colorlist = tempList %}
           {% endunless %}
@@ -285,52 +296,4 @@
   </a>
   </div>
 </div>
-<!-- <script>
-  setTimeout(function(){
-$(document).ready(function(){
-//Swatch-item Js   start
-     
-$(".c-item").click(function(e){
-        
-  e.preventDefault();
-  var fg=false;
-  var vid=$(this).data("v-id");
-  var u=$(this).data("prd-url");
-  var pid=$(this).data("p-id");
-  var prgrid=$("#prd-"+pid).find(".v-img");
-  $(prgrid).each(function(){
-    if( $("."+vid).hasClass("show") ){
-      fg=true;
-    }else{
-      $(this).removeClass("show");
-
-    }
-    });     
- $("."+vid).toggleClass("show");
-
-  var oth=$(this).siblings('button');
-  var c=$(this).find('img');
-  
-  $(oth).each(function(){
-      $(this).find("img").removeClass("active");
-   });
  
-    $(this).find("img").toggleClass("active");
- 
-   if(fg){  
-      var m=u.split("?");
-      $(".prd-link-"+pid).attr("href",m[0]);  
-      $(".prd-img-link-"+pid).attr("href",m[0]);
-   }else{
-    $(".prd-link-"+pid).attr("href",u);
-    $(".prd-img-link-"+pid).attr("href",u);
-   }
-
-});
-//Swatch-item Js end
-
-
-});
-
-  },6000);
-</script> -->
