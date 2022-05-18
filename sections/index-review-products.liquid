@@ -7,9 +7,12 @@
       <div class="main-wrapper">
         {% for block in section.blocks %}
             {% if block.settings.enable %}
-                {% assign product =all_products[block.settings.featured_product] %}
+                {% assign product =all_products[block.settings.f_product] %}
+                {% if block.settings.img != blank %}
                 {% assign initial_image = block.settings.img %}
-
+                {% else %}
+                {% assign initial_image = product.featured_image.src %}
+                {% endif %}
                 <div class="review-wrap ">
             
                     <div class="d-flex">
@@ -150,6 +153,11 @@
         "type": "text",
         "id": "price",
         "label": "Price"
+    },
+    {
+        "type":"product",
+        "id":"f_product",
+        "label":"Choose Product"
     }
 ]
 

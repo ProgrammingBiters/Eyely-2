@@ -3,8 +3,8 @@
     "16346258161ef8d1b8": {
       "type": "index-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Untitled_1800_x_700_px.png",
-        "image_2": "shopify:\/\/shop_images\/Yellow_and_Black_Danger_Square_Safety_Sticker.png",
+        "image": "shopify:\/\/shop_images\/BANNERS_EYELY.png",
+        "image_2": "shopify:\/\/shop_images\/Yellow_and_Black_Danger_Square_Safety_Sticker_3.png",
         "featured_link": "shopify:\/\/collections\/new-arrivals"
       }
     },
@@ -66,7 +66,8 @@
             "review_title": "Love It!",
             "review_description": "Great quality rug at a very reasonable price! It’s exactly what I was expecting. I would definitely purchase rugs from Eyely again!",
             "compare_at_price": "$85.66",
-            "price": "$25.99"
+            "price": "$25.99",
+            "f_product": "kolkata-moroccan-hype-boho-vintage-area-rug"
           }
         },
         "1b003807-bb93-48ba-b0c2-f9dfd5480820": {
@@ -80,7 +81,8 @@
             "review_title": "Love It!",
             "review_description": "Perfect match for my dining table to add color😊the quality is great. Love it!",
             "compare_at_price": "$150.52",
-            "price": "$45.99"
+            "price": "$45.99",
+            "f_product": ""
           }
         },
         "c3c9dc84-56b6-458d-8398-351573281c6c": {
@@ -93,7 +95,8 @@
             "review_title": "Draco Area Rug",
             "review_description": "BEAUTIFUL rug—I’ve received so many compliments on it.",
             "compare_at_price": "$85.66",
-            "price": "$25.99"
+            "price": "$25.99",
+            "f_product": "avery-285-glass-rope-led-table-lamp"
           }
         },
         "ed786815-2a67-4b12-b053-b5a448a7dba2": {
@@ -107,7 +110,8 @@
             "review_title": "Beautiful",
             "review_description": "It’s so beautiful! Just as described! All I needed \u0003in my living room. I am really satisfied.",
             "compare_at_price": "$174.29",
-            "price": "$52.99"
+            "price": "$52.99",
+            "f_product": ""
           }
         },
         "f51de571-f94d-4222-bee8-d7bc698580fb": {
@@ -121,7 +125,8 @@
             "review_title": "Stellar table lamp",
             "review_description": "Stellar table lamp\nAbsolutely stunning crystal lamp with a bold gold starburst. Amazing quality, very well made, modern yet classy, very happy with my purchase. Excellent and accessible customer service, packed well and shipped fast.",
             "compare_at_price": "$647.96",
-            "price": "$161.99"
+            "price": "$161.99",
+            "f_product": ""
           }
         },
         "472495b6-11c1-4008-8bce-7813cb74d083": {
@@ -135,7 +140,8 @@
             "review_title": "Pleasantly surprised!",
             "review_description": "Pleasantly surprised!\nI wasn’t sure what to expect but for the price paid I absolutely love this rug! Shipping was extremely fast and the rug is exactly what I was looking for!",
             "compare_at_price": "$85.66",
-            "price": "$25.99"
+            "price": "$25.99",
+            "f_product": ""
           }
         },
         "ce4bb798-cb1d-4c38-bc77-05422ec6ac02": {
@@ -149,7 +155,8 @@
             "review_title": "Obsessed with my rug! Best ever!",
             "review_description": "Obsessed with my rug! Best ever!\nObsessed with my rug! It is literally the softest rug I have ever owned. And I can’t wait to purchase more from Eyely for my other rooms! You seriously won’t regret this.",
             "compare_at_price": "$100.23",
-            "price": "$30.99"
+            "price": "$30.99",
+            "f_product": ""
           }
         },
         "91ce8e3d-7284-4e00-a92f-1906ebbddcee": {
@@ -163,7 +170,8 @@
             "review_title": "In Love!",
             "review_description": "I am absolutely infatuated with this rug! After receiving the first one, I immediately went online to order another for a different room.",
             "compare_at_price": "$76.86",
-            "price": "$23.99"
+            "price": "$23.99",
+            "f_product": ""
           }
         },
         "35ed330c-93d5-42c1-b5ef-74382d462d91": {
@@ -177,7 +185,8 @@
             "review_title": "Gorgeous rug",
             "review_description": "Pretty satisfied with my purchase :)",
             "compare_at_price": "$76.86",
-            "price": "$23.99"
+            "price": "$23.99",
+            "f_product": ""
           }
         },
         "7ba4b7ff-8057-4f0a-9987-1a903fc96c09": {
@@ -190,7 +199,8 @@
             "review_title": "Beautiful lamp",
             "review_description": "I am beyond happy with this table lamp! It looks \u0003just like in the picture. It matches perfectly with my house decor.",
             "compare_at_price": "$363.96",
-            "price": "$90.99"
+            "price": "$90.99",
+            "f_product": "brazil-ziri-moroccan-geometric-area-rug"
           }
         }
       },
@@ -628,7 +638,8 @@
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/JYL3008A-ON-ROOM.jpg",
             "featured_url": "shopify:\/\/collections\/table-lamps",
-            "title": "Table Lamps"
+            "title": "Table Lamps",
+            "title_per": "70%"
           }
         },
         "57f72f7f-e093-4d1b-a029-396b3fcc74ec": {
@@ -636,7 +647,8 @@
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/JYL7610A-MAIN-ROOM.jpg",
             "featured_url": "shopify:\/\/collections\/flush-mounts",
-            "title": "Flush Mounts"
+            "title": "Flush Mounts",
+            "title_per": "70%"
           }
         },
         "8c8428e5-73d8-4beb-b403-685074df5cdc": {
@@ -644,7 +656,8 @@
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/JYL6111A-ON-ROOM.jpg",
             "featured_url": "shopify:\/\/collections\/pendants",
-            "title": "Pendants"
+            "title": "Pendants",
+            "title_per": "70%"
           }
         },
         "68e79361-0ca1-47dc-bc13-9f750e0d79e1": {
@@ -652,7 +665,8 @@
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/JYL7424A-ON-ROOM.jpg",
             "featured_url": "shopify:\/\/collections\/vanity-lights",
-            "title": "Vanity Lights"
+            "title": "Vanity Lights",
+            "title_per": "70%"
           }
         },
         "bcd8e7f0-8fd1-4e7f-ac5c-ec4f4e284556": {
@@ -660,7 +674,8 @@
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/JYL3022A-ON-ROOM_7cf44211-f70f-4e2e-9608-30cc3deec57f.jpg",
             "featured_url": "shopify:\/\/collections\/floor-lamps",
-            "title": "Floor Lamps"
+            "title": "Floor Lamps",
+            "title_per": "70%"
           }
         },
         "fdde6371-ff11-471c-9515-3404288ef63b": {
@@ -668,7 +683,8 @@
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/HPM1005C-ROOM.jpg",
             "featured_url": "shopify:\/\/collections\/trash-cans",
-            "title": "Trash cans"
+            "title": "Trash cans",
+            "title_per": "70%"
           }
         },
         "0d38449a-c432-484c-b5c9-b251e6eb24e0": {
@@ -676,7 +692,8 @@
           "settings": {
             "featured_image": "shopify:\/\/shop_images\/TBL1014A-ROOM.jpg",
             "featured_url": "shopify:\/\/collections\/garden-stool",
-            "title": "Garden Stools"
+            "title": "Garden Stools",
+            "title_per": "70%"
           }
         }
       },
@@ -783,7 +800,8 @@
     "16351639957d0d774a": {
       "type": "index-newsletter",
       "settings": {
-        "title_txt": "<b>Yas!<\/b> Send me exclusive offers, deals, and personalised tips for shopping on Eyely."
+        "title_txt": "<b>Yas!<\/b> Send me exclusive offers, deals, and personalised tips for shopping on Eyely.",
+        "bg_color": "#deece3"
       }
     }
   },
