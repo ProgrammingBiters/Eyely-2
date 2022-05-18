@@ -557,6 +557,32 @@ $('.mailing-list__form-input').focusin(function(){
 $('body').focusout(function(){
   $(".n-email").css("opacity","0");
 });
+$(".filter-item--toggle-more").click(function(e){
+e.preventDefault();
+var t=$(this).find("a").text();
+var t1=t.replace(/^\s+|\s+$/gm,'');
 
+if(t1 == "See more")
+{
+  $(this).find("a").text("See less");
+var p=$(this).parent();
+var links_child= $(p).find("li");
+$(links_child).each(function(){
+$(this).removeClass("filter-item--hidden");
+});
+}else{
+  $(this).find("a").text("See more");
+  var p=$(this).parent();
+  var links_child= $(p).find("li");
+  $(links_child).each(function(i,data){
+if(i>5){
+    $(this).addClass("filter-item--hidden");
+}
+  });
+  $(this).removeClass("filter-item--hidden");
+}
+
+
+});
 
      });
