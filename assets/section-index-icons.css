@@ -29,11 +29,23 @@ justify-content: space-between;
     transition: .7s;
 }
 .item-icon h3{
+  
     padding-right: 20px; 
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 0px;
 }
+@media (min-width:992px) and (max-width:1199px){
+  .item-icon h3{
+  	width:60%;
+      font-size: 18px;
+  }
+  .item-icon .responsive-image__wrapper {
+  	width:40%;
+  
+  }
+}
+
 @media (max-width: 1023px){
     .index-icons .item-icon{
         display: block;
@@ -46,8 +58,10 @@ justify-content: space-between;
     }
     .item-icon h3{   
          padding: 5px;
+          font-size: 15px;
        
     }
+  
 }
 
 @media (max-width:800px){

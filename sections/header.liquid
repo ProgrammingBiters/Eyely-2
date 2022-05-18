@@ -326,7 +326,7 @@
                                   
                                   {% if settings.rug1_mega_image8 != blank and settings.rug1_mega_url8 != blank %}
                                   <a href="{{ settings.rug1_mega_url8 }}" class="p-1">
-                                    <img class="w-100 mt-3" src="{{ settings.rug1_mega_image8 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image8.width }}" loading="lazy">
+                                    <img class="w-100" src="{{ settings.rug1_mega_image8 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image8.width }}" loading="lazy">
                                   </a>
                                   {% endif %}
                                   </div>
@@ -336,7 +336,7 @@
                               
                                   {% if settings.rug1_mega_image9 != blank and settings.rug1_mega_url8 != blank %}
                                   <a href="{{ settings.rug1_mega_url9 }}" class="p-1">
-                                    <img class="w-100 mt-3" src="{{ settings.rug1_mega_image9 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image9.width }}" loading="lazy">
+                                    <img class="w-100" src="{{ settings.rug1_mega_image9 | img_url : 'original' }}" height="auto" width="{{ settings.rug1_mega_image9.width }}" loading="lazy">
                                   </a>
                                   {% endif %}
                               </div>
@@ -928,7 +928,7 @@
             {% render 'search-perform' %}
           </div>
     <div class="header__icons">
-      <a href="/a/wishlist" class="swym-wishlist icon-wishlist">
+      <a href="/a/wishlist" class="swym-wishlist icon-wishlist d-xl-block d-none">
         <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/favorites.png?v=1630070978" loading="lazy" height="26" width="28">   
       </a> 
       {% comment %}
@@ -1006,7 +1006,7 @@
       </details-modal>
     {% endcomment %}
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %} icon-account">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="d-xl-block d-none header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %} icon-account">
           <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/login.png?v=1630070978" loading="lazy" height="26" width="28">
         </a>
       {%- endif -%}
