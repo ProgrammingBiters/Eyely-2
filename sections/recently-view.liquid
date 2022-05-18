@@ -240,6 +240,7 @@ display:none;
                                             api.refreshWidgets();
                                             $(".c-item").click(function(e){
                                               e.preventDefault();
+                                              if($(this).hasClass("disabled-item")){}else{
                                               var fg=false;
                                               var vid=$(this).data("v-id");
                                               var u=$(this).data("prd-url");
@@ -257,7 +258,10 @@ display:none;
                                                         });
                                              
                                                 $(this).find("img").addClass("active");
-                                             });
+                                            
+                                            } 
+                                            });
+
 
                                              $(".c-item").mouseenter(function(e){
                                               e.preventDefault();
@@ -282,7 +286,7 @@ display:none;
                                              });
 
                                              
-                                             $(".c-item").mouseout(function(e){
+                                             $(".c-item").mouseleave(function(e){
                                               e.preventDefault();
                                           
                                               var fg=false;

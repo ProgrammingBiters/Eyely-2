@@ -305,17 +305,17 @@
     }
   
     .card:hover .media.media--hover-effect > img:first-child:only-child,
-    .card-wrapper:hover .media.media--hover-effect > img:first-child:only-child {
+    .card--product:hover .media.media--hover-effect > img:first-child:only-child {
       transform: scale(1.03);
     }
   
-    .card-wrapper:hover
+    .card--product:hover
       .media.media--hover-effect
       > img:first-child:not(:only-child) {
       opacity: 0;
     }
   
-    .card-wrapper:hover .media.media--hover-effect > img + img {
+    .card--product:hover .media.media--hover-effect > img + img {
       opacity: 1;
       transition: transform var(--duration-short) ease;
       transform: scale(1.03);
@@ -328,7 +328,7 @@
     .card__inner img{
       object-fit: contain;
     }
-    .card-wrapper:hover .card--search img {
+    .card--product:hover .card--search img {
       transform: scale(1.05);
     }
   
@@ -342,7 +342,9 @@
       transition: background-color var(--duration-short) ease;
     }
   }
-
+.c-item.disabled-item{
+  cursor: not-allowed;
+}
     .badge-wrap{
     position: absolute;
     left: 0;
@@ -350,7 +352,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;  
-      height: 100%;
+      height: 100px;
     overflow: hidden;
     border-radius: 10px 10px 0px 0px
   }
@@ -384,7 +386,7 @@
     font-size: 18px !important;
     margin-right: 10px;
     }
-  .card-wrapper:hover .smartwishlist{
+  .card--product:hover .smartwishlist{
     display: block;
   }
   .atc-final-sale, .final_sale{
@@ -443,6 +445,8 @@
   }
 .collection-swathces .swatch-inner .c-item{
 width: 40px;
+height: 42px;
+display: block;
 margin-right: 5px;
 margin-bottom: 5px;
 background: #fff;

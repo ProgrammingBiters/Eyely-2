@@ -50,27 +50,41 @@
     {% endfor %}
 
 {% assign c_tags= current_tags | join : " " %}
+{% assign fg = true%}
 {% if c_tags contains "Shape" %}
 
         {% for image in product_card_product.images %}
           {% for variant in image.variants %}
-                {% if variant.title contains 'Runner' and current_tags contains 'Shape_Runner' %}
+                {% if variant.title contains 'Runner' and current_tags contains 'Shape_Runner' and fg == true %}
                 {% assign rimg = variant.featured_image.position %}
                 {% assign initial_image = product_card_product.images[rimg].src %}
                 {% assign rimg1= rimg | minus : 1 %}
                 {% assign second_image = product_card_product.images[rimg1].src %}
-                {% elsif variant.title contains 'Round' and current_tags contains 'Shape_Round' %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Round' and current_tags contains 'Shape_Round' and fg == true %}
                 {% assign rimg = variant.featured_image.position %}
-                <span data-img="{{rimg}}" data-tags={{ current_tags }}><img src="{{ product.images[rimg].src | img_url:'' }}"></span>
-                {% elsif variant.title contains 'Rectangle' and current_tags contains 'Shape_Rectangle' %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Rectangle' and current_tags contains 'Shape_Rectangle' and fg == true  %}
                 {% assign rimg = variant.featured_image.position %}
-                <span data-img="{{rimg}}" data-tags={{ current_tags }}><img src="{{ product.images[rimg].src | img_url:'' }}"></span>
-                {% elsif variant.title contains 'Square' and current_tags contains 'Shape_Square' %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Square' and current_tags contains 'Shape_Square' and fg == true %}
                 {% assign rimg = variant.featured_image.position %}
-                <span data-img="{{rimg}}" data-tags={{ current_tags }}><img src="{{ product.images[rimg].src | img_url:'' }}"></span>
-                {% elsif variant.title contains 'Oval' and current_tags contains 'Shape_Oval' %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Oval' and current_tags contains 'Shape_Oval' and fg == true  %}
                 {% assign rimg = variant.featured_image.position %}
-                <span data-img="{{rimg}}" data-tags={{ current_tags }}><img src="{{ product.images[rimg].src | img_url:'' }}"></span>
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
                 {% endif %}
           
           {% endfor %}
@@ -79,12 +93,62 @@
 
 {% endif %}
 {% if c_tags contains "Shape" and c_tags contains "Color" %}
-{% assign initial_image = product_card_product.images[1].src %}
-{% assign second_image = product_card_product.images[0].src %}  
+
+
+{% assign active_swatch_name = tag | split: '_' | last | camelize  %}
+{% for tag in current_tags %}
+{% assign tag_group = tag | split: '_' | first | downcase %}
+{% if tag_group == swatch_trigger %}
+{% assign active_swatch_name = tag | split: '_' | last | camelize  %}
+{% endif %}
+{% endfor %}
+
+{% for image in product_card_product.images %}
+{% for variant in image.variants %}
+
+{% if variant.title contains 'Runner' and current_tags contains 'Shape_Runner' and variant.title contains active_swatch_name %}
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg | minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+{% elsif variant.title contains "Round" and current_tags contains 'Shape_Round' and variant.title contains active_swatch_name %}
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg|minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+
+{% elsif variant.title contains "Rectangle" and current_tags contains 'Shape_Rectangle' and  variant.title contains active_swatch_name %}
+    {% assign rimg = variant.featured_image.position %}
+    {% assign initial_image =  product_card_product.images[rimg].src %}
+    {% assign rimg1= rimg|minus : 1 %}
+    {% assign second_image = product_card_product.images[rimg1].src %}  
+{% elsif variant.title contains "Square" and current_tags contains 'Shape_Square' and variant.title contains active_swatch_name %}
+
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg|minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+{% elsif variant.title contains "Oval" and current_tags contains 'Shape_Oval' and variant.title contains active_swatch_name %}
+
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg | minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+{% endif %}
+{% break %}
+{% endfor %}
+{% endfor %}
+
+
+
+
+{% endif %}
+{% if product.title == "Esmortiz Tokay Bohemian Geometric Indoor/Outdoor Area Rug" %}
+{% assign rimg = variant.featured_image.position %}
+{% assign initial_image =  product.images[rimg].src %}
+
 {% endif %}
 
-
-{{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
 <div class="card-wrapper">
   <div class="card-information">
@@ -130,7 +194,7 @@
 
 
             {% assign colorlist = tempList %}
-            <button class="c-item   {% unless variant.available %} disabled-item {% endunless%} "  {% unless variant.available %} disabled {% endunless%}  data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img  {% if checked == true %} class='active'{% assign checked = false %} {% endif %}data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ color }}" src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy" />  </button>
+            <button class="c-item   {% unless variant.available %} disabled-item {% endunless%} "  {% unless variant.available %}  {% endunless%}  data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img  {% if checked == true %} class='active'{% assign checked = false %} {% endif %}data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ color }}" src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}" width="32" height="40" loading="lazy" />  </button>
             {% capture tempList %}{{ colorlist | append: color | append: ' ' }}{% endcapture %}
             {% assign colorlist = tempList %}
           {% endunless %}

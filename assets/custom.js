@@ -96,6 +96,7 @@ var v=$("#template").val();
 if(v != "product" && v != "collection"){
 $(".c-item").click(function(e){
   e.preventDefault();
+  if($(this).hasClass("disabled-item")){}else{
   var fg=false;
   var vid=$(this).data("v-id");
   var u=$(this).data("prd-url");
@@ -113,6 +114,7 @@ $(".c-item").click(function(e){
             });
   
     $(this).find("img").addClass("active");
+    }
   });
 
 
@@ -139,7 +141,7 @@ $(".c-item").click(function(e){
    });
 
    
-   $(".c-item").mouseout(function(e){
+   $(".c-item").mouseleave(function(e){
     e.preventDefault();
 
     var fg=false;
@@ -202,6 +204,7 @@ if((d == undefined || d == null) && f ){
   //Swatch-item Js   start
   $(".c-item").click(function(e){
     e.preventDefault();
+    if($(this).hasClass("disabled-item")){}else{
     var fg=false;
     var vid=$(this).data("v-id");
     var u=$(this).data("prd-url");
@@ -219,6 +222,7 @@ if((d == undefined || d == null) && f ){
               });
    
       $(this).find("img").addClass("active");
+            }
    });
 
    $(".c-item").mouseenter(function(e){
@@ -244,7 +248,7 @@ if((d == undefined || d == null) && f ){
    });
 
    
-   $(".c-item").mouseout(function(e){
+   $(".c-item").mouseleave(function(e){
     e.preventDefault();
 
     var fg=false;
