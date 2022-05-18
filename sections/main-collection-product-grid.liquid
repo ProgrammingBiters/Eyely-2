@@ -15,7 +15,7 @@
     <div class="col-md-6 col-12">
       <h2> {{ collection.title }} </h2>
     </div>
-    <div class="col-md-6 col-12 d-md-block d-none">
+    <div class="col-md-6 col-12 d-lg-block d-none">
      
         <div class="facet-filters sorting caption">
           <div class="facet-filters__field">
@@ -39,7 +39,7 @@
     </div>
   </div>
 <div class="row">
-  <div class="d-md-none d-block  col-md-6 col-sm-6 col-6 py-3">
+  <div class="d-lg-none d-block  col-md-6 col-sm-6 col-6 py-3">
     <button class="utils-filter-button filter-open" type="button" aria-label="Filters" >
         <span class="utils-filter-icon">
             <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13">
@@ -50,7 +50,7 @@
     </button>
 
   </div>
-  <div class="d-md-none d-block  col-md-6 col-sm-6 col-6 py-3">
+  <div class="d-lg-none d-block  col-md-6 col-sm-6 col-6 py-3">
     <button class="utils-filter-button sort-open ms-auto" type="button">
       <span class="utils-filter-text">Sort by</span>
   </button>{% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
@@ -125,7 +125,7 @@
   
       <nav
         aria-label="{{ 'general.accessibility.nav_sidebar' | t }}"
-        class="productgrid--sidebar-section d-md-block d-none"
+        class="productgrid--sidebar-section d-lg-block d-none"
       >
         {% for block in section.blocks %}
           {% assign menu = block.settings.menu %}
