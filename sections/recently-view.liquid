@@ -259,9 +259,9 @@ display:none;
                                                 $(this).find("img").addClass("active");
                                              });
 
-                                             $(".c-item").mouseover(function(e){
+                                             $(".c-item").mouseenter(function(e){
                                               e.preventDefault();
-                                              console.log("hiii");
+                                          
                                               var fg=false;
                                               var vid=$(this).data("v-id");
                                               var u=$(this).data("prd-url");
@@ -273,6 +273,29 @@ display:none;
                                                 $("."+vid).addClass("show");
                                                     var oth=$(this).siblings('button');
                                                     var c=$(this).find('img');
+                                                        
+                                                        // $(oth).each(function(){
+                                                        //     $(this).find("img").removeClass("active");
+                                                        // });
+                                             
+                                                // $(this).find("img").addClass("active");
+                                             });
+
+                                             
+                                             $(".c-item").mouseout(function(e){
+                                              e.preventDefault();
+                                          
+                                              var fg=false;
+                                              var vid=$(this).data("v-id");
+                                              var u=$(this).data("prd-url");
+                                              var pid=$(this).data("p-id");
+                                              var prgrid=$("#prd-"+pid).find(".v-img");
+                                              $(prgrid).each(function(){
+                                                  $(this).removeClass("show");
+                                              });     
+                                                // $("."+vid).addClass("show");
+                                                    // var oth=$(this).siblings('button');
+                                                    // var c=$(this).find('img');
                                                         
                                                         // $(oth).each(function(){
                                                         //     $(this).find("img").removeClass("active");
