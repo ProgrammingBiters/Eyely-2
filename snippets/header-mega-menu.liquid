@@ -1,0 +1,74 @@
+{% comment %}  <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
+    <div class="sub-wrapper">
+        <div class="row mx-auto justify-content-between">
+          
+        </div>
+    </div>
+ </ul> {% endcomment %}
+ 
+  <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
+     <div class="sub-wrapper">
+        <div class="row mx-auto justify-content-between">
+          <div class="col-xl-8 col-lg-8">
+            
+           <div class="row mega-menu-row ">
+        {% for childlink in link.links %}
+          {% if childlink.links != blank %}
+          {% assign child_index = forloop.index %}
+            <div class="col-xl-4 col-lg-4  site-nav--has-dropdown site-nav--has-dropdown-grandchild {% if childlink.active %}site-nav--active{% endif %}"
+              aria-haspopup="true">
+              <a
+                href="{{ childlink.url }}"
+                class="site-nav__link_title"
+                aria-controls="MenuChildren-{{ parent_index }}-{{ child_index }}"
+                data-meganav-type="parent"
+                {% unless template.name == 'index' %}{% if childlink.active %}aria-current="page"{% endif %}{% endunless%}
+                tabindex="-1">
+                  {{ childlink.title | escape }}
+                  <span class="icon icon-arrow-down" aria-hidden="true"></span>
+              </a>
+              <ul
+                id="MenuChildren-{{ parent_index }}-{{ child_index }}"
+                class="site-nav__dropdown-grandchild"
+                data-meganav-dropdown>
+                {% for grandchildlink in childlink.links %}
+                  <li{% if grandchildlink.active %} class="site-nav--active"{% endif %}>
+                    <a 
+                      href="{{ grandchildlink.url }}"
+                      class="site-nav__link"
+                      data-meganav-type="child"
+                      {% unless template.name == 'index' %}{% if grandchildlink.active %}aria-current="page"{% endif %}{% endunless %}
+                      tabindex="-1">
+                        {{ grandchildlink.title | escape }}
+                      </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% else %}
+            <div class="col-xl-4 col-lg-4  site-nav--active">
+              <a
+                href="{{ childlink.url }}"
+                class="site-nav__link_title"
+                data-meganav-type="child"
+                {% if childlink.active %}aria-current="page"{% endif %}
+                tabindex="-1">
+                  {{ childlink.title | escape }}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+          </div>
+          <div class="col-xl-4 col-lg-4">
+            {% if link.title == "Lighting" %}
+            <div class="megamenu-inner-imgdiv">
+              <a href="{{ section.setings.shop_link_url }}"><h3>{{ section.settings.shop_link_text }}Shop All Lighting</h3></a>
+              <img src="{{ section.settings.lighting_img | img_url:'master' }}">
+            </div>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+  </ul>
+  

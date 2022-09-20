@@ -7,20 +7,45 @@
       <div class="main-wrapper row m-auto">
         {% assign collection =  collections[section.settings.featured_collection] %}
         {% for product in collection.products limit: 4 %}
+          {%  if product.images[1] != blank  %}
             {% assign initial_image = product.images[1].src %}
-
-            <div class="col-md-3 col-6">
+          {% else %}
+            {% assign initial_image = product.images[0].src %}
+          {% endif %}
+          <div class="col-md-3 col-6">
                 <div class="item-wrap">
                     <a href="{{ product.url }}">
                         <div class="image_wrap  fst_img-{{ forloop.index }} ">
-                      
+                        {% if initial_image != blank %}
+                                   {%
+                                    render 'rimg',
+                                    class: 'productitem--image-primary img-fluid',
+                                    img: initial_image,
+                                    size: '360x360'                                   
+                                  %}
+                          {% comment %}
                               {% render 'responsive-image' with image : initial_image , class: 'productitem--image-primary img-fluid', image.alt : initial_image.alt, max_width : 360, max_height : 360 %}
-                                
+                                {% endcomment %}
+                          {% endif %}
                         </div>
                         <div class="content_wrap">
                             <div class="item_content">
                                 <p class=" m-0 fw-bold">{{ product.title }}</p>
                             </div>
+                         
+                         {% if product.vendor == 'Eyely' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'happimess' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'ovalair' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                          {% endif %}
                             <div class="reviews-div">
                                 <div class="yotpo bottomLine" data-product-id="{{ product.id }}">
                                     {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
@@ -42,10 +67,11 @@
                             </div>
                         </div>
                         <div class="discount">
-                           <span>{% if product.compare_at_price > product.price %}
-                            <del style="color:#444">{{ product.compare_at_price | money }}</del>&nbsp;
-                            {% endif %}
-                            {{ product.price | money }}</span>
+                           <span>
+                            <span class="text-dark fw-bold">{{ product.price | money }}</span>
+                            {% if product.compare_at_price > product.price %}
+                           &nbsp; <del>{{ product.compare_at_price | money }}</del>
+                            {% endif %}</span>
                         </div>                    
                     </a>
                 </div>
@@ -66,7 +92,7 @@
 {
   "name": "Index Best Seller",
   "tag": "section",
-  "class": "spaced-section spaced-section--full-width",
+  "class": "spaced-section--full-width",
   "settings": [
         {
             "type":"checkbox",

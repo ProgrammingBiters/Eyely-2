@@ -23,7 +23,20 @@
     <img src="{{product.featured_image|img_url:'original'}}" class="img-fluid">
                 </div>
                 <div class="prd-main-div-info">
-                  <h3><span class="prd-main-div-title b-headings">{{product.title}}</span><span class="prd-main-div-price">{{product.price|money}}</span></h3>
+                  <h3><span class="prd-main-div-title b-headings">{{product.title}}</span><br><span class="prd-main-div-price">{{product.price|money}}</span></h3>
+                {% if product.vendor == 'Eyely' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'happimess' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'ovalair' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                          {% endif %}
                 </div>
               </div>
               </a>

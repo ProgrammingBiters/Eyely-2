@@ -7,15 +7,19 @@
   .shop-by-style .shop-by-style_heading{
     text-align:center;
     padding-bottom: 10px;
+/*     font-family: "JosefinSans"; */
+    font-family: 'Guardian Egyptian';
   }
   .shop-by-style .shop-by-style_heading .heading{ 
-  color:#2d3654;
+/*   color:#2d3654; */
   }
   .shop-by-style .shop__p{
     color: #000;
     font-size: 16px;
-    font-weight: 300; 
-    font-family: var(--font-body-family-other);
+    font-weight: 300;
+    font-family: 'Graphik','sans-serif';
+/*     font-family: 'JosefinSans Light'; */
+/*     font-family: var(--font-body-family-other); */
   }
   .shop-by-style .main_wrapper .shop-by-style-item .image_wrap{
       width:80%;
@@ -32,7 +36,7 @@
       right: 0;
       bottom: 0;
       transform: translate(-50%,-50%);
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       width: 100%;
       height:auto;      
@@ -45,11 +49,12 @@
   }
   .shop-by-style .main_wrapper .shop-by-style-item  .content_wrap .item_content{
   text-transform: capitalize;
-  color: #2d3654;
-  font-size: 16px;
+     color: #000;
+    font-size: 16px;
   } 
   .shop-by-style .main_wrapper .shop-by-style-item  .content_wrap .discount{
-  color:#444;
+  color:#000;
+    font-family:"Graphik","sans-serif"!important;
   }
   @media (max-width:767px){
     .shop-by-style .main_wrapper .shop-by-style-item .image_wrap{

@@ -156,7 +156,7 @@
       "filter_button": "Filter",
       "filters_selected": {
         "one": "{{ count }} selected",
-        "other": "{{ count }} selected"
+        "other": "{{ count }}"
       },
       "max_price": "The highest price is {{ price }}",
       "product_count": {
@@ -184,8 +184,9 @@
         "other": "{{ count }} results"
       },
       "results_with_count_and_term": {
-        "one": "{{ count }} result found for “{{ terms }}”",
-        "other": "{{ count }} results found for “{{ terms }}”"
+        "zero": "No results for “{{ terms }}”",
+        "one": "One result for “{{ terms }}”",
+        "other": "Search results for “{{ terms }}” ({{ count }})"
       },
       "title": "Search results",
       "search_for": "Search for “{{ terms }}”"

@@ -1061,6 +1061,529 @@
     ]
   },
   {
+    "name": "Megamenu Kitchen & Bar Title",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Kitchen Mega menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "kitchen_linklists_enable",
+        "label": "Kitchen Megamenu Enable",
+        "default": true
+      },
+      {
+        "id": "kitchen_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "kitchen_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Kitchen Mega menu1"
+      },
+      {
+        "type": "checkbox",
+        "id": "kitchen1_linklists_enable",
+        "label": "Kitchen Megamenu 1 Enable",
+        "default": true
+      },
+      {
+        "id": "kitchen1_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "kitchen1_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Kitchen Mega menu2"
+      },
+      {
+        "type": "checkbox",
+        "id": "kitchen2_linklists_enable",
+        "label": "Kitchen Megamenu 2 Enable",
+        "default": true
+      },
+      {
+        "id": "kitchen2_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "kitchen2_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Kitchen Mega menu3"
+      },
+      {
+        "type": "checkbox",
+        "id": "kitchen3_linklists_enable",
+        "label": "Kitchen Megamenu 3 Enable",
+        "default": true
+      },
+      {
+        "id": "kitchen3_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "kitchen3_linklists",
+        "label": "Link Lists"
+      }
+    ]
+  },
+  {
+    "name": "Megamenu kitchen & Bar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Kitchen & Bar Mega menu1"
+      },
+      {
+        "type": "checkbox",
+        "id": "kitchen1_mega_enable",
+        "label": "Kitchen & Bar Megamenu 1 Enable",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "kitchen1_img_title1",
+        "label": "Title For Kitchen Menu"
+      },
+      {
+        "type": "image_picker",
+        "id": "kitchen1_mega_image1",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "kitchen1_mega_url1",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "kitchen1_mega_size1",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "text",
+        "id": "kitchen1_title1",
+        "label": "Title For Kitchen & Bar Menu"
+      },
+      {
+        "type": "select",
+        "id": "kitchen1_title_pos1",
+        "options": [
+          {
+            "value": "Top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "text",
+        "id": "kitchen1_discover_title1",
+        "label": "Discover Title"
+      }
+    ]
+  },
+  {
+    "name": "Megamenu Home & Garden Title",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Home & Garden Mega menu1"
+      },
+      {
+        "type": "checkbox",
+        "id": "garden1_linklists_enable",
+        "label": "Home & Garden Megamenu 1 Enable",
+        "default": true
+      },
+      {
+        "id": "garden1_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "garden1_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Home & Garden Mega menu2"
+      },
+      {
+        "type": "checkbox",
+        "id": "garden2_linklists_enable",
+        "label": "Home & Garden Megamenu 2 Enable",
+        "default": true
+      },
+      {
+        "id": "garden2_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "garden2_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Home & Garden Mega menu3"
+      },
+      {
+        "type": "checkbox",
+        "id": "garden3_linklists_enable",
+        "label": "Home & Garden Megamenu 3 Enable",
+        "default": true
+      },
+      {
+        "id": "garden3_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "garden3_linklists",
+        "label": "Link Lists"
+      }
+    ]
+  },
+  {
+    "name": "Megamenu Home & Garden",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Home & Garden Mega menu1"
+      },
+      {
+        "type": "checkbox",
+        "id": "garden1_mega_enable",
+        "label": "Home & Garden Megamenu 1 Enable",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "garden1_img_title1",
+        "label": "Title For Home & Garden Menu"
+      },
+      {
+        "type": "image_picker",
+        "id": "garden1_mega_image1",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "garden1_mega_url1",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "garden1_mega_size1",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "text",
+        "id": "garden1_title1",
+        "label": "Title For Home & Garden Menu"
+      },
+      {
+        "type": "select",
+        "id": "garden1_title_pos1",
+        "options": [
+          {
+            "value": "Top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "text",
+        "id": "garden1_discover_title1",
+        "label": "Discover Title"
+      }
+    ]
+  },
+  {
     "name": "Megamenu Chandeliers",
     "settings": [
       {
@@ -2079,6 +2602,188 @@
           }
         ],
         "default": "Bottom"
+      },
+      {
+        "type": "header",
+        "content": "Ceiling Lights Mega menu9"
+      },
+      {
+        "type": "checkbox",
+        "id": "ceilinglights9_mega_enable",
+        "label": "Ceiling Lights Megamenu 9 Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "ceilinglights1_mega_image9",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "ceilinglights1_mega_url9",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "ceilinglights1_mega_size9",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-12"
+      },
+      {
+        "type": "text",
+        "id": "ceilinglights1_title9",
+        "label": "Title For Ceiling Lights Menu"
+      },
+      {
+        "type": "select",
+        "id": "ceilinglights1_title_pos9",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "header",
+        "content": "Ceiling Lights Mega menu10"
+      },
+      {
+        "type": "checkbox",
+        "id": "ceilinglights10_mega_enable",
+        "label": "Ceiling Lights Megamenu 10 Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "ceilinglights1_mega_image10",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "ceilinglights1_mega_url10",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "ceilinglights1_mega_size10",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-12"
+      },
+      {
+        "type": "text",
+        "id": "ceilinglights1_title10",
+        "label": "Title For Ceiling Lights Menu"
+      },
+      {
+        "type": "select",
+        "id": "ceilinglights1_title_pos10",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
       }
     ]
   },
@@ -2801,6 +3506,461 @@
       {
         "type": "select",
         "id": "tablelamp1_title_pos8",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "header",
+        "content": "Table Lamp Mega menu9"
+      },
+      {
+        "type": "checkbox",
+        "id": "tablelamp9_mega_enable",
+        "label": "Table Lamp Megamenu 9 Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "tablelamp1_mega_image9",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "tablelamp1_mega_url9",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_mega_size9",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-6"
+      },
+      {
+        "type": "text",
+        "id": "tablelamp1_title9",
+        "label": "Title For Table Lamp Menu"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_title_pos9",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "header",
+        "content": "Table Lamp Mega menu10"
+      },
+      {
+        "type": "checkbox",
+        "id": "tablelamp10_mega_enable",
+        "label": "Table Lamp Megamenu 10 Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "tablelamp1_mega_image10",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "tablelamp1_mega_url10",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_mega_size10",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-6"
+      },
+      {
+        "type": "text",
+        "id": "tablelamp1_title10",
+        "label": "Title For Table Lamp Menu"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_title_pos10",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "header",
+        "content": "Table Lamp Mega menu11"
+      },
+      {
+        "type": "checkbox",
+        "id": "tablelamp11_mega_enable",
+        "label": "Table Lamp Megamenu 11 Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "tablelamp1_mega_image11",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "tablelamp1_mega_url11",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_mega_size11",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-6"
+      },
+      {
+        "type": "text",
+        "id": "tablelamp1_title11",
+        "label": "Title For Table Lamp Menu"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_title_pos11",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "header",
+        "content": "Table Lamp Mega menu12"
+      },
+      {
+        "type": "checkbox",
+        "id": "tablelamp12_mega_enable",
+        "label": "Table Lamp Megamenu 12 Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "tablelamp1_mega_image12",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "tablelamp1_mega_url12",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_mega_size12",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-6"
+      },
+      {
+        "type": "text",
+        "id": "tablelamp1_title12",
+        "label": "Title For Table Lamp Menu"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_title_pos12",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "header",
+        "content": "Table Lamp Mega menu13"
+      },
+      {
+        "type": "checkbox",
+        "id": "tablelamp13_mega_enable",
+        "label": "Table Lamp Megamenu 13 Enable",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "tablelamp1_mega_image13",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "tablelamp1_mega_url13",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_mega_size13",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-6"
+      },
+      {
+        "type": "text",
+        "id": "tablelamp1_title13",
+        "label": "Title For Table Lamp Menu"
+      },
+      {
+        "type": "select",
+        "id": "tablelamp1_title_pos13",
         "options": [
           {
             "value": "top",
@@ -3823,6 +4983,497 @@
           }
         ],
         "default": "Bottom"
+      }
+    ]
+  },
+  {
+    "name": "Megamenu Gift Title",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Gift Mega menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "gift_linklists_enable",
+        "label": "Gift Megamenu Enable",
+        "default": true
+      },
+      {
+        "id": "gift_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "gift_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Gift Mega menu1"
+      },
+      {
+        "type": "checkbox",
+        "id": "gift1_linklists_enable",
+        "label": "Gift Megamenu 1 Enable",
+        "default": true
+      },
+      {
+        "id": "gift1_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "gift1_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Gift Mega menu2"
+      },
+      {
+        "type": "checkbox",
+        "id": "gift2_linklists_enable",
+        "label": "Gift Megamenu 2 Enable",
+        "default": true
+      },
+      {
+        "id": "gift2_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "gift2_linklists",
+        "label": "Link Lists"
+      },
+      {
+        "type": "header",
+        "content": "Gift Mega menu3"
+      },
+      {
+        "type": "checkbox",
+        "id": "gift3_linklists_enable",
+        "label": "Gift Megamenu 3 Enable",
+        "default": true
+      },
+      {
+        "id": "gift3_link_size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          {
+            "value": "col-2",
+            "label": "Col 2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col 3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col 4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col 5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col 6"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "link_list",
+        "id": "gift3_linklists",
+        "label": "Link Lists"
+      }
+    ]
+  },
+  {
+    "name": "Megamenu Gift",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Gift Mega menu1"
+      },
+      {
+        "type": "checkbox",
+        "id": "gift1_mega_enable",
+        "label": "Gift Megamenu 1 Enable",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "gift1_img_title1",
+        "label": "Title For Gift Menu"
+      },
+      {
+        "type": "image_picker",
+        "id": "gift1_mega_image1",
+        "label": "Featured Image"
+      },
+      {
+        "type": "url",
+        "id": "gift1_mega_url1",
+        "label": "Url For Image"
+      },
+      {
+        "type": "select",
+        "id": "gift1_mega_size1",
+        "options": [
+          {
+            "value": "col-1",
+            "label": "Col-1"
+          },
+          {
+            "value": "col-2",
+            "label": "Col-2"
+          },
+          {
+            "value": "col-3",
+            "label": "Col-3"
+          },
+          {
+            "value": "col-4",
+            "label": "Col-4"
+          },
+          {
+            "value": "col-5",
+            "label": "Col-5"
+          },
+          {
+            "value": "col-6",
+            "label": "Col-6"
+          },
+          {
+            "value": "col-7",
+            "label": "Col-7"
+          },
+          {
+            "value": "col-8",
+            "label": "Col-8"
+          },
+          {
+            "value": "col-9",
+            "label": "Col-9"
+          },
+          {
+            "value": "col-10",
+            "label": "Col-10"
+          },
+          {
+            "value": "col-12",
+            "label": "Col-12"
+          }
+        ],
+        "default": "col-2"
+      },
+      {
+        "type": "text",
+        "id": "gift1_title1",
+        "label": "Title For Gift Menu"
+      },
+      {
+        "type": "select",
+        "id": "gift1_title_pos1",
+        "options": [
+          {
+            "value": "Top",
+            "label": "Top"
+          },
+          {
+            "value": "Bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "Bottom"
+      },
+      {
+        "type": "text",
+        "id": "gift1_discover_title1",
+        "label": "Discover Title"
+      }
+    ]
+  },
+  {
+    "name": "Megamenu Pet",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Pet Collection List"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_mega_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_1_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name",
+        "label": "Collection Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_2_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link1",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img1",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name1",
+        "label": "Collection Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_3_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link2",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img2",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name2",
+        "label": "Collection Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_4_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link3",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img3",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name3",
+        "label": "Collection Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_5_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link4",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img4",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name4",
+        "label": "Collection Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_6_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link5",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img5",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name5",
+        "label": "Collection Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_7_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link6",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img6",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name6",
+        "label": "Collection Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "pet_8_enable",
+        "label": "Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "pet-coll-link7",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-img7",
+        "label": "Pet Image"
+      },
+      {
+        "type": "text",
+        "id": "collection-name7",
+        "label": "Collection Name"
+      },
+      {
+        "type": "header",
+        "content": "Pet Menu Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "all_pet_enable",
+        "label": "All Collection Pet Enable",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "all-p-coll-link",
+        "label": "All Collection Url"
+      },
+      {
+        "type": "text",
+        "id": "collection-main-name",
+        "label": "Collection Name"
+      },
+      {
+        "type": "image_picker",
+        "id": "pet-coll-main-img",
+        "label": "Pet Image"
       }
     ]
   }

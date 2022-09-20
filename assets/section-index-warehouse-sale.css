@@ -7,6 +7,7 @@
 }
 .warehouse-sale .back-sec-info {
     margin-bottom: 30px;
+      padding-left: 30px;
 }
 .warehouse-sale .back-sec-info span {
     color: #8e9792;
@@ -15,12 +16,12 @@
     display: block;
 }
 .warehouse-sale .back-sec-info h4{
-color: #2d3654;
+color: #000;
 font-size: 40px;
 margin-bottom: 15px;
 }    
 .warehouse-sale .back-sec-info  a{
-color: #2d3654;
+color: #000;
 font-size: 19px;
 display: flex;
 align-items: center;
@@ -36,6 +37,7 @@ text-decoration: none;
 .warehouse-sale .back-sec-p{
     line-height: 21px;
     margin-bottom: 0;
+  color:#000;
 }
 .warehouse-sale .back-sec-info i{
     margin-left: 15px;
@@ -69,10 +71,10 @@ text-decoration: none;
     display: block;
     text-align: center;
     font-weight: 700;
-    font-size: 20px;
-    border: 1px solid #2d3654;
-    padding: 15px 10px;
-    color: #2d3654;
+    font-size: 18px;
+    border: 1px solid #000;
+    padding: 11px 10px;
+    color: #000;
     margin: auto;
     margin-top: 18px;
     border-radius: 10px;

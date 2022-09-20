@@ -1,0 +1,154 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<section class="index-coll-hand">
+  <div class="container">
+    <div class="title-div">
+      <h2 class="title text-center review-title">{{ section.settings.title_txt }}</h2>
+    </div>
+    <div class="hand-coll">
+      <ul class="nav nav-tabs" role="tablist">
+        {% for block in section.blocks %}
+        {% if block.type == 'product_box' %}
+        {% assign collection = collections[block.settings.our_collection] %}
+        <li {% if collection.handle == 'air-purifier' %} id="vid-active" {% endif  %}role="presentation" class="{% if forloop.first %} active {% endif %}"><a class="nav-link" href="#{{ collection.title | handleize }}" aria-controls="{{ collection.title | handleize  }}" role="tab" data-toggle="tab">{{ collection.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+      </ul>
+
+
+      <div class="tab-content">
+        {% for block in section.blocks %}
+        {% if block.type == 'product_box' %}
+        {% assign collection = collections[block.settings.our_collection] %}
+        <div role="tabpanel" class="tab-pane {% if forloop.first %}active{% endif %}" id="{{ collection.title | handleize  }}">
+          <div class="tab-grid">
+            {% for product in collection.products limit: '6' %}
+            <div class="tab-grid-inner tab-grid_join-{{ forloop.index }}">
+              {% if product.images[1] != blank %}
+              {% assign img_1 = product.images[1] %}
+              {% else %}
+              {% assign img_1 = product.featured_image %}
+              {% endif %}
+              <div class="tab-grid-img">
+                <a href="{{ product.url }}"> {%
+                                        render 'rimg',
+                                        class: 'img-fluid productitem--image-primary',
+                                        img: img_1,
+                                        size: '400x400'
+                                    %}</a>
+                <p class="tab-grid-price"><span>{{ product.price | money }}</span></p>
+                <div class="tab-grid-wishlist">
+                  <span class="smartwishlist" data-product="{{ product_card_product.id }}" data-variant="{{ product_card_product.variants.first.id }}"></span>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+            {% if collection.handle == 'air-purifier' %}
+            <div class="tab-grid-inner grid-air" style=" grid-column: span 3; grid-row: span 2;">
+              <video id="air-purifier-vid" loop="" preload="none" muted="" class="video-hero__mobile-video video----desktop w-100" >
+                <source src="{{ section.settings.prd-video }}" type="video/mp4">
+
+              </video>
+              <div class="play-videoo">
+                <i class="fa fa-play" aria-hidden="true"></i>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div class="shop-light-view shop-hand-tab">
+            <a href="{{ collection.url }}" class="btn shop-light-btn">{{section.settings.btn_txt}}</a>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function(){
+    var h=$(".hand-coll");
+    if(h != undefined && h  != null ){
+      // $(h).swipe({
+      //   swipeLeft:function(event, direction, distance, duration, fingerCount) {
+      //     $(".nav-tabs li.active").next('li').find('a').tab('show');
+      //     $(".nav-tabs li.active").next('li').find('a').trigger("click");
+
+      //     $(".nav-tabs li.active").next('li').trigger("click");
+      //   },
+      //   swipeRight:function(event, direction, distance, duration, fingerCount) {
+      //     $(".nav-tabs li.active").prev('li').find('a').tab('show');  
+      //     $(".nav-tabs li.active").prev('li').find('a').trigger("click");
+      //     $(".nav-tabs li.active").prev('li').trigger("click");
+      //   }
+      // })
+
+      $(".hand-coll .nav-tabs li").click(function(){
+        
+var v=$(this).attr("id");
+      if(v == "vid-active"){
+        $("#air-purifier-vid").trigger("play");
+      }else{
+        $("#air-purifier-vid").trigger("pause");
+      }      
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+"name": "Index Hand Picked",
+"settings": [
+{
+"type":"text",
+"id":"title_txt",
+"label":"Title"
+},
+{	
+"type": "text",
+"id": "btn_txt",
+"label": "Button Text"
+},
+{
+	"type" : "header",
+	"content":"Air Purifier Video"
+},
+{	
+"type": "url",
+"id": "prd-video",
+"label": "Air Purifier url"
+}
+],
+"blocks":[
+{
+"type": "product_box",
+"name": "Collection",
+"settings":[
+{
+"type": "collection",
+"id": "our_collection",
+"label": "Collection"	
+}
+]
+}
+],
+"presets": [
+{
+"name": "Index Hand Picked",
+"category": "Index"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

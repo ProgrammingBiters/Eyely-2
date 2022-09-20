@@ -5,16 +5,56 @@
         <div class="grid-wrap">
             {% for block in section.blocks %}
                 {% if block.type == "featured_box" and block.settings.featured_image != blank and block.settings.featured_url != blank %}
-                <div class="unique-sec-img {% if forloop.first %} grid_join {% endif %}">
+                      {% if block.settings.prod != blank %}
+                      {% assign product = all_products[block.settings.prod] %}
+                      {% else %}
+                      {% assign product = all_products[section.settings.prod] %}
+                      {% endif %}
+          {% assign rimg = product.featured_image.position %}
+            {% assign rimg_minus = rimg %}
+            {% assign pos = product.featured_image.position | plus:2 %}
+            {% assign second_image = product.images[rimg_minus].src %}      
+          				
+          			<div class="unique-sec-img {% if forloop.first %} grid_join {% endif %}">
                     <a href="{{ block.settings.featured_url }}" class="img_wrap"> 
                             {% if block.settings.title_per != blank %}
                             <span class="per_off">{{block.settings.title_per }}</span>
+                      {% elsif section.settings.discount_percentage != blank %}
+                      <span class="per_off">{{section.settings.discount_percentage }}</span>
                             {% endif %}
+                      {% if second_image != blank %}
                             {% if forloop.first %}
-                            {% render 'responsive-image' with image : block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt : block.settings.featured_image.alt, max_width : 500, max_height : 500 %}
+                        {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: second_image ,
+                                        size: '500x500'                                   
+                                    %}
                              {% else %} 
-                             {% render 'responsive-image' with image : block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt : block.settings.featured_image.alt, max_width : 244, max_height : 244 %}                            
-                            {% endif %}      
+                                {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: second_image ,
+                                        size: '300x300'                                   
+                                    %}
+                            {% endif %}  
+                      {% else %}
+                      {% if forloop.first %}
+                          {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: block.settings.featured_image ,
+                                        size: '500x500'                                   
+                                    %}
+                             {% else %} 
+                                 {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: block.settings.featured_image ,
+                                        size: '300x300'                                   
+                                    %}
+                            {% endif %}  
+                      {% endif %}
                     </a>  
                     <div class="pt-3">
                         <h6 class="my-0 text-center">
@@ -32,7 +72,18 @@
 {% schema %}
   {
     "name": "Index Collection Grid",
-    "settings": [], 
+    "settings": [
+{
+    "type":"product",
+    "id":"prod",
+    "label":"Product"
+  },
+  {
+    "id": "discount_percentage",
+    "type": "text",
+    "label": "Discount"
+  }
+], 
     "tag": "section",
     "class": "spaced-section spaced-section--full-width",
     "blocks":[
@@ -40,7 +91,12 @@
         "type" : "featured_box",
         "name" : "Featured Box",
         "settings" : [
-                    {
+					{
+                        "type":"product",
+                        "id":"prod",
+                        "label":"Product"
+                    },
+					{
                         "type" : "image_picker",
                         "id" : "featured_image",
                         "label" : "Featured Image"

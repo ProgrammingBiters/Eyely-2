@@ -10,18 +10,22 @@
                    {% for article in blog.articles limit:1 %}
                 <div class="f-blog-img">
                   <a href="{{article.url}}">  
+                     <img src="{{article.image|img_url:'x700'}}" class="img-fluid">
+                    
+                   {% comment %}
                     {% if article.image %}
-               
-                     {%
-                render 'rimg',
-                img: article.image,
-                class: 'product-gallery--loaded-image'
-                size: 'x800',
-                lazy: true,
-                canvas: true
-              %}
-              {% endif %}{% comment %}<img src="{{article.image|img_url:'x700'}}" class="img-fluid">{% endcomment %}</a>
+                    {% render 'rimg',
+                    img: article.image,
+                    class: 'product-gallery--loaded-image'
+                    size: 'x800',
+                    lazy: true,
+                    canvas: true
+                    %}
+                    {% endif %}{% comment %}<img src="{{article.image|img_url:'x700'}}" class="img-fluid"> {% endcomment %}
+                   {% endcomment %}
+                  </a>
                 </div>
+            
                 <div class="img-content border-bottom-0">
                                   {%- if article.tags.size > 0 -%}
                                 <div class="d-flex">

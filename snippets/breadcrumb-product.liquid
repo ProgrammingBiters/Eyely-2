@@ -1,0 +1,106 @@
+
+
+{% unless template == 'index' %}
+    <div class="breadcrumb d-sm-flex d-none flex-wrap mb-1 py-2 align-items-center">
+      <a href="{{ routes.cart_url | split: 'cart' | first }}" > Home </a>  
+      {% if template contains 'product' %} 
+      
+        {% if collection %}
+          <span class="arrow">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </span>
+    
+          {% if collection.handle %}
+          {% capture url %}{{collection.url}}{% endcapture %}
+         
+            <span>{{ collection.title | split: '|' | first | link_to: url }}</span>
+           
+          {% endif %}
+        {% endif %}
+      
+        <span class="arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </span>
+        
+          <span>{{ product.title | split: '|' | first }}</span>
+        
+      
+      {% elsif template contains 'collection' and collection.handle %}
+        {% if current_tags %}
+          <span class="arrow">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </span>
+      
+          {% capture url %}{{collection.url}}{% endcapture %}
+          <span class="bd-title">
+         
+            <span>{{ collection.title | split: '|' | first | link_to: url }}</span>
+           
+    
+            <span class="arrow">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </span>
+            
+            {% assign bd_tags = current_tags | join: " + " %}
+            
+            <span>{{ bd_tags | split: '|' | first }}</span>
+            
+          </span>
+      
+        {% else %}
+      
+          <span class="arrow">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </span>
+      
+          <span class="bd-title">
+          
+            <span>{{ collection.title | split: '|' | first | link_to: url }}</span>
+            
+            </span>
+    
+          {% endif %}
+      
+      {% elsif template == 'cart' %}
+          <span class="arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span> 	 
+      {% elsif template == 'article' %}
+    
+        <span class="arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span> 
+      
+         
+          <span>{{ blog.title | split: '|' | first | link_to: blog.url }}</span>
+        
+      
+        <span class="arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+      
+         
+          <span>{{ article.title | split: '|' | first }}</span>
+        
+      {% elsif template contains 'page' %}
+    
+        <span class="arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+      
+        
+          <span>{{ page.title | split: '|' | first }}</span>
+     
+    
+      {% else %}
+        <span class="arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+      
+        
+          <span>{{ page_title | split: '|' | first }}</span>
+       
+      {% endif %}
+  
+    </div>
+    {% endunless %}

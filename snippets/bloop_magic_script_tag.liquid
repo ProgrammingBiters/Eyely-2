@@ -1,0 +1,10 @@
+{% if content_for_header contains 'bloop-loyalty.js' %}
+    <script>
+        window.BLOOP_LOYALTY = {
+            store_id: 1496,
+            bloopCmsAppUri: 'https://bloop-cms.bsscommerce.com'
+        }
+    </script>
+	<script src='https://bloop-static.bsscommerce.com/bloop-loyalty.js' defer='defer'></script>
+	{% assign content_for_header = content_for_header | replace: 'bloop-loyalty.js', 'bloop_loyalty_ready.js' %}
+{% endif %}                   

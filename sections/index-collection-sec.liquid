@@ -1,0 +1,92 @@
+<section class="index-collection-sec">
+  <div class="container">
+    <div class="title-div">
+      <h2 class="index_collection-heading px-md-5 mx-3">{{ section.settings.title }}</h2>
+    </div>
+    <div class="row mx-auto collection-box-wrapper">
+     
+        {% for block in section.blocks %}
+      {% if block.type == 'collection_box' %}
+      {% assign collection = collections[block.settings.our_collection] %}
+      
+      <div class="box-wrapper box-wrapper-row-{{ section.settings.per_row }}">
+         <div class="index_collection-best">
+            <div class="index_collection-best-img">
+              <a href="{{ collection.url }}">
+              {% if collection.image != blank %}
+                 {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: collection.image.src ,
+                                        size: '300x300'                                   
+                                    %}
+              
+              {% endif %}
+        </a>
+            </div>
+            <div class="index_collection-best-text">
+               <a href="{{ collection.url }}"><p>{{ collection.title }}</p>
+             {{ block.settings.btn_txt }}</a>
+            </div>
+        </div>
+      </div>
+       
+       {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ 'index-collection-section.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+  {
+    "name": "Index Collection",
+    "settings": [
+      {
+          "type":"text",
+          "id":"title",
+          "label":"Title"
+      },
+        {
+  "type": "range",
+  "id": "per_row",
+  "min": 2,
+  "max": 5,
+  "step": 1,
+  "label": "Grid Size",
+  "default": 5
+}
+    ],
+    "blocks":[
+		{
+			"type": "collection_box",
+			"name": "Collection",
+			"settings":[
+				{
+					"type": "collection",
+					"id": "our_collection",
+					"label": "Collection"	
+				},
+               {	
+                    "type": "text",
+                    "id": "btn_txt",
+                    "label": "Button Text"
+                }
+			]
+		}
+	],
+    "presets": [
+    	{
+			"name": "Index Collection",
+			"category": "Index"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

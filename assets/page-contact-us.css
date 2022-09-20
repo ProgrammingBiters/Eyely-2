@@ -16,19 +16,23 @@
   }
   .cont-banner .cont-ibanner-img:before {
     content: '';
-    padding-top: 31%;
+/*     padding-top: 31%; */
+     padding-top: 25%;
     display: block;
   }
   
   @media (min-width: 992px) and (max-width: 1199px) {
     .cont-banner .cont-ibanner-img:before {
-      padding-top: 35%;
+/*       padding-top: 35%;
+      */
+       padding-top: 25%;
     }
   }
   
   @media (min-width: 768px) and (max-width: 991px) {
     .cont-banner .cont-ibanner-img:before {
-      padding-top: 50%;
+/*       padding-top: 50%; */
+      padding-top: 25%;
     }
   }
   
@@ -63,7 +67,8 @@
     color: #fff;
     font-size: 40.8px;
     font-weight:500;
-        font-family: 'Bookmania Bold';
+/*         font-family: 'Bookmania Bold'; */
+    font-family: 'Guardian Egyptian';
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
@@ -151,10 +156,15 @@
   }
   
   .contect-forms .cont-form-add img {
-    width: 100%; 
+    max-width: 100%; 
     height: auto;
+    max-height: 460px;
+    margin: auto;
+    width:auto;
   }
-  
+  .contect-forms .cont-form-add  > div{
+    text-align:center;
+  }
   .contect-forms .cont-form-add .chat-eyely i {
     cursor: pointer;
     margin-right: 5px;
@@ -184,6 +194,7 @@
     .contect-forms .cont-form-add .contact-detail {
       line-height: 35px;
       font-size: 16px;
+      font-weight:400;
     }
 
   

@@ -140,7 +140,7 @@
 
   transition: color .1s cubic-bezier(.4,0,.2,1);
   background: #fff;
-  z-index: 99;
+/*   z-index: 99; */
   bottom: 10px;
   border-radius: 9px;
  

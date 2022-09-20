@@ -4,10 +4,10 @@
     <section class="blog-grid">
       <div class="container">
         <h3 class="blog-grid-heading b-headings">{{section.settings.title}}<a href="{{blog.url}}" class="shop-now-prd">view all<i class="fa fa-angle-right"></i></a></h3>
-        <div class="row">
+        <div class="row blog-grid--slide">
           {% for article in blog.articles %}
-          <div class="col-xl-3 col-lg-3 col-md-4 col-6">
-            <div class="b-grid-div">
+          <div class="col-xl-3 col-lg-3 col-md-4 col-6 ">
+            <div class="b-grid-div content">
               {% if article.image != blank %}
               <div class="b-grid-img">
                 <a href="{{article.url}}"><img src="{{article.image | img_url:'original'}}" class="img-fluid"></a>
@@ -21,11 +21,20 @@
             </div>
           </div>
           {% endfor %}
+   
+              
+               
           
         </div>
+         <div>
+      <a href="#" id="loadMore-blog-grid">Load More</a>
+    </div>
       </div>
     </section>
     {% endif %}
+
+
+    
     {% schema %}
       {
         "name": "Blog Grid",

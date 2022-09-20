@@ -1,7 +1,6 @@
 {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
-{{ 'blog.css' | asset_url | stylesheet_tag }}
 <style>
   .blogs-page .blog-page-b-show .b-Recipes {
   background-image: url(" {{ 'download.svg' | asset_url }} ");
@@ -27,8 +26,8 @@
 {% endif %}
 <section class="blogs-page" data-template="{{ template }}">
   <div class="container">
-    <div class="row">
-      <div class="col-xl-2 col-lg-2 col-md-12 col-12 blog-order">
+    <div class="row mx-auto">
+      <div class="col-xl-3 col-lg-3 col-md-12 col-12 blog-order">
         <div class="blog-show blog-page-b-show">
           <h3 class="b-Recipes">In The Shop</h3>
         {% for block in section.blocks %}
@@ -41,7 +40,7 @@
               {% if block.settings.featured_image != blank %}
               <img src="{{block.settings.featured_image |img_url:'original'}}" class="img-fluid">
               {% elsif fproduct.featured_image != blank %}
-              <img src="{{fproduct.featured_image |img_url:'original'}}" class="img-fluid">
+              <img src="{{fproduct.images[1] |img_url:'original'}}" class="img-fluid">
               {% endif %}
               {% if block.settings.badge_title != blank %}
               <div class="ribbon ribbon--left">
@@ -51,17 +50,33 @@
             </a>
           </div>
           <div class="prd-info">
+          
             <h2 class="prd--title b-headings"><a href="{{fproduct.url}}">{{fproduct.title|strip_html|truncate:30}}</a></h2>
-            {% if block.settings.short_info != blank %}<p class="prd-des">{{block.settings.short_info}}</p>{% endif %}
+<!--             {% if block.settings.short_info != blank %}<p class="prd-des">{{block.settings.short_info}}</p>{% endif %} -->
+<span class="prd-main-div-price-blog">{{fproduct.price |money}}</span>
+            {% if fproduct.vendor == 'Eyely' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif fproduct.vendor == 'happimess' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif fproduct.vendor == 'ovalair' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                          {% endif %}
             {% if block.settings.enable_link %} <a href="{{fproduct.url}}" class="shop-now-prd">{{block.settings.link_label}}<i class="fa fa-angle-right"></i></a>{% endif %}
           </div>
+          
         </div>
        
         {% endif %}
         {% endfor %}
            </div>
       </div>
-      <div class="col-xl-7 col-lg-7 col-md-12 col-12 px-lg-0">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12 px-lg-0 featured_article_wrap">
       {% if featuredArticles %}
         {%- for article in featuredArticles  limit: 1 -%}
         <div class="blog-show blog-page-b-show">

@@ -3,10 +3,10 @@
     "page-sell-on-eyely": {
       "type": "sell-on-eyely-page",
       "settings": {
-        "banner_img": "shopify:\/\/shop_images\/11-1.jpg",
+        "banner_img": "shopify:\/\/shop_images\/123.png",
         "banner_text": "Sell On Eyely",
         "form_text": "Mail at info@eyely.com or fill out the form below:",
-        "detail_img": "shopify:\/\/shop_images\/0-2.png"
+        "detail_img": "shopify:\/\/shop_images\/1234.png"
       }
     }
   },

@@ -25,7 +25,7 @@ display:none;
      
           
      
-<div class="grid__item "  itemscope itemtype="http://schema.org/Product" >
+<div class="grid__item ${variants[(0)].compare_at_price}"  itemscope itemtype="http://schema.org/Product" >
     <div id="product-${handle}" class="products">            
         <div class="card-wrapper">
 
@@ -34,9 +34,13 @@ display:none;
                     <div class="card__inner">
                         <div class="">
                             <div id="prd-${id}" class="media media--transparent media--square  media--hover-effect" style="padding-bottom: 100%;">
-                                <img src="${Shopify.Products.resizeImage(images[1], "medium")}"  loading="lazy"
-                                    class="motion-reduce" />
-                                
+                                  {{if images[1] != null }}                        
+                                  <img src="${Shopify.Products.resizeImage(images[1], "medium")}"  loading="lazy"
+                                  class="motion-reduce" />
+                                  {{else}}
+                                  <img src="${Shopify.Products.resizeImage(images[0], "medium")}"  loading="lazy"
+                                  class="motion-reduce" />
+                                  {{/if}} 
                                 <img src="${Shopify.Products.resizeImage(images[0], "medium")}"  loading="lazy"
                                     class="motion-reduce" />
                                     ${( cn = 0 ),''}
@@ -174,7 +178,13 @@ display:none;
                         ${title}
                     </a>
                 </h3>
-                
+                   {{if vendor == 'Eyely' || vendor == 'happimess' || vendor ==  'ovalair' }}      
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                    {{/if}}
+                          
+                                   
                     <div class="reviews-div review-${id}" >
                         <div class="yotpo bottomLine"
                         data-product-id="${id}">
@@ -193,11 +203,15 @@ display:none;
                                     </div>
                                     <div class="price__sale">
                                         <span class="price-item price-item--sale price-item--last">
-                                        From {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
+                                        {{if variants[(0)].compare_at_price != variants[0].price }}From {{/if}}{{html Shopify.formatMoney(variants[0].price, window.money_format)}}
                                         </span>
-                                        <span>
-                                        <s class="price-item price-item--regular">  {{html Shopify.formatMoney(compare_at_price_min, window.money_format)}}</s>
-                                        </span>
+                                        {{if variants[(0)].compare_at_price != variants[0].price }}
+                                        {{if variants[(0)].compare_at_price > 0 }}
+                                          <span>
+                                          <s class="price-item price-item--regular">  {{html Shopify.formatMoney(variants[(0)].compare_at_price, window.money_format)}}</s>
+                                          </span>
+                                        {{/if}}
+                                   {{/if}}
                                     </div>
                                 </div>
                             {{else}}
@@ -205,9 +219,13 @@ display:none;
                                 <span class="price-item price-item--sale price-item--last">
                                 {{html Shopify.formatMoney(variants[0].price, window.money_format)}}
                                 </span>
+                                {{if variants[(0)].compare_at_price != variants[0].price }}
+        {{if variants[(0)].compare_at_price > 0 }}
                                 <span>
-                                <s class="price-item price-item--regular">  {{html Shopify.formatMoney(compare_at_price_min, window.money_format)}}</s>
+                                <s class="price-item price-item--regular">  {{html Shopify.formatMoney(variants[(0)].compare_at_price, window.money_format)}}</s>
                                 </span>
+                                 {{/if}}
+         {{/if}}
                             </div>
                             {{/if}}
 
@@ -238,107 +256,10 @@ display:none;
                                             recentlyViewBlock.show();
                                             var api = new Yotpo.API(yotpo);
                                             api.refreshWidgets();
-                                            $(".c-item").click(function(e){
-                                              e.preventDefault();
-                                              if($(this).hasClass("disabled-item")){}else{
-                                              var fg=false;
-                                              var vid=$(this).data("v-id");
-                                              var u=$(this).data("prd-url");
-                                              var pid=$(this).data("p-id");
-                                              var prgrid=$("#prd-"+pid).find(".v-img");
-                                              $(prgrid).each(function(){
-                                                  $(this).removeClass("show");
-                                              });     
-                                                $("."+vid).addClass("show");
-                                                    var oth=$(this).siblings('button');
-                                                    var c=$(this).find('img');
-                                                        
-                                                        $(oth).each(function(){
-                                                            $(this).find("img").removeClass("active");
-                                                        });
-                                             
-                                                $(this).find("img").addClass("active");
-                                            
-                                            } 
-                                            });
-
-
-                                             $(".c-item").mouseenter(function(e){
-                                              e.preventDefault();
                                           
-                                              var fg=false;
-                                              var vid=$(this).data("v-id");
-                                              var u=$(this).data("prd-url");
-                                              var pid=$(this).data("p-id");
-                                              var prgrid=$("#prd-"+pid).find(".v-img");
-                                              $(prgrid).each(function(){
-                                                  $(this).removeClass("show");
-                                              });     
-                                                $("."+vid).addClass("show");
-                                                    var oth=$(this).siblings('button');
-                                                    var c=$(this).find('img');
-                                                        
-                                                        // $(oth).each(function(){
-                                                        //     $(this).find("img").removeClass("active");
-                                                        // });
-                                             
-                                                // $(this).find("img").addClass("active");
-                                             });
-
-                                             
-                                             $(".c-item").mouseleave(function(e){
-                                              e.preventDefault();
-                                          
-                                              var fg=false;
-                                              var vid=$(this).data("v-id");
-                                              var u=$(this).data("prd-url");
-                                              var pid=$(this).data("p-id");
-                                              var prgrid=$("#prd-"+pid).find(".v-img");
-                                              $(prgrid).each(function(){
-                                                  $(this).removeClass("show");
-                                              });     
-                                                // $("."+vid).addClass("show");
-                                                    // var oth=$(this).siblings('button');
-                                                    // var c=$(this).find('img');
-                                                        
-                                                        // $(oth).each(function(){
-                                                        //     $(this).find("img").removeClass("active");
-                                                        // });
-                                             
-                                                // $(this).find("img").addClass("active");
-                                             });
-
-                                            $(".more-color").click(function(e){
-                                                e.preventDefault();
-                                                var pp=$(this).parent();                                             
-                                                if($(pp).hasClass("more-view")){
-                                                    $(pp).removeClass("more-view");
-                                                }
-                                                else{
-                                                $(pp).addClass("more-view");
-                                                }
-                                                 if($(this).hasClass("minus")){
-                                                            $(this).removeClass("minus");
-                                                            $(this).addClass("plus"); 
-                                                    }else{
-                                                        $(this).removeClass("plus");
-                                                        $(this).addClass("minus");
-                                                    }
-                                                    var pid=$(this).data("prd-id");
-                                                    if($(".review-"+pid).hasClass("d-none")){
-                                                        $(".review-"+pid).removeClass("d-none");
-                                                    }else{
-                                                    $(".review-"+pid).addClass("d-none");
-                                                    }
-                                                    if($(".title-"+pid).hasClass("d-none")){
-                                                        $(".title-"+pid).removeClass("d-none");
-                                                    }else{
-                                                    $(".title-"+pid).addClass("d-none");
-                                                    }
-    });
                                         }
                                         } } );
-},3000);
+},4000);
   </script>
   {% schema %}
 {

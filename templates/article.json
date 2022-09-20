@@ -85,7 +85,62 @@
           "settings": {
             "featured_blog": "news",
             "title": "From Our Shop",
-            "featured_coll": "ceiling-fans"
+            "featured_coll": "runners"
+          }
+        },
+        "35448c0e-b72c-44af-8b2d-6beeaa6ff06a": {
+          "type": "sidebar-links",
+          "settings": {
+            "featured_blog": "rugs",
+            "featured_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_30.png",
+            "link_title": "Outdoor",
+            "link_url": "shopify:\/\/collections\/outdoor",
+            "name": "Sandip",
+            "count": "6"
+          }
+        },
+        "cc532900-9666-4a79-b69f-19cec1ca91b9": {
+          "type": "sidebar-links",
+          "settings": {
+            "featured_blog": "rugs",
+            "featured_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_35.png",
+            "link_title": "Machine Washable Rugs",
+            "link_url": "shopify:\/\/collections\/washable",
+            "name": "Sandip",
+            "count": "6"
+          }
+        },
+        "6f87caa7-74cd-4427-90ab-ecf1737804a0": {
+          "type": "sidebar-links",
+          "settings": {
+            "featured_blog": "rugs",
+            "featured_image": "shopify:\/\/shop_images\/table_lamp-removebg-preview.png",
+            "link_title": "Table Lamps",
+            "link_url": "shopify:\/\/collections\/table-lamps",
+            "name": "Sandip",
+            "count": "6"
+          }
+        },
+        "69a0f891-c044-4433-bbdf-90d61ee5c0a6": {
+          "type": "sidebar-links",
+          "settings": {
+            "featured_blog": "rugs",
+            "featured_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker__15_-removebg-preview.png",
+            "link_title": "Flush Mounts",
+            "link_url": "shopify:\/\/collections\/flush-mounts",
+            "name": "Sandip",
+            "count": "6"
+          }
+        },
+        "28ef32f0-a9ff-44bb-b2d5-7bd93923038c": {
+          "type": "sidebar-links",
+          "settings": {
+            "featured_blog": "rugs",
+            "featured_image": "shopify:\/\/shop_images\/Screenshot_9_ca53d0b6-7c07-4a66-b567-00e0c731a9fb.png",
+            "link_title": "Gifts",
+            "link_url": "shopify:\/\/collections\/gifts",
+            "name": "Sandip",
+            "count": "6"
           }
         }
       },
@@ -97,15 +152,20 @@
         "c7eddf8b-abec-44c5-9e23-1c1e431a6b78",
         "5699d094-d387-4433-9818-81949ae47ceb",
         "fca2276a-6d69-4a10-876c-9f26a2c2f16b",
-        "cd5d7584-37c3-4b8e-a95d-e05e51a6b601"
+        "cd5d7584-37c3-4b8e-a95d-e05e51a6b601",
+        "35448c0e-b72c-44af-8b2d-6beeaa6ff06a",
+        "cc532900-9666-4a79-b69f-19cec1ca91b9",
+        "6f87caa7-74cd-4427-90ab-ecf1737804a0",
+        "69a0f891-c044-4433-bbdf-90d61ee5c0a6",
+        "28ef32f0-a9ff-44bb-b2d5-7bd93923038c"
       ],
       "settings": {
-        "sidebartitle": "F52er's Collections",
+        "sidebartitle": "Eyely's Collections",
         "sidebarsubtitle": "APPEARS IN THESE",
-        "newsletter_title": "Want more Food52?",
+        "newsletter_title": "Want more eyely?",
         "newsletter_description": "Our best tips for eating thoughtfully and living joyfully, right to your inbox.",
         "join_title": "Join the Conversation",
-        "join_subtitle": "See what other Food52 readers are saying.",
+        "join_subtitle": "See what other Eyely readers are saying.",
         "popular_title": "Popular on Eyely"
       }
     },

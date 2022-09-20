@@ -1,5 +1,5 @@
 .collection-grid{
-    padding:40px 0;
+      padding: 40px 0;
 }
 .collection-grid .container{
     max-width:1630px;
@@ -10,7 +10,7 @@
         grid-gap: 20px;
         grid-template-columns: repeat(5,1fr);
         grid-auto-rows: auto;
-        padding: 15px;
+         padding: 15px;
 }
 
 
@@ -48,11 +48,14 @@
       width: 100%;
   }
   .collection-grid .grid-wrap .unique-sec-img a{
-      color:#2d3654;
+   color: #000;
+    display: block;
       display:block;
       text-decoration: none;
       font-size: 16px;
-      font-family: 'Bookmania Bold';
+/*  font-family: 'JosefinSans Medium'; */
+    font-family: 'Graphik','sans-serif';
+    font-weight: 700;
     }
 .collection-grid .grid-wrap .grid_join{
     grid-row: span 2;

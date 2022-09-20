@@ -24,13 +24,24 @@
             var data = response.resources.results.products;
             console.log(data);
             resultsList.empty();
-            if(data.length == 0) {
+            if(data.size == 0) {
               resultsList.hide();
             } 
             else
             {
               resultsList.css("display","block");
+              var fg=false;
+var t=[];
               $.each(data, function(index, item) {
+              v=item.tags;
+              fg=false;
+                  $.each(v, function(ik, iy) {
+                    if(iy == "hidden"){
+                    fg= true;
+                    }
+                  });
+                if(fg == true ){}
+                else{
                   if(index <= 5 ){
                 var p=item.price * 100;
                 console.log(p);
@@ -43,8 +54,9 @@
                 link.wrap('<li></li>');
                 resultsList.append(link.parent());
                   }
+              }
               });
-              if(data.length > 5) {
+              if(data.size > 5) {
                 resultsList.append('<li class="text-center"><span class=" btn-results"><a href="' + searchURL + '"> View All Results </a></span></li>');
               }
               resultsList.fadeIn(200);

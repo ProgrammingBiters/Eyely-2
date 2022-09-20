@@ -1,0 +1,25 @@
+<section class="video-popup-section">
+  <div class="video-popup-modal">
+
+    <div class="video-popup-close">
+      <button class="video-close-button" type="button">
+        <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/icons8-close-25.svg?v=1662662121"  class="video-close-button__icon" >
+      </button>
+    </div>
+    <div class="video-modal-content">
+
+      {% if product.metafields.custom.gallery_videos.value != blank %}
+         <div class="prd-video-inner-div">
+          <video muted="" loop="loop" width="100%" class="d-block" id="vid-popup" >
+            <source src="">
+          </video>
+        </div>
+        
+        {% endif %}
+
+     
+
+    </div>
+  </div>
+</section>
+

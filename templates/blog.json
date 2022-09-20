@@ -36,6 +36,45 @@
     },
     "1643345791a6cc4a9c": {
       "type": "blog-product",
+      "blocks": {
+        "cdca28f3-4305-46cc-9a00-83188ef7542e": {
+          "type": "featured_product",
+          "settings": {
+            "featured_product": "adawell-approx-5-ft-x-8-ft-area-rug"
+          }
+        },
+        "aa1fecb9-7010-4cc3-82f8-daf217e692d8": {
+          "type": "featured_product",
+          "settings": {
+            "featured_product": "kolkata-moroccan-hype-boho-vintage-area-rug"
+          }
+        },
+        "80b8d770-c2e9-448d-9d95-fbdcb84eb53a": {
+          "type": "featured_product",
+          "settings": {
+            "featured_product": "adelina-235-crystal-led-table-lamp"
+          }
+        },
+        "bbb6d2e0-604b-4d3b-a0c7-90a60a3957cd": {
+          "type": "featured_product",
+          "settings": {
+            "featured_product": "ace-255-glass-teardrop-led-table-lamp-set-of-2"
+          }
+        },
+        "ff98c5b2-2cfa-44aa-9dae-89724d85ff4d": {
+          "type": "featured_product",
+          "settings": {
+            "featured_product": "angie-tropical-palm-leaf-indooroutdoor-area-rug"
+          }
+        }
+      },
+      "block_order": [
+        "cdca28f3-4305-46cc-9a00-83188ef7542e",
+        "aa1fecb9-7010-4cc3-82f8-daf217e692d8",
+        "80b8d770-c2e9-448d-9d95-fbdcb84eb53a",
+        "bbb6d2e0-604b-4d3b-a0c7-90a60a3957cd",
+        "ff98c5b2-2cfa-44aa-9dae-89724d85ff4d"
+      ],
       "settings": {
         "title": "New to <span>The Shop<\/span>",
         "subtitle": "Our newest additions that we can't stop talking about",
@@ -102,14 +141,15 @@
     "1643346033eed0bfbc": {
       "type": "featured-article",
       "settings": {
-        "featured_article": "rugs\/2021-buying-guide-for-runner-rugs-improve-the-aesthetic-of-your-bedroom",
-        "view_article_label": "view article"
+        "featured_article": "rugs\/how-to-remove-stains-from-carpets",
+        "view_article_label": "view article",
+        "vid_url": "https:\/\/www.youtube.com\/embed\/nFCW1Fu7pA4"
       }
     },
     "1643346095b9c82cd7": {
       "type": "team-product",
       "settings": {
-        "title": "Our Best Selling Pendants",
+        "title": "Our Best Selling <span>Pendants<\/span>",
         "featured_collection": "pendants"
       }
     },
@@ -120,13 +160,14 @@
         "title": "How to Flatten Your Rug | Remove Creases & Dents",
         "description": "Here are a few helpful tips and tricks on how to make your new rug flat fast",
         "button_label": "Read More",
-        "button_url": "shopify:\/\/blogs\/rugs\/how-to-play-with-area-rug-patterns-guide-to-fitting-the-perfect-rug",
+        "button_url": "shopify:\/\/blogs\/rugs\/how-to-flatten-area-rugs-diy-tips",
         "vid_url": "https:\/\/www.youtube.com\/embed\/gL6JBa_fWts",
         "video_type": "youtube"
       }
     },
     "16433461786e16b463": {
       "type": "f-blog",
+      "disabled": true,
       "settings": {
         "fblog": "lighting",
         "right_title": "Latest"
@@ -141,6 +182,7 @@
     },
     "1643346204b7c3f83d": {
       "type": "f-blog-2",
+      "disabled": true,
       "settings": {
         "fblog": "rugs",
         "right_title": "Latest"

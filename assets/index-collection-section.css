@@ -1,0 +1,175 @@
+.index-collection-sec{
+  padding-bottom:10px;
+}
+.index-collection-sec .title-div{
+  padding-top:40px;
+  padding-bottom:40px;
+/*   background:#b1d1d8; */
+}
+ .collection-box-wrapper{
+   margin-top:-35px;
+ }
+@media (min-width:768px){
+  
+
+.index-collection-sec .box-wrapper-row-5 {
+  width: calc(100% / 5 ) !important;
+  padding:0px 8px;
+}
+.index-collection-sec .box-wrapper-row-4 {
+  width: calc(100% / 4 )!important;
+  padding:0px 8px;
+}
+.index-collection-sec .box-wrapper-row-3 {
+  width: calc(100% / 3 )!important;
+  padding:0px 8px;
+}
+.index-collection-sec .box-wrapper-row-2 {
+  width: calc(100% / 2 )!important;
+  padding:0px 8px;
+}
+  }
+.index-collection-sec .title-div .index_collection-heading{
+/*   text-transform:uppercase; */
+/*   color:#258635; */
+  margin-bottom:15px;
+}
+@media (max-width: 767px) {
+    .arrow-new {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;
+}
+
+.right {  margin-right: 5px;
+    margin-bottom: 2px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left { 
+  margin-bottom: 2px;
+    margin-left: 5px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+  .index-collection-sec .slick-arrow{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+   z-index: 3;
+    background: #fff;
+    border-radius: 50%;
+  } 
+  .index-collection-sec .slick-prev{
+    left:0;
+    right:auto;
+  }
+    .index-collection-sec .slick-next{
+    right:0;
+    left:auto;
+  }
+  .index-collection-sec .slick-next:before,.index-collection-sec .slick-prev:before{
+    display:none;
+  }
+  
+  .index-collection-sec{
+    margin-bottom:30px;
+  }
+  .index-collection-sec .box-wrapper-row-5,.index-collection-sec .box-wrapper-row-4,.index-collection-sec .box-wrapper-row-3 {
+        width: calc(100% - 10px);
+        padding-right:10px;
+        max-width: 100%;
+  }
+}
+
+.index-collection-sec .index_collection-best .index_collection-best-img{
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  border-radius:25px;
+}
+
+.index-collection-sec .index_collection-best .index_collection-best-img::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.index-collection-sec .index_collection-best .index_collection-best-img img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ object-fit: cover;
+  
+}
+.index-collection-sec .index_collection-best .index_collection-best-text{
+    padding: 10px 0;
+  text-align: center;
+}
+.index-collection-sec .index_collection-best .index_collection-best-text p {
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 0;
+      color: #000;
+/*       font-family: 'Guardian Egyptian'; */
+  font-family: 'Graphik Medium','sans-serif';
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .index-collection-sec .index_collection-best .index_collection-best-text p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .index-collection-sec .index_collection-best .index_collection-best-text p {
+    font-size: 19px;
+  }
+}
+
+
+ .index-collection-sec .index_collection-best .index_collection-best-text a{
+   font-size:13px;
+   color:#959595;
+
+/*    text-transform:uppercase; */
+ }
+@media (min-width: 768px) and (max-width: 991px) {
+  .index-collection-sec .index_collection-best .index_collection-best-text a {
+    font-size: 12px;
+  }
+}
+@media (max-width:767px){
+  .collection-box-wrapper{
+    max-height:400px;
+    overflow:hidden;
+  }
+  .collection-box-wrapper.slick-initialized{
+    max-height:unset;
+    overflow:unset;
+  }
+}
+@media (max-width:560px){
+    .index-collection-sec .index_collection-best .index_collection-best-text p {
+    font-size: 12px;
+  }
+    .collection-box-wrapper{
+    max-height:200px;
+    overflow:hidden;
+  }
+  .collection-box-wrapper.slick-initialized{
+    max-height:unset;
+    overflow:unset;
+  }
+}
+.collection-box-wrapper .slick-next, .collection-box-wrapper .slick-prev{
+  top: 40%;
+}

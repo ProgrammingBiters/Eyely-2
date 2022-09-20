@@ -8,6 +8,7 @@
   </span>
 {%- endcapture -%}
 
+
 {% comment %} Custom tag ordering {% endcomment %}
 {%- assign custom_ordered_tags = section.settings.custom_ordered_tags | split: ',' -%}
 {%- assign custom_tags = blank -%}
@@ -64,6 +65,7 @@
     {% endif %}
   {% endif %}
 
+    
   {% assign tag_count = 0 %}
   <h3 class="productgrid--sidebar-title--small">
     {{ cat_item }}
@@ -85,6 +87,7 @@
       Loop through collection tags
     {% endcomment %}
     {% for tag in sorted_tags %}
+
       {% liquid
         assign cat = tag | split: '_' | first
         assign cat_handle = cat | handleize
@@ -95,20 +98,48 @@
         {% assign tag_count = tag_count | plus: 1 %}
 
         {%- if show_swatches -%}
+    {% assign fg = false %}
+{% for t in collection.all_tags %}
+                {% if t contains "rug" %}
+    				{% assign fg = true %}
+    			{% endif %}
+    
+    			{% endfor %}
           {%- assign color_name = tag | remove_first: cat | remove_first: '_' -%}
-          {%- capture swatch -%}
-            <div
-              class="filter-item--swatch-wrapper"
-              data-swatch-tooltip="{{ color_name }}"
-            >
-              <div class="filter-item--swatch">
-                <div
-                  class="filter-item--swatch-inner  {{color_name | handleize}} "
-                style="text-align: center;{% render 'swatch-styles', color_name: color_name %}">
-                </div>
-              </div>
-            </div>
-          {%- endcapture -%}
+    		{% if fg %}
+                        {% if tag == "Color_Ivory" or tag == "Color_Multi" or tag == "Color_Blue" or tag == "Color_Navy" or tag == "Color_Cream" or tag == "Color_Pink" or tag == "Color_Coral" or tag == "Color_Beige" or tag == "Color_Turquoise" or tag == "Color_Gray" or tag == "Color_Charcoal" or tag == "Color_Red" or tag == "Color_Black" or tag == "Color_Orange" or tag == "Color_Burgundy" or tag == "Color_Natural" or tag == "Color_Green" or tag == "Color_Gold" or tag == "Color_Teal" or tag == "Color_Taupe" or tag == "Color_Aqua" or tag == "Color_Yellow" or tag == "Color_Khaki" or tag == "Color_Purple" or tag == "Color_Silver" or tag == "Color_Pink" %}
+                          {%- capture swatch -%} 
+                          <div
+                               class="filter-item--swatch-wrapper"
+                               data-swatch-tooltip="{{ color_name }}"
+                               >
+                            <div class="filter-item--swatch">
+                              <div
+                                   class="filter-item--swatch-inner  {{color_name | handleize}} "
+                                   style="text-align: center;{% render 'swatch-styles', color_name: color_name %}">
+                              </div>
+                            </div>
+                          </div>
+                          {%- endcapture -%}
+    {% else %}
+     {% assign swatch = "" %}
+    
+                        {% endif %}
+    			{% else %}
+                    {%- capture swatch -%}
+                      <div
+                            class="filter-item--swatch-wrapper"
+                            data-swatch-tooltip="{{ color_name }}"
+                          >
+                            <div class="filter-item--swatch">
+                              <div
+                                class="filter-item--swatch-inner  {{color_name | handleize}} "
+                              style="text-align: center;{% render 'swatch-styles', color_name: color_name %}">
+                              </div>
+                            </div>
+                          </div>
+                    {%- endcapture -%}
+    			{% endif %}
         {%- endif -%}
 
         {% comment %}
@@ -132,6 +163,7 @@
               {{ tag | remove_first: cat | remove_first: '_' }}
             </span>
           {%- endif -%}
+        
         {%- endcapture -%}
 
         {% assign filter_active = false %}
@@ -157,10 +189,17 @@
           {% if current_tags contains tag %}
             {{ tag_content | link_to_remove_tag: tag }}
           {% else %}
+          {% if show_swatches %}
+          {% if swatch != blank %}
+          {{ tag_content | link_to_add_tag: tag }}
+          {% endif %}
+          {% else %}
             {{ tag_content | link_to_add_tag: tag }}
+          {% endif %}
           {% endif %}
         </li>
       {% endif %}
+     {% assign swatch = "" %}
     {% endfor %}
  {%- unless show_swatches -%}
     {% if tag_count > tag_limit %}

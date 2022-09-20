@@ -68,8 +68,9 @@
             <span class="pagination--chevron-left" aria-hidden="true">
               {% render 'icon-chevron-down-small' %}
             </span>
-
-            {{ 'general.pagination.previous' | t }}
+			<span class="label-prev">  
+  				{{ 'general.pagination.previous' | t }}
+            </span>
           </a>
         </li>
       {% endif %}
@@ -82,7 +83,8 @@
               href="{{ part.url }}{% if grid_list %}&grid_list{% endif %}"
               aria-label="Go to page {{ part.title }}"
             >
-              {{ part.title }}
+            {{ part.title }}
+              
             </a>
           </li>
       
@@ -102,7 +104,7 @@
               aria-current="true"
             >
               <span class="pagination--item">
-                {{ part.title }}
+                   {{ part.title }}
               </span>
             </li>
           {% endif %}
@@ -116,7 +118,7 @@
             href="{{- paginate.next.url -}}{%- if grid_list -%}&grid_list{%- endif -%}"
             aria-label="Go to next page"
           >
-            {{ 'general.pagination.next' | t }}
+            <span class="label-next"> {{ 'general.pagination.next' | t }}</span>
             <span class="pagination--chevron-right" aria-hidden="true">
               {% render 'icon-chevron-down-small' %}
             </span>

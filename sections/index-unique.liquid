@@ -1,0 +1,234 @@
+<section class="prd-grid index-unique-grid">
+  <div class="container">
+
+
+    <div class="product-section">
+      <div class="show---product w-100">
+        <div class="row align-items-center">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-12">
+            <div class="details-of-sec">
+
+              <h2>{{section.settings.top_title}}</h2>
+              <h3>{{ section.settings.title }}</h3>
+              <a href="{{ section.settings.coll-url }}" class="d-md-block d-none">see more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          {% for block in section.blocks %}
+          {% assign collection = collections[block.settings.add_collection] %}
+          {% if block.type == 'prd' and block.settings.add_collection != blank %}
+          <div class="{% if forloop.index == 1 %}col-xl-3 col-lg-3 col-md-3 {% elsif forloop.index == 2 %} col-xl-2 col-lg-2 col-md-2 {% elsif forloop.index == 3 %}  col-xl-3 col-lg-3 col-md-3 {% elsif forloop.index == 4 %} col-xl-4 col-lg-4 col-md-4 {% elsif forloop.index == 5 %} col-xl-3 col-lg-3 col-md-3 {% elsif forloop.index == 6 %}col-xl-2 col-lg-2 col-md-2 {% endif %} col-6">
+
+            <a href="{{ collection.url }}" class="unique-section-link">
+              <div class="s-product-details">
+                {% if collection.image != blank  %}
+                   {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: collection.image ,
+                                        size: '400x400'                                   
+                                    %}
+               
+                  {% endif  %}
+                <div class="prd-price prd-c-price">
+                  <p>{{ collection.title }}</p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+          {% endif %}
+          {% endfor %}
+          <div class="col-xl-3 col-lg-3 col-md-3 col-6 details-description {{section.settings.size_last}}  d-md-block d-none">
+            {{section.settings.info_p}}
+          </div>
+          <div class="details-of-sec my-3 d-md-none d-block">
+
+
+            <a href="{{ collection.url }}">see more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Index Unique sale",
+"tag": "section",
+"class": "spaced-section spaced-section--full-width",
+"max_blocks":6,
+"settings":[
+{
+"type":"text",
+"id":"top_title",
+"label":"Top Title",
+"default":"Eyelys Picks"
+},
+{
+"type":"text",
+"id":"title",
+"label":"Title",
+"default":"For your home"
+},
+{
+"type":"url",
+"id":"coll-url",
+"label":"See More Collection Url"
+},
+{
+"type" : "textarea",
+"id" : "info_p",
+"label" : "Info",
+"default" : "Exceptional pieces by Indian creators that can help express your style in any space"
+}
+],
+"blocks":[
+{
+"type":"prd",
+"name":"Collection",
+"settings":[
+{		
+"type":"collection",
+"id":"add_collection",
+"label":"Collection Select"
+},
+{
+"type":"header",
+"content":"Main Header"
+},
+{
+"type" : "text",
+"id" : "back_p",
+"label" : "Text",
+"default" : "Shop this unique finds"
+}, 
+{
+"type": "select",
+"id": "size_first",
+"label":"Grid Size Main Title",
+"options": [
+{
+"value": "col-xl-1 col-lg-1 col-md-1",
+"label": "Col-1"
+},
+{
+"value": "col-xl-2 col-lg-2 col-md-2",
+"label": "Col-2"
+},
+{
+"value": "col-xl-3 col-lg-3 col-md-3",
+"label": "Col-3"
+},
+{
+"value": "col-xl-4 col-lg-4 col-md-4",
+"label": "Col-4"
+},
+{
+"value": "col-xl-5 col-lg-5 col-md-5",
+"label": "Col-5"
+},
+{
+"value": "col-xl-6 col-lg-6 col-md-6",
+"label": "Col-6"
+},
+{
+"value": "col-xl-7 col-lg-7 col-md-7",
+"label": "Col-7"
+},
+{
+"value": "col-xl-8 col-lg-8 col-md-8",
+"label": "Col-8"
+},
+{
+"value": "col-xl-9 col-lg-9 col-md-9",
+"label": "Col-9"
+},
+{
+"value": "col-xl-10 col-lg-10 col-md-10",
+"label": "Col-10"
+},
+{
+"value": "col-xl-11 col-lg-11 col-md-11",
+"label": "Col-11"
+},
+{
+"value": "col-xl-12 col-lg-12 col-md-12",
+"label": "Col-12"
+}
+],
+"default": "col-xl-3 col-lg-3 col-md-3"
+},
+{
+"type":"header",
+"content":"Description"
+},		
+{
+"type": "select",
+"id": "size_last",
+"label":"Grid Size Description",
+"options": [
+{
+"value": "col-xl-1 col-lg-1 col-md-1",
+"label": "Col-1"
+},
+{
+"value": "col-xl-2 col-lg-2 col-md-2",
+"label": "Col-2"
+},
+{
+"value": "col-xl-3 col-lg-3 col-md-3",
+"label": "Col-3"
+},
+{
+"value": "col-xl-4 col-lg-4 col-md-4",
+"label": "Col-4"
+},
+{
+"value": "col-xl-5 col-lg-5 col-md-5",
+"label": "Col-5"
+},
+{
+"value": "col-xl-6 col-lg-6 col-md-6",
+"label": "Col-6"
+},
+{
+"value": "col-xl-7 col-lg-7 col-md-7",
+"label": "Col-7"
+},
+{
+"value": "col-xl-8 col-lg-8 col-md-8",
+"label": "Col-8"
+},
+{
+"value": "col-xl-9 col-lg-9 col-md-9",
+"label": "Col-9"
+},
+{
+"value": "col-xl-10 col-lg-10 col-md-10",
+"label": "Col-10"
+},
+{
+"value": "col-xl-11 col-lg-11 col-md-11",
+"label": "Col-11"
+},
+{
+"value": "col-xl-12 col-lg-12 col-md-12",
+"label": "Col-12"
+}
+],
+"default": "col-xl-3 col-lg-3 col-md-3"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Index Unique sale"
+}
+]
+
+}
+{% endschema %}

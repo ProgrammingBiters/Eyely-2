@@ -6,8 +6,84 @@
 {%- assign random_number = "now" | date: "%N" | modulo: diff -%}
 {%- assign random_number = random_number | plus: min -%}
 {% paginate collect.products by collect.all_products_count %}
+<style>
+  .e-prd .e-prd-title span{
+    background-image:url({{ 'shop.svg' | asset_url }});
+  }
+</style>
 
+<section class="e-prd">
+  <div class="container">
 
+    <h3 class="e-prd-title"> {{section.settings.title}}</h3>
+    <div class="row e-slider"> 
+   {% for product in collect.products limit:5 offset:random_number %}
+      
+      <div class="col-lg-2 col-md-2 col-6">
+        <div class="all-prd-main content1">
+        <a href="{{product.url}}">
+      	<div class="prd-main-div">
+         
+          <div class="prd-main-div-img">
+          {% assign initial_image = product.images[1].src %}
+            {% assign second_image = product.images[0].src %}    
+            {%  unless initial_image != nil %}
+              {% assign initial_image = product.images[0].src %}
+              {% endunless %}
+            {% if initial_image != nil %}
+        
+                                  {%
+                                    render 'rimg',
+                                    class: 'productitem--image-primary img-fluid lazyload',
+                                    img: initial_image,
+                                    size: '360x360'                                   
+                                  %}
+            {% endif %}
+            
+                      {% if second_image != nil %}
+        
+                                  {%
+                                    render 'rimg',
+                                    class: 'v-img1 img-fluid lazyload',
+                                    img:second_image,
+                                    size: '360x360'                                   
+                                  %}
+            {% endif %}
+          </div>
+     
+          <div class="prd-main-div-info">
+            <h3 class="b-headings"><span class="prd-main-div-title">{{product.title}} </span> <br> <span class="prd-main-div-price">{{product.price |money}}</span></h3>
+                       {% if product.vendor == 'Eyely' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'happimess' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'ovalair' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                          {% endif %}
+     </div>
+        </div>
+        </a>
+
+        </div>
+      </div>    
+     
+      {% endfor %}
+    </div>
+   {% comment %}
+    <div class="load-more-btn">
+      <a href="#" id="loadMore1">view more</a>
+    </div>
+{% endcomment %}
+  </div>
+</section>
+
+{% comment %}
 <section class="teamwork mb-5">
   <h3 class="teamwork-headline b-headings">{{section.settings.title}}</h3>
   <div class="team-work-prd">
@@ -40,6 +116,7 @@
     </div>
   </div>
 </section>
+  {% endcomment %}
 {% endpaginate %}
 {% schema %}
   {

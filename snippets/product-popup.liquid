@@ -1,0 +1,98 @@
+<section class="product-popup-section">
+  <div class="prd-popup-modal">
+
+    <div class="prd-popup-close">
+      <button class="prd-close-button" type="button">Close
+        <img src="https://cdn.shopify.com/s/files/1/0553/3053/7657/files/icons8-close-25.svg?v=1662662121"  class="close-button__icon" >
+      </button>
+    </div>
+
+    <div class="prd-modal-content">
+
+      <div class="prd-modal-main-container">
+        <div class="prd-modal-main-img-div">
+          <div class="prd-modal-img-wrapper">
+            <div class="prd-modal-main-standard-img">
+              {% for media in product.media %} 
+                 {% case media.media_type %}
+                {% when 'image' %}
+                    <div class="prd-modal-main-img-container">
+                      <div class="img-wrap  zoom-1">
+                        {%
+                            render 'rimg',
+                            class : 'img-fluid m-auto lazyload',
+                            img: media.src,
+                            size: '500x500',
+                            lazy : false
+                          %}
+                      </div>
+                    </div>
+                   {% comment %}
+                  {% when 'external_video' %}
+                         <div class="product-single__media external-video" >
+                   
+                          {% assign m_url = media | external_video_url  %}
+                          {% if m_url contains 'vimeo' %}
+                           <div class="vimeo-wrapper">
+                          <iframe id="main-{{media.id}}" frameborder="0" src="{{ media | external_video_url : autoplay: "1" ,controls:"0", loop: "1", muted: "1"  }}"></iframe>
+                           </div>
+                          {% elsif m_url contains "youtube" %}
+                    			 <iframe id="main-{{media.id}}" src="{{media | external_video_url }}" class="youtube-vid-wrapper"></iframe>
+                          {% else %}
+                          {{ media | external_video_tag }}
+                          {% endif %}
+                        </div>
+            
+                  {% when 'video' %}
+                    <div class="prd-modal-main-img-container internal-video" data-video="true">
+                      <video class="media-video" loop preload muted playsinline autoplay >
+                        {% for video_source in media.sources %}
+                        <source src="{{ video_source.url }}" type="video/{{ video_source.format }}">
+                        {% endfor %}
+                      </video>             
+                    </div>
+              {% endcomment %}
+                 {% endcase %}
+             {% endfor %}
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="prd-modal-side-container">
+        <div class="prd-modal-slide-content">
+          <div class="prd-modal-side-content__label">{{ product.title }} {% if product.vendor contains "Eyely" or product.vendor contains "happimess"  or product.vendor contains "ovalair"  %}<span class="gray-label">by eyely</span>{% endif %}</div>
+            <div class="prd-modal-side-content__images"><span>Product Images</span>
+            <div class="prd-modal-side-img-thumbnails">
+              {% assign cnt=0 %}
+              {% for media in product.media %} 
+              {% case media.media_type %}
+                {% when 'image' %}
+              <div class="prd-modal-side-thumbnail__wrapper" data-index="{{ cnt }}">
+                <button type="button" class="prd-modal-side-thumbnail__image-block" data-index="{{ cnt }}">
+                {% assign cnt=cnt | plus : 1 %}
+                   {%
+                        render 'rimg',
+                        class : 'img-fluid m-auto lazyload prd-modal-side-thumbnail__img',
+                        img: media.preview_image,
+                        size: '70x70',
+                        lazy : false
+                      %}
+
+                </button>
+              </div>  
+              {% endcase %}
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>  
+
+  </div>
+</section>
+
+

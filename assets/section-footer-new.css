@@ -1,21 +1,22 @@
 footer{
-  padding:40px 0px;
+    padding-top: 3.25rem;
   background-color: #ebecf0;
-  color: #2d3654;
+  color: #000;
 }
 footer .container{
   max-width: 1630px;
 }
 footer .heading-wrap h4{
-  color: #2d3654;   
+  color: #000;   
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 18px;
-  font-family: 'Bookmania Bold';
+    font-family: 'Guardian Egyptian';
 }
 footer .link-wrapper .footer-block__details-content li a{
   text-decoration: none;
-  color:#2d3654;
+  color:#000;
+  font-weight:500;
   line-height: 1.5;
 }
 footer .accordion-item{
@@ -25,9 +26,9 @@ footer .accordion-item{
 
 footer .accordion-item h2 .accordion-button{
   background-color: transparent;
-  color: #2d3654;
+  color: #000;
   font-size: 18px;
-  font-family: 'Bookmania Bold';
+    font-family: 'Guardian Egyptian';
   padding: 1.5rem 11px 1.5rem 0; 
 }
 footer .accordion-item  .accordion-button:focus{
@@ -40,8 +41,8 @@ footer .accordion-item  .accordion-button:not(.collapsed){
 }
 footer .accordion-item  .accordion-button:after{
 
-  border-left:2px solid #2d3654;
-  border-bottom: 2px solid #2d3654;
+  border-left:2px solid #000;
+  border-bottom: 2px solid #000;
   transform: rotate(315deg);
   background-image: none;
 }
@@ -50,7 +51,7 @@ footer .accordion-item  .accordion-button[aria-expanded="true"]::after{
 }
 
 footer .accordion-item .accordion-body ul li a{
-  color:#2d3654;
+  color:#000;
 }
 footer .accordion-item .accordion-body{
   padding:1rem 0;
@@ -61,10 +62,10 @@ footer .list-social__item svg{
   width: 2.5rem !important;
 }
 footer .accordion-item .accordion-body .footer-block__details-content li .list-menu__item--link{
-  padding-top:0;
-  padding-bottom:0;
+  padding-top:3px;
+  padding-bottom:3px;
   font-weight: 400;
-  font-size:13px;
+  font-size:16px;
 }
 @media (min-width:992px){
   footer .list-social__item .list-social__link:first-child{
@@ -75,14 +76,27 @@ footer .list-social{
   justify-content: flex-start;
 }
 footer .footer-bottom a{
-  color:#2d3654;
+  color:#000;
   text-decoration: none;
 }
 footer .footer-bottom  .opacity-75{
   opacity: 0.75;
-  display:block;
+/*   display:block; */
   font-size:13px;
 }
 span.copyright__content{
 	font-size:13px;
+}
+@media (max-width:990px){
+.footer__copyright {
+    text-align: center;
+    margin-top: 30px;
+  padding: 20px;
+
+}
+}
+@media (max-width:767px){
+  footer .footer-bottom .opacity-75 {
+display:block;
+  }
 }

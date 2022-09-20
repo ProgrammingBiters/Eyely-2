@@ -55,7 +55,8 @@ border-radius: 5px;
 
 .filter-item a,.filter-item a:hover{
   text-decoration: none;
-  margin-bottom: 5px !important;
+  margin-bottom: 8px !important;
+  
 }
 .productgrid--sidebar-item .filter-item--grid a{
 background: #22222213;
@@ -161,6 +162,7 @@ min-height:2em;
   padding-left: 0;
   padding-right: 1.75rem;
   border:0px;
+    color:#222;
 }
 
 @media screen and (forced-colors: active) {
@@ -170,7 +172,7 @@ min-height:2em;
 }
 
 .facet-filters__sort,
-.facet-filters__sort:hover {
+.facet-filters__sort:hover ,.facet-filters__sort:focus,.facet-filters__sort:focus-visible{
   box-shadow: none;
 }
 
@@ -191,17 +193,17 @@ min-height:2em;
 
 .facet-filters__sort:focus-visible {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 1rem;
-  box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
+/*   outline-offset: 1rem; */
+/*   box-shadow: 0 0 0 1rem rgb(var(--color-background)),
+    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3); */
 }
 
 .facet-filters__sort.focused,
 .no-js .facet-filters__sort:focus {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 1rem;
-  box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
+/*   outline-offset: 1rem; */
+/*   box-shadow: 0 0 0 1rem rgb(var(--color-background)),
+    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3); */
 }
 
 .no-js .facet-filters__sort:focus:not(:focus-visible),

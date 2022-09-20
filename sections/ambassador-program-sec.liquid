@@ -1,0 +1,106 @@
+{{'ambassador-program.css' | asset_url | stylesheet_tag }}
+<section class="richdemo-main">
+  <div class="richbox-demo">
+    <div class="richbox-title">
+      <h2> {{ section.settings.heading }} </h2>
+    </div>
+    <div class="description">
+      <p> {{ section.settings.description }} </p>
+    </div>
+  </div>
+</section>
+
+<div class="user-manual">
+  <div class="container">
+    <div class="user-guid">
+     {% for block in section.blocks %}
+      <div class="user-manual-bg">
+        <div class="row align-items-center">	
+
+          <div class="description col-12 col-md-6">
+            <div class="step-info text-center w-100">
+              {% if block.settings.heading_txt != blank %}
+              <h4>{{ block.settings.heading_txt }}</h4>
+              {% endif %}
+
+              {% if block.settings.info_content != blank %}
+              <p>{{ block.settings.info_content }} </p>
+              {% endif %}
+
+            </div>
+          </div>
+          <div class="image col-12 col-md-6">
+            {% if block.settings.image != blank %}
+            <div class="step-image w-100"> 
+              <img
+                   srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                           {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                           {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                           {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                           {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                           {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                           {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                   src="{{ block.settings.image | image_url: width: 533 }}"
+                   alt="{{ block.settings.image.alt | escape }}"
+                   class="img-fluid motion-reduce w-100"
+                   loading="lazy"
+                   >
+            </div>
+            {% endif%}
+          </div>
+        </div>
+      </div>
+     {% endfor%}
+    </div>
+ <div style="margin: 100px auto;" class="pxFormGenerator" id="9AXkyiohQCMFJVYl7zt5ww"></div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "ambassador-program",
+    "settings": [
+     {
+      "type":"text",
+      "id":"heading", 
+      "label":"Heading"
+     },
+     {
+      "type":"text",
+      "id":"description",
+      "label":"Tagline"
+     }
+    ],
+	"blocks":[
+     {
+       "name": "Step",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+           "type":"text",
+           "id":"heading_txt", 
+           "label":"Heading"
+         },
+         {
+           "type":"textarea",
+           "id":"info_content", 
+           "label":"Description"
+         }
+       ]
+     }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

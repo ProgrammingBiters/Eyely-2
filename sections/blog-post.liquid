@@ -119,8 +119,58 @@
           </div>
           <div class="content__text-container">
             {{my_article_description[1]}}
+            {% if article.metafields.global.from_our_shop.value  !=  blank %}
+              {% assign t="From Our Shop" %}
+{% if article.metafields.global.from_our_shop_title.value != blank %}
+  {% assign t= article.metafields.global.from_our_shop_title.value %}
+  {% endif %}
+              <div class="a-article-product">  
+              <div class="product-well__label">{{ t }}</div>
+                <div class="row">
+                  {% for product in article.metafields.global.from_our_shop.value %}
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                  <div class="all-prd-main">
+                    <a href="{{product.url}}">
+                      <div class="prd-main-div">
+                        <div class="prd-main-div-img">
+                           <img src="{{ product.images[1] | img_url:'master' }}" class= "productitem--image-primary img-fluid lazyload blog-prd-img-1">
+                          <img src="{{ product.featured_image |img_url:'master' }}" class= "productitem--image-primary img-fluid lazyload blog-prd-img-2">
+{% comment %}                                 
+                                {%
+                                    render 'rimg',
+                                    class: 'productitem--image-primary img-fluid lazyload',
+                                    img: product.images[1],
+                                    size: '360x360'                                   
+                                  %}
+{% endcomment %}
 
-
+                        </div>
+                        <div class="prd-main-div-info">
+                          <h3 class="b-headings"><span class="prd-main-div-title">{{product.title}}</span><br><span class="prd-main-div-price">{{product.price|money}}</span></h3>
+                         {% if product.vendor == 'Eyely' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'happimess' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                           {% elsif product.vendor == 'ovalair' %}
+                          <div class="prd-ship">
+                            <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+                          </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </a>
+                  
+                  </div>
+                </div>
+                    {% endfor  %}
+                </div>
+                 </div>
+            {% endif %}
+            {% comment %}
             {% for block in section.blocks %}
             {% if block.type == "featured_collection"  and block.settings.featured_coll != blank %}{% comment %}and  block.settings.featured_blog == blog.handle{% endcomment %}
             <div class="a-article-product">
@@ -136,15 +186,11 @@
 
                         </div>
                         <div class="prd-main-div-info">
-                          <h3 class="b-headings"><span class="prd-main-div-title">{{product.title}}</span><span class="prd-main-div-price">{{product.price|money}}</span></h3>
+                          <h3 class="b-headings"><span class="prd-main-div-title">{{product.title}}</span><br><span class="prd-main-div-price">{{product.price|money}}</span></h3>
                         </div>
                       </div>
                     </a>
-                    <!--                         <div class="prd-cart">
-<button type="button" class="css-1jg1bx">
-<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-</button>
-</div> -->
+                  
                   </div>
                 </div>
                 {% endfor %}
@@ -152,6 +198,7 @@
             </div>
             {% endif %}
             {% endfor %}
+            {% endcomment %}
             {% if blog.next_article or blog.previous_article %}
             {% assign current_found = false %}
             {% assign done = false %}
@@ -294,6 +341,38 @@
           <div class="sidebar__content">
             <div class="sidebar__content-collection">
               <h3 class="sidebar__content-collection-title b-headings">{{section.settings.sidebarsubtitle}}<span>{{section.settings.sidebartitle}}</span></h3>
+   
+   {%- if article.metafields.global.collection != blank -%}
+
+   <ul>
+            
+{% for collection in collections %}
+{% for c in article.metafields.global.collection.value %}
+{% if c == collection.title %}
+                <li>
+                  <div class="css-cgbl8k">
+         
+                    <div class="s-collection-img">
+                      <a href="{{collection.url}}"><img src="{{ collection.image |img_url:'master' }}"></a>
+                    </div>
+           
+                    <div class="s-collection-info">
+                      
+                      <h5 class="b-headings"><a href="{{collection.url}}">{{collection.title}}</a></h5>
+
+                      <p>{{collection.products_count}} items</p>
+                    </div>
+                  </div>  	
+                </li>
+  {% endif %}
+              {% endfor %}
+  {% endfor %}
+    
+              </ul>
+            {%- endif -%}
+  
+ {% comment %}
+  
               <ul>
                 {% for block in section.blocks %}
                 {% if block.type == "sidebar-links" and  block.settings.featured_blog == blog.handle %}
@@ -314,6 +393,8 @@
                 {% endif %}
                 {% endfor %}
               </ul>
+              {% endcomment %}
+              
             </div>
           </div>
 

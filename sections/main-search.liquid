@@ -16,10 +16,17 @@
   .template-search__header {
     margin-bottom: 3rem;
   }
-
+  .search__button{
+  height:100%;
+  }
+  .search__button svg{
+      width: 30px;
+  height: 30px;
+  
+  }
   .template-search__search {
     margin: 0 auto 3.5rem;
-    max-width: 47.8rem;
+    max-width: 100%;
   }
 
   .template-search__search .search {
@@ -55,13 +62,32 @@
   assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
 -%}
 
-<div class="template-search spaced-section{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %}">
+<div class="template-search {% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %}">
   <div class="template-search__header page-width center">
-    {%- if search.performed -%}
+   {% comment %}  {%- if search.performed -%}
       <h1 class="h2">{{ 'templates.search.title' | t }}</h1>
     {%- else -%}
       <h1 class="h2">{{ 'general.search.search' | t }}</h1>
     {%- endif -%}
+    {% endcomment %}
+  {% assign search_category = blank %}
+  {% assign search_filter_string = blank %}
+  {%- if search.performed -%}
+    {% assign field_prefixes = 'product_type: tag:' | split: ' ' %}
+    {% for field_prefix in field_prefixes %}
+      {% if search.terms contains field_prefix %}
+        {% assign search_filter = search.terms | split: field_prefix | last %}
+        {% assign search_category = search_filter | remove: 'searchfilter_' %}
+        {% assign search_filter_string = field_prefix | append: search_filter %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {%- endif -%}
+    {%
+    render 'breadcrumb',
+    search_category: search_category,
+  %}
+
     <div class="template-search__search">
       {%- if settings.predictive_search_enabled -%}
         <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
@@ -105,7 +131,7 @@
                 
             <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
               <svg class="icon icon-search">
-                <use xlink:href="#icon-search">
+                <use xlink:href="#icon-search"/>
               </svg>
             </button>
           </div>
@@ -118,7 +144,7 @@
     {%- if search.performed -%}
       {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%} 
         {%- if search.results_count > 0 -%}        
-          <p role="status">{{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}</p>
+          <p role="status"> Search results for {{ search.terms}}</p>
         {%- endif -%}
       {%- endunless -%}
       {%- if search.results_count == 0 and search.filters == empty -%}        
@@ -126,14 +152,16 @@
       {%- endif -%}
     {%- endif -%}
   </div>
+
   {%- if search.performed -%}
-    {%- if search.filters != empty -%}
+   {% comment %}   {%- if search.filters != empty -%}
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
         <div class="page-width">
           {% render 'facets', results: search, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
         </div>
       {%- endif -%}
     {%- endif -%}
+  {% endcomment %}
     <div id="ProductGridContainer">
       {%- if search.results.size == 0 and search.filters != empty -%}
         <div class="template-search__results collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
@@ -149,12 +177,33 @@
         {% paginate search.results by 24 %}
           <div class="template-search__results collection page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
-            <ul class="grid grid--4-col-desktop grid--3-col-tablet grid--2-col grid--one-third-max grid--quarter-max negative-margin product-grid" role="list">
+            <ul class="grid grid--4-col-desktop grid--3-col-tablet grid--2-col grid--one-third-max grid--quarter-max product-grid" role="list">
               {%- for item in search.results -%}
-                <li class="grid__item{% unless item.object_type == 'product' %} grid__item--small{% endunless %}">
                   {%- case item.object_type -%}
-                    {%- when 'product' -%}
-                      {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
+                    {%- when 'product' -%}  
+                      {% assign fg = false %}
+              {% for tag  in item.tags %}
+                  {% if tag == "hidden" %}
+                  {% assign fg = true %}
+                  {% endif %}
+              {% endfor %}
+              {% if fg %}
+                {% else %}
+              <li class="grid__item{% unless item.object_type == 'product' %} grid__item--small{% endunless %}">
+              
+                          {% render 'product-card-collection',
+							product_card_product: item,
+                            media_size: section.settings.image_ratio,
+                            show_secondary_image: section.settings.show_secondary_image,
+                            add_image_padding: section.settings.add_image_padding,
+                            show_vendor: section.settings.show_vendor,
+                            show_image_outline: section.settings.show_image_outline,
+                            show_rating: section.settings.show_rating
+                          %}
+                  </li>
+                        {%  endif %}
+                  {% comment %}
+                  {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
                       {% render 'product-card',
                         product_card_product: item,
                         media_size: section.settings.image_ratio,
@@ -215,8 +264,9 @@
                           </div>
                         </div>
                       </a>
+                  {% endcomment %}
                   {%- endcase -%}
-                </li>
+              
               {%- endfor -%}
             </ul>
             {%- if paginate.pages > 1 -%}
@@ -233,7 +283,6 @@
 {
   "name": "t:sections.main-search.name",
   "tag": "section",
-  "class": "spaced-section",
   "settings": [
     {
       "type": "header",

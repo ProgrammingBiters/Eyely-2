@@ -1,5 +1,5 @@
-
-<div class="review-products">
+{% comment %} {% render 'responsive-image' with image : initial_image , class: 'productitem--image-primary img-fluid', image.alt : initial_image.alt, max_width : 200, max_height : 200 %}{% endcomment %}
+<div class="review-products d-md-block d-none">
     <div class="container">
       <div class="title-div">
           <h2 class="title text-center review-title">{{ section.settings.title }}</h2>
@@ -19,7 +19,13 @@
                         <div class="image_wrap {% if forloop.index == 1 %} fst_img {% elsif forloop.index == 3 %}third{% endif %}">
                             {%  if  initial_image != blank %}
                                 <a href="{{ product.url }}">
-                                {% render 'responsive-image' with image : initial_image , class: 'productitem--image-primary img-fluid', image.alt : initial_image.alt, max_width : 200, max_height : 200 %}
+                                   {%
+                                        render 'rimg',
+                                        class: 'img-fluid productitem--image-primary',
+                                        img: initial_image,
+                                        size: '500x500'
+                                    %}
+                               
                                 </a>
                             {% endif %}
                         </div>
@@ -70,7 +76,9 @@
             {% endif %}
         {% endfor %}
       </div>
-      <a class="mobile_btn" href="javascript:void(0)">{{ section.settings.btnname }}</a>
+      <div class="d-md-none d-block text-center">
+      <a class="mobile_btn btn" href="javascript:void(0)">{{ section.settings.btnname }}</a>
+      </div>
       </div>
 </div>
 {{ 'section-index-review-products.css' | asset_url | stylesheet_tag }}

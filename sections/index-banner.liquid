@@ -1,71 +1,72 @@
 
-<div class="container index-banner  p-0">
- <div class="desk-banner">
-  <a href="{{ section.settings.featured_link }}" class="slide-image">
-    <img srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | img_url: '375x' }} 375w,{%- endif -%}
-    {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
-    {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | img_url: '1100x' }} 1100w,{%- endif -%}
-    {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}
-    {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | img_url: '1780x' }} 1780w,{%- endif -%}
-    {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | img_url: '2000x' }} 2000w,{%- endif -%}
-    {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | img_url: '3000x' }} 3000w,{%- endif -%}
-    {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | img_url: '3840x' }} 3840w,{%- endif -%}
-    {{ section.settings.image | img_url: 'master' }} {{ section.settings.image.width }}w"
-    alt="{{ section.settings.image.alt | default: shop.name }}" class="lazyload" data-sizes="auto" loading="lazy"
-    src="{{ section.settings.image | img_url: '1500x' }}"
-    width="{{ section.settings.image.width }}"
-    height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"    
-    >
-</a>
-</div>
-               
-<div class="mobile-banner" >
-  <a  href="{{ section.settings.featured_link }}" class="slide-image">
-    <img  srcset="{%- if section.settings.image_2.width >= 375 -%}{{ section.settings.image_2 | img_url: '375x' }} 375w,{%- endif -%}
-    {%- if section.settings.image_2.width >= 750 -%}{{ section.settings.image_2 | img_url: '750x' }} 750w,{%- endif -%}
-    {%- if section.settings.image_2.width >= 1100 -%}{{ section.settings.image_2 | img_url: '1100x' }} 1100w,{%- endif -%}
-    {%- if section.settings.image_2.width >= 1500 -%}{{ section.settings.image_2 | img_url: '1500x' }} 1500w,{%- endif -%}
-    {%- if section.settings.image_2.width >= 1780 -%}{{ section.settings.image_2 | img_url: '1780x' }} 1780w,{%- endif -%}
-    {%- if section.settings.image_2.width >= 2000 -%}{{ section.settings.image_2 | img_url: '2000x' }} 2000w,{%- endif -%}
-    {%- if section.settings.image_2.width >= 3000 -%}{{ section.settings.image_2 | img_url: '3000x' }} 3000w,{%- endif -%}
-    {%- if section.settings.image_2.width >= 3840 -%}{{ section.settings.image_2 | img_url: '3840x' }} 3840w,{%- endif -%}
-    {{ section.settings.image_2 | img_url: 'master' }} {{ section.settings.image_2.width }}w"
-    alt="{{ section.settings.image_2.alt | default: shop.name }}" class="lazyload" data-sizes="auto" loading="lazy"
-    src="{{ section.settings.image_2 | img_url: '1500x' }}"
-    width="{{ section.settings.image_2.width }}"
-    height="{{ section.settings.image_2.width | divided_by: section.settings.image_2.aspect_ratio }}"    
-  >
-  </a>
-</div>
-</div>
+<section class="i--banner">
+  <div class="container">
+    <div class="row">
+      {% for block in section.blocks %}
+      {% if block.type == 'banner-slide' %}
+       <div class="col-xl-12 i--banner-main">
+         <a href="https://www.eyely.com/collections/rugs">
+          <div class="banner_img">
+                                 {%
+                                        render 'rimg',
+                                        class: 'img-fluid desk_img',
+                                        img: block.settings.slide_img ,
+                                        size: '1800x700'                                   
+                                    %}
+            {% if block.settings.mob_slider_img != blank %}
+              {%
+                                        render 'rimg',
+                                        class: 'img-fluid mob_banner',
+                                        img: block.settings.mob_slider_img ,
+                                        size: '600x600'                                   
+                                    %}
+           
+            {% else %}
+                {%
+                                        render 'rimg',
+                                        class: 'img-fluid mob_banner',
+                                        img: block.settings.slider_img ,
+                                        size: '600x600'                                   
+                                    %}
+            {% endif %}
+          </div>
+           </a>
+       </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {{ 'section-index-banner.css' | asset_url | stylesheet_tag }}
 
 {% schema %}
 {
-  "name": "Index-Banner",
-  "tag": "section",
-  "class": "spaced-section spaced-section--full-width",
-  "settings": [   
-      {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Desk Banner"
-    },
-    {
-        "type": "image_picker",
-        "id": "image_2",
-        "label": "Mobile Banner"
-    },
-    {
-        "type":"url",
-        "id":"featured_link",
-        "label":"Featured Link"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Index Banner"
-    }
-  ]
+"name": "Index-Banner",
+"tag": "section",
+"class": "spaced-section spaced-section--full-width",
+"settings": [],
+  "blocks":[
+		{
+			"type": "banner-slide",
+			"name": "Banner Slide",
+			"settings": [
+				{	
+					"type": "image_picker",
+					"id": "slide_img",
+					"label": "Image"
+				},
+				{
+                    "type": "image_picker",
+                    "id": "mob_slider_img",
+                    "label": "Mobile Banner Image"
+                }
+			]
+		}	
+	],
+"presets": [
+{
+"name": "Index Banner"
+}
+]
 }
 {% endschema %}

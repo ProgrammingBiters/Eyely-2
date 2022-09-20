@@ -1,12 +1,12 @@
 .shop-by-color{
-    margin-top:20px;
+    padding: 60px 0;
   }
   .shop-by-color .container{
     max-width: 1630px;
   }
   .shop-by-color .shop-by-color_heading{
     text-align:center;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
   }
   .shop-by-style .shop-by-color_heading .heading{ 
     color:#2d3654;
@@ -15,7 +15,7 @@
     color: #000;
     font-size: 16px;
     font-weight: 300;
-    font-family: var(--font-body-family-other);
+    font-family: JosefinSans Light;
   }
  .shop-by-color .main_wrapper .shop-by-color-item a{
     text-decoration: none;
@@ -71,7 +71,7 @@
                 text-decoration: none;
                 border: 1px solid #2d3654;
                 color: #2d3654;
-                padding: 15px 30px;
+                padding: 11px 30px;
                 margin-top: 20px;
                 display: inline-block;
                 border-radius: 5px;

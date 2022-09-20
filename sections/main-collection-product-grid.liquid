@@ -6,9 +6,10 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 {% assign results = collection %}
-  
+
 
 <div class="container">
   <div class="row my-3 mx-md-3 mx-0">
@@ -16,353 +17,410 @@
       <h2> {{ collection.title }} </h2>
     </div>
     <div class="col-md-6 col-12 d-lg-block d-none">
-     
-        <div class="facet-filters sorting caption">
-          <div class="facet-filters__field">
-           {% comment %}  <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>{% endcomment %}
-            <div class="select">
-              {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
-              <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
-                {%- for option in results.sort_options -%}
-                  <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
-                {%- endfor -%}
-              </select>
-              {% render 'icon-caret' %}
-            </div>
-          </div>
 
-          <noscript>
-            <button type="submit" class="facets__button-no-js button button--tertiary">{{ 'products.facets.sort_button' | t }}</button>
-          </noscript>
+      <div class="facet-filters sorting caption">
+        <div class="facet-filters__field">
+          {% comment %}  <label class="facet-filters__label caption-large" for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>{% endcomment %}
+          <div class="select">
+            {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+            <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
+              {%- for option in results.sort_options -%}
+              <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
+              {%- endfor -%}
+            </select>
+            {% render 'icon-caret' %}
+          </div>
         </div>
+
+        <noscript>
+          <button type="submit" class="facets__button-no-js button button--tertiary">{{ 'products.facets.sort_button' | t }}</button>
+        </noscript>
+      </div>
 
     </div>
   </div>
-<div class="row">
-  <div class="d-lg-none d-block  col-md-6 col-sm-6 col-6 py-3">
-    <button class="utils-filter-button filter-open" type="button" aria-label="Filters" >
+  <div class="row">
+    <div class="d-lg-none d-block  col-md-6 col-sm-6 col-6 py-3">
+      {%- assign filter_count = 0 -%}
+      {%- if current_tags.size > 0 -%}
+      {%- assign filter_count = current_tags.size -%}
+      {%- endif -%}
+      <button class="utils-filter-button filter-open" type="button" aria-label="Filters ({{'products.facets.filters_selected.other' | t: count: filter_count }})" >
         <span class="utils-filter-icon">
-            <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13">
+          <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13">
             <path fill="currentColor" fill-rule="evenodd" d="M16.516 2.25h2.474v1.5h-2.474a2.626 2.626 0 0 1-5.032 0H0v-1.5h11.484a2.626 2.626 0 0 1 5.032 0zm-9 7h11.472v1.5H7.516a2.626 2.626 0 0 1-5.032 0H0v-1.5h2.484a2.626 2.626 0 0 1 5.032 0zM5 11.375a1.375 1.375 0 1 1 0-2.75 1.375 1.375 0 0 1 0 2.75zm9-7a1.375 1.375 0 1 1 0-2.75 1.375 1.375 0 0 1 0 2.75z"></path>
-            </svg>
+          </svg>
         </span>
-        <span class="utils-filter-text">Filters</span>
-    </button>
+        <span class="utils-filter-text">Filters ({{'products.facets.filters_selected.other' | t: count: filter_count }})</span>
+      </button>
 
-  </div>
-  <div class="d-lg-none d-block  col-md-6 col-sm-6 col-6 py-3">
-    <button class="utils-filter-button sort-open ms-auto" type="button">
-      <span class="utils-filter-text">Sort by</span>
-  </button>{% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+    </div>
+    <div class="d-lg-none d-block  col-md-6 col-sm-6 col-6 py-3">
+      <button class="utils-filter-button sort-open ms-auto" type="button">
+        <span class="utils-filter-text">Sort by</span>
+      </button>{% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
-<div class="sort-by-mobile-wrapper">
-  <div class="sort-by-inner" data-modal-inner="" >
-    <button class="sort-close" type="button" aria-label="Close" data-modal-close="">
-        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
-        <path fill="currentColor" fill-rule="evenodd" d="M5.306 6.5L0 1.194 1.194 0 6.5 5.306 11.806 0 13 1.194 7.694 6.5 13 11.806 11.806 13 6.5 7.694 1.194 13 0 11.806 5.306 6.5z"></path>
-        </svg>
-    </button>
-    <div class="sort-content" >
+      <div class="sort-by-mobile-wrapper">
+        <div class="sort-by-inner" data-modal-inner="" >
+          <button class="sort-close" type="button" aria-label="Close" data-modal-close="">
+            <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+              <path fill="currentColor" fill-rule="evenodd" d="M5.306 6.5L0 1.194 1.194 0 6.5 5.306 11.806 0 13 1.194 7.694 6.5 13 11.806 11.806 13 6.5 7.694 1.194 13 0 11.806 5.306 6.5z"></path>
+            </svg>
+          </button>
+          <div class="sort-content" >
             <span class="utils-sortby--modal-title">
-            Sort by
+              Sort by
             </span>
 
-      <ul class="utils-sortby--modal-list">
-         <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button {% if sort_by == "manual" %}utils-sortby--modal-button--active{% endif %}" value="manual" data-productgrid-trigger-sort-button="" {% if sort_by == "manual" %}disabled=""{% endif %}>
-            Featured
-          </button>
-        </li>    
-        <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button {% if sort_by == "best-selling" %}utils-sortby--modal-button--active{% endif %}" value="best-selling" data-productgrid-trigger-sort-button=""  {% if sort_by == "best-selling" %}disabled=""{% endif %} >
-            Best selling
-          </button>
-        </li>   
-        <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button  {% if sort_by == "title-ascending" %}utils-sortby--modal-button--active{% endif %}" value="title-ascending" data-productgrid-trigger-sort-button="" {% if sort_by == "title-ascending" %}disabled=""{% endif %}>
-            Alphabetically, A-Z
-          </button>
-        </li>    
-        <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button  {% if sort_by == "title-descending" %}utils-sortby--modal-button--active{% endif %}" value="title-descending" data-productgrid-trigger-sort-button=""  {% if sort_by == "title-descending" %}disabled=""{% endif %}>
-            Alphabetically, Z-A
-          </button>
-        </li>       
-        <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button  {% if sort_by == "price-ascending" %}utils-sortby--modal-button--active{% endif %}" value="price-ascending" data-productgrid-trigger-sort-button=""  {% if sort_by == "price-ascending" %}disabled=""{% endif %}>
-            Price, low to high
-          </button>
-        </li>
-        <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button  {% if sort_by == "price-descending" %}utils-sortby--modal-button--active{% endif %}" value="price-descending" data-productgrid-trigger-sort-button=""  {% if sort_by == "price-descending" %}disabled=""{% endif %}>
-            Price, high to low
-          </button>
-        </li>
-        <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button  {% if sort_by == "created-ascending" %}utils-sortby--modal-button--active{% endif %}" value="created-ascending" data-productgrid-trigger-sort-button=""  {% if sort_by == "created-ascending" %}disabled=""{% endif %}>
-            Date, old to new
-          </button>
-        </li>
-        <li class="utils-sortby--modal-item">
-          <button class="utils-sortby--modal-button {% if sort_by == "created-descending" %}utils-sortby--modal-button--active{% endif %}" value="created-descending" data-productgrid-trigger-sort-button="" {% if sort_by == "created-descending" %}disabled=""{% endif %}>
-            Date, new to old
-          </button>
-        </li>
-      </ul>
-        </div>
-  </div>
-</div>
-    
-  </div>
-</div>
-  <div class="row">
-
-
-    <div class="filter-div">
-
-      {% if section.blocks.size > 0 %}
-      {% assign sidebar_menu_depth = menu_depth | times: 1 %}
-  
-      <nav
-        aria-label="{{ 'general.accessibility.nav_sidebar' | t }}"
-        class="productgrid--sidebar-section d-lg-block d-none"
-      >
-        {% for block in section.blocks %}
-          {% assign menu = block.settings.menu %}
-  
-          {% if linklists[menu] == blank or linklists[menu].links.size == 0 %}
-         
-            {% break %}
-          {% endif %}
-
-          <div class="productgrid--sidebar-item productgrid--sidebar-menu">
-            {%
-              render 'navlist',
-              menu_list: linklists[block.settings.menu].links,
-              depth: 1,
-              max_depth: sidebar_menu_depth,
-              aria_expanded: true,
-              show_prod_count: show_prod_count
-            %}
+            <ul class="utils-sortby--modal-list">
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button {% if sort_by == "manual" %}utils-sortby--modal-button--active{% endif %}" value="manual" data-productgrid-trigger-sort-button="" {% if sort_by == "manual" %}disabled=""{% endif %}>
+                  Featured
+                </button>
+              </li>    
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button {% if sort_by == "best-selling" %}utils-sortby--modal-button--active{% endif %}" value="best-selling" data-productgrid-trigger-sort-button=""  {% if sort_by == "best-selling" %}disabled=""{% endif %} >
+                  Best selling
+                </button>
+              </li>   
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button  {% if sort_by == "title-ascending" %}utils-sortby--modal-button--active{% endif %}" value="title-ascending" data-productgrid-trigger-sort-button="" {% if sort_by == "title-ascending" %}disabled=""{% endif %}>
+                  Alphabetically, A-Z
+                </button>
+              </li>    
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button  {% if sort_by == "title-descending" %}utils-sortby--modal-button--active{% endif %}" value="title-descending" data-productgrid-trigger-sort-button=""  {% if sort_by == "title-descending" %}disabled=""{% endif %}>
+                  Alphabetically, Z-A
+                </button>
+              </li>       
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button  {% if sort_by == "price-ascending" %}utils-sortby--modal-button--active{% endif %}" value="price-ascending" data-productgrid-trigger-sort-button=""  {% if sort_by == "price-ascending" %}disabled=""{% endif %}>
+                  Price, low to high
+                </button>
+              </li>
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button  {% if sort_by == "price-descending" %}utils-sortby--modal-button--active{% endif %}" value="price-descending" data-productgrid-trigger-sort-button=""  {% if sort_by == "price-descending" %}disabled=""{% endif %}>
+                  Price, high to low
+                </button>
+              </li>
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button  {% if sort_by == "created-ascending" %}utils-sortby--modal-button--active{% endif %}" value="created-ascending" data-productgrid-trigger-sort-button=""  {% if sort_by == "created-ascending" %}disabled=""{% endif %}>
+                  Date, old to new
+                </button>
+              </li>
+              <li class="utils-sortby--modal-item">
+                <button class="utils-sortby--modal-button {% if sort_by == "created-descending" %}utils-sortby--modal-button--active{% endif %}" value="created-descending" data-productgrid-trigger-sort-button="" {% if sort_by == "created-descending" %}disabled=""{% endif %}>
+                  Date, new to old
+                </button>
+              </li>
+            </ul>
           </div>
-        {% endfor %}
-      </nav>
-    {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="filter-div">
+      {% for block in section.blocks %}
+      {% if block.type == "coll-select" and block.settings.featured_collection == collection.handle %}
+
+      <div class="collection-submenu d-lg-block d-none">
+        <ul>
+          {%for link in linklists[block.settings.new_menu].links %}
+          <li ><a href="{{link.url}}">{{link.title}}</a>
+            {% if link.links != blank %}
+            <ul class="submenu">
+              {% for child_link in link.links %}  
+              <li><a href="{{ child_link.url }}">{{ child_link.title}}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {%endfor%}
+          {%for link in linklists[block.settings.new_menu-2].links %}
+          <li ><a href="{{link.url}}">{{link.title}}</a>
+            {% if link.links != blank %}
+            <ul class="submenu">
+              {% for child_link in link.links %}  
+              <li><a href="{{ child_link.url }}">{{ child_link.title}}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {%endfor%}
+          {%for link in linklists[block.settings.new_menu-3].links %}
+          <li ><a href="{{link.url}}">{{link.title}}</a>
+            {% if link.links != blank %}
+            <ul class="submenu">
+              {% for child_link in link.links %}  
+              <li><a href="{{ child_link.url }}">{{ child_link.title}}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {%endfor%}
+        </ul>
+      </div>
+
+      {% endif %}
+      {% endfor %}
 
 
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-        {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-        <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-      
-        <div id="main-collection-filters" data-id="{{ section.id }}">
-          {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
-        </div>
+      {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+      <div id="main-collection-filters" data-id="{{ section.id }}">
+        {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
+      </div>
       {%- endif -%}
     </div>
-    <div class="col">
+    <div class="col grid-wrapper">
       {% if current_tags.size > 0 %}
-        <div class="productgrid--sidebar-item productgrid--sidebar-filters--current d-md-block d-none">
-          {%- render 'product-grid-tags-active' -%}
-        </div>
+      <div class="productgrid--sidebar-item productgrid--sidebar-filters--current d-md-block d-none">
+        {%- render 'product-grid-tags-active' -%}
+      </div>
       {% endif %}
+      {% assign fg= true %}
+      {% for t in current_tags %}
+        {% if t contains "Shape" %}
+          {% assign fg = false %}
+          {% endif  %}
+        {% endfor %}
       <div id="ProductGridContainer">
         {%- paginate collection.products by section.settings.products_per_page -%}
         {%- if collection.products.size == 0 -%}
-          <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
-            <div class="loading-overlay gradient"></div>
-            <div class="title-wrapper center">
-              <h2 class="title title--primary">
-                There are no products matching your search
-                <br>
-               
-              </h2> <a class="productgrid--no-results-button" href="/collections/all">
-                View all products
-              </a>
-            </div>
-          </div>
-        {%- else -%}
-          <div class="collection ">
-            <div class="loading-overlay gradient"></div>
+        <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+          <div class="loading-overlay gradient"></div>
+          <div class="title-wrapper center">
+            <h2 class="title title--primary">
+              There are no products matching your search
+              <br>
 
-            <ul  data-id="{{ section.id }}" id="product-grid" class="
-              grid grid--2-col  product-grid {% if collection.products_count == 4 %} grid--4-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}
-              ">
-              {%- for product in collection.products -%}
-                <li class="grid__item">
-                  {% render 'product-card-collection',
-                    product_card_product: product,
-                    media_size: section.settings.image_ratio,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    add_image_padding: section.settings.add_image_padding,
-                    show_vendor: section.settings.show_vendor,
-                    show_image_outline: section.settings.show_image_outline,
-                    show_rating: section.settings.show_rating
-                  %}
-                </li>
-              {%- endfor -%}
-                {%
-                render 'pagination', paginate: paginate,
-                grid_list: true
-                %}
-                {% comment %}
-              {% if paginate.next %}
-                <div id="more" class="col-12  mt-4 d-none">
-                  <p><a href="{{ paginate.next.url }}" class="btn-show-more button-all m-auto">Load More</a></p>
-                </div>
-              <div class="col-12 loader-div  text-center my-3">
-                <img src="{{ 'loader.gif' | asset_img_url : '100x100' }}" class="img-fluid" loading="lazy" height="auto" width="150">
-              </div>
-                {% endif %}
-                {% endcomment %}
+            </h2> <a class="productgrid--no-results-button" href="/collections/all">
+            View all products
+            </a>
           </div>
-        {%- endif -%}
-        {%- endpaginate -%}
+        </div>
+        {%- else -%}
+        <div class="collection ">
+          <div class="loading-overlay gradient"></div>
+
+          <ul  data-id="{{ section.id }}" id="product-grid" class="
+                                                                   grid grid--2-col  product-grid {% if collection.products_count == 4 %} grid--4-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}
+                                                                   ">
+            {%- for product in collection.products -%}
+             {% assign flag = false %}
+              {% for tag  in product.tags %}
+                  {% if tag == "hidden" %}
+                  {% assign flag = true %}
+                  {% endif %}
+              {% endfor %}
+              {% if flag %}
+                {% else %}
+              <li class="grid__item">
+              {% render 'product-card-collection',
+                    product_card_product: product,
+              media_size: section.settings.image_ratio,
+              show_secondary_image: section.settings.show_secondary_image,
+              add_image_padding: section.settings.add_image_padding,
+              show_vendor: section.settings.show_vendor,
+              show_image_outline: section.settings.show_image_outline,
+              show_rating: section.settings.show_rating
+              %}
+                {% endif %}
+            </li>
+            {%- endfor -%}
+            {%
+                render 'pagination', paginate: paginate,
+            grid_list: true
+            %}
+            {% comment %}
+            {% if paginate.next %}
+            <div id="more" class="col-12  mt-4 d-none">
+              <p><a href="{{ paginate.next.url }}" class="btn-show-more button-all m-auto">Load More</a></p>
+            </div>
+            <div class="col-12 loader-div  text-center my-3">
+              <img src="{{ 'loader.gif' | asset_img_url : '100x100' }}" class="img-fluid" loading="lazy" height="auto" width="150">
+            </div>
+            {% endif %}
+            {% endcomment %}
+            </div>
+          {%- endif -%}
+          {%- endpaginate -%}
+        </div>
       </div>
     </div>
-  </div>
-</div> 
-<script>
-  Shopify.queryParams = {};
+  </div> 
+  <script>
+    $(".show---more").click(function () {
+      if($(".text").hasClass("less-more-submenu")) {
+        $(this).text("Show Less");
+      } else {
+        $(this).text("Show More");
+      }
 
-  // Preserve existing query parameters
-  if (location.search.length) {
-    var params = location.search.substr(1).split('&');
+      $(".text").toggleClass("less-more-submenu");
+    });
 
-    for (var i = 0; i < params.length; i++) {
-      var keyValue = params[i].split('=');
 
-      if (keyValue.length) {
-        Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+    Shopify.queryParams = {};
+
+    // Preserve existing query parameters
+    if (location.search.length) {
+      var params = location.search.substr(1).split('&');
+
+      for (var i = 0; i < params.length; i++) {
+        var keyValue = params[i].split('=');
+
+        if (keyValue.length) {
+          Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+        }
       }
     }
-  }
 
-  // Update sort_by query parameter on select change
-  document.querySelector('#SortBy').addEventListener('change', function(e) {
-    var value = e.target.value;
+    // Update sort_by query parameter on select change
+    document.querySelector('#SortBy').addEventListener('change', function(e) {
+      var value = e.target.value;
 
-    Shopify.queryParams.sort_by = value;
-    location.search = new URLSearchParams(Shopify.queryParams).toString();
-  });
-  
-</script>
-{% schema %}
-{
+      Shopify.queryParams.sort_by = value;
+      location.search = new URLSearchParams(Shopify.queryParams).toString();
+    });
+
+  </script>
+  {% schema %}
+  {
   "name": "t:sections.main-collection-product-grid.name",
   "class": "spaced-section collection-grid-section",
   "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "min": 8,
-      "max": 24,
-      "step": 4,
-      "default": 16,
-      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-collection-product-grid.settings.header__3.content"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "add_image_padding",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.add_image_padding.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_image_outline",
-      "default": true,
-      "label": "t:sections.main-collection-product-grid.settings.show_image_outline.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_rating",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
-      "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-collection-product-grid.settings.header__1.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_filtering",
-      "default": true,
-      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
-      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_sorting",
-      "default": true,
-      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "collapse_on_larger_devices",
-      "default": false,
-      "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
-    },
-    {
-      "type": "range",
-      "id": "menu_depth_range",
-      "label": "Menu depth visibility",
-      "info": "[Learn more](https://help.shopify.com/manual/sell-online/online-store/menus-and-links#create-a-drop-down-menu)",
-      "min": 1,
-      "max": 3,
-      "step": 1,
-      "default": 1
-    }
+  {
+  "type": "range",
+  "id": "products_per_page",
+  "min": 8,
+  "max": 24,
+  "step": 4,
+  "default": 16,
+  "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+  },
+  {
+  "type": "header",
+  "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+  },
+  {
+  "type": "select",
+  "id": "image_ratio",
+  "options": [
+  {
+  "value": "adapt",
+  "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+  },
+  {
+  "value": "portrait",
+  "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+  },
+  {
+  "value": "square",
+  "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+  }
+  ],
+  "default": "adapt",
+  "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+  },
+  {
+  "type": "checkbox",
+  "id": "show_secondary_image",
+  "default": false,
+  "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+  },
+  {
+  "type": "checkbox",
+  "id": "add_image_padding",
+  "default": false,
+  "label": "t:sections.main-collection-product-grid.settings.add_image_padding.label"
+  },
+  {
+  "type": "checkbox",
+  "id": "show_image_outline",
+  "default": true,
+  "label": "t:sections.main-collection-product-grid.settings.show_image_outline.label"
+  },
+  {
+  "type": "checkbox",
+  "id": "show_vendor",
+  "default": false,
+  "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+  },
+  {
+  "type": "checkbox",
+  "id": "show_rating",
+  "default": false,
+  "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+  "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+  },
+  {
+  "type": "header",
+  "content": "t:sections.main-collection-product-grid.settings.header__1.content"
+  },
+  {
+  "type": "checkbox",
+  "id": "enable_filtering",
+  "default": true,
+  "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+  "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+  },
+  {
+  "type": "checkbox",
+  "id": "enable_sorting",
+  "default": true,
+  "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+  },
+  {
+  "type": "checkbox",
+  "id": "collapse_on_larger_devices",
+  "default": false,
+  "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
+  },
+  {
+  "type": "range",
+  "id": "menu_depth_range",
+  "label": "Menu depth visibility",
+  "info": "[Learn more](https://help.shopify.com/manual/sell-online/online-store/menus-and-links#create-a-drop-down-menu)",
+  "min": 1,
+  "max": 3,
+  "step": 1,
+  "default": 1
+  }
+
   ] ,
   "blocks": [
   {
-    "type": "menu",
-    "name": "Menu",
-    "settings": [
-      {
-        "id": "menu",
-        "type": "link_list",
-        "label": "Menu",
-        "info": "This menu will show as many dropdown items as specified in \"Menu depth visibility\"."
-      }
-    ],
-    "limit": 10
+  "type": "coll-select",
+  "name": "Collection Section",
+  "settings": [
+  {
+  "type": "collection",
+  "id": "featured_collection",
+  "label": "Select Collection"
+  },
+  {
+  "type":"link_list",
+  "id":"new_menu",
+  "label":"Menu"
+  },
+  {
+  "type":"link_list",
+  "id":"new_menu-2",
+  "label":"Menu"
+  },
+   {
+  "type":"link_list",
+  "id":"new_menu-3",
+  "label":"Menu"
   }
-]
-}
-{% endschema %}
+  ]
+  }
+  ]
+  }
+  {% endschema %}

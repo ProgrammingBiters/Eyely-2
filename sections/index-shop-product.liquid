@@ -1,61 +1,121 @@
 
 <div class="shop-product">
-    <div class="container">
-        <div class="shop-product-title">
-        <h3>{{ section.settings.title_txt }}</h3>
-        <p class="shop__p">{{ section.settings.heading_txt }}</p>
-      </div>
-      <div class="shop-product-maindiv">
-        {% assign collection =  collections[section.settings.collection_main] %}
-                {% for product in  collection.products limit : 5 %}
-                <div class="shop-product-mainbox">
-                    <a href="{{ product.url }}">
-                        <div class="shop-product-img">
-                            {% render 'responsive-image' with image : product.images[1].src , class: 'productitem--image-primary img-fluid', image.alt : product.images[1].src.alt, max_width : 300, max_height : 300 %}
-                               
-                        </div>
-                    </a>
-                    <div class="title-div my-2">
-                        <h6><a href="{{ product.url }}">{{ product.title }}</a></h6>
-                    </div>
-                </div>
-               {% endfor %}
-   
-      </div>
+  <div class="container">
+    <div class="shop-product-title">
+      <h3>{{ section.settings.title_txt }}</h3>
+      <p class="shop__p">{{ section.settings.heading_txt }}</p>
     </div>
+    {% comment %}
+    <div class="shop-product-maindiv">
+      {% assign collection =  collections[section.settings.collection_main] %}
+      {% for product in  collection.products limit : 5 %}
+      <div class="shop-product-mainbox">
+        <a href="{{ product.url }}">
+          <div class="shop-product-img">
+            {% if product.images[1] != blank %}
+            {% render 'responsive-image' with image : product.images[1].src , class: 'productitem--image-primary img-fluid', image.alt : product.images[1].src.alt, max_width : 300, max_height : 300 %}
+              {% else %}
+              {% render 'responsive-image' with image : product.images[0].src , class: 'productitem--image-primary img-fluid', image.alt : product.images[0].src.alt, max_width : 300, max_height : 300 %}
+              {% endif %}
+            <div class="prd-price">
+              <p>{{ product.price | money }}</p>
+            </div> 
+          </div>
+        </a>
+        <div class="title-div my-2">
+          <p class=" m-0 fw-bold"><a href="{{ product.url }}">{{ product.title }}</a></p>
+          
+          <div class="discount d-lg-none d-block">
+            <span>{% if product.compare_at_price > product.price %}
+              <del style="color:#000">{{ product.compare_at_price | money }}</del>&nbsp;
+              {% endif %}
+              {{ product.price | money }}</span>
+          </div> 
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+    {% endcomment %}
+    
+    <div class="shop-product-maindiv">
+      
+      {% for block in section.blocks  limit : 5 %}
+        {% if block.type == "featured-follection" %}
+           {% assign collection = collections[block.settings.featured_collection] %}
+      <div class="shop-product-mainbox">
+        <a href="{{ collection.url }}">
+          <div class="shop-product-img">
+            {% if collection.image != blank %}
+              {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: collection.image.src ,
+                                        size: '300x300'                                   
+                                    %}
+           
+              {% endif %}
+          </div>
+        </a>
+        <div class="title-div my-2">
+          <p class=" m-0 fw-bold"><a href="{{ collection.url }}">{{ collection.title }}</a></p>
+    
+        </div>
+      </div>
+          {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
 </div>
 
 {{ 'section-index-shop-product.css' | asset_url | stylesheet_tag }}
 
 {% schema %}
-  {
-    "name" : "Shop Product",
-    "tag": "section",
-    "class": "spaced-section spaced-section--full-width",
-    "settings" : [
-                {
-                "type" : "text",
-                "id" : "title_txt",
-                "label" : "Title",
-                "default" : "Shop Table Lamps"
-                },
-                {
-                "type" : "textarea",
-                "id" : "heading_txt",
-                "label" : "Sub Title",
-                "default" : "Our table lamps pair up perfectly with any type of rug you have"
-                },
-                {
-                "type" : "collection",
-                "id" : "collection_main",
-                "label" : "Collection"
-                }
-        ],
-	"presets": [
-      {
-        "name": "Shop Product",
-        "category": "Index"
-      }
-    ]
-  }
+{
+"name" : "Shop Product",
+"tag": "section",
+"class": "spaced-section spaced-section--full-width",
+"settings" : [
+{
+"type" : "text",
+"id" : "title_txt",
+"label" : "Title",
+"default" : "Shop Table Lamps"
+},
+{
+"type" : "textarea",
+"id" : "heading_txt",
+"label" : "Sub Title",
+"default" : "Our table lamps pair up perfectly with any type of rug you have"
+},
+{
+"type" : "collection",
+"id" : "collection_main",
+"label" : "Collection"
+}
+],
+"blocks":[
+ {
+    "type":"featured-follection",
+    "name":"Featured Collection",
+          "settings":[
+                  {	
+                      "type": "collection",
+                      "id": "featured_collection",
+                      "label": "Collection"
+                  }
+            ]
+ }
+],
+
+
+  
+"presets": [
+{
+"name": "Shop Product",
+"category": "Index"
+}
+]
+}
 {% endschema %}

@@ -221,9 +221,9 @@
     alt="{{ rimg_alt }}"
     height="auto"
     width="auto"
-    loading="lazy"
     data-widths="[{{ image_widths }}]"
-    data-sizes="auto"
+    data-sizes="auto" 
+    srcset="{{ rimg_density_srcset }}"
     {% if lazy %}
       data-rimg="lazy"
       data-rimg-scale="{{ rimg_scale }}"

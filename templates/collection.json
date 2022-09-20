@@ -11,15 +11,30 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "blocks": {
-        "0c0db054-92d4-45c6-871c-056017202a37": {
-          "type": "menu",
+        "5a57d93c-784d-4192-98ed-902fb964938a": {
+          "type": "coll-select",
+          "disabled": true,
           "settings": {
-            "menu": "test-menu"
+            "featured_collection": "rugsss",
+            "new_menu": "shop-by-shape-rugs",
+            "new_menu-2": "",
+            "new_menu-3": ""
+          }
+        },
+        "7a2a7a28-c083-4e5e-b216-1ba5f11286ad": {
+          "type": "coll-select",
+          "disabled": true,
+          "settings": {
+            "featured_collection": "ceiling-fans",
+            "new_menu": "shop-by-style-ceiling-lights-2",
+            "new_menu-2": "",
+            "new_menu-3": ""
           }
         }
       },
       "block_order": [
-        "0c0db054-92d4-45c6-871c-056017202a37"
+        "5a57d93c-784d-4192-98ed-902fb964938a",
+        "7a2a7a28-c083-4e5e-b216-1ba5f11286ad"
       ],
       "settings": {
         "products_per_page": 24,
@@ -31,7 +46,8 @@
         "show_rating": true,
         "enable_filtering": true,
         "enable_sorting": true,
-        "collapse_on_larger_devices": false
+        "collapse_on_larger_devices": false,
+        "menu_depth_range": 1
       }
     },
     "recently-view": {

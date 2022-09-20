@@ -9,14 +9,17 @@
     margin-bottom: 40px;
     padding: 0px 10px;
 }
-.shop-product .shop-product-title  h3{color:#2d3654;
+.shop-product .shop-product-title  h3{
+  color:#000;
       font-size: 28px;
     }
 
 .shop-product .shop-product-title  p{
       font-size: 16px;
       margin-bottom: 0;  
-      font-family: var(--font-body-family-other);
+  color:#000;
+/*       font-family: JosefinSans Light; */
+  font-family: 'Graphik','sans-serif';
 }
 
 
@@ -52,14 +55,14 @@
   }
 
   .shop-product .shop-product-maindiv .shop-product-mainbox .title-div a{
-        color:#2d3654; 
+        color:#000; 
         overflow: hidden;
         display: -webkit-box;
         line-clamp: 2;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         text-decoration: none;
-        font-family: 'Bookmania Bold';
+    font-family: Graphik,"sans-serif";
         font-size: 16px;
 }
 
@@ -68,6 +71,9 @@
          width: calc(100% / 3 - 0px);
     margin-bottom: 20px;
   }
+   .shop-product{
+       padding: 0px 15px;
+   }
   }
 
 @media (max-width: 480px) {

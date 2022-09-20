@@ -13,6 +13,14 @@
     <h2 class="product-recommendations__heading">{{ section.settings.heading | escape }}</h2>
     <ul class="grid grid--2-col product-grid{% if recommendations.products_count > 3 %} grid--4-col-desktop grid--quarter-max{% else %} grid--{{ recommendations.products_count }}-col-tablet{% endif %}" role="list">
       {% for recommendation in recommendations.products %}
+                   {% assign flag = false %}
+            {% for tag  in recommendation.tags %}
+                {% if tag == "hidden" %}
+                {% assign flag = true %}
+                {% endif %}
+              {% endfor %}
+              {% if flag %}
+                {% else %}
         <li class="grid__item">
           {% render 'product-card-collection',
             product_card_product: recommendation,
@@ -24,6 +32,7 @@
             show_rating: section.settings.show_rating
           %}
         </li>
+                        {% endif %}
       {% endfor %}
     </ul>
   {% endif %}

@@ -1,0 +1,35 @@
+{% if product.metafields.custom.gallery_videos.value != blank %}
+  <div class="index-product-video-sec">
+
+    <div class="title-video">
+     <h4>Moments</h4>
+   </div>
+    <div class="row index-prd-video-slide-mobile">
+         {% for gallery_video in product.metafields.custom.gallery_videos.value %}
+           {% assign vids="" %}
+           {% for s in gallery_video.sources %}
+             {% assign t= s.url | append :" - " %}
+             {{ s.media_type }}
+             {% assign vid_old= t | append : vids %}
+             {% assign vids= vid_old %}
+             {% endfor %}
+           
+       <div class="col-xl-3 col-lg-3 col-md-3 px-md-3 px-1"">
+         <a  href="javascript:void(0);" class="index-product-video-img" data-urls="{{ vids }}">
+           
+           {%
+                        render 'rimg',
+                        class : 'img-fluid m-auto lazyload',
+                        img: gallery_video.preview_image,
+                        size: '200x200',
+                        lazy : false
+                      %}
+           <div class="index-product-video-overlayer"></div>
+           <div class="index-product-video-icon index-product-video-icon1"><i class="fa fa-play" aria-hidden="true"></i></div>
+         </a>
+       </div>
+     {% endfor  %}
+    </div>
+
+</div>
+{% endif %}

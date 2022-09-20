@@ -22,7 +22,7 @@
     font-size: 18px;
     font-weight: 500;
     margin-bottom: .6rem;
-    color: #2d3654;
+    color: #000;
 }
 .index-latest-blog .index-grid-div {
     margin-bottom: 15px;
@@ -32,7 +32,7 @@
 }
 .index-latest-blog  .index-grid-div .index-grid-img {
     position: relative;
-    padding-bottom: 75%;
+    padding-bottom: 57%;
     overflow: hidden;
     display: block;
     width: 100%;
@@ -61,13 +61,13 @@
 }
 .index-latest-blog .index-grid-div .index-blog-content span {
     font-size: 16px;
-    color: #2d3654;
+    color: #0000;
     margin-bottom: 10px;
     display: block;
 }
 .index-latest-blog .index-grid-div .index-blog-content h3 a{
     font-size: 18px;
-    color: #2d3654;
+    color: #000;
     line-clamp: 1;
     overflow: hidden;
     display: -webkit-box;
@@ -84,7 +84,7 @@
     margin-bottom: 3px;
     font-weight: 400;
     line-height: 20px;
-    color: #2d3654;
+    color: #000;
     line-clamp: 2;
     overflow: hidden;
     display: -webkit-box;

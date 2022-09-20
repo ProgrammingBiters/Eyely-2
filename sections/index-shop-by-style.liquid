@@ -12,15 +12,15 @@
                         <a href="{{block.settings.logo_url}}">
                             <div class="image_wrap">
                               {% if block.settings.featured_image != blank %}
-                                   {% comment %} {%
+                                   {%
                                     render 'rimg',
-                                    class: 'img-fluid',
+                                    class: 'productitem--image-primary img-fluid',
                                     img: block.settings.featured_image,
                                     size: '400x400'                                   
                                   %}
-                                {% endcomment %}
-                                  {% render 'responsive-image' with image : block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt : block.settings.featured_image.alt, max_width : 200, max_height : 300 %}
-                               
+                              
+                                  {% comment %} {% render 'responsive-image' with image : block.settings.featured_image , class: 'productitem--image-primary img-fluid', image.alt : block.settings.featured_image.alt, max_width : 300, max_height : 400 %}
+                                 {% endcomment %}
                                {% endif %}
                             </div>
                             <div class="content_wrap ">

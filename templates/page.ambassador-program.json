@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "main": {
+      "type": "ambassador-program-sec",
+      "blocks": {
+        "c92d2739-81ed-4775-8b40-caa6f02b6bda": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_from_iOS.jpg",
+            "heading_txt": "1. Apply now",
+            "info_content": "<p>Apply to our eyely Ambassador Program and receive exclusive FREE decor, every month. <br><br>It'll be worth it, trust us.<\/p>"
+          }
+        },
+        "301801b5-6bf0-45fb-b134-f3ae19649a40": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_from_iOS_1.jpg",
+            "heading_txt": "2. What will you get?",
+            "info_content": "<p>If you are accepted, you'll be gifted and rewarded: <br><br><strong>1<\/strong>)  <strong>eyely product for <span>FREE<\/span><br><br><strong>2<\/strong>)  create content and get <strong>reposted \n <\/strong> on our Instagram to increase your engagement<\/strong><\/p>"
+          }
+        },
+        "6beba939-80e3-43f5-8ac3-1d592a8304bb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_from_iOS_2.jpg",
+            "heading_txt": "3. Become an eyely Ambassador",
+            "info_content": "<p>This <strong>ambassador <\/strong>program<em> isn't like anyone else,<\/em><br><br>We really want you to be part of our community, and gift you with our exclusive home decor. <br><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c92d2739-81ed-4775-8b40-caa6f02b6bda",
+        "301801b5-6bf0-45fb-b134-f3ae19649a40",
+        "6beba939-80e3-43f5-8ac3-1d592a8304bb"
+      ],
+      "settings": {
+        "heading": "Become an eyely ambassador and get exclusive home products for free",
+        "description": "Our program isn't like the other ones. With us, you'll get gifted, every single month your choice of our curated selection of home decor"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

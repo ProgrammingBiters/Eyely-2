@@ -1,0 +1,390 @@
+{% comment %}
+    Renders a product card
+
+    Accepts:
+    - product_card_product: {Object} Product Liquid object (optional)
+    - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+    - add_image_padding: {Boolean} Enables padding on the image to space out the grid
+    - show_vendor: {Boolean} Show the product vendor. Default: false
+    - show_image_outline: {Boolean} Show card outline. Default: true (optional)
+    - show_rating: {Boolean} Show the product rating. Default: false
+
+    Usage:
+    {% render 'product-card', show_vendor: section.settings.show_vendor %}{%- assign show_swatches = false -%}
+{% endcomment %}
+{% assign p_link = product_card_product.url  | split: "?" %}
+{% assign initial_image = product_card_product.images[1].src %}
+{% assign second_image = product_card_product.images[0].src %}    
+        
+{%- if settings.swatches_enable -%}
+    {%- for option in product_card_product.options_with_values -%}
+      {%- assign swatch_trigger = settings.swatches_swatch_trigger | strip | downcase -%}
+      {%- assign option_name = option.name | downcase -%}
+      {%- if option_name == swatch_trigger -%}
+   
+            {%- assign show_swatches = true -%}
+        {%- assign swatch_values = option.values -%}
+        {%- assign swatch_values_count = option.values.size -%}
+        {%- assign swatch_option_key = 'option' | append: forloop.index -%}
+ 
+        {%- break -%}
+
+      {%- endif -%}
+    {%- endfor -%}
+{% endif %}
+  {% for tag in current_tags %}
+        {% assign tag_group = tag | split: '_' | first | downcase %}
+        {% if tag_group == swatch_trigger %}
+          {% assign active_swatch_name = tag | split: '_' | last | downcase %}
+
+          {% for variant in  product_card_product.variants %}
+            {% assign option_value = variant[swatch_option_key] | downcase %}
+            {% if option_value contains active_swatch_name or active_swatch_name contains  swatch_value_downcased %}
+              	{% assign initial_image =  variant.image %}
+
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg|minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% break %}
+        {% endif %}
+    {% endfor %}
+
+{% assign c_tags= current_tags | join : " " %}
+{% assign fg = true%}
+{% if c_tags contains "Shape" %}
+
+        {% for image in product_card_product.images %}
+          {% for variant in image.variants %}
+                {% if variant.title contains 'Runner' and current_tags contains 'Shape_Runner' and fg == true %}
+                {% assign rimg = variant.featured_image.position %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Round' and current_tags contains 'Shape_Round' and fg == true %}
+                {% assign rimg = variant.featured_image.position %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Rectangle' and current_tags contains 'Shape_Rectangle' and fg == true  %}
+                {% assign rimg = variant.featured_image.position %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Square' and current_tags contains 'Shape_Square' and fg == true %}
+                {% assign rimg = variant.featured_image.position %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% elsif variant.title contains 'Oval' and current_tags contains 'Shape_Oval' and fg == true  %}
+                {% assign rimg = variant.featured_image.position %}
+                {% assign initial_image = product_card_product.images[rimg].src %}
+                {% assign rimg1= rimg | minus : 1 %}
+                {% assign second_image = product_card_product.images[rimg1].src %}
+                {% assign fg = false %}
+                {% endif %}
+          
+          {% endfor %}
+          {% endfor %}
+
+
+{% endif %}
+{% if c_tags contains "Shape" and c_tags contains "Color" %}
+
+
+{% assign active_swatch_name = tag | split: '_' | last | camelize  %}
+{% for tag in current_tags %}
+{% assign tag_group = tag | split: '_' | first | downcase %}
+{% if tag_group == swatch_trigger %}
+{% assign active_swatch_name = tag | split: '_' | last | camelize  %}
+{% endif %}
+{% endfor %}
+
+{% for image in product_card_product.images %}
+{% for variant in image.variants %}
+
+{% if variant.title contains 'Runner' and current_tags contains 'Shape_Runner' and variant.title contains active_swatch_name %}
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg | minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+{% elsif variant.title contains "Round" and current_tags contains 'Shape_Round' and variant.title contains active_swatch_name %}
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg|minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+
+{% elsif variant.title contains "Rectangle" and current_tags contains 'Shape_Rectangle' and  variant.title contains active_swatch_name %}
+    {% assign rimg = variant.featured_image.position %}
+    {% assign initial_image =  product_card_product.images[rimg].src %}
+    {% assign rimg1= rimg|minus : 1 %}
+    {% assign second_image = product_card_product.images[rimg1].src %}  
+{% elsif variant.title contains "Square" and current_tags contains 'Shape_Square' and variant.title contains active_swatch_name %}
+
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg|minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+{% elsif variant.title contains "Oval" and current_tags contains 'Shape_Oval' and variant.title contains active_swatch_name %}
+
+      {% assign rimg = variant.featured_image.position %}
+      {% assign initial_image =  product_card_product.images[rimg].src %}
+      {% assign rimg1= rimg | minus : 1 %}
+      {% assign second_image = product_card_product.images[rimg1].src %}  
+{% endif %}
+{% break %}
+{% endfor %}
+{% endfor %}
+
+
+
+
+{% endif %}
+{% if product.title == "Esmortiz Tokay Bohemian Geometric Indoor/Outdoor Area Rug" %}
+{% assign rimg = variant.featured_image.position %}
+{% assign initial_image =  product.images[rimg].src %}
+
+{% endif %}
+
+
+<div class="card-wrapper light-wrapper">
+  <div class="card-information">
+    {% assign c = 0 %}
+    {% capture swatches %}
+    
+  
+    {% for option in product_card_product.options %}
+      {% if option == 'Color' %}
+        {% assign index = forloop.index0 %}
+        {% assign colorlist = '' %}
+        {% assign color = '' %}
+        {% assign img_list = '' %}
+        {% assign checked = false %}
+    {% assign flagg= true  %}
+        {% for variant in product_card_product.variants %}
+          {% capture color %}{{ variant.options[index] }}{% endcapture %}
+       
+          {% unless colorlist contains color %}
+
+          {% for tag in current_tags %}
+  
+          {% assign t = tag | split: "_" %}
+    {% if t[0] contains "Color" %}
+          {% assign cc = variant.options[index] | downcase %}
+          {% assign che = t[1] | downcase %}
+          {% if cc contains che and flagg == true %}
+            {% assign checked = true %}
+          {% endif %}
+    {% endif %}
+          {% endfor %}
+            {% assign c = c | plus : 1 %}
+            {% capture imgs %}<img src="{{ variant.image | img_url: 'original' }}"  srcset="{%- if variant.image.width >= 165 -%}{{ variant.image | img_url: '165x' }} 165w,{%- endif -%}
+            {%- if variant.image.width >= 360 -%}{{ variant.image | img_url: '360x' }} 360w,{%- endif -%}
+            {%- if variant.image.width >= 533 -%}{{ variant.image | img_url: '533x' }} 533w,{%- endif -%}
+            {%- if variant.image.width >= 720 -%}{{ variant.image | img_url: '720x' }} 720w,{%- endif -%}
+            {%- if variant.image.width >= 940 -%}{{ variant.image | img_url: '940x' }} 940w,{%- endif -%}
+            {%- if variant.image.width >= 1066 -%}{{ variant.image | img_url: '1066x' }} 1066w,{%- endif -%}
+            {{ initial_image | img_url: 'master' }} {{ variant.image.width }}w"
+          src="{{ variant.image | img_url: '533x' }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+         alt="{{ color }}" width="{{ variant.image.width }}" height="{{ variant.image.height }}" loading="lazy" class="v-img v-{{ variant.id }}-{{section.id}}  ">
+         {% endcapture %}
+         
+           {% assign img_list = img_list | append : imgs | append : ' ' %} 
+            
+
+
+            {% assign colorlist = tempList %}
+            <button class="c-item   {% unless variant.available %} disabled-item {% endunless%} "  {% unless variant.available %}  {% endunless%}  data-p-id="{{ product_card_product.id }}" data-v-id="v-{{ variant.id }}-{{section.id}}" data-img-url="{{ variant.image | img_url: 'original' }}" data-prd-url="{{ variant.url }}"><img class='img-fluid  {% if checked == true %} active{% assign checked = false %}{% assign flagg = false %} {% endif %}' data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ color }}" src="{{ variant.image | img_url: '50x50' }}" alt="{{ color }}"  loading="lazy" />  </button>
+            {% capture tempList %}{{ colorlist | append: color | append: ' ' }}{% endcapture %}
+            {% assign colorlist = tempList %}
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    {% endcapture %}
+   <div class="card-information__wrapper">
+      <div class="collection-swathces">
+      <div class="swatch-inner {% if c <= 4 %} full {% endif %}"> {{ swatches }}</div>
+      {% if c > 4 %} <button class="more-color plus"  data-prd-id="{{ product_card_product.id }}-{{section.id}}"><span class="pl">+</span><span class="mi">-</span></button> {% endif %}
+    </div>
+      
+      {%- if show_vendor -%}
+        <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+        <div class="caption-with-letter-spacing light">{{ product_card_product.vendor }}</div>
+      {%- endif -%}
+
+      {%- if product_card_product.featured_media -%}
+        <h3 class="card-information__text light-info-text h5 title-{{ product_card_product.id }}-{{section.id}}">
+          <a href="{{ p_link[0] | default: '#' }}" class="full-unstyled-link prd-link-{{ product_card_product.id }}-{{section.id}}">
+            {{ product_card_product.title | escape }}
+          </a>
+        </h3>
+      {%- endif -%}
+      
+	 {% if product_card_product.vendor == 'Eyely' %}
+        <div class="prd-ship">
+          <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+        </div>
+       {% elsif product_card_product.vendor == 'happimess' %}
+        <div class="prd-ship">
+          <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+        </div>
+       {% elsif product_card_product.vendor == 'ovalair' %}
+        <div class="prd-ship">
+          <i class="fa fa-truck" aria-hidden="true"></i><span>Usually Ships within 24 hours</span>
+        </div>
+        {% endif %}
+     
+     <div class="light-coll-time {% if show_countdown == true %} d-block {% else %} d-none{% endif %}">
+<!--        <p>Ends in 24h 55m 49s</p> -->
+       <span class="timer_wrap_new" data-id="prd-{{product_card_product.id}}" data-y="{{y}}" data-m="{{m}}" data-d="{{d}}" data-h="{{h}}" > 
+         <span class="example" id="prd-{{product_card_product.id}}" >
+         <span><span class="hours">00</span><span class=" pl-2 hours_text">Hours</span></span>
+         <span class="seperator px-2">:</span>
+         <span><span class="minutes">00</span><span class="pl-2 minutes_text">Minutes</span></span>
+         <span class="seperator px-2">:</span>
+         <span><span class="seconds">00</span><span class="pl-2 seconds_text">Seconds</span></span>
+         </span>
+       </span>
+     </div>
+     
+
+     
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+      {% render 'price-card', product: product_card_product, price_class: '' %}
+      {% for tag in product_card_product.tags %}
+        {% if tag == "Offers_Final Sale" %}
+           <div class="final_sale_wrapper_grid text-right"><small class="mb-0 final_sale"><strong>FINAL SALE</strong></small></div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="card card--product{% if initial_image == nil %} card--text-only card--soft{% endif %}{% if initial_image != nil and show_image_outline %} card--outline-collection{% endif %}" tabindex="-1">
+    <a href="{{p_link[0] }}" class="prd-img-link-{{ product_card_product.id }}">
+     <div class="card__inner">
+      {%- if initial_image -%}
+        {%- liquid
+          assign featured_media_aspect_ratio = initial_image.aspect_ratio
+
+          if initial_image.aspect_ratio == nil
+            assign featured_media_aspect_ratio = 1
+          endif
+        -%}
+
+        <div{% if add_image_padding %} class="card__media-full-spacer light-media-info"{% endif %}>
+          <div id="prd-{{ product_card_product.id }}" class="media media--transparent media--square media--hover-effect"
+            {% if media_size == 'adapt' and initial_image %} style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"{% endif %}
+          >
+            <img
+              srcset="{%- if initial_image.width >= 165 -%}{{ initial_image | img_url: '165x' }} 165w,{%- endif -%}
+                {%- if initial_image.width >= 360 -%}{{ initial_image | img_url: '360x' }} 360w,{%- endif -%}
+                {%- if initial_image.width >= 533 -%}{{ initial_image | img_url: '533x' }} 533w,{%- endif -%}
+                {%- if initial_image.width >= 720 -%}{{ initial_image | img_url: '720x' }} 720w,{%- endif -%}
+                {%- if initial_image.width >= 940 -%}{{ initial_image | img_url: '940x' }} 940w,{%- endif -%}
+                {%- if initial_image.width >= 1066 -%}{{ initial_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                {{ initial_image | img_url: 'master' }} {{ initial_image.width }}w"
+              src="{{ initial_image | img_url: '533x' }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+              alt="{{ initial_image.alt | escape }}"
+              loading="lazy"
+              class="motion-reduce"
+              width="{{ initial_image.width }}"
+              height="{{ initial_image.height }}"
+            >
+
+            {%- if second_image != nil and show_secondary_image -%}
+              <img
+                srcset="{%- if second_image.width >= 165 -%}{{ second_image | img_url: '165x' }} 165w,{%- endif -%}
+                  {%- if second_image.width >= 360 -%}{{ second_image | img_url: '360x' }} 360w,{%- endif -%}
+                  {%- if second_image.width >= 533 -%}{{ second_image | img_url: '533x' }} 533w,{%- endif -%}
+                  {%- if second_image.width >= 720 -%}{{ second_image | img_url: '720x' }} 720w,{%- endif -%}
+                  {%- if second_image.width >= 940 -%}{{ second_image | img_url: '940x' }} 940w,{%- endif -%}
+                  {%- if second_image.width >= 1066 -%}{{ second_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                  {{ second_image | img_url: 'master' }} {{ second_image.width }}w"
+                src="{{ second_image | img_url: '533x' }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                alt="{{ second_image.alt | escape }}"
+                loading="lazy"
+                class="motion-reduce"
+              width="{{ second_image.width }}"
+              height="{{ second_image.height }}"
+              >
+            {%- endif -%}
+
+             
+      {{ img_list }}
+    
+          </div>
+        </div>
+      {%- else -%}
+        <div class="card__content">
+          <h2 class="card__text h3">
+            <a href="{{ p_link[0] | default: '#' }}" class="full-unstyled-link">
+              {{ product_card_product.title }}
+            </a>
+          </h2>
+        </div>
+      {%- endif -%}
+     
+      
+       <div class="badge-bottom">
+        {%- if product_card_product.available == false -%}
+          <span class=" badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+        {%- elsif product_card_product.compare_at_price > product_card_product.price and product_card_product.available -%}
+        {% assign sales_saved = product_card_product.compare_at_price | minus: product_card_product.price %}
+{% comment %}{{ sales_saved | times: 100.0 | divided_by: product_card_product.compare_at_price | round }}%{% endcomment %}
+        <span class="badge--bottom-left light-badge-bottom color-{{ settings.sale_badge_color_scheme }} bg-dark">{{section.settings.discount_percentage }} </span>
+         <span class="deal-span">Deal of the Day</span>
+         {%- endif -%}
+
+        {% for tag in product_card_product.tags %}
+
+                {% if tag == "WASHABLE" or tag == "Washable" %}
+                <span class="color-{{ settings.sale_badge_color_scheme }}  tag-new-wrap d-flex justify-content-end">Machine Washable</span> 
+                {% endif %}
+         
+      {% endfor %}
+      
+
+      </div>
+   
+  <div class="badge-wrap">
+        <div class="tag-div">
+          {% for tag in product_card_product.tags %}
+       
+         
+           {% assign show_size = 0 %}
+              {% if tag == "light" %}
+                  {% for product_option in product_card_product.options_with_values %}
+                    {% if product_option.name == "Size" or product_option.name == "Style" %}
+                    {% assign show_size = 1 %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if show_size == 1 %}
+            
+                      <span  class="color-{{ settings.sale_badge_color_scheme }} bg-dark   tag-new-wrap d-flex justify-content-end">More Styles</span>
+            
+                  {% endif %}
+              {% endif %}
+          {% endfor %}
+          </div>
+      
+            </div>
+
+      
+    </div>
+  </a>
+  </div>
+</div>
+ 

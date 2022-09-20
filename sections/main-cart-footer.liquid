@@ -1,11 +1,12 @@
-{{ 'component-cart.css' | asset_url | stylesheet_tag }}
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
+ 
   <div>
-    <div class="cart__footer cart-total">
+    <div class="cart__footer cart-total ">
+      
       {%- if section.settings.show_cart_note -%}
         <cart-note class="cart__note field">
           <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
@@ -77,7 +78,7 @@
           {{ 'general.continue_shopping' | t }} {% render 'icon-arrow-cart', id: 'icon-signpost-arrow' %}
         </a>
       </div>
-        <div id="cart-errors"></div>
+        <div id="cart-errors" style="display:none;"></div>
       </div>
     </div>
   </div>

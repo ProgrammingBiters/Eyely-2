@@ -61,7 +61,8 @@
    
    .sell-banner .sell-ibanner-img .sell-banner-overlayer {
      text-align: center;
-     font-family :"Bookmania Bold";
+/*      font-family :"Bookmania Bold"; */
+     font-family: 'Guardian Egyptian';
      color: #fff;
      font-size: 40.8px;
      font-weight:500;

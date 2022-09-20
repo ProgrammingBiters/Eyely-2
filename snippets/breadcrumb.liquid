@@ -1,3 +1,4 @@
+{% assign search_category = search_category | default: blank %}
 
 
 
@@ -91,7 +92,31 @@
       
         
           <span>{{ page.title | split: '|' | first }}</span>
-     
+      {% elsif template contains 'search' and search.performed %}
+      {% capture sanitized_terms %}
+        {%
+          render 'search-sanitizer',
+          search_terms: search.terms
+        %}
+      {% endcapture %}
+
+      {% assign sanitized_terms = sanitized_terms | strip %}
+
+       <span class="arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+
+      {% if search_category != blank %}
+        <span>
+          {{
+            'search.general.breadcrumbs_count_when_filtered'
+            | t: terms: sanitized_terms, category: search_category, count: search.results_count
+          }}
+        </span>
+      {% else %}
+        <span>Search results for "{{ search.terms}}"</span>
+      {% endif %}
+
     
       {% else %}
         <span class="arrow">

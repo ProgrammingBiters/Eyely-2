@@ -1,33 +1,199 @@
-.index-banner{
-    position: relative;
-    display:block;
-    max-width: 1600px;
+.img-for-scrol{
+  display:flex;
+  overflow:scroll;
+}
+.i--banner .i--banner-main{
+  padding: 0 15px;
+}
+.i--banner .banner-slider-img{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.i--banner .banner-slider-img::before{
+  content:'';
+  display:block;
+  padding-top:60%;
+}
+@media (max-width:480px){
+  .i--banner .banner-slider-img::before{
+    padding-top:60%;
   }
- 
-  
-  .index-banner img{
-    max-width: 100%;
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
+  .i--banner .slide-product-offer{
+    margin-bottom:10px;
   }
-  .desk-banner{
-    position: relative;
-    display:block;
-    width: 100%;
+}
+.i--banner .banner-slider-img img{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  object-position:center;
+  object-fit:cover;
+}
+.i--banner .banner-short-img .b---img{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.i--banner .banner-short-img .b---img::before{
+  content:'';
+  display:block;
+  padding-top:36%;
+}
+.i--banner .banner-short-img .b---img img{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  object-position:center;
+  object-fit:cover;
+}
+.i--banner .banner-short-img  .img--content{
+  font-size:16px;
+  margin:5px 0 10px 0;
+}
+
+.i--banner .banner-short-img  .img--content p{
+  margin:0;
+/*   font-family:'Bookmania Bold' , sans-serif; */
+  font-family:'JosefinSans Bold',sans-serif;
+  font-size:18px;
+}
+.i--banner .slick-dots li button{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.i--banner .slick-dots {
+  bottom: -30px;
+}
+.i--banner .slick-dots li{
+  width: 8px;
+  height: 8px;
+  margin: 0 12px;
+  background: rgb(231, 232, 234);
+  border-radius:50%;
+}
+.i--banner .slick-dots .slick-active{
+  background:red;
+}
+.slick-dots li button:before{
+  font-size:0;
+}
+
+.i--banner  .slide-product-offer:hover .slick-prev{
+  opacity:.4;
+}
+.i--banner  .slide-product-offer:hover .slick-next{
+  opacity:.4;
+}
+.i--banner .slick-prev{
+  height: 70px;
+  width: 70px;
+  top: 50%;
+  background: #fff;
+  opacity: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  transition:.5s;
+}
+.i--banner .slick-next {
+  height: 70px;
+  width: 70px;
+  top: 50%;
+  background: #fff;
+  opacity: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  transition:.5s;
+}
+.i--banner  .slide-product-offer:hover .slick-prev:hover{
+  opacity:.7;
+}
+.i--banner  .slide-product-offer:hover .slick-next:hover{
+  opacity:.7;
+}
+.i--banner .slick-next.slick-disabled:before{
+  opacity: .75;
+}
+
+.i--banner .slick-prev.slick-disabled:before {
+  opacity: .75;
+}
+
+.i--banner .slick-prev{
+  left:4%;
+}
+.i--banner .slick-next{
+  right:4%;
+}
+
+.i--banner .slick-prev:before{
+  content: "\f104";
+  font-size: 63px;
+  line-height: 34px;
+  color: #000;
+  text-align: center;
+}
+.i--banner .slick-next:before{
+  content: "\f105";
+  font-family: FontAwesome;
+  font-size: 63px;
+  line-height: 34px;
+  color: #000;
+  text-align: center;
+}
+.i--banner .banner_img {
+  position: relative;
+  overflow: hidden;
+}
+
+.i--banner .banner_img::before {
+  content: '';
+  display: block;
+  padding-top: 38%;
+}
+
+.i--banner .banner_img img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+     .i--banner .banner_img .desk_img{
+     display:block;
+     }
+
+.i--banner .banner_img .mob_banner{
+ 	opacity:0;
+  display:none;
+}
+@media (max-width: 767px) {
+  .i--banner .banner_img::before {
+    content: '';
+    display: block;
+    padding-top: 95%;
   }
-  .mobile-banner{
-    position: relative;
-    width: 100%;
-    display:none;
-  }
-  
-  
-  @media screen and (max-width: 749px) {
-  .mobile-banner{
-      display:block;
-    }
-    .desk-banner{
-      display:none;
-    }
-  }
+     .i--banner .banner_img .desk_img{
+     display:none;
+     }
+   .i--banner .banner_img .mob_banner{
+ 	opacity:1;
+     display:block;
+	}
+}
+

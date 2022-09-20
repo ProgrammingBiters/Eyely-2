@@ -1,6 +1,6 @@
 <section class="v-article">
   <div class="container">
-    <div class="row align-items-center text-center">
+    <div class="row align-items-stretch text-center">
       <div class="col-xl-5  pr-xl-0 pr-lg-0 col-lg-5  order-div">
         <div class="article-detail">
           <div class="redirect-aritcle">
@@ -18,7 +18,15 @@
           </div>
         </div>
       </div>
-      {% if article.image != blank %}
+      {% if section.settings.vid_url != blank %}
+              <div class="col-xl-7 pl-xl-0 pl-lg-0 col-lg-7 order-div-1">
+        <div class="v-article-img">
+         
+            <iframe src="{{ section.settings.vid_url }}"  title="{{article.title}}" class="w-100"></iframe>
+        
+        </div>
+      </div>
+      {% elsif article.image != blank %}
       <div class="col-xl-7 pl-xl-0 pl-lg-0 col-lg-7 order-div-1">
         <div class="v-article-img">
           <a href="{{article.url}}"><img src="{{article.image| img_url:'original'}}" class="img-fluid"></a>
@@ -43,7 +51,12 @@
 "id":"view_article_label",
 "label":"View Article label",
 "default":"view article"
-}
+},
+  {
+    "type":"url",
+    "label":"video url",
+    "id":"vid_url"  
+  }
 ],
 "presets": [
   {

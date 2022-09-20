@@ -1,0 +1,138 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{% assign results = collection %}
+  
+<section class="index-lightning-sec">
+<div class="container">
+  <div class="row my-3 mx-md-3 mx-0">
+    <div class="col-6">
+      <h2> {{ section.settings.title_txt }} </h2>
+    </div>
+    <div class="col-6">
+      <div class="shop-light-view">
+        <a href="{{ section.settings.btn_url }}" class="btn shop-light-btn">{{ section.settings.btn_txt }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col grid-wrapper">
+      <div id="ProductGridContainer">
+          <div class="collection ">
+            <div class="loading-overlay gradient"></div>
+            {% assign collection = collections[section.settings.shop_collection] %}
+            <ul data-id="{{ section.id }}" id="product-grid" class="light-grid-slide 
+                                                                     grid   product-grid 
+                                                                    flex-nowrap ">
+              {% for product in collection.products %}
+              <li class="col-12">
+                
+                {% render 'index-card-collection',
+                    product_card_product: product,
+                    media_size: section.settings.image_ratio,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    add_image_padding: section.settings.add_image_padding,
+                    show_vendor: section.settings.show_vendor,
+                    show_image_outline: section.settings.show_image_outline,
+                    show_rating: section.settings.show_rating,
+                    y:section.settings.year,
+                    m:section.settings.month,
+                    d:section.settings.day,
+                    h:section.settings.hour,
+                show_countdown:section.settings.show_countdown
+                  %}
+              </li>
+              {% endfor %}
+            </ul>
+        </div>
+
+    
+      </div>
+    </div>
+  </div>
+</div> 
+</section>
+
+{% schema %}
+  {
+    "name": "Index Lightning",
+    "settings": [
+      {
+        "type":"text",
+        "id":"title_txt",
+        "label":"Title"
+      },
+  	  {
+		"type": "url",
+        "id": "btn_url",
+        "label": "Button Url"
+      },
+      {	
+        "type": "text",
+        "id": "btn_txt",
+        "label": "Button Text"
+      },
+	  {
+        "type": "collection",
+        "id": "shop_collection",
+        "label": "Collection"	
+      },
+      {	
+        "type": "text",
+        "id": "discount_percentage",
+        "label":"Discount"
+      },
+		{
+			"type":"checkbox",
+          "id":"show_countdown",
+          "label":"Show CountDown",
+          "default":true
+		}
+		,
+      {
+        "type": "number",
+        "label": "Year",
+        "id": "year",
+        "default": 2022
+      },
+      {
+        "type": "range",
+        "label": "Month",
+        "id": "month",
+        "default": 6,
+        "min": 1,
+        "step": 1,
+        "max": 12
+      },
+      {
+        "type": "range",
+        "label": "Day",
+        "id": "day",
+        "default": 17,
+        "min": 1,
+        "step": 1,
+        "max": 31
+      },
+ 		{
+        "type": "range",
+        "label": "Hour",
+        "id": "hour",
+        "default": 23,
+        "min": 1,
+        "step": 1,
+        "max": 23
+      }
+  	],
+	"presets": [
+      {
+        "name": "Index Lightning",
+        "category": "Index"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

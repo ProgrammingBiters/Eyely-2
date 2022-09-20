@@ -1,0 +1,228 @@
+
+{%comment %}
+<section class="prd-grid">
+  <div class="container">
+    <div class="product-section">
+      <div class="show---product">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+            <div class="details-of-sec">
+              {%for block in section.blocks %}
+              {% if block.type == 'prd' %}
+              {% assign collection = collections[block.settings.add_collection] %}
+              <h2>Editors' Picks</h2>
+              <h3>{{ collection.title }}</h3>
+              <a href="{{ collection.url }}" class="d-md-block d-none">see more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {%for block in section.blocks %}
+          {% if block.type == 'prd' %}
+          {% assign collection = collections[block.settings.add_collection] %}
+          {% for product in collection.products limit:6 %}
+          <div class="col-xl-3 col-lg-3 col-md-3 col-4">
+
+            <a href="{{ product.url }}">
+              <div class="s-product-details">
+                {%  if product.images[2] != blank %}
+                <img src="{{ product.images[2] | img_url:'master' }}" >
+                  {%  else  %}
+                  <img src="{{ product.images[0] | img_url:'master' }}" >
+                  {% endif %}
+                <div class="prd-price">
+                  <p>{{ product.price | money }}</p>
+                </div>
+                <div class="tab-grid-wishlist">
+                  <span class="smartwishlist" data-product="{{ product_card_product.id }}" data-variant="{{ product_card_product.variants.first.id }}"></span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+          {% endfor %}
+          {% endif %}
+          {% endfor %}
+          <div class="details-of-sec d-md-none d-block">
+            {%for block in section.blocks %}
+            {% if block.type == 'prd' %}
+            {% assign collection = collections[block.settings.add_collection] %}
+
+            <a href="{{ collection.url }}">see more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="product--video d-lg-block d-none">
+        <video class="w-100" src="{{ section.settings.product-video }}" loop autoplay></video>
+        <div class="play-videoo">
+          <i class="fa fa-play" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endcomment %}
+<section class="prd-grid">
+  <div class="container">
+    
+      {% for block in section.blocks %}
+       {% if block.type == 'prd' and block.settings.add_collection != blank %}
+              {% assign collection = collections[block.settings.add_collection] %}
+    
+    <div class="product-section">
+      <div class="show---product">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+            <div class="details-of-sec">
+        	{% if block.settings.top_title != blank %}
+              <h2>{{block.settings.top_title}}</h2>
+            {% endif %}
+              <h3>{% if block.settings.title != blank %}
+                {{ block.settings.title }}
+                {% else %}
+                {{collection.title}}
+                {% endif %}</h3>
+              <a href="{{ collection.url }}" class="d-md-block d-none">see more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+              
+            </div>
+          </div>
+         
+          {% for product in collection.products limit:6 %}
+          <div class="col-xl-3 col-lg-3 col-md-3 col-4 d-md-block d-none">
+
+            <a href="{{ product.url }}">
+              <div class="s-product-details">
+                 {% if product.images[1] != blank  %}
+                {%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: product.images[1] ,
+                                        size: '300x300'                                   
+                                    %}
+               {% else %}{%
+                                        render 'rimg',
+                                        class: 'img-fluid',
+                                        img: product.images[0] ,
+                                        size: '300x300'                                   
+                                    %}
+              {% endif  %}
+                
+                <div class="prd-price">
+                  <p>{{ product.price | money }}</p>
+                </div>
+                <div class="tab-grid-wishlist">
+                  <span class="smartwishlist" data-product="{{ product_card_product.id }}" data-variant="{{ product_card_product.variants.first.id }}"></span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+          {% endfor %}
+{% if block.settings.product_video_machine != blank %}
+      <div class="col-xl-12 d-md-none d-block">
+         <a href="{{ collection.url }}"><div class="wasable_gif_div"><img src="{{ block.settings.product_video_machine |img_url:'master' }}" class="wasable_gif_img"></div></a>
+      </div>
+      {% endif %}
+         
+          <div class="details-of-sec d-md-none d-block">
+           
+           
+            <a href="{{ collection.url }}">see more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+          
+          </div>
+        </div>
+      </div>
+      {% if block.settings.product-video != blank %}
+      <div class="product--video d-lg-block d-none">
+        <video id="washable_video" autoplay muted class="w-100" src="{{ block.settings.product-video }}" loop></video>
+        <div class="play-videoo">
+          <i class="fa fa-play" aria-hidden="true"></i>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    	{% endif %}
+     {% endfor %}
+    
+    
+    
+  </div>
+</section>
+
+<script>
+  const videos = document.querySelectorAll("video")
+
+  videos.forEach(video => {
+    video.addEventListener("mouseover", function () {
+      this.play()
+    })
+
+    video.addEventListener("mouseout", function () {
+      this.pause()
+    })
+
+    video.addEventListener("touchstart", function () {
+      this.play()
+    })
+
+    video.addEventListener("touchend", function () {
+      this.pause()
+    })
+  })
+</script>
+
+{% schema %}
+{
+"name": "Product Grid",
+"settings": [
+   
+],
+"blocks":[
+{
+"type":"prd",
+"name":"Collection",
+"settings":[
+{		
+"type":"collection",
+"id":"add_collection",
+"label":"Collection Select"
+},{
+"type":"text",
+"id":"top_title",
+"label":"Top Title",
+"default":"Eyelys Picks"
+},
+{
+"type":"text",
+"id":"title",
+"label":"Title"
+},
+{
+"type":"url",
+"id":"product-video",
+"label":"Product Video"
+},
+   {
+  "type":"image_picker",
+  "id":"product_video_machine",
+  "label":"Mobile Product Video"
+  }
+]
+}
+],
+"presets": [
+{
+"name": "Index Product Grid"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

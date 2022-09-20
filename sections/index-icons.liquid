@@ -4,7 +4,12 @@
             {% if block.type == "icons" and block.settings.enable %}
             <div class='item-icon'>
                 {% if block.settings.icon_image != blank %}
-                    {% render 'responsive-image' with image : block.settings.icon_image, image.alt : block.settings.icon_image.alt, max_width : 100, max_height : 100 %}
+                {%
+                                        render 'rimg',
+                                        class: 'img-fluid productitem--image-primary',
+                                        img: block.settings.icon_image,
+                                        size: '100x100'
+                                    %}
                 {% endif %}
                 <h3>{{ block.settings.title }}</h3>
             </div>

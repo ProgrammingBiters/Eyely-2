@@ -1,45 +1,48 @@
 {
   "current": {
     "colors_solid_button_labels": "#FFFFFF",
-    "colors_accent_1": "#2d3654",
-    "colors_accent_2": "#2d3654",
-    "colors_text": "#2d3654",
-    "colors_outline_button_labels": "#2d3654",
-    "colors_background_1": "#FFFFFF",
-    "colors_background_2": "#F3F3F3",
+    "colors_accent_1": "#222222",
+    "colors_accent_2": "#222222",
+    "colors_text": "#222222",
+    "colors_outline_button_labels": "#222222",
+    "colors_background_1": "#ffffff",
+    "colors_background_2": "#ffffff",
     "type_header_font": "josefin_sans_n6",
     "heading_scale": 120,
     "type_body_font": "josefin_sans_n7",
     "body_scale": 100,
     "type_body_other": "josefin_sans_n3",
     "social_facebook_link": "https:\/\/facebook.com\/eyelyhome",
-    "social_pinterest_link": "https:\/\/in.pinterest.com\/eyelyhome\/_shop\/",
+    "social_pinterest_link": "",
     "social_instagram_link": "https:\/\/www.instagram.com\/eyelyhome\/",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@eyelyhome",
     "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UC7Nfh4f1r3DxfDfoZHx8jfQ",
+    "favicon": "shopify:\/\/shop_images\/32x32_E.png",
     "currency_code_enabled": false,
     "show_countdown": false,
-    "month": 10,
-    "day": 31,
+    "year": 2022,
+    "month": 9,
+    "day": 19,
     "rug1_mega_image1": "shopify:\/\/shop_images\/reds-oranges_d164ff97-6952-486d-8a28-b8ba424cd716.jpg",
-    "rug1_mega_url1": "\/collections\/rugs\/color_red",
+    "rug1_mega_url1": "https:\/\/www.eyely.com\/collections\/rugs\/color_red",
     "rug1_mega_size1": "col-6",
     "rug1_mega_image2": "shopify:\/\/shop_images\/blacks-whites_987cbdda-7d07-4775-8fb2-e39665545001.jpg",
     "rug1_mega_url2": "https:\/\/www.eyely.com\/collections\/rugs\/color_black",
     "rug1_mega_size2": "col-6",
     "rug1_mega_image3": "shopify:\/\/shop_images\/blues-greens_cdff715d-969a-4ec6-8614-e37e1f2e4f36.jpg",
-    "rug1_mega_url3": "\/collections\/rugs\/color_blue",
+    "rug1_mega_url3": "https:\/\/www.eyely.com\/collections\/rugs\/color_blue",
     "rug1_mega_size3": "col-6",
     "rug1_mega_image4": "shopify:\/\/shop_images\/tans-ivories.jpg",
     "rug1_mega_url4": "\/collections\/rugs\/color_ivory",
     "rug1_mega_size4": "col-6",
     "rug1_mega_image5": "shopify:\/\/shop_images\/Machine_Washable_2.png",
-    "rug1_mega_url5": "\/collections\/rugs\/washable",
+    "rug1_mega_url5": "https:\/\/www.eyely.com\/collections\/rugs\/washable",
     "rug1_mega_size5": "col-4",
     "rug1_mega_image6": "shopify:\/\/shop_images\/rug_pad.png",
     "rug1_mega_url6": "shopify:\/\/collections\/rug-pad",
     "rug1_mega_size6": "col-4",
     "rug1_mega_image7": "shopify:\/\/shop_images\/final_sale_53cef7c1-3b54-4f43-bcbb-fcd1bf9c2703.png",
-    "rug1_mega_url7": "\/collections\/warehouse-sale\/offers_final-sale",
+    "rug1_mega_url7": "https:\/\/www.eyely.com\/collections\/warehouse-sale\/offers_final-sale",
     "rug1_mega_size7": "col-4",
     "rug1_mega_image8": "shopify:\/\/shop_images\/shags_77dd00af-5f16-4e8d-ac2e-6d3bdebdf304.png",
     "rug1_mega_url8": "shopify:\/\/collections\/shags",
@@ -47,58 +50,128 @@
     "rug1_mega_image9": "shopify:\/\/shop_images\/Outdoor_56710d03-fda6-4431-bf60-fc96c138c765.png",
     "rug1_mega_url9": "shopify:\/\/collections\/outdoor",
     "rug1_mega_size9": "col-12",
+    "kitchen_link_size": "col-3",
+    "kitchen_linklists": "shop-by-kitchen",
+    "kitchen1_link_size": "col-3",
+    "kitchen1_linklists": "shop-by-kitchen2",
+    "kitchen2_link_size": "col-3",
+    "kitchen2_linklists": "shop-by-kitchen3",
+    "kitchen3_linklists_enable": false,
+    "kitchen3_link_size": "col-4",
+    "kitchen3_linklists": "shop-by-kitchen4",
+    "kitchen1_mega_enable": true,
+    "kitchen1_img_title1": "Shop all Kitchen and Bar",
+    "kitchen1_mega_image1": "shopify:\/\/shop_images\/74d7eba6-8ca5-5451-a10c-03977cc22364.jpg",
+    "kitchen1_mega_url1": "shopify:\/\/collections\/kitchen-bar",
+    "kitchen1_mega_size1": "col-3",
+    "kitchen1_title1": "",
+    "kitchen1_discover_title1": "",
+    "garden1_link_size": "col-3",
+    "garden1_linklists": "home-garden1",
+    "garden2_link_size": "col-3",
+    "garden2_linklists": "home-garden2",
+    "garden3_link_size": "col-3",
+    "garden3_linklists": "home-garden3",
+    "garden1_img_title1": "Shop All Home & Garden",
+    "garden1_mega_image1": "shopify:\/\/shop_images\/artificial-7-artificial-kentia-palm-silk-tree-released-nearly-natural-323113_535x_fb63d06d-c2d0-4687-8b2e-c6bd27f0c83f.webp",
+    "garden1_mega_url1": "shopify:\/\/collections\/home-garden",
+    "garden1_mega_size1": "col-3",
     "chandeliers1_mega_image1": "shopify:\/\/shop_images\/integrated-led-lighting.jpg",
-    "chandeliers1_mega_url1": "\/collections\/chandeliers\/integratedled",
+    "chandeliers1_mega_url1": "https:\/\/www.eyely.com\/collections\/chandeliers\/integratedled",
     "chandeliers1_mega_image2": "shopify:\/\/shop_images\/how-to-choose-the-best-ceiling-lights-for-you-home.jpg",
     "chandeliers1_mega_url2": "shopify:\/\/blogs\/lighting\/how-to-choose-the-best-ceiling-lights-for-your-home",
     "chandeliers1_mega_image3": "shopify:\/\/shop_images\/our-most-popular-chandeliers.jpg",
     "chandeliers1_mega_url3": "shopify:\/\/collections\/chandeliers",
     "chandeliers1_mega_image4": "shopify:\/\/shop_images\/smart-plugs-image.jpg",
     "chandeliers1_mega_url4": "shopify:\/\/collections\/smart-plugs",
-    "ceilinglights1_mega_image1": "shopify:\/\/shop_images\/ceiling-lights-menu-1.jpg",
-    "ceilinglights1_mega_url1": "\/collections\/ceiling-lights\/style_contemporary",
-    "ceilinglights1_title1": "Contemporary",
-    "ceilinglights1_mega_image2": "shopify:\/\/shop_images\/ceiling-lights-menu-2.jpg",
-    "ceilinglights1_mega_url2": "\/collections\/ceiling-lights\/style_farmhouse",
-    "ceilinglights1_title2": "Farmhouse",
-    "ceilinglights1_mega_image3": "shopify:\/\/shop_images\/ceiling-lights-menu-7.jpg",
-    "ceilinglights1_mega_url3": "\/collections\/ceiling-lights\/integratedled",
-    "ceilinglights1_title3": "Integrated LED",
-    "ceilinglights1_mega_image4": "shopify:\/\/shop_images\/ceiling-lights-menu-4.jpg",
-    "ceilinglights1_mega_url4": "\/collections\/ceiling-lights\/style_french-country",
-    "ceilinglights1_title4": "French Country",
-    "ceilinglights1_mega_image5": "shopify:\/\/shop_images\/ceiling-lights-menu-5.jpg",
-    "ceilinglights1_mega_url5": "\/collections\/ceiling-lights\/style_transitional",
-    "ceilinglights1_title5": "Transitional",
-    "ceilinglights1_mega_image6": "shopify:\/\/shop_images\/ceiling-lights-menu-6.jpg",
-    "ceilinglights1_mega_url6": "\/collections\/ceiling-lights\/style_cottage",
-    "ceilinglights1_title6": "Cottage",
-    "ceilinglights1_mega_image7": "shopify:\/\/shop_images\/smart-lighting-image.jpg",
-    "ceilinglights1_mega_url7": "shopify:\/\/collections\/smart-lighting",
-    "ceilinglights1_mega_image8": "shopify:\/\/shop_images\/how-to-mount-ceiling-lights-image.png",
-    "ceilinglights1_mega_url8": "https:\/\/cdn.shopify.com\/s\/files\/1\/0553\/3053\/7657\/files\/Flush-Mount-Assembly.pdf?v=1627040830",
+    "ceilinglights1_mega_image1": "shopify:\/\/shop_images\/JYL1089A-ON-ROOM_360x_d8ac556e-8afa-4a22-9821-65d58f050c74.jpg",
+    "ceilinglights1_mega_url1": "shopify:\/\/collections\/lighting",
+    "ceilinglights1_mega_size1": "col-12",
+    "ceilinglights1_title1": "Shop All Lighting",
+    "ceilinglights1_title_pos1": "Top",
+    "ceilinglights2_mega_enable": true,
+    "ceilinglights1_mega_image2": "shopify:\/\/shop_images\/neon_lighting_b8fcdbfa-25b4-4cd0-92b8-6981ffad900c.png",
+    "ceilinglights1_mega_url2": "shopify:\/\/collections\/neon-lights",
+    "ceilinglights1_mega_size2": "col-6",
+    "ceilinglights1_title2": "Neon Lights",
+    "ceilinglights3_mega_enable": true,
+    "ceilinglights1_mega_image3": "shopify:\/\/shop_images\/jonathany-smartlighting_4a15d765-c6a3-4cc1-9dff-b43585f27462.png",
+    "ceilinglights1_mega_url3": "shopify:\/\/collections\/smart-bulbs",
+    "ceilinglights1_mega_size3": "col-6",
+    "ceilinglights1_title3": "Smart Bulbs",
+    "ceilinglights4_mega_enable": false,
+    "ceilinglights1_mega_image4": "shopify:\/\/shop_images\/how-to-mount-ceiling-lights-image_1024x1024_e0b50ee5-09a6-4fea-b522-ec067cd2d992.png",
+    "ceilinglights1_mega_url4": "shopify:\/\/blogs\/lighting\/how-to-install-flush-mount-ceiling-lights-diy",
+    "ceilinglights1_mega_size4": "col-5",
+    "ceilinglights1_title4": "",
+    "ceilinglights5_mega_enable": false,
+    "ceilinglights1_mega_image5": "shopify:\/\/shop_images\/ezgif.com-gif-maker__14_-removebg-preview_2.png",
+    "ceilinglights1_mega_url5": "shopify:\/\/collections\/chandeliers",
+    "ceilinglights1_mega_size5": "col-3",
+    "ceilinglights1_title5": "Chandelier",
+    "ceilinglights6_mega_enable": false,
+    "ceilinglights1_mega_image6": "shopify:\/\/shop_images\/ezgif.com-gif-maker__15_-removebg-preview.png",
+    "ceilinglights1_mega_url6": "shopify:\/\/collections\/flush-mounts",
+    "ceilinglights1_mega_size6": "col-3",
+    "ceilinglights1_title6": "Flush Mount",
+    "ceilinglights7_mega_enable": false,
+    "ceilinglights1_mega_image7": "shopify:\/\/shop_images\/ezgif.com-gif-maker__16_-removebg-preview_1.png",
+    "ceilinglights1_mega_url7": "shopify:\/\/collections\/pendants",
+    "ceilinglights1_mega_size7": "col-3",
+    "ceilinglights1_title7": "Pendant",
+    "ceilinglights8_mega_enable": false,
+    "ceilinglights1_mega_image8": "shopify:\/\/shop_images\/JYL9509A-MAIN-SILO_953x800_21f747b6-e567-4652-b709-f9463b3ee88a.webp",
+    "ceilinglights1_mega_url8": "https:\/\/www.eyely.com\/collections\/floor-lamps\/style_industrial",
+    "ceilinglights1_mega_size8": "col-4",
+    "ceilinglights9_mega_enable": false,
+    "ceilinglights1_mega_image9": "shopify:\/\/shop_images\/JYL3504A-ON_1000x758_9941d837-f12b-4b76-837f-fcbaf7fda505.webp",
+    "ceilinglights1_mega_url9": "shopify:\/\/collections\/table-lamp-sets",
+    "ceilinglights1_mega_size9": "col-4",
+    "ceilinglights10_mega_enable": false,
+    "ceilinglights1_mega_image10": "shopify:\/\/shop_images\/JYL9006A-ON_800x800_3334d378-487d-4ff8-a59a-cc72bbb2a184.webp",
+    "ceilinglights1_mega_url10": "shopify:\/\/collections\/smart-lighting",
+    "ceilinglights1_mega_size10": "col-4",
     "tablelamp1_mega_image1": "shopify:\/\/shop_images\/table-lamp-menu1_6ec88156-a238-41f7-b6c4-a3fec73b24c7.jpg",
-    "tablelamp1_mega_url1": "\/collections\/table-lamps\/color_gold",
+    "tablelamp1_mega_url1": "https:\/\/www.eyely.com\/collections\/table-lamps\/color_gold",
     "tablelamp1_title1": "Gold Leaf",
     "tablelamp1_mega_image2": "shopify:\/\/shop_images\/table-lamp-menu2_02e9864e-1155-4379-8165-c4d077156e88.jpg",
-    "tablelamp1_mega_url2": "\/collections\/table-lamps\/material_rope",
+    "tablelamp1_mega_url2": "https:\/\/www.eyely.com\/collections\/table-lamps\/material_rope",
     "tablelamp1_title2": "Natural",
     "tablelamp1_mega_image3": "shopify:\/\/shop_images\/table-lamp-menu3_ff62cfeb-c339-4f9b-a08a-f0219587929b.jpg",
-    "tablelamp1_mega_url3": "\/collections\/table-lamps\/material_glass",
+    "tablelamp1_mega_url3": "https:\/\/www.eyely.com\/collections\/table-lamps\/material_glass",
     "tablelamp1_title3": "Glass",
     "tablelamp1_mega_image4": "shopify:\/\/shop_images\/table-lamp-menu4.jpg",
-    "tablelamp1_mega_url4": "\/collections\/table-lamps\/color_gold",
+    "tablelamp1_mega_url4": "https:\/\/www.eyely.com\/collections\/table-lamps\/color_gold",
     "tablelamp1_title4": "Gold",
     "tablelamp1_mega_image5": "shopify:\/\/shop_images\/table-lamp-menu5.jpg",
-    "tablelamp1_mega_url5": "\/collections\/table-lamps\/material_seashell",
+    "tablelamp1_mega_url5": "https:\/\/www.eyely.com\/collections\/table-lamps\/material_seashell",
     "tablelamp1_title5": "Seashell",
     "tablelamp1_mega_image6": "shopify:\/\/shop_images\/table-lamp-menu6.jpg",
-    "tablelamp1_mega_url6": "\/collections\/table-lamps\/material_glass",
+    "tablelamp1_mega_url6": "https:\/\/www.eyely.com\/collections\/table-lamps\/material_glass",
+    "tablelamp1_mega_size6": "col-2",
     "tablelamp1_title6": "Mercury",
-    "tablelamp1_mega_image7": "shopify:\/\/shop_images\/smart-lighting-image_2fcbe773-a5a3-4b6c-b6f0-1f830e9df9ff.jpg",
-    "tablelamp1_mega_url7": "shopify:\/\/collections\/smart-lighting",
-    "tablelamp1_mega_image8": "shopify:\/\/shop_images\/explore-table-lamp-sets.jpg",
-    "tablelamp1_mega_url8": "shopify:\/\/collections\/table-lamp-sets",
+    "tablelamp1_mega_image7": "shopify:\/\/shop_images\/allfloor2.png",
+    "tablelamp1_mega_url7": "shopify:\/\/collections\/floor-lamps",
+    "tablelamp1_mega_size7": "col-12",
+    "tablelamp1_mega_image8": "shopify:\/\/shop_images\/led-floor-lamps-500-330_41de466c-9af8-4aca-9337-544c465de985.jpg",
+    "tablelamp1_mega_url8": "shopify:\/\/collections\/integrated-led-floor-lights",
+    "tablelamp1_mega_size8": "col-2",
+    "tablelamp1_mega_image9": "shopify:\/\/shop_images\/farmhouse-floor-lamps-500-165_b334ddcf-6b88-4e01-9d13-4feb6fc64a5e.jpg",
+    "tablelamp1_mega_url9": "https:\/\/www.eyely.com\/collections\/floor-lamps\/style_industrial",
+    "tablelamp1_mega_size9": "col-2",
+    "tablelamp1_title9": "",
+    "tablelamp1_mega_image10": "shopify:\/\/shop_images\/usddd_1024x1024_38c7af31-1817-4453-880e-9df29a2d13b3.webp",
+    "tablelamp1_mega_url10": "shopify:\/\/collections\/usb-table-lamps",
+    "tablelamp1_mega_size10": "col-2",
+    "tablelamp1_mega_image11": "shopify:\/\/shop_images\/ezgif_e0acb1d2-6cce-4614-b9bf-435a7b8fa77c.jpg",
+    "tablelamp1_mega_url11": "shopify:\/\/collections\/rechargeable",
+    "tablelamp1_mega_size11": "col-2",
+    "tablelamp1_mega_image12": "shopify:\/\/shop_images\/smart-lighting-image_1024x1024_ac640029-384d-4b61-aa4b-a2f6a182fb8d.webp",
+    "tablelamp1_mega_url12": "shopify:\/\/collections\/smart-lighting",
+    "tablelamp1_mega_size12": "col-12",
+    "tablelamp1_mega_image13": "shopify:\/\/shop_images\/New_Project_12.png",
+    "tablelamp1_mega_url13": "shopify:\/\/collections\/table-lamp-sets",
+    "tablelamp1_mega_size13": "col-12",
     "floorlamp1_mega_image1": "shopify:\/\/shop_images\/floor-lamp-most-popular_051f4675-4352-48fb-9a7b-0e21dc661374.jpg",
     "floorlamp1_mega_url1": "shopify:\/\/collections\/floor-lamps",
     "floorlamp1_mega_size1": "col-4",
@@ -108,45 +181,85 @@
     "floorlamp1_mega_url2": "shopify:\/\/collections\/integrated-led-floor-lights",
     "floorlamp1_mega_size2": "col-3",
     "floorlamp1_mega_image3": "shopify:\/\/shop_images\/farmhouse-floor-lamps-500-165_319bbff5-f41d-43b8-b110-cea2eec1a31e.jpg",
-    "floorlamp1_mega_url3": "\/collections\/floor-lamps\/style_industrial",
+    "floorlamp1_mega_url3": "https:\/\/www.eyely.com\/collections\/floor-lamps\/style_industrial",
     "floorlamp1_mega_size3": "col-3",
-    "walllight1_mega_image1": "shopify:\/\/shop_images\/wall-light-menu-transitional.jpg",
-    "walllight1_mega_url1": "\/collections\/wall-lights\/style_transitional",
+    "walllight1_mega_image1": "shopify:\/\/shop_images\/wall-light-menu-transitional_1f5eb408-c76a-4d82-b845-f3b736274d39.jpg",
+    "walllight1_mega_url1": "https:\/\/www.eyely.com\/collections\/wall-lights\/style_transitional",
     "walllight1_mega_size1": "col-3",
     "walllight1_title1": "Transitional",
-    "walllight1_mega_image2": "shopify:\/\/shop_images\/wall-light-menu-bohemian.jpg",
-    "walllight1_mega_url2": "\/collections\/wall-lights\/style_bohemian",
+    "walllight1_mega_image2": "shopify:\/\/shop_images\/wall-light-menu-bohemian_e1a8b8fb-a597-4cf0-8b64-470fd60106da.jpg",
+    "walllight1_mega_url2": "https:\/\/www.eyely.com\/collections\/wall-lights\/style_bohemian",
     "walllight1_mega_size2": "col-3",
     "walllight1_title2": "Bohemian",
-    "walllight1_mega_image3": "shopify:\/\/shop_images\/wall-light-menu-glam.jpg",
-    "walllight1_mega_url3": "\/collections\/wall-lights\/style_glam",
+    "walllight1_mega_image3": "shopify:\/\/shop_images\/wall-light-menu-glam_956e2830-bc11-433d-83b1-18fcbcc6d5d7.jpg",
+    "walllight1_mega_url3": "https:\/\/www.eyely.com\/collections\/wall-lights\/style_glam",
     "walllight1_mega_size3": "col-3",
     "walllight1_title3": "Glam",
-    "walllight1_mega_image4": "shopify:\/\/shop_images\/wall-light-menu-industrial.jpg",
-    "walllight1_mega_url4": "\/collections\/wall-lights\/style_transitional",
+    "walllight1_mega_image4": "shopify:\/\/shop_images\/wall-light-menu-industrial_e4944f1f-5eea-4522-afbd-41b0db779361.jpg",
+    "walllight1_mega_url4": "https:\/\/www.eyely.com\/collections\/wall-lights\/style_transitional",
     "walllight1_mega_size4": "col-3",
     "walllight1_title4": "Industrial",
-    "walllight1_mega_image5": "shopify:\/\/shop_images\/wall-light-menu-cottage.jpg",
-    "walllight1_mega_url5": "\/collections\/wall-lights\/style_cottage",
+    "walllight1_mega_image5": "shopify:\/\/shop_images\/wall-light-menu-cottage_c78c6b45-dce9-4360-999d-7b7dceb85c2b.jpg",
+    "walllight1_mega_url5": "https:\/\/www.eyely.com\/collections\/wall-lights\/style_cottage",
     "walllight1_mega_size5": "col-3",
     "walllight1_title5": "Cottage",
-    "walllight1_mega_image6": "shopify:\/\/shop_images\/wall-light-menu-midcentury.jpg",
-    "walllight1_mega_url6": "\/collections\/wall-lights\/style_midcentury",
+    "walllight1_mega_image6": "shopify:\/\/shop_images\/wall-light-menu-midcentury_04693cfe-c865-4187-95fe-72fa00fd3e2b.jpg",
+    "walllight1_mega_url6": "https:\/\/www.eyely.com\/collections\/wall-lights\/style_midcentury",
     "walllight1_mega_size6": "col-3",
-    "walllight1_title6": "Midcentury",
-    "walllight1_mega_image7": "shopify:\/\/shop_images\/wall-light-menu-classic.jpg",
-    "walllight1_mega_url7": "\/collections\/wall-lights\/style_classic",
+    "walllight1_title6": "Modern",
+    "walllight1_mega_image7": "shopify:\/\/shop_images\/wall-light-menu-classic_e0cc83fd-c23d-432a-8a60-3bf6c613d494.jpg",
+    "walllight1_mega_url7": "https:\/\/www.eyely.com\/collections\/wall-lights\/style_classic",
     "walllight1_mega_size7": "col-3",
     "walllight1_title7": "Classic",
-    "walllight1_mega_image8": "shopify:\/\/shop_images\/wall-light-menu-art-deco.jpg",
+    "walllight1_mega_image8": "shopify:\/\/shop_images\/wall-light-menu-art-deco_5791fc5a-af66-45e5-8de2-4e8adb813955.jpg",
     "walllight1_mega_url8": "shopify:\/\/collections\/wall-lights",
     "walllight1_mega_size8": "col-3",
     "walllight1_title8": "Art Deco",
+    "gift_linklists_enable": false,
+    "gift_linklists": "see-all-gift1",
+    "gift1_linklists_enable": false,
+    "gift1_linklists": "see-all-gift2",
+    "gift2_linklists_enable": false,
+    "gift2_linklists": "see-all-gift3",
+    "gift3_linklists_enable": false,
+    "gift3_linklists": "see-all-gift4",
+    "gift1_mega_enable": false,
+    "gift1_img_title1": "Fun In The Sun",
+    "gift1_mega_image1": "shopify:\/\/shop_images\/Screenshot_9.png",
+    "gift1_mega_url1": "shopify:\/\/collections\/gifts",
+    "gift1_mega_size1": "col-4",
+    "pet-coll-link": "shopify:\/\/collections\/toys",
+    "pet-coll-img": "shopify:\/\/shop_images\/ce94a97856c449dee9a4b35022da846b8007c35f85b80828863bd0cb086f32be.jpg",
+    "collection-name": "Toys",
+    "pet-coll-link1": "shopify:\/\/collections\/bowls-treat-jars",
+    "pet-coll-img1": "shopify:\/\/shop_images\/waveboth_700x700_ac810d0a-ba01-4b06-b2de-eb18dac419aa.webp",
+    "collection-name1": "Bowls & Treat Jars",
+    "pet-coll-link2": "shopify:\/\/collections\/collars",
+    "pet-coll-img2": "shopify:\/\/shop_images\/waveboth_700x700_ac810d0a-ba01-4b06-b2de-eb18dac419aa.png",
+    "collection-name2": "Collars",
+    "pet-coll-link3": "shopify:\/\/collections\/leashes",
+    "pet-coll-img3": "shopify:\/\/shop_images\/touch-of-leather-dog-leash-military_8754af14-08b3-4db1-8ebb-65f5f19c059d.png",
+    "collection-name3": "Leashes",
+    "pet-coll-link4": "shopify:\/\/collections\/harness",
+    "pet-coll-img4": "shopify:\/\/shop_images\/6gMVgkbg.jpg",
+    "collection-name4": "Harness",
+    "pet-coll-link5": "shopify:\/\/collections\/houses-beds-tables",
+    "pet-coll-img5": "shopify:\/\/shop_images\/PLACIDPETHOUSE.jpg",
+    "collection-name5": "Houses, Beds, & Tables",
+    "pet-coll-link6": "shopify:\/\/collections\/pet-wear",
+    "pet-coll-img6": "shopify:\/\/shop_images\/F3841.jpg",
+    "collection-name6": "Pet Wear",
+    "pet-coll-link7": "",
+    "collection-name7": "",
+    "all-p-coll-link": "shopify:\/\/collections",
+    "collection-main-name": "SHOP ALL",
+    "pet-coll-main-img": "shopify:\/\/shop_images\/F3841C.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/transparent_gif_eyely_edadc4be-c4a8-452e-b6fe-861988f87067.gif",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "text": "SUMMER IS COMING SALE 70% OFF + FREE SHIPPING ON $35+. LIMITED QUANTITIES.",
+          "text": "70% OFF + FREE SHIPPING ON $35+.",
           "announcement_color": "#ffffff",
           "announcement_background": "#020202",
           "link": ""
@@ -158,105 +271,41 @@
           "1e10c23d-75a1-411e-b3ff-03aa865e7131": {
             "type": "menu-links",
             "settings": {
-              "txt": "Rugs",
-              "size": "col-2",
-              "linklists": "shop-by-style-rugs"
+              "txt": "Lighting",
+              "size": "col-3",
+              "linklists": "header-1"
             }
           },
           "37e87a41-455f-400c-b8c4-c987a64ec3eb": {
             "type": "menu-links",
             "settings": {
-              "txt": "Rugs",
-              "size": "col-2",
-              "linklists": "shop-by-shape-rugs"
-            }
-          },
-          "d4f632a3-84d0-40fa-b32e-02f37994c26c": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Chandeliers",
+              "txt": "Lighting",
               "size": "col-3",
-              "linklists": "shop-by-style-chandeliers"
-            }
-          },
-          "74880bba-ba24-4ff2-9394-c7daee6b45cb": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Chandeliers",
-              "size": "col-3",
-              "linklists": "shop-by-style-chandeliers-2"
+              "linklists": "header-2"
             }
           },
           "ce0b241b-385a-43a8-b617-b074c66b09ee": {
             "type": "menu-links",
             "settings": {
-              "txt": "Ceiling Lights",
-              "size": "col-2",
-              "linklists": "shop-by-style-ceiling-lights"
+              "txt": "Lighting",
+              "size": "col-3",
+              "linklists": "header-3"
             }
           },
           "3b0ba8dc-cfeb-4c7d-98a1-465ba42a2c14": {
             "type": "menu-links",
             "settings": {
-              "txt": "Ceiling Lights",
+              "txt": "Rugs",
               "size": "col-2",
-              "linklists": "shop-by-style-ceiling-lights-2"
-            }
-          },
-          "f42c210f-e205-4d6c-b6c3-3e4f476592d4": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Ceiling Lights",
-              "size": "col-2",
-              "linklists": "shop-by-style-chandeliers-3"
+              "linklists": "shop-by-style-rugs"
             }
           },
           "e07ea082-c2e2-4db3-b9ce-54fd66c98a05": {
             "type": "menu-links",
             "settings": {
-              "txt": "Table Lamps",
-              "size": "col-3",
-              "linklists": "shop-by-style-table-lamps"
-            }
-          },
-          "9099059a-cfdd-44d9-94a1-f1b94caaf3b6": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Table Lamps",
+              "txt": "Rugs",
               "size": "col-2",
-              "linklists": "shop-by-style-table-lamps-2"
-            }
-          },
-          "acb56919-9c0d-4579-ace1-12c1339dc039": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Floor Lamps",
-              "size": "col-3",
-              "linklists": "shop-by-style-floor-lamps"
-            }
-          },
-          "a74171b7-e11b-4a96-a743-93c64f3cf3e9": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Floor Lamps",
-              "size": "col-3",
-              "linklists": "shop-by-style-floor-lamps-2"
-            }
-          },
-          "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Wall Lights",
-              "size": "col-3",
-              "linklists": "shop-by-style-wall-lights"
-            }
-          },
-          "de223b70-9acf-452e-ad48-66cc7e0a0982": {
-            "type": "menu-links",
-            "settings": {
-              "txt": "Wall Lights",
-              "size": "col-3",
-              "linklists": "shop-by-style-wall-lights-2"
+              "linklists": "shop-by-shape-rugs"
             }
           },
           "e54ca53e-80df-4593-b4de-654a6b28e0ec": {
@@ -269,15 +318,15 @@
           "3cd3582a-0c68-4798-ba9b-81c2557f04b1": {
             "type": "mobile_menu_bg",
             "settings": {
-              "menu_main_label": "Storage Benches",
-              "menu_main_image": "shopify:\/\/shop_images\/12.png"
+              "menu_main_label": "Linear Chandeliers",
+              "menu_main_image": "shopify:\/\/shop_images\/JYL1324A-MAIN-SILO-removebg-preview.png"
             }
           },
           "1fb24a58-92c8-44ad-8ea9-aa6d6295c3f2": {
             "type": "mobile_menu_bg",
             "settings": {
-              "menu_main_label": "Storage Trunks",
-              "menu_main_image": "shopify:\/\/shop_images\/13.png"
+              "menu_main_label": "Runners",
+              "menu_main_image": "shopify:\/\/shop_images\/MOH203A-28-ROOM.png"
             }
           },
           "b615aa66-9b91-463c-be78-e5780e64a4ea": {
@@ -285,27 +334,6 @@
             "settings": {
               "menu_main_label": "Trash Cans",
               "menu_main_image": "shopify:\/\/shop_images\/11.png"
-            }
-          },
-          "d594391f-95ce-4c5a-b3b7-d01a90629f34": {
-            "type": "mobile_menu_bg",
-            "settings": {
-              "menu_main_label": "Chandeliers",
-              "menu_main_image": "shopify:\/\/shop_images\/5_77b4dcc2-8a24-4588-8f2e-536060ee090a.png"
-            }
-          },
-          "02a3f4af-d975-4f71-96b6-94afd60d0c1e": {
-            "type": "mobile_menu_bg",
-            "settings": {
-              "menu_main_label": "Table Lamps",
-              "menu_main_image": "shopify:\/\/shop_images\/2.png"
-            }
-          },
-          "ac040f2d-b14d-49b0-a70f-1cbd4ce64e1e": {
-            "type": "mobile_menu_bg",
-            "settings": {
-              "menu_main_label": "Floor Lamps",
-              "menu_main_image": "shopify:\/\/shop_images\/3-1.png"
             }
           },
           "0c578458-9609-4933-a108-65d6544fae0e": {
@@ -320,13 +348,6 @@
             "settings": {
               "menu_main_label": "Wall Lights",
               "menu_main_image": "shopify:\/\/shop_images\/6_578d5501-969a-436e-ad2c-a2c582c21f90.png"
-            }
-          },
-          "36b784c5-fb1a-4ae8-b7bc-f94bd3c3a956": {
-            "type": "mobile_menu_bg",
-            "settings": {
-              "menu_main_label": "Outdoor Lights",
-              "menu_main_image": "shopify:\/\/shop_images\/7_c7168ab3-29e4-43d5-b871-ec90a5d5d25e.png"
             }
           },
           "18c92048-1579-453d-a846-ec27cd13df9a": {
@@ -350,25 +371,11 @@
               "menu_main_image": "shopify:\/\/shop_images\/10_a452e757-5399-4e17-9f75-03fcd657b553.png"
             }
           },
-          "419e03cc-4792-42fa-8087-166d3a0fda24": {
-            "type": "mobile_menu_bg",
-            "settings": {
-              "menu_main_label": "Indoor \/ Outdoor",
-              "menu_main_image": "shopify:\/\/shop_images\/indoor-outdoor.jpg"
-            }
-          },
           "701359c1-a01d-49a1-9d8d-32b585e3baa3": {
             "type": "mobile_menu_bg",
             "settings": {
               "menu_main_label": "New Rugs",
               "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_19.png"
-            }
-          },
-          "c38244f4-d98b-422e-9d1d-0c7e351d02b7": {
-            "type": "mobile_menu_bg",
-            "settings": {
-              "menu_main_label": "All Rugs",
-              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_20.png"
             }
           },
           "dca89905-c63f-46c1-a26f-89099dcdd3a8": {
@@ -469,44 +476,170 @@
               "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_34_ff274809-b6e2-444f-b6ce-74160af8f98a.png"
             }
           },
-          "f1b81705-7c27-4855-9dd0-128aea34dbe9": {
+          "3297ea06-ec2e-41c5-88f3-56ba2d9bc629": {
             "type": "mobile_menu_bg",
             "settings": {
-              "menu_main_label": "Machine Washable",
-              "menu_main_image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_35.png"
+              "menu_main_label": "Gifts",
+              "menu_main_image": "shopify:\/\/shop_images\/Gift__1.png"
+            }
+          },
+          "fdca38eb-1fd4-4123-a128-5c5cf772e85b": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Bedding",
+              "menu_main_image": "shopify:\/\/shop_images\/bedd_e3158dd8-f6fd-4404-8c21-56c498406b4e.png"
+            }
+          },
+          "f1b73890-7bd0-4ad0-9c3f-dfcf5fbef4a8": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Table Lamps SETS",
+              "menu_main_image": "shopify:\/\/shop_images\/table-bg-remove-removebg-preview.png"
+            }
+          },
+          "fb4ce135-759a-40c6-8964-6e98f67b0a53": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Smart Lighting",
+              "menu_main_image": "shopify:\/\/shop_images\/BLB2000A-SET2-DETAIL2-removebg-preview.png"
+            }
+          },
+          "a8fa74a0-941b-4aee-b93e-007e4d4185af": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "All Lamps",
+              "menu_main_image": "shopify:\/\/shop_images\/table_lamp-removebg-preview.png"
+            }
+          },
+          "fd370e73-1b43-4841-b850-4e9451621cc6": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "USB Table Lamps",
+              "menu_main_image": "shopify:\/\/shop_images\/USB_Table_Lamps_256x256-removebg-preview.png"
+            }
+          },
+          "b1693a69-df6e-4545-b135-94093e7e135b": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Wellness",
+              "menu_main_image": "shopify:\/\/shop_images\/Wellness_2.png"
+            }
+          },
+          "0eec4220-213d-40a4-b8c3-81dcd220bdf4": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Pet",
+              "menu_main_image": "shopify:\/\/shop_images\/Pet_1.png"
+            }
+          },
+          "a86aa2fa-20d9-4bd9-ba19-d0e30442fa26": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Rug Pads",
+              "menu_main_image": "shopify:\/\/shop_images\/Layer_25.png"
+            }
+          },
+          "c453794a-ba62-40d7-bc35-7aa18c786252": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Outdoor",
+              "menu_main_image": "shopify:\/\/shop_images\/Layer_23.png"
+            }
+          },
+          "9540d4c2-d292-49bc-b2e8-dd0a686a060a": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Lighting",
+              "menu_main_image": "shopify:\/\/shop_images\/Lighting_1.png"
+            }
+          },
+          "a238d4fa-c7c0-44c9-a1cc-52d014cd2f8c": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Outdoor Lighting",
+              "menu_main_image": "shopify:\/\/shop_images\/JYL7609A-SET2-OFF-SIDE_500x500-removebg-preview_1.png"
+            }
+          },
+          "20706f60-60f6-4310-ab9a-3be2d4ded2b1": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Chandeliers",
+              "menu_main_image": "shopify:\/\/shop_images\/JYL7439A-MS_bf2e93a1-1054-4af5-b115-eecbbe88f80a_256x256_crop_center-removebg-preview.png"
+            }
+          },
+          "97807973-1b3e-4bf7-9b37-d7716cc3310d": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Kitchen & Bar",
+              "menu_main_image": "shopify:\/\/shop_images\/Kitchen_Bar_1.png"
+            }
+          },
+          "74dc4763-3c2e-49ab-b429-39dd48bb5acb": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Food & Drink",
+              "menu_main_image": "shopify:\/\/shop_images\/STY01_BREADWARMERBASKET-FLOWEROVAL_535x-removebg-preview.png"
+            }
+          },
+          "1e8a3f35-2790-4d8d-a464-5073e19d2d5c": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Kitchen",
+              "menu_main_image": "shopify:\/\/shop_images\/ridged-edge-dinnerwarecrockeryliving-simply-house-197849_1_535x-removebg-preview.png"
+            }
+          },
+          "202ceb7a-5f9d-49e6-b8bb-53a8d5aa6850": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Barware",
+              "menu_main_image": "shopify:\/\/shop_images\/IMG_0011-Edit_360x-removebg-preview.png"
+            }
+          },
+          "83a13b4b-59fe-457a-b876-c4819f9ca380": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Drinkware",
+              "menu_main_image": "shopify:\/\/shop_images\/Komorebi-Acrylic-Wine-Glasses-Set-of-4-0_360x-removebg-preview.png"
+            }
+          },
+          "3151fd5a-9962-4800-9af9-70f397cb996b": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Serveware",
+              "menu_main_image": "shopify:\/\/shop_images\/serving-trays-round-seagrass-tray-with-mother-of-pearl-inlay-wooden-base-insert-handle-for-breakfast-food-coffee-table-decor-decoration-storage-and-display-38628492607747_360x-removeb_d37ff2b7-e14f-4555-b36e-762713e27a4c.png"
+            }
+          },
+          "1d229782-e157-4936-aac9-a11c49821285": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Furniture",
+              "menu_main_image": "shopify:\/\/shop_images\/HPM9100A-SILO1_700x700-removebg-preview.png"
+            }
+          },
+          "199a5c4d-61dd-4390-94dc-adc6f183d809": {
+            "type": "mobile_menu_bg",
+            "settings": {
+              "menu_main_label": "Home & Garden",
+              "menu_main_image": "shopify:\/\/shop_images\/Home_Garden_1.png"
             }
           }
         },
         "block_order": [
           "1e10c23d-75a1-411e-b3ff-03aa865e7131",
           "37e87a41-455f-400c-b8c4-c987a64ec3eb",
-          "d4f632a3-84d0-40fa-b32e-02f37994c26c",
-          "74880bba-ba24-4ff2-9394-c7daee6b45cb",
           "ce0b241b-385a-43a8-b617-b074c66b09ee",
           "3b0ba8dc-cfeb-4c7d-98a1-465ba42a2c14",
-          "f42c210f-e205-4d6c-b6c3-3e4f476592d4",
           "e07ea082-c2e2-4db3-b9ce-54fd66c98a05",
-          "9099059a-cfdd-44d9-94a1-f1b94caaf3b6",
-          "acb56919-9c0d-4579-ace1-12c1339dc039",
-          "a74171b7-e11b-4a96-a743-93c64f3cf3e9",
-          "8e6d17d9-88d0-4e96-b4b3-73dcd149dc8c",
-          "de223b70-9acf-452e-ad48-66cc7e0a0982",
           "e54ca53e-80df-4593-b4de-654a6b28e0ec",
           "3cd3582a-0c68-4798-ba9b-81c2557f04b1",
           "1fb24a58-92c8-44ad-8ea9-aa6d6295c3f2",
           "b615aa66-9b91-463c-be78-e5780e64a4ea",
-          "d594391f-95ce-4c5a-b3b7-d01a90629f34",
-          "02a3f4af-d975-4f71-96b6-94afd60d0c1e",
-          "ac040f2d-b14d-49b0-a70f-1cbd4ce64e1e",
           "0c578458-9609-4933-a108-65d6544fae0e",
           "389b020c-f7f6-4e51-be7b-ff6a137babb5",
-          "36b784c5-fb1a-4ae8-b7bc-f94bd3c3a956",
           "18c92048-1579-453d-a846-ec27cd13df9a",
           "229f739e-0ac1-4e60-8514-308886bc16b1",
           "7789328f-b14a-49d7-b810-bce567bb67d5",
-          "419e03cc-4792-42fa-8087-166d3a0fda24",
           "701359c1-a01d-49a1-9d8d-32b585e3baa3",
-          "c38244f4-d98b-422e-9d1d-0c7e351d02b7",
           "dca89905-c63f-46c1-a26f-89099dcdd3a8",
           "a42b83fc-d6e1-4614-8d93-9ea76c1c4dbb",
           "91147423-f6cd-41cf-b31c-9a57d0f26ee2",
@@ -521,21 +654,44 @@
           "3db04c3b-5148-4913-a377-67cb016b6543",
           "2d94e115-27c6-4985-adfd-61b910daede4",
           "31062f28-7472-41e0-9dfc-6a692a5d90d5",
-          "f1b81705-7c27-4855-9dd0-128aea34dbe9"
+          "3297ea06-ec2e-41c5-88f3-56ba2d9bc629",
+          "fdca38eb-1fd4-4123-a128-5c5cf772e85b",
+          "f1b73890-7bd0-4ad0-9c3f-dfcf5fbef4a8",
+          "fb4ce135-759a-40c6-8964-6e98f67b0a53",
+          "a8fa74a0-941b-4aee-b93e-007e4d4185af",
+          "fd370e73-1b43-4841-b850-4e9451621cc6",
+          "b1693a69-df6e-4545-b135-94093e7e135b",
+          "0eec4220-213d-40a4-b8c3-81dcd220bdf4",
+          "a86aa2fa-20d9-4bd9-ba19-d0e30442fa26",
+          "c453794a-ba62-40d7-bc35-7aa18c786252",
+          "9540d4c2-d292-49bc-b2e8-dd0a686a060a",
+          "a238d4fa-c7c0-44c9-a1cc-52d014cd2f8c",
+          "20706f60-60f6-4310-ab9a-3be2d4ded2b1",
+          "97807973-1b3e-4bf7-9b37-d7716cc3310d",
+          "74dc4763-3c2e-49ab-b429-39dd48bb5acb",
+          "1e8a3f35-2790-4d8d-a464-5073e19d2d5c",
+          "202ceb7a-5f9d-49e6-b8bb-53a8d5aa6850",
+          "83a13b4b-59fe-457a-b876-c4819f9ca380",
+          "3151fd5a-9962-4800-9af9-70f397cb996b",
+          "1d229782-e157-4936-aac9-a11c49821285",
+          "199a5c4d-61dd-4390-94dc-adc6f183d809"
         ],
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify:\/\/shop_images\/eyely-logo-png-shopify.png",
           "logo_width": 120,
           "logo_position": "top-left",
-          "menu": "app-menu",
+          "menu": "header-menu",
+          "shop_link_text": "Shop All Lighting",
+          "shop_link_url": "shopify:\/\/collections\/lighting",
+          "lighting_img": "shopify:\/\/shop_images\/JYL1089A-ON-ROOM_360x_d8ac556e-8afa-4a22-9821-65d58f050c74.jpg",
           "show_line_separator": true,
           "enable_sticky_header": false,
-          "mobile_menu": "mobile-menu",
+          "mobile_menu": "mobile-menu-eyely-3",
           "mobile_sale_text": "",
           "mobile_sale_url": "shopify:\/\/collections\/warehouse-sale",
           "link_image1": "shopify:\/\/shop_images\/track.png",
-          "link1": "shopify:\/\/pages\/track-order",
+          "link1": "\/apps\/tracktor\/track",
           "link_image2": "shopify:\/\/shop_images\/returns.png",
           "link2": "shopify:\/\/pages\/easy-returns",
           "link_image3": "shopify:\/\/shop_images\/rug_care_guide.png",
@@ -585,6 +741,13 @@
         "settings": {
           "show_social": false
         }
+      },
+      "index-newsletter": {
+        "type": "index-newsletter",
+        "settings": {
+          "title_txt": "<b>Yas!<\/b> Send me exclusive offers, deals, and personalised tips for shopping on Eyely.",
+          "bg_color": "#deece3"
+        }
       }
     },
     "content_for_index": [
@@ -597,14 +760,26 @@
         "settings": {
         }
       },
-      "11989736685688860011": {
-        "type": "shopify:\/\/apps\/easy-variant-images\/blocks\/embed_via\/bfecabd5-49af-4d37-8214-f0f4649f4cb3",
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
         "disabled": false,
         "settings": {
         }
       },
-      "319724205969189013": {
-        "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "6143736321357441667": {
+        "type": "shopify:\/\/apps\/tidio-live-chat\/blocks\/app-embed\/1002274d-fb18-4939-98f6-5f05a8deeadc",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "10436698916776057164": {
+        "type": "shopify:\/\/apps\/appstle-subscriptions\/blocks\/appstle-subscription-helper\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
         "disabled": false,
         "settings": {
         }
@@ -626,6 +801,8 @@
         "announcement-bar": {
           "type": "announcement-bar",
           "settings": {
+            "announcement_color": "#fff",
+            "announcement_background": "#000"
           }
         }
       }

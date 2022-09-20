@@ -40,13 +40,14 @@ outline: 0px;
 box-shadow: none;
 }
 .index-newsletter .n-sub-btn {
-    color: #2d3654;
+    color: #000;
     background:transparent;
     outline: 0;
     font-weight: 700;
     letter-spacing: 1px;
     border: 0px;
     font-size: 17px;
+  font-family: 'Graphik','sans-serif';
 }.social-link ,.social-link:hover{
     height: 36px;
     width: 36px;
@@ -54,7 +55,7 @@ box-shadow: none;
     color:transparent;
 }.social-link svg {    position: relative;
     display: inline-block;
-    fill: #2b3757;
+    fill: #000;
     height: 40px;
     width: 40px;
 }
